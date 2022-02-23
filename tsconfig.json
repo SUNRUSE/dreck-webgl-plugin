@@ -35,7 +35,8 @@
     "jsxFragmentFactory": "React.Fragment",
     "keyofStringsOnly": true,
     "lib": [
-      "ES2020"
+      "ES2020",
+      "DOM"
     ],
     "listEmittedFiles": false,
     "listFiles": false,
