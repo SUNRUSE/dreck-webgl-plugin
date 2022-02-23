@@ -36,7 +36,7 @@ export abstract class Resource<
       this.timesContextResourcedWhenInstanceCreated ===
         this.context.timesContextRestored
     ) {
-      this.deleteInstance(this.context.gl, this.instance);
+      this.deleteInstance(this.instance);
       this.instance = null;
     }
   }
@@ -85,7 +85,7 @@ export abstract class Resource<
         this.timesContextResourcedWhenInstanceCreated =
           this.context.timesContextRestored;
 
-        this.instance = this.createInstance(this.context.gl);
+        this.instance = this.createInstance();
 
         return this.instance;
       }
@@ -96,19 +96,12 @@ export abstract class Resource<
 
   /**
    * Creates a new instance of this resource.  Will normally be called before the first use.  May be called again following recovery of a lost context.
-   * @param gl The WebGL rendering context to use to create the instance of this resource.
    */
-  abstract createInstance(
-    gl: Pick<WebGLRenderingContext, TWebGLRenderingContextKey>
-  ): TInstance;
+  abstract createInstance(): TInstance;
 
   /**
    * Deletes a previously created instance of this resource.  Will normally be called during disposal.
-   * @param gl The WebGL rendering context to use to delete the instance of this resource.
    * @param instance The instance of this resource to delete.
    */
-  abstract deleteInstance(
-    gl: Pick<WebGLRenderingContext, TWebGLRenderingContextKey>,
-    instance: TInstance
-  ): void;
+  abstract deleteInstance(instance: TInstance): void;
 }

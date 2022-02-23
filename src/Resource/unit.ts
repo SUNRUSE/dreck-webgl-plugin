@@ -97,17 +97,12 @@ describe(`Resource`, () => {
         const deleteInstance = jasmine.createSpy(`deleteInstance`);
 
         class TestResource extends Resource<TestInstance, `cullFace`> {
-          createInstance(
-            gl: Pick<WebGLRenderingContext, `cullFace`>
-          ): TestInstance {
-            return createInstance(gl);
+          createInstance(): TestInstance {
+            return createInstance();
           }
 
-          deleteInstance(
-            gl: Pick<WebGLRenderingContext, `cullFace`>,
-            instance: TestInstance
-          ): void {
-            deleteInstance(gl, instance);
+          deleteInstance(instance: TestInstance): void {
+            deleteInstance(instance);
           }
         }
 
@@ -136,10 +131,7 @@ describe(`Resource`, () => {
 
               expect(createInstance).not.toHaveBeenCalled();
               expect(deleteInstance).toHaveBeenCalledTimes(1);
-              expect(deleteInstance).toHaveBeenCalledWith(
-                context.gl,
-                step.instance
-              );
+              expect(deleteInstance).toHaveBeenCalledWith(step.instance);
               break;
 
             case `disposeThrowsError`:
@@ -175,7 +167,7 @@ describe(`Resource`, () => {
 
               expect(result).toEqual(step.instance);
               expect(createInstance).toHaveBeenCalledTimes(1);
-              expect(createInstance).toHaveBeenCalledWith(context.gl);
+              expect(createInstance).toHaveBeenCalledWith();
               expect(deleteInstance).not.toHaveBeenCalled();
               break;
             }
