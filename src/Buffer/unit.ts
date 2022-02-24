@@ -29,12 +29,16 @@ describe(`Buffer`, () => {
           deleteBuffer = jasmine.createSpy(`deleteBuffer`);
           isContextLost = jasmine.createSpy(`isContextLost`);
 
-          generateData = jasmine
-            .createSpy(`generateData`)
-            .and.returnValue(Uint16Array.from([32, 768, 1024, 512]));
+          generateData = jasmine.createSpy(`generateData`).and.returnValue({
+            bufferContent: Uint16Array.from([32, 768, 1024, 512]),
+            instanceData: `Test Instance Data`,
+          });
 
-          class TestBuffer extends Buffer {
-            generateData(): BufferSource {
+          class TestBuffer extends Buffer<`Test Instance Data`> {
+            generateData(): {
+              readonly bufferContent: BufferSource;
+              readonly instanceData: `Test Instance Data`;
+            } {
               return generateData();
             }
           }
@@ -97,12 +101,16 @@ describe(`Buffer`, () => {
           deleteBuffer = jasmine.createSpy(`deleteBuffer`);
           isContextLost = jasmine.createSpy(`isContextLost`);
 
-          generateData = jasmine
-            .createSpy(`generateData`)
-            .and.returnValue(Uint16Array.from([32, 768, 1024, 512]));
+          generateData = jasmine.createSpy(`generateData`).and.returnValue({
+            bufferContent: Uint16Array.from([32, 768, 1024, 512]),
+            instanceData: `Test Instance Data`,
+          });
 
-          class TestBuffer extends Buffer {
-            generateData(): BufferSource {
+          class TestBuffer extends Buffer<`Test Instance Data`> {
+            generateData(): {
+              readonly bufferContent: BufferSource;
+              readonly instanceData: `Test Instance Data`;
+            } {
               return generateData();
             }
           }
@@ -167,7 +175,10 @@ describe(`Buffer`, () => {
         });
 
         it(`returns the created buffer`, () => {
-          expect(result).toEqual({ example: `buffer` });
+          expect(result).toEqual({
+            buffer: { example: `buffer` },
+            data: `Test Instance Data`,
+          });
         });
       });
 
@@ -189,12 +200,16 @@ describe(`Buffer`, () => {
           deleteBuffer = jasmine.createSpy(`deleteBuffer`);
           isContextLost = jasmine.createSpy(`isContextLost`);
 
-          generateData = jasmine
-            .createSpy(`generateData`)
-            .and.returnValue(Uint16Array.from([32, 768, 1024, 512]));
+          generateData = jasmine.createSpy(`generateData`).and.returnValue({
+            bufferContent: Uint16Array.from([32, 768, 1024, 512]),
+            instanceData: `Test Instance Data`,
+          });
 
-          class TestBuffer extends Buffer {
-            generateData(): BufferSource {
+          class TestBuffer extends Buffer<`Test Instance Data`> {
+            generateData(): {
+              readonly bufferContent: BufferSource;
+              readonly instanceData: `Test Instance Data`;
+            } {
               return generateData();
             }
           }
@@ -261,12 +276,16 @@ describe(`Buffer`, () => {
           deleteBuffer = jasmine.createSpy(`deleteBuffer`);
           isContextLost = jasmine.createSpy(`isContextLost`);
 
-          generateData = jasmine
-            .createSpy(`generateData`)
-            .and.returnValue(Uint16Array.from([]));
+          generateData = jasmine.createSpy(`generateData`).and.returnValue({
+            bufferContent: Uint16Array.from([]),
+            instanceData: `Test Instance Data`,
+          });
 
-          class TestBuffer extends Buffer {
-            generateData(): BufferSource {
+          class TestBuffer extends Buffer<`Test Instance Data`> {
+            generateData(): {
+              readonly bufferContent: BufferSource;
+              readonly instanceData: `Test Instance Data`;
+            } {
               return generateData();
             }
           }
@@ -337,12 +356,16 @@ describe(`Buffer`, () => {
           deleteBuffer = jasmine.createSpy(`deleteBuffer`);
           isContextLost = jasmine.createSpy(`isContextLost`);
 
-          generateData = jasmine
-            .createSpy(`generateData`)
-            .and.returnValue(Uint16Array.from([32, 768, 1024, 512]));
+          generateData = jasmine.createSpy(`generateData`).and.returnValue({
+            bufferContent: Uint16Array.from([32, 768, 1024, 512]),
+            instanceData: `Test Instance Data`,
+          });
 
-          class TestBuffer extends Buffer {
-            generateData(): BufferSource {
+          class TestBuffer extends Buffer<`Test Instance Data`> {
+            generateData(): {
+              readonly bufferContent: BufferSource;
+              readonly instanceData: `Test Instance Data`;
+            } {
               return generateData();
             }
           }
@@ -404,12 +427,16 @@ describe(`Buffer`, () => {
           deleteBuffer = jasmine.createSpy(`deleteBuffer`);
           isContextLost = jasmine.createSpy(`isContextLost`);
 
-          generateData = jasmine
-            .createSpy(`generateData`)
-            .and.returnValue(Uint16Array.from([32, 768, 1024, 512]));
+          generateData = jasmine.createSpy(`generateData`).and.returnValue({
+            bufferContent: Uint16Array.from([32, 768, 1024, 512]),
+            instanceData: `Test Instance Data`,
+          });
 
-          class TestBuffer extends Buffer {
-            generateData(): BufferSource {
+          class TestBuffer extends Buffer<`Test Instance Data`> {
+            generateData(): {
+              readonly bufferContent: BufferSource;
+              readonly instanceData: `Test Instance Data`;
+            } {
               return generateData();
             }
           }
