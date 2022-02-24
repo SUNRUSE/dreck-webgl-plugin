@@ -1,5 +1,9 @@
 export { Animation } from "./Animation";
 export { BinaryType } from "./BinaryType";
+export { binaryTypeBytes } from "./binaryTypeBytes";
+export { binaryTypeMaximum } from "./binaryTypeMaximum";
+export { binaryTypeMinimum } from "./binaryTypeMinimum";
+export { binaryTypeType } from "./binaryTypeType";
 export { BooleanAnimation } from "./BooleanAnimation";
 export { BooleanKeyframeData } from "./BooleanKeyframeData";
 export { Buffer } from "./Buffer";
