@@ -1,4 +1,5 @@
 export { Animation } from "./Animation";
+export { BinaryType } from "./BinaryType";
 export { BooleanAnimation } from "./BooleanAnimation";
 export { BooleanKeyframeData } from "./BooleanKeyframeData";
 export { Buffer } from "./Buffer";
