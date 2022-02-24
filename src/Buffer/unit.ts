@@ -1,4 +1,4 @@
-import { Buffer, Constants } from "..";
+import { Buffer, Constants, ContextInterface } from "..";
 
 describe(`Buffer`, () => {
   const targets: ReadonlyArray<{
@@ -35,6 +35,14 @@ describe(`Buffer`, () => {
           }
         }
 
+        let context: ContextInterface<
+          | `createBuffer`
+          | `bindBuffer`
+          | `bufferData`
+          | `deleteBuffer`
+          | `getContextAttributes`
+          | `isContextLost`
+        >;
         let buffer: TestBuffer;
 
         beforeAll(() => {
@@ -50,20 +58,19 @@ describe(`Buffer`, () => {
             instanceData: `Test Instance Data`,
           });
 
-          buffer = new TestBuffer(
-            {
-              gl: {
-                getContextAttributes,
-                createBuffer,
-                bindBuffer,
-                bufferData,
-                deleteBuffer,
-                isContextLost,
-              },
-              timesContextRestored: 7,
+          context = {
+            gl: {
+              getContextAttributes,
+              createBuffer,
+              bindBuffer,
+              bufferData,
+              deleteBuffer,
+              isContextLost,
             },
-            target.target
-          );
+            timesContextRestored: 7,
+          };
+
+          buffer = new TestBuffer(context, target.target);
         });
 
         it(`does not check for context loss`, () => {
@@ -97,6 +104,10 @@ describe(`Buffer`, () => {
         it(`exposes the target`, () => {
           expect(buffer.target).toEqual(target.target);
         });
+
+        it(`exposes the context`, () => {
+          expect(buffer.context).toBe(context);
+        });
       });
 
       describe(`on creating an instance`, () => {
@@ -121,6 +132,14 @@ describe(`Buffer`, () => {
           }
         }
 
+        let context: ContextInterface<
+          | `createBuffer`
+          | `bindBuffer`
+          | `bufferData`
+          | `deleteBuffer`
+          | `getContextAttributes`
+          | `isContextLost`
+        >;
         let buffer: TestBuffer;
 
         beforeAll(() => {
@@ -138,20 +157,19 @@ describe(`Buffer`, () => {
             instanceData: `Test Instance Data`,
           });
 
-          buffer = new TestBuffer(
-            {
-              gl: {
-                getContextAttributes,
-                createBuffer,
-                bindBuffer,
-                bufferData,
-                deleteBuffer,
-                isContextLost,
-              },
-              timesContextRestored: 7,
+          context = {
+            gl: {
+              getContextAttributes,
+              createBuffer,
+              bindBuffer,
+              bufferData,
+              deleteBuffer,
+              isContextLost,
             },
-            target.target
-          );
+            timesContextRestored: 7,
+          };
+
+          buffer = new TestBuffer(context, target.target);
 
           result = buffer.createInstance();
         });
@@ -212,6 +230,10 @@ describe(`Buffer`, () => {
         it(`exposes the target`, () => {
           expect(buffer.target).toEqual(target.target);
         });
+
+        it(`exposes the context`, () => {
+          expect(buffer.context).toBe(context);
+        });
       });
 
       describe(`on creating a null instance`, () => {
@@ -236,6 +258,14 @@ describe(`Buffer`, () => {
           }
         }
 
+        let context: ContextInterface<
+          | `createBuffer`
+          | `bindBuffer`
+          | `bufferData`
+          | `deleteBuffer`
+          | `getContextAttributes`
+          | `isContextLost`
+        >;
         let buffer: TestBuffer;
 
         beforeAll(() => {
@@ -253,20 +283,19 @@ describe(`Buffer`, () => {
             instanceData: `Test Instance Data`,
           });
 
-          buffer = new TestBuffer(
-            {
-              gl: {
-                getContextAttributes,
-                createBuffer,
-                bindBuffer,
-                bufferData,
-                deleteBuffer,
-                isContextLost,
-              },
-              timesContextRestored: 7,
+          context = {
+            gl: {
+              getContextAttributes,
+              createBuffer,
+              bindBuffer,
+              bufferData,
+              deleteBuffer,
+              isContextLost,
             },
-            target.target
-          );
+            timesContextRestored: 7,
+          };
+
+          buffer = new TestBuffer(context, target.target);
 
           result = buffer.createInstance();
         });
@@ -306,6 +335,10 @@ describe(`Buffer`, () => {
         it(`exposes the target`, () => {
           expect(buffer.target).toEqual(target.target);
         });
+
+        it(`exposes the context`, () => {
+          expect(buffer.context).toBe(context);
+        });
       });
 
       describe(`on creating an instance which is empty`, () => {
@@ -330,6 +363,14 @@ describe(`Buffer`, () => {
           }
         }
 
+        let context: ContextInterface<
+          | `createBuffer`
+          | `bindBuffer`
+          | `bufferData`
+          | `deleteBuffer`
+          | `getContextAttributes`
+          | `isContextLost`
+        >;
         let buffer: TestBuffer;
 
         beforeAll(() => {
@@ -345,20 +386,19 @@ describe(`Buffer`, () => {
             instanceData: `Test Instance Data`,
           });
 
-          buffer = new TestBuffer(
-            {
-              gl: {
-                getContextAttributes,
-                createBuffer,
-                bindBuffer,
-                bufferData,
-                deleteBuffer,
-                isContextLost,
-              },
-              timesContextRestored: 7,
+          context = {
+            gl: {
+              getContextAttributes,
+              createBuffer,
+              bindBuffer,
+              bufferData,
+              deleteBuffer,
+              isContextLost,
             },
-            target.target
-          );
+            timesContextRestored: 7,
+          };
+
+          buffer = new TestBuffer(context, target.target);
 
           try {
             buffer.createInstance();
@@ -403,6 +443,10 @@ describe(`Buffer`, () => {
         it(`exposes the target`, () => {
           expect(buffer.target).toEqual(target.target);
         });
+
+        it(`exposes the context`, () => {
+          expect(buffer.context).toBe(context);
+        });
       });
 
       describe(`on deleting a null instance`, () => {
@@ -426,6 +470,14 @@ describe(`Buffer`, () => {
           }
         }
 
+        let context: ContextInterface<
+          | `createBuffer`
+          | `bindBuffer`
+          | `bufferData`
+          | `deleteBuffer`
+          | `getContextAttributes`
+          | `isContextLost`
+        >;
         let buffer: TestBuffer;
 
         beforeAll(() => {
@@ -441,20 +493,19 @@ describe(`Buffer`, () => {
             instanceData: `Test Instance Data`,
           });
 
-          buffer = new TestBuffer(
-            {
-              gl: {
-                getContextAttributes,
-                createBuffer,
-                bindBuffer,
-                bufferData,
-                deleteBuffer,
-                isContextLost,
-              },
-              timesContextRestored: 7,
+          context = {
+            gl: {
+              getContextAttributes,
+              createBuffer,
+              bindBuffer,
+              bufferData,
+              deleteBuffer,
+              isContextLost,
             },
-            target.target
-          );
+            timesContextRestored: 7,
+          };
+
+          buffer = new TestBuffer(context, target.target);
 
           buffer.deleteInstance(null);
         });
@@ -490,6 +541,10 @@ describe(`Buffer`, () => {
         it(`exposes the target`, () => {
           expect(buffer.target).toEqual(target.target);
         });
+
+        it(`exposes the context`, () => {
+          expect(buffer.context).toBe(context);
+        });
       });
 
       describe(`on deleting a non-null instance`, () => {
@@ -513,6 +568,14 @@ describe(`Buffer`, () => {
           }
         }
 
+        let context: ContextInterface<
+          | `createBuffer`
+          | `bindBuffer`
+          | `bufferData`
+          | `deleteBuffer`
+          | `getContextAttributes`
+          | `isContextLost`
+        >;
         let buffer: TestBuffer;
 
         beforeAll(() => {
@@ -528,20 +591,19 @@ describe(`Buffer`, () => {
             instanceData: `Test Instance Data`,
           });
 
-          buffer = new TestBuffer(
-            {
-              gl: {
-                getContextAttributes,
-                createBuffer,
-                bindBuffer,
-                bufferData,
-                deleteBuffer,
-                isContextLost,
-              },
-              timesContextRestored: 7,
+          context = {
+            gl: {
+              getContextAttributes,
+              createBuffer,
+              bindBuffer,
+              bufferData,
+              deleteBuffer,
+              isContextLost,
             },
-            target.target
-          );
+            timesContextRestored: 7,
+          };
+
+          buffer = new TestBuffer(context, target.target);
 
           buffer.deleteInstance({ example: `buffer` });
         });
@@ -584,6 +646,10 @@ describe(`Buffer`, () => {
 
         it(`exposes the target`, () => {
           expect(buffer.target).toEqual(target.target);
+        });
+
+        it(`exposes the context`, () => {
+          expect(buffer.context).toBe(context);
         });
       });
     });
