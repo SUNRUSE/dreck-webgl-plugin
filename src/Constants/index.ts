@@ -96,4 +96,34 @@ export const enum Constants {
    * The shader computes fragment colors as unit intervals.
    */
   FragmentShader = 35632,
+
+  /**
+   * A 2-dimensional floating-point vector.
+   */
+  Vec2 = 35664,
+
+  /**
+   * A 3-dimensional floating-point vector.
+   */
+  Vec3 = 35665,
+
+  /**
+   * A 4-dimensional floating-point vector.
+   */
+  Vec4 = 35666,
+
+  /**
+   * A 2x2 floating-point column-order matrix.
+   */
+  Mat2 = 35674,
+
+  /**
+   * A 3x3 floating-point column-order matrix.
+   */
+  Mat3 = 35675,
+
+  /**
+   * A 4x4 floating-point column-order matrix.
+   */
+  Mat4 = 35676,
 }
