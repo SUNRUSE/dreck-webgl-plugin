@@ -32,9 +32,7 @@ export abstract class Buffer<
       | TWebGLRenderingContextKey
       | `isContextLost`
     >,
-    private readonly target:
-      | Constants.ArrayBuffer
-      | Constants.ElementArrayBuffer
+    public readonly target: Constants.ArrayBuffer | Constants.ElementArrayBuffer
   ) {
     super(context);
   }
