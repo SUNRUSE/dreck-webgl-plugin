@@ -6,6 +6,7 @@ export { Constants } from "./Constants";
 export { ContextInterface } from "./ContextInterface";
 export { FloatAnimation } from "./FloatAnimation";
 export { FloatKeyframeData } from "./FloatKeyframeData";
+export { IndexBuffer } from "./IndexBuffer";
 export { Keyframe } from "./Keyframe";
 export { Resource } from "./Resource";
 export { sampleBooleanAnimation } from "./sampleBooleanAnimation";
