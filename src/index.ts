@@ -1,5 +1,6 @@
 export { Animation } from "./Animation";
 export { AttributeDefinition } from "./AttributeDefinition";
+export { AttributeDefinitionSet } from "./AttributeDefinitionSet";
 export { BinaryType } from "./BinaryType";
 export { binaryTypeBytes } from "./binaryTypeBytes";
 export { binaryTypeMaximum } from "./binaryTypeMaximum";
