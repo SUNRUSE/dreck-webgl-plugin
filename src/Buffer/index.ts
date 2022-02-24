@@ -4,11 +4,19 @@ import { Resource } from "../Resource";
 
 /**
  * A WebGL buffer, for either vertices or indices.
+ * @template TWebGLRenderingContextKey The key(s) of the WebGL rendering context which are used by the resource.
  * @template TInstanceData Additional data included in an instance.
  */
-export abstract class Buffer<TInstanceData> extends Resource<
+export abstract class Buffer<
+  TWebGLRenderingContextKey extends keyof WebGLRenderingContext,
+  TInstanceData
+> extends Resource<
   null | { readonly buffer: WebGLBuffer; readonly data: TInstanceData },
-  `createBuffer` | `bindBuffer` | `bufferData` | `deleteBuffer`
+  | `createBuffer`
+  | `bindBuffer`
+  | `bufferData`
+  | `deleteBuffer`
+  | TWebGLRenderingContextKey
 > {
   /**
    * Creates a new WebGL buffer, for either vertices or indices.
@@ -21,6 +29,7 @@ export abstract class Buffer<TInstanceData> extends Resource<
       | `bindBuffer`
       | `bufferData`
       | `deleteBuffer`
+      | TWebGLRenderingContextKey
       | `isContextLost`
     >,
     private readonly target:

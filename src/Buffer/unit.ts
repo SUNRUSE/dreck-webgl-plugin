@@ -15,6 +15,7 @@ describe(`Buffer`, () => {
   for (const target of targets) {
     describe(target.description, () => {
       describe(`on construction`, () => {
+        let getContextAttributes: jasmine.Spy;
         let createBuffer: jasmine.Spy;
         let bindBuffer: jasmine.Spy;
         let bufferData: jasmine.Spy;
@@ -23,6 +24,7 @@ describe(`Buffer`, () => {
         let generateData: jasmine.Spy;
 
         beforeAll(() => {
+          getContextAttributes = jasmine.createSpy(`getContextAttributes`);
           createBuffer = jasmine.createSpy(`createBuffer`);
           bindBuffer = jasmine.createSpy(`bindBuffer`);
           bufferData = jasmine.createSpy(`bufferData`);
@@ -34,7 +36,10 @@ describe(`Buffer`, () => {
             instanceData: `Test Instance Data`,
           });
 
-          class TestBuffer extends Buffer<`Test Instance Data`> {
+          class TestBuffer extends Buffer<
+            `getContextAttributes`,
+            `Test Instance Data`
+          > {
             generateData(): {
               readonly bufferContent: BufferSource;
               readonly instanceData: `Test Instance Data`;
@@ -46,6 +51,7 @@ describe(`Buffer`, () => {
           new TestBuffer(
             {
               gl: {
+                getContextAttributes,
                 createBuffer,
                 bindBuffer,
                 bufferData,
@@ -81,9 +87,14 @@ describe(`Buffer`, () => {
         it(`does not delete any buffers`, () => {
           expect(deleteBuffer).not.toHaveBeenCalled();
         });
+
+        it(`does not call additional methods`, () => {
+          expect(getContextAttributes).not.toHaveBeenCalled();
+        });
       });
 
       describe(`on creating an instance`, () => {
+        let getContextAttributes: jasmine.Spy;
         let createBuffer: jasmine.Spy;
         let bindBuffer: jasmine.Spy;
         let bufferData: jasmine.Spy;
@@ -93,6 +104,7 @@ describe(`Buffer`, () => {
         let result: null | WebGLBuffer;
 
         beforeAll(() => {
+          getContextAttributes = jasmine.createSpy(`getContextAttributes`);
           createBuffer = jasmine
             .createSpy(`createBuffer`)
             .and.returnValue({ example: `buffer` });
@@ -106,7 +118,10 @@ describe(`Buffer`, () => {
             instanceData: `Test Instance Data`,
           });
 
-          class TestBuffer extends Buffer<`Test Instance Data`> {
+          class TestBuffer extends Buffer<
+            `getContextAttributes`,
+            `Test Instance Data`
+          > {
             generateData(): {
               readonly bufferContent: BufferSource;
               readonly instanceData: `Test Instance Data`;
@@ -118,6 +133,7 @@ describe(`Buffer`, () => {
           const buffer = new TestBuffer(
             {
               gl: {
+                getContextAttributes,
                 createBuffer,
                 bindBuffer,
                 bufferData,
@@ -180,9 +196,14 @@ describe(`Buffer`, () => {
             data: `Test Instance Data`,
           });
         });
+
+        it(`does not call additional methods`, () => {
+          expect(getContextAttributes).not.toHaveBeenCalled();
+        });
       });
 
       describe(`on creating a null instance`, () => {
+        let getContextAttributes: jasmine.Spy;
         let createBuffer: jasmine.Spy;
         let bindBuffer: jasmine.Spy;
         let bufferData: jasmine.Spy;
@@ -192,6 +213,7 @@ describe(`Buffer`, () => {
         let result: null | WebGLBuffer;
 
         beforeAll(() => {
+          getContextAttributes = jasmine.createSpy(`getContextAttributes`);
           createBuffer = jasmine
             .createSpy(`createBuffer`)
             .and.returnValue(null);
@@ -205,7 +227,10 @@ describe(`Buffer`, () => {
             instanceData: `Test Instance Data`,
           });
 
-          class TestBuffer extends Buffer<`Test Instance Data`> {
+          class TestBuffer extends Buffer<
+            `getContextAttributes`,
+            `Test Instance Data`
+          > {
             generateData(): {
               readonly bufferContent: BufferSource;
               readonly instanceData: `Test Instance Data`;
@@ -217,6 +242,7 @@ describe(`Buffer`, () => {
           const buffer = new TestBuffer(
             {
               gl: {
+                getContextAttributes,
                 createBuffer,
                 bindBuffer,
                 bufferData,
@@ -258,9 +284,14 @@ describe(`Buffer`, () => {
         it(`returns null`, () => {
           expect(result).toBeNull();
         });
+
+        it(`does not call additional methods`, () => {
+          expect(getContextAttributes).not.toHaveBeenCalled();
+        });
       });
 
       describe(`on creating an instance which is empty`, () => {
+        let getContextAttributes: jasmine.Spy;
         let createBuffer: jasmine.Spy;
         let bindBuffer: jasmine.Spy;
         let bufferData: jasmine.Spy;
@@ -270,6 +301,7 @@ describe(`Buffer`, () => {
         let error: unknown;
 
         beforeAll(() => {
+          getContextAttributes = jasmine.createSpy(`getContextAttributes`);
           createBuffer = jasmine.createSpy(`createBuffer`);
           bindBuffer = jasmine.createSpy(`bindBuffer`);
           bufferData = jasmine.createSpy(`bufferData`);
@@ -281,7 +313,10 @@ describe(`Buffer`, () => {
             instanceData: `Test Instance Data`,
           });
 
-          class TestBuffer extends Buffer<`Test Instance Data`> {
+          class TestBuffer extends Buffer<
+            `getContextAttributes`,
+            `Test Instance Data`
+          > {
             generateData(): {
               readonly bufferContent: BufferSource;
               readonly instanceData: `Test Instance Data`;
@@ -293,6 +328,7 @@ describe(`Buffer`, () => {
           const buffer = new TestBuffer(
             {
               gl: {
+                getContextAttributes,
                 createBuffer,
                 bindBuffer,
                 bufferData,
@@ -339,9 +375,14 @@ describe(`Buffer`, () => {
         it(`throws the expected error`, () => {
           expect(error).toEqual(new Error(`Buffers cannot be empty.`));
         });
+
+        it(`does not call additional methods`, () => {
+          expect(getContextAttributes).not.toHaveBeenCalled();
+        });
       });
 
       describe(`on deleting a null instance`, () => {
+        let getContextAttributes: jasmine.Spy;
         let createBuffer: jasmine.Spy;
         let bindBuffer: jasmine.Spy;
         let bufferData: jasmine.Spy;
@@ -350,6 +391,7 @@ describe(`Buffer`, () => {
         let generateData: jasmine.Spy;
 
         beforeAll(() => {
+          getContextAttributes = jasmine.createSpy(`getContextAttributes`);
           createBuffer = jasmine.createSpy(`createBuffer`);
           bindBuffer = jasmine.createSpy(`bindBuffer`);
           bufferData = jasmine.createSpy(`bufferData`);
@@ -361,7 +403,10 @@ describe(`Buffer`, () => {
             instanceData: `Test Instance Data`,
           });
 
-          class TestBuffer extends Buffer<`Test Instance Data`> {
+          class TestBuffer extends Buffer<
+            `getContextAttributes`,
+            `Test Instance Data`
+          > {
             generateData(): {
               readonly bufferContent: BufferSource;
               readonly instanceData: `Test Instance Data`;
@@ -373,6 +418,7 @@ describe(`Buffer`, () => {
           const buffer = new TestBuffer(
             {
               gl: {
+                getContextAttributes,
                 createBuffer,
                 bindBuffer,
                 bufferData,
@@ -410,9 +456,14 @@ describe(`Buffer`, () => {
         it(`does not delete any buffers`, () => {
           expect(deleteBuffer).not.toHaveBeenCalled();
         });
+
+        it(`does not call additional methods`, () => {
+          expect(getContextAttributes).not.toHaveBeenCalled();
+        });
       });
 
       describe(`on deleting a non-null instance`, () => {
+        let getContextAttributes: jasmine.Spy;
         let createBuffer: jasmine.Spy;
         let bindBuffer: jasmine.Spy;
         let bufferData: jasmine.Spy;
@@ -421,6 +472,7 @@ describe(`Buffer`, () => {
         let generateData: jasmine.Spy;
 
         beforeAll(() => {
+          getContextAttributes = jasmine.createSpy(`getContextAttributes`);
           createBuffer = jasmine.createSpy(`createBuffer`);
           bindBuffer = jasmine.createSpy(`bindBuffer`);
           bufferData = jasmine.createSpy(`bufferData`);
@@ -432,7 +484,10 @@ describe(`Buffer`, () => {
             instanceData: `Test Instance Data`,
           });
 
-          class TestBuffer extends Buffer<`Test Instance Data`> {
+          class TestBuffer extends Buffer<
+            `getContextAttributes`,
+            `Test Instance Data`
+          > {
             generateData(): {
               readonly bufferContent: BufferSource;
               readonly instanceData: `Test Instance Data`;
@@ -444,6 +499,7 @@ describe(`Buffer`, () => {
           const buffer = new TestBuffer(
             {
               gl: {
+                getContextAttributes,
                 createBuffer,
                 bindBuffer,
                 bufferData,
@@ -488,6 +544,10 @@ describe(`Buffer`, () => {
 
         it(`deletes the buffer`, () => {
           expect(deleteBuffer).toHaveBeenCalledWith({ example: `buffer` });
+        });
+
+        it(`does not call additional methods`, () => {
+          expect(getContextAttributes).not.toHaveBeenCalled();
         });
       });
     });
