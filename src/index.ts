@@ -20,6 +20,7 @@ export { Keyframe } from "./Keyframe";
 export { Mat2 } from "./Mat2";
 export { Mat3 } from "./Mat3";
 export { Mat4 } from "./Mat4";
+export { PackedAttributeDefinitionSet } from "./PackedAttributeDefinitionSet";
 export { Resource } from "./Resource";
 export { S16 } from "./S16";
 export { S8 } from "./S8";
