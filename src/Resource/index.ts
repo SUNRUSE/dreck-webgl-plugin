@@ -18,7 +18,7 @@ export abstract class Resource<
    * @param context The context under which the resource will be created.
    */
   constructor(
-    protected readonly context: ContextInterface<
+    public readonly context: ContextInterface<
       TWebGLRenderingContextKey | `isContextLost`
     >
   ) {}

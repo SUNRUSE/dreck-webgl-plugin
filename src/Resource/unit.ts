@@ -265,6 +265,8 @@ describe(`Resource`, () => {
           createInstance.calls.reset();
           deleteInstance.calls.reset();
         }
+
+        expect(testResource.context).toBe(context);
       });
     });
   }
