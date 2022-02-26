@@ -23,6 +23,10 @@ export class PackedAttributeDefinitionSet<
     readonly [TKey in keyof TAttributeDefinitionSet]: number;
   };
 
+  /**
+   * Creates a new packed attribute definition set.
+   * @param attributeDefinitionSet The attribute definition set to pack.
+   */
   constructor(public readonly attributeDefinitionSet: TAttributeDefinitionSet) {
     let strideRounding = 0;
     this.stride = 0;
