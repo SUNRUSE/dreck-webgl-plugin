@@ -1,12 +1,9 @@
 import { Constants } from "../Constants";
-import type { BinaryType } from "../BinaryType";
 
 /**
  * A map of binary data types to the maximum value they support (inclusive).
  */
-export const binaryTypeMaximum: {
-  readonly [T in keyof BinaryType]: BinaryType[T];
-} = {
+export const binaryTypeMaximum = {
   /**
    * An unsigned 8-bit integer (0 to 255, inclusive).
    */

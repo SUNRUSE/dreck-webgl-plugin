@@ -1,12 +1,9 @@
 import { Constants } from "../Constants";
-import type { BinaryType } from "../BinaryType";
 
 /**
  * A map of binary data types to whether they are integers or floats.
  */
-export const binaryTypeType: {
-  readonly [T in keyof BinaryType]: `integer` | `float`;
-} = {
+export const binaryTypeType = {
   /**
    * An unsigned 8-bit integer (0 to 255, inclusive).
    */

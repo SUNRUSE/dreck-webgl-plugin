@@ -1,12 +1,9 @@
 import { Constants } from "../Constants";
-import type { BinaryType } from "../BinaryType";
 
 /**
  * A map of binary data types to their sizes, in bytes.
  */
-export const binaryTypeBytes: {
-  readonly [T in keyof BinaryType]: number;
-} = {
+export const binaryTypeBytes = {
   /**
    * An unsigned 8-bit integer (0 to 255, inclusive).
    */

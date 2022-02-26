@@ -1,12 +1,9 @@
 import { Constants } from "../Constants";
-import type { BinaryType } from "../BinaryType";
 
 /**
  * A map of binary data types to the minimum value they support (inclusive).
  */
-export const binaryTypeMinimum: {
-  readonly [T in keyof BinaryType]: BinaryType[T];
-} = {
+export const binaryTypeMinimum = {
   /**
    * An unsigned 8-bit integer (0 to 255, inclusive).
    */
