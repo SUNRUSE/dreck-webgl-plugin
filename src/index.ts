@@ -32,6 +32,8 @@ export { U16 } from "./U16";
 export { U8 } from "./U8";
 export { UniformDefinition } from "./UniformDefinition";
 export { UniformDefinitionSet } from "./UniformDefinitionSet";
+export { VaryingDefinition } from "./VaryingDefinition";
+export { VaryingDefinitionSet } from "./VaryingDefinitionSet";
 export { Vec2 } from "./Vec2";
 export { Vec3 } from "./Vec3";
 export { Vec4 } from "./Vec4";
