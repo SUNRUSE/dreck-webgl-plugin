@@ -126,4 +126,14 @@ export const enum Constants {
    * A 4x4 floating-point column-order matrix.
    */
   Mat4 = 35676,
+
+  /**
+   * The shader parameter which retrieves whether compilation succeeded.
+   */
+  CompileStatus = 35713,
+
+  /**
+   * The program parameter which retrieves whether linking succeeded.
+   */
+  LinkStatus = 35714,
 }
