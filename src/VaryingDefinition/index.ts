@@ -1,4 +1,4 @@
-import type { ShaderType } from "..";
+import type { ShaderType } from "../ShaderType";
 
 /**
  * Describes information which is output from the vertex shader, interpolated and fed into the fragment shader.

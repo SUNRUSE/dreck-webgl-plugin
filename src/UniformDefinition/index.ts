@@ -1,4 +1,4 @@
-import type { ShaderType } from "..";
+import type { ShaderType } from "../ShaderType";
 
 /**
  * Describes an input to a shader which is uniform across all vertices and fragments of a draw call.
