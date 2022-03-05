@@ -15,6 +15,7 @@ export { F32 } from "./F32";
 export { Float } from "./Float";
 export { FloatAnimation } from "./FloatAnimation";
 export { FloatKeyframeData } from "./FloatKeyframeData";
+export { FragmentShader } from "./FragmentShader";
 export { IndexBuffer } from "./IndexBuffer";
 export { Keyframe } from "./Keyframe";
 export { Mat2 } from "./Mat2";
