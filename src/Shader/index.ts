@@ -5,6 +5,7 @@ import { shaderTypeKeyword } from "../shaderTypeKeyword";
 
 /**
  * A WebGL shader which can be compiled into a shader.
+ * @template TType The type of the shader.
  */
 export abstract class Shader<
   TType extends Constants.VertexShader | Constants.FragmentShader
