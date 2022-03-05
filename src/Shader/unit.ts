@@ -258,127 +258,21 @@ describe(`Shader`, () => {
       type: `attribute`,
       primitive: Constants.Float,
       name: `test_declaration_aq_name`,
-      quantity: 1,
     },
     {
       type: `attribute`,
-      primitive: Constants.Float,
+      primitive: Constants.Vec2,
       name: `test_declaration_ar_name`,
-      quantity: 2,
     },
     {
       type: `attribute`,
-      primitive: Constants.Float,
+      primitive: Constants.Vec3,
       name: `test_declaration_as_name`,
-      quantity: 3,
     },
     {
       type: `attribute`,
-      primitive: Constants.Vec2,
+      primitive: Constants.Vec4,
       name: `test_declaration_at_name`,
-      quantity: 1,
-    },
-    {
-      type: `attribute`,
-      primitive: Constants.Vec2,
-      name: `test_declaration_au_name`,
-      quantity: 2,
-    },
-    {
-      type: `attribute`,
-      primitive: Constants.Vec2,
-      name: `test_declaration_av_name`,
-      quantity: 3,
-    },
-    {
-      type: `attribute`,
-      primitive: Constants.Vec3,
-      name: `test_declaration_aw_name`,
-      quantity: 1,
-    },
-    {
-      type: `attribute`,
-      primitive: Constants.Vec3,
-      name: `test_declaration_ax_name`,
-      quantity: 2,
-    },
-    {
-      type: `attribute`,
-      primitive: Constants.Vec3,
-      name: `test_declaration_ay_name`,
-      quantity: 3,
-    },
-    {
-      type: `attribute`,
-      primitive: Constants.Vec4,
-      name: `test_declaration_az_name`,
-      quantity: 1,
-    },
-    {
-      type: `attribute`,
-      primitive: Constants.Vec4,
-      name: `test_declaration_ba_name`,
-      quantity: 2,
-    },
-    {
-      type: `attribute`,
-      primitive: Constants.Vec4,
-      name: `test_declaration_bb_name`,
-      quantity: 3,
-    },
-    {
-      type: `attribute`,
-      primitive: Constants.Mat2,
-      name: `test_declaration_bc_name`,
-      quantity: 1,
-    },
-    {
-      type: `attribute`,
-      primitive: Constants.Mat2,
-      name: `test_declaration_bd_name`,
-      quantity: 2,
-    },
-    {
-      type: `attribute`,
-      primitive: Constants.Mat2,
-      name: `test_declaration_be_name`,
-      quantity: 3,
-    },
-    {
-      type: `attribute`,
-      primitive: Constants.Mat3,
-      name: `test_declaration_bf_name`,
-      quantity: 1,
-    },
-    {
-      type: `attribute`,
-      primitive: Constants.Mat3,
-      name: `test_declaration_bg_name`,
-      quantity: 2,
-    },
-    {
-      type: `attribute`,
-      primitive: Constants.Mat3,
-      name: `test_declaration_bh_name`,
-      quantity: 3,
-    },
-    {
-      type: `attribute`,
-      primitive: Constants.Mat4,
-      name: `test_declaration_bi_name`,
-      quantity: 1,
-    },
-    {
-      type: `attribute`,
-      primitive: Constants.Mat4,
-      name: `test_declaration_bj_name`,
-      quantity: 2,
-    },
-    {
-      type: `attribute`,
-      primitive: Constants.Mat4,
-      name: `test_declaration_bk_name`,
-      quantity: 3,
     },
   ];
 
@@ -786,26 +680,9 @@ uniform mat4 test_declaration_an_name;
 uniform mat4 test_declaration_ao_name[2];
 uniform mat4 test_declaration_ap_name[3];
 attribute float test_declaration_aq_name;
-attribute float test_declaration_ar_name[2];
-attribute float test_declaration_as_name[3];
-attribute vec2 test_declaration_at_name;
-attribute vec2 test_declaration_au_name[2];
-attribute vec2 test_declaration_av_name[3];
-attribute vec3 test_declaration_aw_name;
-attribute vec3 test_declaration_ax_name[2];
-attribute vec3 test_declaration_ay_name[3];
-attribute vec4 test_declaration_az_name;
-attribute vec4 test_declaration_ba_name[2];
-attribute vec4 test_declaration_bb_name[3];
-attribute mat2 test_declaration_bc_name;
-attribute mat2 test_declaration_bd_name[2];
-attribute mat2 test_declaration_be_name[3];
-attribute mat3 test_declaration_bf_name;
-attribute mat3 test_declaration_bg_name[2];
-attribute mat3 test_declaration_bh_name[3];
-attribute mat4 test_declaration_bi_name;
-attribute mat4 test_declaration_bj_name[2];
-attribute mat4 test_declaration_bk_name[3];
+attribute vec2 test_declaration_ar_name;
+attribute vec3 test_declaration_as_name;
+attribute vec4 test_declaration_at_name;
 Test Body Line A
 Test Body Line B
 Test Body Line C
@@ -1042,26 +919,9 @@ uniform mat4 test_declaration_an_name;
 uniform mat4 test_declaration_ao_name[2];
 uniform mat4 test_declaration_ap_name[3];
 attribute float test_declaration_aq_name;
-attribute float test_declaration_ar_name[2];
-attribute float test_declaration_as_name[3];
-attribute vec2 test_declaration_at_name;
-attribute vec2 test_declaration_au_name[2];
-attribute vec2 test_declaration_av_name[3];
-attribute vec3 test_declaration_aw_name;
-attribute vec3 test_declaration_ax_name[2];
-attribute vec3 test_declaration_ay_name[3];
-attribute vec4 test_declaration_az_name;
-attribute vec4 test_declaration_ba_name[2];
-attribute vec4 test_declaration_bb_name[3];
-attribute mat2 test_declaration_bc_name;
-attribute mat2 test_declaration_bd_name[2];
-attribute mat2 test_declaration_be_name[3];
-attribute mat3 test_declaration_bf_name;
-attribute mat3 test_declaration_bg_name[2];
-attribute mat3 test_declaration_bh_name[3];
-attribute mat4 test_declaration_bi_name;
-attribute mat4 test_declaration_bj_name[2];
-attribute mat4 test_declaration_bk_name[3];
+attribute vec2 test_declaration_ar_name;
+attribute vec3 test_declaration_as_name;
+attribute vec4 test_declaration_at_name;
 Test Body Line A
 Test Body Line B
 Test Body Line C
@@ -1303,26 +1163,9 @@ uniform mat4 test_declaration_an_name;
 uniform mat4 test_declaration_ao_name[2];
 uniform mat4 test_declaration_ap_name[3];
 attribute float test_declaration_aq_name;
-attribute float test_declaration_ar_name[2];
-attribute float test_declaration_as_name[3];
-attribute vec2 test_declaration_at_name;
-attribute vec2 test_declaration_au_name[2];
-attribute vec2 test_declaration_av_name[3];
-attribute vec3 test_declaration_aw_name;
-attribute vec3 test_declaration_ax_name[2];
-attribute vec3 test_declaration_ay_name[3];
-attribute vec4 test_declaration_az_name;
-attribute vec4 test_declaration_ba_name[2];
-attribute vec4 test_declaration_bb_name[3];
-attribute mat2 test_declaration_bc_name;
-attribute mat2 test_declaration_bd_name[2];
-attribute mat2 test_declaration_be_name[3];
-attribute mat3 test_declaration_bf_name;
-attribute mat3 test_declaration_bg_name[2];
-attribute mat3 test_declaration_bh_name[3];
-attribute mat4 test_declaration_bi_name;
-attribute mat4 test_declaration_bj_name[2];
-attribute mat4 test_declaration_bk_name[3];
+attribute vec2 test_declaration_ar_name;
+attribute vec3 test_declaration_as_name;
+attribute vec4 test_declaration_at_name;
 Test Body Line A
 Test Body Line B
 Test Body Line C

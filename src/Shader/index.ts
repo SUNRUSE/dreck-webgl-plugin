@@ -49,34 +49,84 @@ export abstract class Shader<
    * Returns the declaractions of the shader between the header and body.
    * @returns The declaractions of the shader between the header and body.
    */
-  abstract getDeclarations(): ReadonlyArray<{
-    /**
-     * The manner in which the declaration is input into or output from the shader.
-     */
-    readonly type: `varying` | `uniform` | `attribute`;
+  abstract getDeclarations(): ReadonlyArray<
+    | {
+        /**
+         * The manner in which the declaration is input into or output from the shader.
+         */
+        readonly type: `varying`;
 
-    /**
-     * The declaration's primitive type.
-     */
-    readonly primitive:
-      | Constants.Float
-      | Constants.Vec2
-      | Constants.Vec3
-      | Constants.Vec4
-      | Constants.Mat2
-      | Constants.Mat3
-      | Constants.Mat4;
+        /**
+         * The declaration's primitive type.
+         */
+        readonly primitive:
+          | Constants.Float
+          | Constants.Vec2
+          | Constants.Vec3
+          | Constants.Vec4
+          | Constants.Mat2
+          | Constants.Mat3
+          | Constants.Mat4;
 
-    /**
-     * The declaration's name.
-     */
-    readonly name: string;
+        /**
+         * The declaration's name.
+         */
+        readonly name: string;
 
-    /**
-     * When 1, the declaration is NOT an array.  When greater than 1, the declaration is an array of the specified length.
-     */
-    readonly quantity: number;
-  }>;
+        /**
+         * When 1, the declaration is NOT an array.  When greater than 1, the declaration is an array of the specified length.
+         */
+        readonly quantity: number;
+      }
+    | {
+        /**
+         * The manner in which the declaration is input into or output from the shader.
+         */
+        readonly type: `uniform`;
+
+        /**
+         * The declaration's primitive type.
+         */
+        readonly primitive:
+          | Constants.Float
+          | Constants.Vec2
+          | Constants.Vec3
+          | Constants.Vec4
+          | Constants.Mat2
+          | Constants.Mat3
+          | Constants.Mat4;
+
+        /**
+         * The declaration's name.
+         */
+        readonly name: string;
+
+        /**
+         * When 1, the declaration is NOT an array.  When greater than 1, the declaration is an array of the specified length.
+         */
+        readonly quantity: number;
+      }
+    | {
+        /**
+         * The manner in which the declaration is input into or output from the shader.
+         */
+        readonly type: `attribute`;
+
+        /**
+         * The declaration's primitive type.
+         */
+        readonly primitive:
+          | Constants.Float
+          | Constants.Vec2
+          | Constants.Vec3
+          | Constants.Vec4;
+
+        /**
+         * The declaration's name.
+         */
+        readonly name: string;
+      }
+  >;
 
   /**
    * Returns the lines of the shader following the header and declarations.
@@ -99,7 +149,9 @@ export abstract class Shader<
               `${declaration.type} ${
                 shaderTypeKeyword[declaration.primitive]
               } ${declaration.name}${
-                declaration.quantity === 1 ? `` : `[${declaration.quantity}]`
+                declaration.type === `attribute` || declaration.quantity === 1
+                  ? ``
+                  : `[${declaration.quantity}]`
               };`
           ),
           ...this.getBodyLines(),
