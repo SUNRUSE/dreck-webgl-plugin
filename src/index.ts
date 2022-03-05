@@ -26,6 +26,7 @@ export { S16 } from "./S16";
 export { S8 } from "./S8";
 export { sampleBooleanAnimation } from "./sampleBooleanAnimation";
 export { sampleFloatAnimation } from "./sampleFloatAnimation";
+export { Shader } from "./Shader";
 export { ShaderType } from "./ShaderType";
 export { shaderTypeArity } from "./shaderTypeArity";
 export { U16 } from "./U16";
