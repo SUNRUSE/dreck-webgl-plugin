@@ -22,6 +22,7 @@ export { Mat2 } from "./Mat2";
 export { Mat3 } from "./Mat3";
 export { Mat4 } from "./Mat4";
 export { PackedAttributeDefinitionSet } from "./PackedAttributeDefinitionSet";
+export { Program } from "./Program";
 export { Resource } from "./Resource";
 export { ResourceInterface } from "./ResourceInterface";
 export { S16 } from "./S16";
