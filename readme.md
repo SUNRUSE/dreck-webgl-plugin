@@ -1,4 +1,4 @@
-# Celluloid Engine
+# Celluloid Engine [![Continuous Integration](https://github.com/jameswilddev/celluloid-engine/workflows/Continuous%20Integration/badge.svg)](https://github.com/jameswilddev/celluloid-engine/actions) [![License](https://img.shields.io/github/license/jameswilddev/celluloid-engine.svg)](https://github.com/jameswilddev/celluloid-engine/blob/master/license) [![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovatebot.com/)
 
 A collection of bits and bobs you can use to make your own browser-based 3D applications (such as games).
 
