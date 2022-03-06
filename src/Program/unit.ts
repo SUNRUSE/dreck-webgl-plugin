@@ -914,10 +914,12 @@ describe(`Program`, () => {
       | `getUniformLocation`
     >;
 
+    let vertexShaderThrowIfDisposed: jasmine.Spy;
     let vertexShaderThrowIfFromAnotherContext: jasmine.Spy;
     let vertexShaderGetInstance: jasmine.Spy;
     let vertexShader: TestVertexShader;
 
+    let fragmentShaderThrowIfDisposed: jasmine.Spy;
     let fragmentShaderThrowIfFromAnotherContext: jasmine.Spy;
     let fragmentShaderGetInstance: jasmine.Spy;
     let fragmentShader: TestFragmentShader;
@@ -957,11 +959,16 @@ describe(`Program`, () => {
         timesContextRestored: 7,
       };
 
+      vertexShaderThrowIfDisposed = jasmine.createSpy(
+        `vertexShaderThrowIfDisposed`
+      );
       vertexShaderThrowIfFromAnotherContext = jasmine.createSpy(
         `vertexShaderThrowIfFromAnotherContext`
       );
       vertexShaderGetInstance = jasmine.createSpy(`vertexShaderGetInstance`);
       vertexShader = {
+        context: `Test Vertex Shader Context`,
+        throwIfDisposed: vertexShaderThrowIfDisposed,
         throwIfFromAnotherContext: vertexShaderThrowIfFromAnotherContext,
         getInstance: vertexShaderGetInstance,
         attributeDefinitionSet: testAttributeDefinitionSet,
@@ -970,6 +977,9 @@ describe(`Program`, () => {
         type: Constants.VertexShader,
       };
 
+      fragmentShaderThrowIfDisposed = jasmine.createSpy(
+        `fragmentShaderThrowIfDisposed`
+      );
       fragmentShaderThrowIfFromAnotherContext = jasmine.createSpy(
         `fragmentShaderThrowIfFromAnotherContext`
       );
@@ -977,6 +987,8 @@ describe(`Program`, () => {
         `fragmentShaderGetInstance`
       );
       fragmentShader = {
+        context: `Test Fragment Shader Context`,
+        throwIfDisposed: fragmentShaderThrowIfDisposed,
         throwIfFromAnotherContext: fragmentShaderThrowIfFromAnotherContext,
         getInstance: fragmentShaderGetInstance,
         varyingDefinitionSet: testVaryingDefinitionSet,
@@ -1043,6 +1055,10 @@ describe(`Program`, () => {
       expect(getUniformLocation).not.toHaveBeenCalled();
     });
 
+    it(`does not check whether the vertex shader has been disposed`, () => {
+      expect(vertexShaderThrowIfDisposed).not.toHaveBeenCalled();
+    });
+
     it(`checks whether the vertex shader is from the correct context once`, () => {
       expect(vertexShaderThrowIfFromAnotherContext).toHaveBeenCalledTimes(1);
     });
@@ -1055,6 +1071,10 @@ describe(`Program`, () => {
 
     it(`does not get any instances of the vertex shader`, () => {
       expect(vertexShaderGetInstance).not.toHaveBeenCalled();
+    });
+
+    it(`does not check whether the fragment shader has been disposed`, () => {
+      expect(fragmentShaderThrowIfDisposed).not.toHaveBeenCalled();
     });
 
     it(`checks whether the fragment shader is from the correct context once`, () => {
@@ -1099,10 +1119,12 @@ describe(`Program`, () => {
         | `getUniformLocation`
       >;
 
+      let vertexShaderThrowIfDisposed: jasmine.Spy;
       let vertexShaderThrowIfFromAnotherContext: jasmine.Spy;
       let vertexShaderGetInstance: jasmine.Spy;
       let vertexShader: TestVertexShader;
 
+      let fragmentShaderThrowIfDisposed: jasmine.Spy;
       let fragmentShaderThrowIfFromAnotherContext: jasmine.Spy;
       let fragmentShaderGetInstance: jasmine.Spy;
       let fragmentShader: TestFragmentShader;
@@ -1144,6 +1166,9 @@ describe(`Program`, () => {
           timesContextRestored: 7,
         };
 
+        vertexShaderThrowIfDisposed = jasmine.createSpy(
+          `vertexShaderThrowIfDisposed`
+        );
         vertexShaderThrowIfFromAnotherContext = jasmine.createSpy(
           `vertexShaderThrowIfFromAnotherContext`
         );
@@ -1151,6 +1176,8 @@ describe(`Program`, () => {
           .createSpy(`vertexShaderGetInstance`)
           .and.returnValue(null);
         vertexShader = {
+          context: `Test Vertex Shader Context`,
+          throwIfDisposed: vertexShaderThrowIfDisposed,
           throwIfFromAnotherContext: vertexShaderThrowIfFromAnotherContext,
           getInstance: vertexShaderGetInstance,
           attributeDefinitionSet: testAttributeDefinitionSet,
@@ -1159,6 +1186,9 @@ describe(`Program`, () => {
           type: Constants.VertexShader,
         };
 
+        fragmentShaderThrowIfDisposed = jasmine.createSpy(
+          `fragmentShaderThrowIfDisposed`
+        );
         fragmentShaderThrowIfFromAnotherContext = jasmine.createSpy(
           `fragmentShaderThrowIfFromAnotherContext`
         );
@@ -1166,6 +1196,8 @@ describe(`Program`, () => {
           .createSpy(`fragmentShaderGetInstance`)
           .and.returnValue({ test: `fragmentShader` });
         fragmentShader = {
+          context: `Test Fragment Shader Context`,
+          throwIfDisposed: fragmentShaderThrowIfDisposed,
           throwIfFromAnotherContext: fragmentShaderThrowIfFromAnotherContext,
           getInstance: fragmentShaderGetInstance,
           varyingDefinitionSet: testVaryingDefinitionSet,
@@ -1234,12 +1266,20 @@ describe(`Program`, () => {
         expect(getUniformLocation).not.toHaveBeenCalled();
       });
 
+      it(`does not check whether the vertex shader has been disposed`, () => {
+        expect(vertexShaderThrowIfDisposed).not.toHaveBeenCalled();
+      });
+
       it(`does not further check whether the vertex shader is from the correct context`, () => {
         expect(vertexShaderThrowIfFromAnotherContext).toHaveBeenCalledTimes(1);
       });
 
       it(`gets one instance of the vertex shader`, () => {
         expect(vertexShaderGetInstance).toHaveBeenCalledTimes(1);
+      });
+
+      it(`does not check whether the fragment shader has been disposed`, () => {
+        expect(fragmentShaderThrowIfDisposed).not.toHaveBeenCalled();
       });
 
       it(`does not further check whether the fragment shader is from the correct context`, () => {
@@ -1283,10 +1323,12 @@ describe(`Program`, () => {
         | `getUniformLocation`
       >;
 
+      let vertexShaderThrowIfDisposed: jasmine.Spy;
       let vertexShaderThrowIfFromAnotherContext: jasmine.Spy;
       let vertexShaderGetInstance: jasmine.Spy;
       let vertexShader: TestVertexShader;
 
+      let fragmentShaderThrowIfDisposed: jasmine.Spy;
       let fragmentShaderThrowIfFromAnotherContext: jasmine.Spy;
       let fragmentShaderGetInstance: jasmine.Spy;
       let fragmentShader: TestFragmentShader;
@@ -1328,6 +1370,9 @@ describe(`Program`, () => {
           timesContextRestored: 7,
         };
 
+        vertexShaderThrowIfDisposed = jasmine.createSpy(
+          `vertexShaderThrowIfDisposed`
+        );
         vertexShaderThrowIfFromAnotherContext = jasmine.createSpy(
           `vertexShaderThrowIfFromAnotherContext`
         );
@@ -1335,6 +1380,8 @@ describe(`Program`, () => {
           .createSpy(`vertexShaderGetInstance`)
           .and.returnValue({ test: `vertexShader` });
         vertexShader = {
+          context: `Test Vertex Shader Context`,
+          throwIfDisposed: vertexShaderThrowIfDisposed,
           throwIfFromAnotherContext: vertexShaderThrowIfFromAnotherContext,
           getInstance: vertexShaderGetInstance,
           attributeDefinitionSet: testAttributeDefinitionSet,
@@ -1343,6 +1390,9 @@ describe(`Program`, () => {
           type: Constants.VertexShader,
         };
 
+        fragmentShaderThrowIfDisposed = jasmine.createSpy(
+          `fragmentShaderThrowIfDisposed`
+        );
         fragmentShaderThrowIfFromAnotherContext = jasmine.createSpy(
           `fragmentShaderThrowIfFromAnotherContext`
         );
@@ -1350,6 +1400,8 @@ describe(`Program`, () => {
           .createSpy(`fragmentShaderGetInstance`)
           .and.returnValue(null);
         fragmentShader = {
+          context: `Test Fragment Shader Context`,
+          throwIfDisposed: fragmentShaderThrowIfDisposed,
           throwIfFromAnotherContext: fragmentShaderThrowIfFromAnotherContext,
           getInstance: fragmentShaderGetInstance,
           varyingDefinitionSet: testVaryingDefinitionSet,
@@ -1418,12 +1470,20 @@ describe(`Program`, () => {
         expect(getUniformLocation).not.toHaveBeenCalled();
       });
 
+      it(`does not check whether the vertex shader has been disposed`, () => {
+        expect(vertexShaderThrowIfDisposed).not.toHaveBeenCalled();
+      });
+
       it(`does not further check whether the vertex shader is from the correct context`, () => {
         expect(vertexShaderThrowIfFromAnotherContext).toHaveBeenCalledTimes(1);
       });
 
       it(`may get at most one instance of vertex shader`, () => {
         expect(vertexShaderGetInstance.calls.count()).toBeLessThanOrEqual(1);
+      });
+
+      it(`does not check whether the fragment shader has been disposed`, () => {
+        expect(fragmentShaderThrowIfDisposed).not.toHaveBeenCalled();
       });
 
       it(`does not further check whether the fragment shader is from the correct context`, () => {
@@ -1467,10 +1527,12 @@ describe(`Program`, () => {
         | `getUniformLocation`
       >;
 
+      let vertexShaderThrowIfDisposed: jasmine.Spy;
       let vertexShaderThrowIfFromAnotherContext: jasmine.Spy;
       let vertexShaderGetInstance: jasmine.Spy;
       let vertexShader: TestVertexShader;
 
+      let fragmentShaderThrowIfDisposed: jasmine.Spy;
       let fragmentShaderThrowIfFromAnotherContext: jasmine.Spy;
       let fragmentShaderGetInstance: jasmine.Spy;
       let fragmentShader: TestFragmentShader;
@@ -1514,6 +1576,9 @@ describe(`Program`, () => {
           timesContextRestored: 7,
         };
 
+        vertexShaderThrowIfDisposed = jasmine.createSpy(
+          `vertexShaderThrowIfDisposed`
+        );
         vertexShaderThrowIfFromAnotherContext = jasmine.createSpy(
           `vertexShaderThrowIfFromAnotherContext`
         );
@@ -1521,6 +1586,8 @@ describe(`Program`, () => {
           .createSpy(`vertexShaderGetInstance`)
           .and.returnValue({ test: `vertexShader` });
         vertexShader = {
+          context: `Test Vertex Shader Context`,
+          throwIfDisposed: vertexShaderThrowIfDisposed,
           throwIfFromAnotherContext: vertexShaderThrowIfFromAnotherContext,
           getInstance: vertexShaderGetInstance,
           attributeDefinitionSet: testAttributeDefinitionSet,
@@ -1529,6 +1596,9 @@ describe(`Program`, () => {
           type: Constants.VertexShader,
         };
 
+        fragmentShaderThrowIfDisposed = jasmine.createSpy(
+          `fragmentShaderThrowIfDisposed`
+        );
         fragmentShaderThrowIfFromAnotherContext = jasmine.createSpy(
           `fragmentShaderThrowIfFromAnotherContext`
         );
@@ -1536,6 +1606,8 @@ describe(`Program`, () => {
           .createSpy(`fragmentShaderGetInstance`)
           .and.returnValue({ test: `fragmentShader` });
         fragmentShader = {
+          context: `Test Fragment Shader Context`,
+          throwIfDisposed: fragmentShaderThrowIfDisposed,
           throwIfFromAnotherContext: fragmentShaderThrowIfFromAnotherContext,
           getInstance: fragmentShaderGetInstance,
           varyingDefinitionSet: testVaryingDefinitionSet,
@@ -1604,12 +1676,20 @@ describe(`Program`, () => {
         expect(getUniformLocation).not.toHaveBeenCalled();
       });
 
+      it(`does not check whether the vertex shader has been disposed`, () => {
+        expect(vertexShaderThrowIfDisposed).not.toHaveBeenCalled();
+      });
+
       it(`does not further check whether the vertex shader is from the correct context`, () => {
         expect(vertexShaderThrowIfFromAnotherContext).toHaveBeenCalledTimes(1);
       });
 
       it(`gets one instance of vertex shader`, () => {
         expect(vertexShaderGetInstance).toHaveBeenCalledTimes(1);
+      });
+
+      it(`does not check whether the fragment shader has been disposed`, () => {
+        expect(fragmentShaderThrowIfDisposed).not.toHaveBeenCalled();
       });
 
       it(`does not further check whether the fragment shader is from the correct context`, () => {
@@ -1653,10 +1733,12 @@ describe(`Program`, () => {
         | `getUniformLocation`
       >;
 
+      let vertexShaderThrowIfDisposed: jasmine.Spy;
       let vertexShaderThrowIfFromAnotherContext: jasmine.Spy;
       let vertexShaderGetInstance: jasmine.Spy;
       let vertexShader: TestVertexShader;
 
+      let fragmentShaderThrowIfDisposed: jasmine.Spy;
       let fragmentShaderThrowIfFromAnotherContext: jasmine.Spy;
       let fragmentShaderGetInstance: jasmine.Spy;
       let fragmentShader: TestFragmentShader;
@@ -1706,6 +1788,9 @@ describe(`Program`, () => {
           timesContextRestored: 7,
         };
 
+        vertexShaderThrowIfDisposed = jasmine.createSpy(
+          `vertexShaderThrowIfDisposed`
+        );
         vertexShaderThrowIfFromAnotherContext = jasmine.createSpy(
           `vertexShaderThrowIfFromAnotherContext`
         );
@@ -1713,6 +1798,8 @@ describe(`Program`, () => {
           .createSpy(`vertexShaderGetInstance`)
           .and.returnValue({ test: `vertexShader` });
         vertexShader = {
+          context: `Test Vertex Shader Context`,
+          throwIfDisposed: vertexShaderThrowIfDisposed,
           throwIfFromAnotherContext: vertexShaderThrowIfFromAnotherContext,
           getInstance: vertexShaderGetInstance,
           attributeDefinitionSet: testAttributeDefinitionSet,
@@ -1721,6 +1808,9 @@ describe(`Program`, () => {
           type: Constants.VertexShader,
         };
 
+        fragmentShaderThrowIfDisposed = jasmine.createSpy(
+          `fragmentShaderThrowIfDisposed`
+        );
         fragmentShaderThrowIfFromAnotherContext = jasmine.createSpy(
           `fragmentShaderThrowIfFromAnotherContext`
         );
@@ -1728,6 +1818,8 @@ describe(`Program`, () => {
           .createSpy(`fragmentShaderGetInstance`)
           .and.returnValue({ test: `fragmentShader` });
         fragmentShader = {
+          context: `Test Fragment Shader Context`,
+          throwIfDisposed: fragmentShaderThrowIfDisposed,
           throwIfFromAnotherContext: fragmentShaderThrowIfFromAnotherContext,
           getInstance: fragmentShaderGetInstance,
           varyingDefinitionSet: testVaryingDefinitionSet,
@@ -1821,6 +1913,10 @@ describe(`Program`, () => {
         expect(getUniformLocation).not.toHaveBeenCalled();
       });
 
+      it(`does not check whether the vertex shader has been disposed`, () => {
+        expect(vertexShaderThrowIfDisposed).not.toHaveBeenCalled();
+      });
+
       it(`does not further check whether the vertex shader is from the correct context`, () => {
         expect(vertexShaderThrowIfFromAnotherContext).toHaveBeenCalledTimes(1);
       });
@@ -1833,6 +1929,10 @@ describe(`Program`, () => {
 
       it(`gets one instance of the vertex shader`, () => {
         expect(vertexShaderGetInstance).toHaveBeenCalledTimes(1);
+      });
+
+      it(`does not check whether the fragment shader has been disposed`, () => {
+        expect(fragmentShaderThrowIfDisposed).not.toHaveBeenCalled();
       });
 
       it(`does not further check whether the fragment shader is from the correct context`, () => {
@@ -1902,10 +2002,12 @@ describe(`Program`, () => {
         | `getUniformLocation`
       >;
 
+      let vertexShaderThrowIfDisposed: jasmine.Spy;
       let vertexShaderThrowIfFromAnotherContext: jasmine.Spy;
       let vertexShaderGetInstance: jasmine.Spy;
       let vertexShader: TestVertexShader;
 
+      let fragmentShaderThrowIfDisposed: jasmine.Spy;
       let fragmentShaderThrowIfFromAnotherContext: jasmine.Spy;
       let fragmentShaderGetInstance: jasmine.Spy;
       let fragmentShader: TestFragmentShader;
@@ -1955,6 +2057,9 @@ describe(`Program`, () => {
           timesContextRestored: 7,
         };
 
+        vertexShaderThrowIfDisposed = jasmine.createSpy(
+          `vertexShaderThrowIfDisposed`
+        );
         vertexShaderThrowIfFromAnotherContext = jasmine.createSpy(
           `vertexShaderThrowIfFromAnotherContext`
         );
@@ -1962,6 +2067,8 @@ describe(`Program`, () => {
           .createSpy(`vertexShaderGetInstance`)
           .and.returnValue({ test: `vertexShader` });
         vertexShader = {
+          context: `Test Vertex Shader Context`,
+          throwIfDisposed: vertexShaderThrowIfDisposed,
           throwIfFromAnotherContext: vertexShaderThrowIfFromAnotherContext,
           getInstance: vertexShaderGetInstance,
           attributeDefinitionSet: testAttributeDefinitionSet,
@@ -1970,6 +2077,9 @@ describe(`Program`, () => {
           type: Constants.VertexShader,
         };
 
+        fragmentShaderThrowIfDisposed = jasmine.createSpy(
+          `fragmentShaderThrowIfDisposed`
+        );
         fragmentShaderThrowIfFromAnotherContext = jasmine.createSpy(
           `fragmentShaderThrowIfFromAnotherContext`
         );
@@ -1977,6 +2087,8 @@ describe(`Program`, () => {
           .createSpy(`fragmentShaderGetInstance`)
           .and.returnValue({ test: `fragmentShader` });
         fragmentShader = {
+          context: `Test Fragment Shader Context`,
+          throwIfDisposed: fragmentShaderThrowIfDisposed,
           throwIfFromAnotherContext: fragmentShaderThrowIfFromAnotherContext,
           getInstance: fragmentShaderGetInstance,
           varyingDefinitionSet: testVaryingDefinitionSet,
@@ -2097,6 +2209,10 @@ describe(`Program`, () => {
         expect(getUniformLocation).not.toHaveBeenCalled();
       });
 
+      it(`does not check whether the vertex shader has been disposed`, () => {
+        expect(vertexShaderThrowIfDisposed).not.toHaveBeenCalled();
+      });
+
       it(`does not further check whether the vertex shader is from the correct context`, () => {
         expect(vertexShaderThrowIfFromAnotherContext).toHaveBeenCalledTimes(1);
       });
@@ -2109,6 +2225,10 @@ describe(`Program`, () => {
 
       it(`gets one instance of the vertex shader`, () => {
         expect(vertexShaderGetInstance).toHaveBeenCalledTimes(1);
+      });
+
+      it(`does not check whether the fragment shader has been disposed`, () => {
+        expect(fragmentShaderThrowIfDisposed).not.toHaveBeenCalled();
       });
 
       it(`does not further check whether the fragment shader is from the correct context`, () => {
@@ -2192,10 +2312,12 @@ describe(`Program`, () => {
         | `getUniformLocation`
       >;
 
+      let vertexShaderThrowIfDisposed: jasmine.Spy;
       let vertexShaderThrowIfFromAnotherContext: jasmine.Spy;
       let vertexShaderGetInstance: jasmine.Spy;
       let vertexShader: TestVertexShader;
 
+      let fragmentShaderThrowIfDisposed: jasmine.Spy;
       let fragmentShaderThrowIfFromAnotherContext: jasmine.Spy;
       let fragmentShaderGetInstance: jasmine.Spy;
       let fragmentShader: TestFragmentShader;
@@ -2455,6 +2577,9 @@ describe(`Program`, () => {
           timesContextRestored: 7,
         };
 
+        vertexShaderThrowIfDisposed = jasmine.createSpy(
+          `vertexShaderThrowIfDisposed`
+        );
         vertexShaderThrowIfFromAnotherContext = jasmine.createSpy(
           `vertexShaderThrowIfFromAnotherContext`
         );
@@ -2462,6 +2587,8 @@ describe(`Program`, () => {
           .createSpy(`vertexShaderGetInstance`)
           .and.returnValue({ test: `vertexShader` });
         vertexShader = {
+          context: `Test Vertex Shader Context`,
+          throwIfDisposed: vertexShaderThrowIfDisposed,
           throwIfFromAnotherContext: vertexShaderThrowIfFromAnotherContext,
           getInstance: vertexShaderGetInstance,
           attributeDefinitionSet: testAttributeDefinitionSet,
@@ -2470,6 +2597,9 @@ describe(`Program`, () => {
           type: Constants.VertexShader,
         };
 
+        fragmentShaderThrowIfDisposed = jasmine.createSpy(
+          `fragmentShaderThrowIfDisposed`
+        );
         fragmentShaderThrowIfFromAnotherContext = jasmine.createSpy(
           `fragmentShaderThrowIfFromAnotherContext`
         );
@@ -2477,6 +2607,8 @@ describe(`Program`, () => {
           .createSpy(`fragmentShaderGetInstance`)
           .and.returnValue({ test: `fragmentShader` });
         fragmentShader = {
+          context: `Test Fragment Shader Context`,
+          throwIfDisposed: fragmentShaderThrowIfDisposed,
           throwIfFromAnotherContext: fragmentShaderThrowIfFromAnotherContext,
           getInstance: fragmentShaderGetInstance,
           varyingDefinitionSet: testVaryingDefinitionSet,
@@ -2882,6 +3014,10 @@ describe(`Program`, () => {
         expect(getUniformLocation).toHaveBeenCalledTimes(42);
       });
 
+      it(`does not check whether the vertex shader has been disposed`, () => {
+        expect(vertexShaderThrowIfDisposed).not.toHaveBeenCalled();
+      });
+
       it(`does not further check whether the vertex shader is from the correct context`, () => {
         expect(vertexShaderThrowIfFromAnotherContext).toHaveBeenCalledTimes(1);
       });
@@ -2894,6 +3030,10 @@ describe(`Program`, () => {
 
       it(`gets one instance of the vertex shader`, () => {
         expect(vertexShaderGetInstance).toHaveBeenCalledTimes(1);
+      });
+
+      it(`does not check whether the fragment shader has been disposed`, () => {
+        expect(fragmentShaderThrowIfDisposed).not.toHaveBeenCalled();
       });
 
       it(`does not further check whether the fragment shader is from the correct context`, () => {
@@ -3095,10 +3235,12 @@ describe(`Program`, () => {
         | `getUniformLocation`
       >;
 
+      let vertexShaderThrowIfDisposed: jasmine.Spy;
       let vertexShaderThrowIfFromAnotherContext: jasmine.Spy;
       let vertexShaderGetInstance: jasmine.Spy;
       let vertexShader: TestVertexShader;
 
+      let fragmentShaderThrowIfDisposed: jasmine.Spy;
       let fragmentShaderThrowIfFromAnotherContext: jasmine.Spy;
       let fragmentShaderGetInstance: jasmine.Spy;
       let fragmentShader: TestFragmentShader;
@@ -3138,6 +3280,9 @@ describe(`Program`, () => {
           timesContextRestored: 7,
         };
 
+        vertexShaderThrowIfDisposed = jasmine.createSpy(
+          `vertexShaderThrowIfDisposed`
+        );
         vertexShaderThrowIfFromAnotherContext = jasmine.createSpy(
           `vertexShaderThrowIfFromAnotherContext`
         );
@@ -3145,6 +3290,8 @@ describe(`Program`, () => {
           .createSpy(`vertexShaderGetInstance`)
           .and.returnValue({ test: `vertexShader` });
         vertexShader = {
+          context: `Test Vertex Shader Context`,
+          throwIfDisposed: vertexShaderThrowIfDisposed,
           throwIfFromAnotherContext: vertexShaderThrowIfFromAnotherContext,
           getInstance: vertexShaderGetInstance,
           attributeDefinitionSet: testAttributeDefinitionSet,
@@ -3153,6 +3300,9 @@ describe(`Program`, () => {
           type: Constants.VertexShader,
         };
 
+        fragmentShaderThrowIfDisposed = jasmine.createSpy(
+          `fragmentShaderThrowIfDisposed`
+        );
         fragmentShaderThrowIfFromAnotherContext = jasmine.createSpy(
           `fragmentShaderThrowIfFromAnotherContext`
         );
@@ -3160,6 +3310,8 @@ describe(`Program`, () => {
           .createSpy(`fragmentShaderGetInstance`)
           .and.returnValue({ test: `fragmentShader` });
         fragmentShader = {
+          context: `Test Fragment Shader Context`,
+          throwIfDisposed: fragmentShaderThrowIfDisposed,
           throwIfFromAnotherContext: fragmentShaderThrowIfFromAnotherContext,
           getInstance: fragmentShaderGetInstance,
           varyingDefinitionSet: testVaryingDefinitionSet,
@@ -3376,12 +3528,20 @@ describe(`Program`, () => {
         expect(getUniformLocation).not.toHaveBeenCalled();
       });
 
+      it(`does not check whether the vertex shader has been disposed`, () => {
+        expect(vertexShaderThrowIfDisposed).not.toHaveBeenCalled();
+      });
+
       it(`does not further check whether the vertex shader is from the correct context`, () => {
         expect(vertexShaderThrowIfFromAnotherContext).toHaveBeenCalledTimes(1);
       });
 
       it(`gets one instance of the vertex shader`, () => {
         expect(vertexShaderGetInstance).toHaveBeenCalledTimes(1);
+      });
+
+      it(`does not check whether the fragment shader has been disposed`, () => {
+        expect(fragmentShaderThrowIfDisposed).not.toHaveBeenCalled();
       });
 
       it(`does not further check whether the fragment shader is from the correct context`, () => {
@@ -3437,10 +3597,12 @@ describe(`Program`, () => {
         | `getUniformLocation`
       >;
 
+      let vertexShaderThrowIfDisposed: jasmine.Spy;
       let vertexShaderThrowIfFromAnotherContext: jasmine.Spy;
       let vertexShaderGetInstance: jasmine.Spy;
       let vertexShader: TestVertexShader;
 
+      let fragmentShaderThrowIfDisposed: jasmine.Spy;
       let fragmentShaderThrowIfFromAnotherContext: jasmine.Spy;
       let fragmentShaderGetInstance: jasmine.Spy;
       let fragmentShader: TestFragmentShader;
@@ -3480,11 +3642,16 @@ describe(`Program`, () => {
           timesContextRestored: 7,
         };
 
+        vertexShaderThrowIfDisposed = jasmine.createSpy(
+          `vertexShaderThrowIfDisposed`
+        );
         vertexShaderThrowIfFromAnotherContext = jasmine.createSpy(
           `vertexShaderThrowIfFromAnotherContext`
         );
         vertexShaderGetInstance = jasmine.createSpy(`vertexShaderGetInstance`);
         vertexShader = {
+          context: `Test Vertex Shader Context`,
+          throwIfDisposed: vertexShaderThrowIfDisposed,
           throwIfFromAnotherContext: vertexShaderThrowIfFromAnotherContext,
           getInstance: vertexShaderGetInstance,
           attributeDefinitionSet: testAttributeDefinitionSet,
@@ -3493,6 +3660,9 @@ describe(`Program`, () => {
           type: Constants.VertexShader,
         };
 
+        fragmentShaderThrowIfDisposed = jasmine.createSpy(
+          `fragmentShaderThrowIfDisposed`
+        );
         fragmentShaderThrowIfFromAnotherContext = jasmine.createSpy(
           `fragmentShaderThrowIfFromAnotherContext`
         );
@@ -3500,6 +3670,8 @@ describe(`Program`, () => {
           `fragmentShaderGetInstance`
         );
         fragmentShader = {
+          context: `Test Fragment Shader Context`,
+          throwIfDisposed: fragmentShaderThrowIfDisposed,
           throwIfFromAnotherContext: fragmentShaderThrowIfFromAnotherContext,
           getInstance: fragmentShaderGetInstance,
           varyingDefinitionSet: testVaryingDefinitionSet,
@@ -3568,6 +3740,10 @@ describe(`Program`, () => {
         expect(getUniformLocation).not.toHaveBeenCalled();
       });
 
+      it(`does not check whether the vertex shader has been disposed`, () => {
+        expect(vertexShaderThrowIfDisposed).not.toHaveBeenCalled();
+      });
+
       it(`does not further check whether the vertex shader is from the correct context`, () => {
         expect(vertexShaderThrowIfFromAnotherContext).toHaveBeenCalledTimes(1);
       });
@@ -3580,6 +3756,10 @@ describe(`Program`, () => {
 
       it(`does not get any instances of the vertex shader`, () => {
         expect(vertexShaderGetInstance).not.toHaveBeenCalled();
+      });
+
+      it(`does not check whether the fragment shader has been disposed`, () => {
+        expect(fragmentShaderThrowIfDisposed).not.toHaveBeenCalled();
       });
 
       it(`does not further check whether the fragment shader is from the correct context`, () => {
