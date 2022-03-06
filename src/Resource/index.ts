@@ -13,7 +13,7 @@ export abstract class Resource<
 {
   private disposed = false;
   private instance: null | TInstance = null;
-  private timesContextResourcedWhenInstanceCreated = 0;
+  private timesContextRestoredWhenInstanceCreated = 0;
 
   /**
    * Creates a new WebGL resource.
@@ -35,7 +35,7 @@ export abstract class Resource<
 
     if (
       this.instance !== null &&
-      this.timesContextResourcedWhenInstanceCreated ===
+      this.timesContextRestoredWhenInstanceCreated ===
         this.context.timesContextRestored
     ) {
       this.deleteInstance(this.instance);
@@ -63,7 +63,7 @@ export abstract class Resource<
 
     if (
       this.instance === null ||
-      this.timesContextResourcedWhenInstanceCreated !==
+      this.timesContextRestoredWhenInstanceCreated !==
         this.context.timesContextRestored
     ) {
       if (this.context.gl.isContextLost()) {
@@ -71,7 +71,7 @@ export abstract class Resource<
 
         return null;
       } else {
-        this.timesContextResourcedWhenInstanceCreated =
+        this.timesContextRestoredWhenInstanceCreated =
           this.context.timesContextRestored;
 
         this.instance = this.createInstance();
