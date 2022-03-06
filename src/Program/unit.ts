@@ -1441,6 +1441,192 @@ describe(`Program`, () => {
       });
     });
 
+    describe(`when the fragment shader cannot be created`, () => {
+      let createProgram: jasmine.Spy;
+      let attachShader: jasmine.Spy;
+      let linkProgram: jasmine.Spy;
+      let getProgramParameter: jasmine.Spy;
+      let isContextLost: jasmine.Spy;
+      let getProgramInfoLog: jasmine.Spy;
+      let detachShader: jasmine.Spy;
+      let deleteProgram: jasmine.Spy;
+      let useProgram: jasmine.Spy;
+      let getAttribLocation: jasmine.Spy;
+      let getUniformLocation: jasmine.Spy;
+      let context: ContextInterface<
+        | `createProgram`
+        | `attachShader`
+        | `linkProgram`
+        | `getProgramParameter`
+        | `isContextLost`
+        | `getProgramInfoLog`
+        | `detachShader`
+        | `deleteProgram`
+        | `useProgram`
+        | `getAttribLocation`
+        | `getUniformLocation`
+      >;
+
+      let vertexShaderThrowIfFromAnotherContext: jasmine.Spy;
+      let vertexShaderGetInstance: jasmine.Spy;
+      let vertexShader: TestVertexShader;
+
+      let fragmentShaderThrowIfFromAnotherContext: jasmine.Spy;
+      let fragmentShaderGetInstance: jasmine.Spy;
+      let fragmentShader: TestFragmentShader;
+
+      let program: Program<
+        TestAttributeDefinitionSet,
+        TestUniformDefinitionSet,
+        TestVaryingDefinitionSet
+      >;
+
+      let result: unknown;
+
+      beforeAll(() => {
+        createProgram = jasmine
+          .createSpy(`createProgram`)
+          .and.returnValue(null);
+        attachShader = jasmine.createSpy(`attachShader`);
+        linkProgram = jasmine.createSpy(`linkProgram`);
+        getProgramParameter = jasmine.createSpy(`getProgramParameter`);
+        isContextLost = jasmine.createSpy(`isContextLost`);
+        getProgramInfoLog = jasmine.createSpy(`getProgramInfoLog`);
+        detachShader = jasmine.createSpy(`detachShader`);
+        deleteProgram = jasmine.createSpy(`deleteProgram`);
+        useProgram = jasmine.createSpy(`useProgram`);
+        getAttribLocation = jasmine.createSpy(`getAttribLocation`);
+        getUniformLocation = jasmine.createSpy(`getUniformLocation`);
+        context = {
+          gl: {
+            createProgram,
+            attachShader,
+            linkProgram,
+            getProgramParameter,
+            isContextLost,
+            getProgramInfoLog,
+            detachShader,
+            deleteProgram,
+            useProgram,
+            getAttribLocation,
+            getUniformLocation,
+          },
+          timesContextRestored: 7,
+        };
+
+        vertexShaderThrowIfFromAnotherContext = jasmine.createSpy(
+          `vertexShaderThrowIfFromAnotherContext`
+        );
+        vertexShaderGetInstance = jasmine
+          .createSpy(`vertexShaderGetInstance`)
+          .and.returnValue({ test: `vertexShader` });
+        vertexShader = {
+          throwIfFromAnotherContext: vertexShaderThrowIfFromAnotherContext,
+          getInstance: vertexShaderGetInstance,
+          attributeDefinitionSet: testAttributeDefinitionSet,
+          varyingDefinitionSet: testVaryingDefinitionSet,
+          uniformDefinitionSet: testUniformDefinitionSet,
+          type: Constants.VertexShader,
+        };
+
+        fragmentShaderThrowIfFromAnotherContext = jasmine.createSpy(
+          `fragmentShaderThrowIfFromAnotherContext`
+        );
+        fragmentShaderGetInstance = jasmine
+          .createSpy(`fragmentShaderGetInstance`)
+          .and.returnValue({ test: `fragmentShader` });
+        fragmentShader = {
+          throwIfFromAnotherContext: fragmentShaderThrowIfFromAnotherContext,
+          getInstance: fragmentShaderGetInstance,
+          varyingDefinitionSet: testVaryingDefinitionSet,
+          uniformDefinitionSet: testUniformDefinitionSet,
+          type: Constants.FragmentShader,
+        };
+
+        program = new Program(context, vertexShader, fragmentShader);
+
+        result = program.createInstance();
+      });
+
+      it(`exposes the context`, () => {
+        expect(program.context).toBe(context);
+      });
+
+      it(`exposes the vertex shader`, () => {
+        expect(program.vertexShader).toBe(vertexShader);
+      });
+
+      it(`exposes the fragment shader`, () => {
+        expect(program.fragmentShader).toBe(fragmentShader);
+      });
+
+      it(`creates one program`, () => {
+        expect(createProgram).toHaveBeenCalledTimes(1);
+      });
+
+      it(`does not attach shaders to any programs`, () => {
+        expect(attachShader).not.toHaveBeenCalled();
+      });
+
+      it(`does not link any programs`, () => {
+        expect(linkProgram).not.toHaveBeenCalled();
+      });
+
+      it(`does not get any program parameters`, () => {
+        expect(getProgramParameter).not.toHaveBeenCalled();
+      });
+
+      it(`does not check for context loss`, () => {
+        expect(isContextLost).not.toHaveBeenCalled();
+      });
+
+      it(`does not retrieve any program info logs`, () => {
+        expect(getProgramInfoLog).not.toHaveBeenCalled();
+      });
+
+      it(`does not detach shaders from any programs`, () => {
+        expect(detachShader).not.toHaveBeenCalled();
+      });
+
+      it(`does not delete any programs`, () => {
+        expect(deleteProgram).not.toHaveBeenCalled();
+      });
+
+      it(`does not use any programs`, () => {
+        expect(useProgram).not.toHaveBeenCalled();
+      });
+
+      it(`does not get any attribute locations`, () => {
+        expect(getAttribLocation).not.toHaveBeenCalled();
+      });
+
+      it(`does not get any uniform locations`, () => {
+        expect(getUniformLocation).not.toHaveBeenCalled();
+      });
+
+      it(`does not further check whether the vertex shader is from the correct context`, () => {
+        expect(vertexShaderThrowIfFromAnotherContext).toHaveBeenCalledTimes(1);
+      });
+
+      it(`gets one instance of vertex shader`, () => {
+        expect(vertexShaderGetInstance).toHaveBeenCalledTimes(1);
+      });
+
+      it(`does not further check whether the fragment shader is from the correct context`, () => {
+        expect(fragmentShaderThrowIfFromAnotherContext).toHaveBeenCalledTimes(
+          1
+        );
+      });
+
+      it(`gets one instance of the fragment shader`, () => {
+        expect(fragmentShaderGetInstance).toHaveBeenCalledTimes(1);
+      });
+
+      it(`returns null`, () => {
+        expect(result).toBeNull();
+      });
+    });
+
     describe(`when linking fails due to context loss`, () => {
       let createProgram: jasmine.Spy;
       let attachShader: jasmine.Spy;
