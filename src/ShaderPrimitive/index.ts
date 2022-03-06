@@ -10,7 +10,7 @@ import type { Constants } from "../Constants";
 /**
  * A map of shader types to Javascript equivalents.
  */
-export type ShaderType = {
+export type ShaderPrimitive = {
   /**
    * A 1-dimensional float.
    */

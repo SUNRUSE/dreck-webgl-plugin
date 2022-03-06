@@ -39,13 +39,13 @@ export abstract class FragmentShader<
     return [
       ...Object.entries(this.uniformDefinitionSet).map(([key, value]) => ({
         type: `uniform` as `uniform`,
-        primitive: value.shaderType,
+        primitive: value.shaderPrimitive,
         name: key,
         quantity: value.quantity,
       })),
       ...Object.entries(this.varyingDefinitionSet).map(([key, value]) => ({
         type: `varying` as `varying`,
-        primitive: value.shaderType,
+        primitive: value.shaderPrimitive,
         name: key,
         quantity: value.quantity,
       })),

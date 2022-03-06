@@ -1,7 +1,7 @@
 import type { ContextInterface } from "../ContextInterface";
 import { Constants } from "../Constants";
 import { Resource } from "../Resource";
-import { shaderTypeKeyword } from "../shaderTypeKeyword";
+import { shaderPrimitiveKeyword } from "../shaderPrimitiveKeyword";
 
 /**
  * A WebGL shader which can be compiled into a shader.
@@ -147,7 +147,7 @@ export abstract class Shader<
           ...this.getDeclarations().map(
             (declaration) =>
               `${declaration.type} ${
-                shaderTypeKeyword[declaration.primitive]
+                shaderPrimitiveKeyword[declaration.primitive]
               } ${declaration.name}${
                 declaration.type === `attribute` || declaration.quantity === 1
                   ? ``

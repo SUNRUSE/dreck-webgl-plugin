@@ -7,7 +7,7 @@ export type VaryingDefinition = {
   /**
    * The type of the value within the shader.
    */
-  readonly shaderType:
+  readonly shaderPrimitive:
     | Constants.Float
     | Constants.Vec2
     | Constants.Vec3

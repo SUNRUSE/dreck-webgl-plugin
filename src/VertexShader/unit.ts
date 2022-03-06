@@ -3,348 +3,348 @@ import { Constants, ContextInterface, VertexShader } from "..";
 describe(`VertexShader`, () => {
   type TestVaryingDefinitionSet = {
     readonly test_declaration_a_name: {
-      readonly shaderType: Constants.Float;
+      readonly shaderPrimitive: Constants.Float;
       readonly quantity: 1;
     };
     readonly test_declaration_b_name: {
-      readonly shaderType: Constants.Float;
+      readonly shaderPrimitive: Constants.Float;
       readonly quantity: 2;
     };
     readonly test_declaration_c_name: {
-      readonly shaderType: Constants.Float;
+      readonly shaderPrimitive: Constants.Float;
       readonly quantity: 3;
     };
     readonly test_declaration_d_name: {
-      readonly shaderType: Constants.Vec2;
+      readonly shaderPrimitive: Constants.Vec2;
       readonly quantity: 1;
     };
     readonly test_declaration_e_name: {
-      readonly shaderType: Constants.Vec2;
+      readonly shaderPrimitive: Constants.Vec2;
       readonly quantity: 2;
     };
     readonly test_declaration_f_name: {
-      readonly shaderType: Constants.Vec2;
+      readonly shaderPrimitive: Constants.Vec2;
       readonly quantity: 3;
     };
     readonly test_declaration_g_name: {
-      readonly shaderType: Constants.Vec3;
+      readonly shaderPrimitive: Constants.Vec3;
       readonly quantity: 1;
     };
     readonly test_declaration_h_name: {
-      readonly shaderType: Constants.Vec3;
+      readonly shaderPrimitive: Constants.Vec3;
       readonly quantity: 2;
     };
     readonly test_declaration_i_name: {
-      readonly shaderType: Constants.Vec3;
+      readonly shaderPrimitive: Constants.Vec3;
       readonly quantity: 3;
     };
     readonly test_declaration_j_name: {
-      readonly shaderType: Constants.Vec4;
+      readonly shaderPrimitive: Constants.Vec4;
       readonly quantity: 1;
     };
     readonly test_declaration_k_name: {
-      readonly shaderType: Constants.Vec4;
+      readonly shaderPrimitive: Constants.Vec4;
       readonly quantity: 2;
     };
     readonly test_declaration_l_name: {
-      readonly shaderType: Constants.Vec4;
+      readonly shaderPrimitive: Constants.Vec4;
       readonly quantity: 3;
     };
     readonly test_declaration_m_name: {
-      readonly shaderType: Constants.Mat2;
+      readonly shaderPrimitive: Constants.Mat2;
       readonly quantity: 1;
     };
     readonly test_declaration_n_name: {
-      readonly shaderType: Constants.Mat2;
+      readonly shaderPrimitive: Constants.Mat2;
       readonly quantity: 2;
     };
     readonly test_declaration_o_name: {
-      readonly shaderType: Constants.Mat2;
+      readonly shaderPrimitive: Constants.Mat2;
       readonly quantity: 3;
     };
     readonly test_declaration_p_name: {
-      readonly shaderType: Constants.Mat3;
+      readonly shaderPrimitive: Constants.Mat3;
       readonly quantity: 1;
     };
     readonly test_declaration_q_name: {
-      readonly shaderType: Constants.Mat3;
+      readonly shaderPrimitive: Constants.Mat3;
       readonly quantity: 2;
     };
     readonly test_declaration_r_name: {
-      readonly shaderType: Constants.Mat3;
+      readonly shaderPrimitive: Constants.Mat3;
       readonly quantity: 3;
     };
     readonly test_declaration_s_name: {
-      readonly shaderType: Constants.Mat4;
+      readonly shaderPrimitive: Constants.Mat4;
       readonly quantity: 1;
     };
     readonly test_declaration_t_name: {
-      readonly shaderType: Constants.Mat4;
+      readonly shaderPrimitive: Constants.Mat4;
       readonly quantity: 2;
     };
     readonly test_declaration_u_name: {
-      readonly shaderType: Constants.Mat4;
+      readonly shaderPrimitive: Constants.Mat4;
       readonly quantity: 3;
     };
   };
 
   const testVaryingDefinitionSet: TestVaryingDefinitionSet = {
     test_declaration_a_name: {
-      shaderType: Constants.Float,
+      shaderPrimitive: Constants.Float,
       quantity: 1,
     },
     test_declaration_b_name: {
-      shaderType: Constants.Float,
+      shaderPrimitive: Constants.Float,
       quantity: 2,
     },
     test_declaration_c_name: {
-      shaderType: Constants.Float,
+      shaderPrimitive: Constants.Float,
       quantity: 3,
     },
     test_declaration_d_name: {
-      shaderType: Constants.Vec2,
+      shaderPrimitive: Constants.Vec2,
       quantity: 1,
     },
     test_declaration_e_name: {
-      shaderType: Constants.Vec2,
+      shaderPrimitive: Constants.Vec2,
       quantity: 2,
     },
     test_declaration_f_name: {
-      shaderType: Constants.Vec2,
+      shaderPrimitive: Constants.Vec2,
       quantity: 3,
     },
     test_declaration_g_name: {
-      shaderType: Constants.Vec3,
+      shaderPrimitive: Constants.Vec3,
       quantity: 1,
     },
     test_declaration_h_name: {
-      shaderType: Constants.Vec3,
+      shaderPrimitive: Constants.Vec3,
       quantity: 2,
     },
     test_declaration_i_name: {
-      shaderType: Constants.Vec3,
+      shaderPrimitive: Constants.Vec3,
       quantity: 3,
     },
     test_declaration_j_name: {
-      shaderType: Constants.Vec4,
+      shaderPrimitive: Constants.Vec4,
       quantity: 1,
     },
     test_declaration_k_name: {
-      shaderType: Constants.Vec4,
+      shaderPrimitive: Constants.Vec4,
       quantity: 2,
     },
     test_declaration_l_name: {
-      shaderType: Constants.Vec4,
+      shaderPrimitive: Constants.Vec4,
       quantity: 3,
     },
     test_declaration_m_name: {
-      shaderType: Constants.Mat2,
+      shaderPrimitive: Constants.Mat2,
       quantity: 1,
     },
     test_declaration_n_name: {
-      shaderType: Constants.Mat2,
+      shaderPrimitive: Constants.Mat2,
       quantity: 2,
     },
     test_declaration_o_name: {
-      shaderType: Constants.Mat2,
+      shaderPrimitive: Constants.Mat2,
       quantity: 3,
     },
     test_declaration_p_name: {
-      shaderType: Constants.Mat3,
+      shaderPrimitive: Constants.Mat3,
       quantity: 1,
     },
     test_declaration_q_name: {
-      shaderType: Constants.Mat3,
+      shaderPrimitive: Constants.Mat3,
       quantity: 2,
     },
     test_declaration_r_name: {
-      shaderType: Constants.Mat3,
+      shaderPrimitive: Constants.Mat3,
       quantity: 3,
     },
     test_declaration_s_name: {
-      shaderType: Constants.Mat4,
+      shaderPrimitive: Constants.Mat4,
       quantity: 1,
     },
     test_declaration_t_name: {
-      shaderType: Constants.Mat4,
+      shaderPrimitive: Constants.Mat4,
       quantity: 2,
     },
     test_declaration_u_name: {
-      shaderType: Constants.Mat4,
+      shaderPrimitive: Constants.Mat4,
       quantity: 3,
     },
   };
 
   type TestUniformDefinitionSet = {
     readonly test_declaration_v_name: {
-      readonly shaderType: Constants.Float;
+      readonly shaderPrimitive: Constants.Float;
       readonly quantity: 1;
     };
     readonly test_declaration_w_name: {
-      readonly shaderType: Constants.Float;
+      readonly shaderPrimitive: Constants.Float;
       readonly quantity: 2;
     };
     readonly test_declaration_x_name: {
-      readonly shaderType: Constants.Float;
+      readonly shaderPrimitive: Constants.Float;
       readonly quantity: 3;
     };
     readonly test_declaration_y_name: {
-      readonly shaderType: Constants.Vec2;
+      readonly shaderPrimitive: Constants.Vec2;
       readonly quantity: 1;
     };
     readonly test_declaration_z_name: {
-      readonly shaderType: Constants.Vec2;
+      readonly shaderPrimitive: Constants.Vec2;
       readonly quantity: 2;
     };
     readonly test_declaration_aa_name: {
-      readonly shaderType: Constants.Vec2;
+      readonly shaderPrimitive: Constants.Vec2;
       readonly quantity: 3;
     };
     readonly test_declaration_ab_name: {
-      readonly shaderType: Constants.Vec3;
+      readonly shaderPrimitive: Constants.Vec3;
       readonly quantity: 1;
     };
     readonly test_declaration_ac_name: {
-      readonly shaderType: Constants.Vec3;
+      readonly shaderPrimitive: Constants.Vec3;
       readonly quantity: 2;
     };
     readonly test_declaration_ad_name: {
-      readonly shaderType: Constants.Vec3;
+      readonly shaderPrimitive: Constants.Vec3;
       readonly quantity: 3;
     };
     readonly test_declaration_ae_name: {
-      readonly shaderType: Constants.Vec4;
+      readonly shaderPrimitive: Constants.Vec4;
       readonly quantity: 1;
     };
     readonly test_declaration_af_name: {
-      readonly shaderType: Constants.Vec4;
+      readonly shaderPrimitive: Constants.Vec4;
       readonly quantity: 2;
     };
     readonly test_declaration_ag_name: {
-      readonly shaderType: Constants.Vec4;
+      readonly shaderPrimitive: Constants.Vec4;
       readonly quantity: 3;
     };
     readonly test_declaration_ah_name: {
-      readonly shaderType: Constants.Mat2;
+      readonly shaderPrimitive: Constants.Mat2;
       readonly quantity: 1;
     };
     readonly test_declaration_ai_name: {
-      readonly shaderType: Constants.Mat2;
+      readonly shaderPrimitive: Constants.Mat2;
       readonly quantity: 2;
     };
     readonly test_declaration_aj_name: {
-      readonly shaderType: Constants.Mat2;
+      readonly shaderPrimitive: Constants.Mat2;
       readonly quantity: 3;
     };
     readonly test_declaration_ak_name: {
-      readonly shaderType: Constants.Mat3;
+      readonly shaderPrimitive: Constants.Mat3;
       readonly quantity: 1;
     };
     readonly test_declaration_al_name: {
-      readonly shaderType: Constants.Mat3;
+      readonly shaderPrimitive: Constants.Mat3;
       readonly quantity: 2;
     };
     readonly test_declaration_am_name: {
-      readonly shaderType: Constants.Mat3;
+      readonly shaderPrimitive: Constants.Mat3;
       readonly quantity: 3;
     };
     readonly test_declaration_an_name: {
-      readonly shaderType: Constants.Mat4;
+      readonly shaderPrimitive: Constants.Mat4;
       readonly quantity: 1;
     };
     readonly test_declaration_ao_name: {
-      readonly shaderType: Constants.Mat4;
+      readonly shaderPrimitive: Constants.Mat4;
       readonly quantity: 2;
     };
     readonly test_declaration_ap_name: {
-      readonly shaderType: Constants.Mat4;
+      readonly shaderPrimitive: Constants.Mat4;
       readonly quantity: 3;
     };
   };
 
   const testUniformDefinitionSet: TestUniformDefinitionSet = {
     test_declaration_v_name: {
-      shaderType: Constants.Float,
+      shaderPrimitive: Constants.Float,
       quantity: 1,
     },
     test_declaration_w_name: {
-      shaderType: Constants.Float,
+      shaderPrimitive: Constants.Float,
       quantity: 2,
     },
     test_declaration_x_name: {
-      shaderType: Constants.Float,
+      shaderPrimitive: Constants.Float,
       quantity: 3,
     },
     test_declaration_y_name: {
-      shaderType: Constants.Vec2,
+      shaderPrimitive: Constants.Vec2,
       quantity: 1,
     },
     test_declaration_z_name: {
-      shaderType: Constants.Vec2,
+      shaderPrimitive: Constants.Vec2,
       quantity: 2,
     },
     test_declaration_aa_name: {
-      shaderType: Constants.Vec2,
+      shaderPrimitive: Constants.Vec2,
       quantity: 3,
     },
     test_declaration_ab_name: {
-      shaderType: Constants.Vec3,
+      shaderPrimitive: Constants.Vec3,
       quantity: 1,
     },
     test_declaration_ac_name: {
-      shaderType: Constants.Vec3,
+      shaderPrimitive: Constants.Vec3,
       quantity: 2,
     },
     test_declaration_ad_name: {
-      shaderType: Constants.Vec3,
+      shaderPrimitive: Constants.Vec3,
       quantity: 3,
     },
     test_declaration_ae_name: {
-      shaderType: Constants.Vec4,
+      shaderPrimitive: Constants.Vec4,
       quantity: 1,
     },
     test_declaration_af_name: {
-      shaderType: Constants.Vec4,
+      shaderPrimitive: Constants.Vec4,
       quantity: 2,
     },
     test_declaration_ag_name: {
-      shaderType: Constants.Vec4,
+      shaderPrimitive: Constants.Vec4,
       quantity: 3,
     },
     test_declaration_ah_name: {
-      shaderType: Constants.Mat2,
+      shaderPrimitive: Constants.Mat2,
       quantity: 1,
     },
     test_declaration_ai_name: {
-      shaderType: Constants.Mat2,
+      shaderPrimitive: Constants.Mat2,
       quantity: 2,
     },
     test_declaration_aj_name: {
-      shaderType: Constants.Mat2,
+      shaderPrimitive: Constants.Mat2,
       quantity: 3,
     },
     test_declaration_ak_name: {
-      shaderType: Constants.Mat3,
+      shaderPrimitive: Constants.Mat3,
       quantity: 1,
     },
     test_declaration_al_name: {
-      shaderType: Constants.Mat3,
+      shaderPrimitive: Constants.Mat3,
       quantity: 2,
     },
     test_declaration_am_name: {
-      shaderType: Constants.Mat3,
+      shaderPrimitive: Constants.Mat3,
       quantity: 3,
     },
     test_declaration_an_name: {
-      shaderType: Constants.Mat4,
+      shaderPrimitive: Constants.Mat4,
       quantity: 1,
     },
     test_declaration_ao_name: {
-      shaderType: Constants.Mat4,
+      shaderPrimitive: Constants.Mat4,
       quantity: 2,
     },
     test_declaration_ap_name: {
-      shaderType: Constants.Mat4,
+      shaderPrimitive: Constants.Mat4,
       quantity: 3,
     },
   };

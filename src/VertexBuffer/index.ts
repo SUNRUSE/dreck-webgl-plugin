@@ -2,7 +2,7 @@ import { Constants } from "../Constants";
 import type { ContextInterface } from "../ContextInterface";
 import type { Float } from "../Float";
 import type { PackedAttributeDefinitionSet } from "../PackedAttributeDefinitionSet";
-import type { ShaderType } from "../ShaderType";
+import type { ShaderPrimitive } from "../ShaderPrimitive";
 import type { Vec2 } from "../Vec2";
 import type { Vec3 } from "../Vec3";
 import type { Vec4 } from "../Vec4";
@@ -170,7 +170,7 @@ export abstract class VertexBuffer<
    */
   abstract generateVertices(): {
     readonly [T in keyof TAttributeDefinitionSet]: ReadonlyArray<
-      ShaderType[TAttributeDefinitionSet[T][`shaderPrimitive`]]
+      ShaderPrimitive[TAttributeDefinitionSet[T][`shaderPrimitive`]]
     >;
   };
 }

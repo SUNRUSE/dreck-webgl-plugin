@@ -5,8 +5,8 @@ import {
   AttributeDefinition,
   binaryTypeBytes,
   BinaryType,
-  shaderTypeArity,
-  ShaderType,
+  shaderPrimitiveArity,
+  ShaderPrimitive,
 } from "..";
 
 describe(`PackedAttributeDefinitionSet`, () => {
@@ -71,7 +71,9 @@ describe(`PackedAttributeDefinitionSet`, () => {
             end =
               offset +
               binaryTypeBytes[value.binaryType as keyof BinaryType] *
-                shaderTypeArity[value.shaderPrimitive as keyof ShaderType];
+                shaderPrimitiveArity[
+                  value.shaderPrimitive as keyof ShaderPrimitive
+                ];
           });
 
           it(`has an integer offset`, () => {
@@ -118,8 +120,8 @@ describe(`PackedAttributeDefinitionSet`, () => {
                       binaryTypeBytes[
                         otherValue.binaryType as keyof BinaryType
                       ] *
-                        shaderTypeArity[
-                          otherValue.shaderPrimitive as keyof ShaderType
+                        shaderPrimitiveArity[
+                          otherValue.shaderPrimitive as keyof ShaderPrimitive
                         ];
 
                     const otherIsBefore = otherEnd <= offset;

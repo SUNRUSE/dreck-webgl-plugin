@@ -2,8 +2,8 @@ import { binaryTypeBytes } from "../binaryTypeBytes";
 import type { AttributeDefinition } from "../AttributeDefinition";
 import type { AttributeDefinitionSet } from "../AttributeDefinitionSet";
 import type { BinaryType } from "../BinaryType";
-import type { ShaderType } from "../ShaderType";
-import { shaderTypeArity } from "../shaderTypeArity";
+import type { ShaderPrimitive } from "../ShaderPrimitive";
+import { shaderPrimitiveArity } from "../shaderPrimitiveArity";
 
 /**
  * Describes an attribute definition set which has been packed into a repeating structure of bytes.
@@ -49,7 +49,8 @@ export class PackedAttributeDefinitionSet<
         const binaryType = value.binaryType as keyof BinaryType;
 
         if (binaryTypeBytes[binaryType] === bytes) {
-          const shaderType = value.shaderPrimitive as keyof ShaderType;
+          const shaderPrimitive =
+            value.shaderPrimitive as keyof ShaderPrimitive;
 
           if (strideRounding === 0) {
             strideRounding = bytes;
@@ -62,7 +63,7 @@ export class PackedAttributeDefinitionSet<
 
           offsets[key] = this.stride;
 
-          this.stride += bytes * shaderTypeArity[shaderType];
+          this.stride += bytes * shaderPrimitiveArity[shaderPrimitive];
         }
       }
     }
