@@ -561,7 +561,9 @@ describe(`VertexBuffer`, () => {
       let vertexBuffer: TestVertexBuffer;
       let output: {
         readonly bufferContent: BufferSource;
-        readonly instanceData: null;
+        readonly instanceData: {
+          readonly numberOfVertices: number;
+        };
       };
 
       beforeAll(() => {
@@ -1120,7 +1122,7 @@ describe(`VertexBuffer`, () => {
       it(`returns everything else as expected`, () => {
         expect(output).toEqual({
           bufferContent: jasmine.any(Uint8Array),
-          instanceData: null,
+          instanceData: { numberOfVertices: 5 },
         });
       });
     });

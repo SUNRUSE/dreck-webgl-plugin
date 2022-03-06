@@ -21,7 +21,7 @@ import { binaryTypeType } from "../binaryTypeType";
  */
 export abstract class VertexBuffer<
   TAttributeDefinitionSet extends AttributeDefinitionSet
-> extends Buffer<never, null> {
+> extends Buffer<never, { readonly numberOfVertices: number }> {
   /**
    * Creates a new buffer of vertex attributes.
    * @param context The context under which the buffer will be created.
@@ -42,7 +42,7 @@ export abstract class VertexBuffer<
 
   generateData(): {
     readonly bufferContent: BufferSource;
-    readonly instanceData: null;
+    readonly instanceData: { readonly numberOfVertices: number };
   } {
     const vertices = this.generateVertices();
 
@@ -158,7 +158,9 @@ export abstract class VertexBuffer<
 
     return {
       bufferContent,
-      instanceData: null,
+      instanceData: {
+        numberOfVertices,
+      },
     };
   }
 
