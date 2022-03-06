@@ -1,6 +1,6 @@
 {
   "name": "celluloid-engine",
-  "description": "Simple cel-shaded games engine for your browser.",
+  "description": "A collection of bits and bobs you can use to make your own browser-based 3D applications (such as games).",
   "version": "0.0.0",
   "engines": {
     "node": ">=16.11.1"
