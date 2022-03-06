@@ -1,4 +1,5 @@
 import type { ContextInterface } from "../ContextInterface";
+import type { ResourceInterface } from "../ResourceInterface";
 
 /**
  * A WebGL resource.
@@ -8,7 +9,8 @@ import type { ContextInterface } from "../ContextInterface";
 export abstract class Resource<
   TInstance,
   TWebGLRenderingContextKey extends keyof WebGLRenderingContext
-> {
+> implements ResourceInterface<TInstance>
+{
   private disposed = false;
   private instance: null | TInstance = null;
   private timesContextResourcedWhenInstanceCreated = 0;
@@ -41,21 +43,12 @@ export abstract class Resource<
     }
   }
 
-  /**
-   * Throws an error if this resource has been disposed.
-   * @throws When this resource has been disposed.
-   */
   throwIfDisposed(): void {
     if (this.disposed) {
       throw new Error(`Unable to interact with a disposed resource.`);
     }
   }
 
-  /**
-   * Throws an error if this resource is not of a given context.
-   * @param resource The resource against which to check this resource.
-   * @throws When this resource is not of the given context.
-   */
   throwIfFromAnotherContext(resource: Resource<unknown, never>): void {
     this.throwIfDisposed();
     resource.throwIfDisposed();
@@ -65,10 +58,6 @@ export abstract class Resource<
     }
   }
 
-  /**
-   * Call to get the current instance, creating it if it has not been created before, and recreating it if context loss has been recovered from.
-   * @returns The current instance, if any, otherwise, null (e.g. if context loss has occurred).
-   */
   getInstance(): null | TInstance {
     this.throwIfDisposed();
 

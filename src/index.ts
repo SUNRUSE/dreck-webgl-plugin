@@ -23,6 +23,7 @@ export { Mat3 } from "./Mat3";
 export { Mat4 } from "./Mat4";
 export { PackedAttributeDefinitionSet } from "./PackedAttributeDefinitionSet";
 export { Resource } from "./Resource";
+export { ResourceInterface } from "./ResourceInterface";
 export { S16 } from "./S16";
 export { S8 } from "./S8";
 export { sampleBooleanAnimation } from "./sampleBooleanAnimation";
