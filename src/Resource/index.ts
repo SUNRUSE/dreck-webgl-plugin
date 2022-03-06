@@ -43,6 +43,10 @@ export abstract class Resource<
     }
   }
 
+  /**
+   * Throws an error if this resource has been disposed.
+   * @throws When this resource has been disposed.
+   */
   throwIfDisposed(): void {
     if (this.disposed) {
       throw new Error(`Unable to interact with a disposed resource.`);

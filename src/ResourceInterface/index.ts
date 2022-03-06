@@ -2,12 +2,6 @@ import type { Resource } from "../Resource";
 
 export interface ResourceInterface<TInstance> {
   /**
-   * Throws an error if this resource has been disposed.
-   * @throws When this resource has been disposed.
-   */
-  throwIfDisposed(): void;
-
-  /**
    * Throws an error if this resource is not of a given context.
    * @param resource The resource against which to check this resource.
    * @throws When this resource is not of the given context.
