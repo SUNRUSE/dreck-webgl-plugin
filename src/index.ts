@@ -9,6 +9,7 @@ export { binaryTypeType } from "./binaryTypeType";
 export { BooleanAnimation } from "./BooleanAnimation";
 export { BooleanKeyframeData } from "./BooleanKeyframeData";
 export { Buffer } from "./Buffer";
+export { calculateTransform } from "./calculateTransform";
 export { Constants } from "./Constants";
 export { ContextInterface } from "./ContextInterface";
 export { createContext } from "./createContext";
