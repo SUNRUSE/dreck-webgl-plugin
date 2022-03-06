@@ -11,6 +11,7 @@ export { BooleanKeyframeData } from "./BooleanKeyframeData";
 export { Buffer } from "./Buffer";
 export { Constants } from "./Constants";
 export { ContextInterface } from "./ContextInterface";
+export { createContext } from "./createContext";
 export { F32 } from "./F32";
 export { Float } from "./Float";
 export { FloatAnimation } from "./FloatAnimation";
