@@ -11,3 +11,9 @@ jobs:
         registry-url: 'https://registry.npmjs.org'
     - run: npm ci
     - run: npm test
+    - run: echo //registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }} > ${NPM_CONFIG_USERCONFIG}
+      if: github.event_name == 'release' && github.event.action == 'created'
+    - run: "sed -i \"s/\\\"version\\\": \\\"0.0.0\\\",/\\\"version\\\": \\\"${GITHUB_REF/refs\\/tags\\/v/}\\\",/g\" package.json"
+      if: github.event_name == 'release' && github.event.action == 'created'
+    - run: npm publish
+      if: github.event_name == 'release' && github.event.action == 'created'
