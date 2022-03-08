@@ -21,6 +21,7 @@ describe(`Buffer`, () => {
         let bufferData: jasmine.Spy;
         let deleteBuffer: jasmine.Spy;
         let isContextLost: jasmine.Spy;
+        let render: jasmine.Spy;
         let generateData: jasmine.Spy;
 
         class TestBuffer extends Buffer<
@@ -52,6 +53,7 @@ describe(`Buffer`, () => {
           bufferData = jasmine.createSpy(`bufferData`);
           deleteBuffer = jasmine.createSpy(`deleteBuffer`);
           isContextLost = jasmine.createSpy(`isContextLost`);
+          render = jasmine.createSpy(`render`);
 
           generateData = jasmine.createSpy(`generateData`).and.returnValue({
             bufferContent: Uint16Array.from([32, 768, 1024, 512]),
@@ -68,6 +70,7 @@ describe(`Buffer`, () => {
               isContextLost,
             },
             timesContextRestored: 7,
+            render,
           };
 
           buffer = new TestBuffer(context, target.target);
@@ -75,6 +78,10 @@ describe(`Buffer`, () => {
 
         it(`does not check for context loss`, () => {
           expect(isContextLost).not.toHaveBeenCalled();
+        });
+
+        it(`does not render`, () => {
+          expect(render).not.toHaveBeenCalled();
         });
 
         it(`does not create any buffers`, () => {
@@ -117,6 +124,7 @@ describe(`Buffer`, () => {
         let bufferData: jasmine.Spy;
         let deleteBuffer: jasmine.Spy;
         let isContextLost: jasmine.Spy;
+        let render: jasmine.Spy;
         let generateData: jasmine.Spy;
         let result: null | WebGLBuffer;
 
@@ -151,6 +159,7 @@ describe(`Buffer`, () => {
           bufferData = jasmine.createSpy(`bufferData`);
           deleteBuffer = jasmine.createSpy(`deleteBuffer`);
           isContextLost = jasmine.createSpy(`isContextLost`);
+          render = jasmine.createSpy(`render`);
 
           generateData = jasmine.createSpy(`generateData`).and.returnValue({
             bufferContent: Uint16Array.from([32, 768, 1024, 512]),
@@ -167,6 +176,7 @@ describe(`Buffer`, () => {
               isContextLost,
             },
             timesContextRestored: 7,
+            render,
           };
 
           buffer = new TestBuffer(context, target.target);
@@ -176,6 +186,10 @@ describe(`Buffer`, () => {
 
         it(`does not check for context loss`, () => {
           expect(isContextLost).not.toHaveBeenCalled();
+        });
+
+        it(`does not render`, () => {
+          expect(render).not.toHaveBeenCalled();
         });
 
         it(`creates one buffer`, () => {
@@ -243,6 +257,7 @@ describe(`Buffer`, () => {
         let bufferData: jasmine.Spy;
         let deleteBuffer: jasmine.Spy;
         let isContextLost: jasmine.Spy;
+        let render: jasmine.Spy;
         let generateData: jasmine.Spy;
         let result: null | WebGLBuffer;
 
@@ -277,6 +292,7 @@ describe(`Buffer`, () => {
           bufferData = jasmine.createSpy(`bufferData`);
           deleteBuffer = jasmine.createSpy(`deleteBuffer`);
           isContextLost = jasmine.createSpy(`isContextLost`);
+          render = jasmine.createSpy(`render`);
 
           generateData = jasmine.createSpy(`generateData`).and.returnValue({
             bufferContent: Uint16Array.from([32, 768, 1024, 512]),
@@ -293,6 +309,7 @@ describe(`Buffer`, () => {
               isContextLost,
             },
             timesContextRestored: 7,
+            render,
           };
 
           buffer = new TestBuffer(context, target.target);
@@ -302,6 +319,10 @@ describe(`Buffer`, () => {
 
         it(`does not check for context loss`, () => {
           expect(isContextLost).not.toHaveBeenCalled();
+        });
+
+        it(`does not render`, () => {
+          expect(render).not.toHaveBeenCalled();
         });
 
         it(`creates one buffer`, () => {
@@ -348,6 +369,7 @@ describe(`Buffer`, () => {
         let bufferData: jasmine.Spy;
         let deleteBuffer: jasmine.Spy;
         let isContextLost: jasmine.Spy;
+        let render: jasmine.Spy;
         let generateData: jasmine.Spy;
         let error: unknown;
 
@@ -380,6 +402,7 @@ describe(`Buffer`, () => {
           bufferData = jasmine.createSpy(`bufferData`);
           deleteBuffer = jasmine.createSpy(`deleteBuffer`);
           isContextLost = jasmine.createSpy(`isContextLost`);
+          render = jasmine.createSpy(`render`);
 
           generateData = jasmine.createSpy(`generateData`).and.returnValue({
             bufferContent: Uint16Array.from([]),
@@ -396,6 +419,7 @@ describe(`Buffer`, () => {
               isContextLost,
             },
             timesContextRestored: 7,
+            render,
           };
 
           buffer = new TestBuffer(context, target.target);
@@ -410,6 +434,10 @@ describe(`Buffer`, () => {
 
         it(`does not check for context loss`, () => {
           expect(isContextLost).not.toHaveBeenCalled();
+        });
+
+        it(`does not render`, () => {
+          expect(render).not.toHaveBeenCalled();
         });
 
         it(`does not create any buffers`, () => {
@@ -456,6 +484,7 @@ describe(`Buffer`, () => {
         let bufferData: jasmine.Spy;
         let deleteBuffer: jasmine.Spy;
         let isContextLost: jasmine.Spy;
+        let render: jasmine.Spy;
         let generateData: jasmine.Spy;
 
         class TestBuffer extends Buffer<
@@ -487,6 +516,7 @@ describe(`Buffer`, () => {
           bufferData = jasmine.createSpy(`bufferData`);
           deleteBuffer = jasmine.createSpy(`deleteBuffer`);
           isContextLost = jasmine.createSpy(`isContextLost`);
+          render = jasmine.createSpy(`render`);
 
           generateData = jasmine.createSpy(`generateData`).and.returnValue({
             bufferContent: Uint16Array.from([32, 768, 1024, 512]),
@@ -503,6 +533,7 @@ describe(`Buffer`, () => {
               isContextLost,
             },
             timesContextRestored: 7,
+            render,
           };
 
           buffer = new TestBuffer(context, target.target);
@@ -512,6 +543,10 @@ describe(`Buffer`, () => {
 
         it(`does not check for context loss`, () => {
           expect(isContextLost).not.toHaveBeenCalled();
+        });
+
+        it(`does not render`, () => {
+          expect(render).not.toHaveBeenCalled();
         });
 
         it(`does not create any buffers`, () => {
@@ -554,6 +589,7 @@ describe(`Buffer`, () => {
         let bufferData: jasmine.Spy;
         let deleteBuffer: jasmine.Spy;
         let isContextLost: jasmine.Spy;
+        let render: jasmine.Spy;
         let generateData: jasmine.Spy;
 
         class TestBuffer extends Buffer<
@@ -585,6 +621,7 @@ describe(`Buffer`, () => {
           bufferData = jasmine.createSpy(`bufferData`);
           deleteBuffer = jasmine.createSpy(`deleteBuffer`);
           isContextLost = jasmine.createSpy(`isContextLost`);
+          render = jasmine.createSpy(`render`);
 
           generateData = jasmine.createSpy(`generateData`).and.returnValue({
             bufferContent: Uint16Array.from([32, 768, 1024, 512]),
@@ -601,6 +638,7 @@ describe(`Buffer`, () => {
               isContextLost,
             },
             timesContextRestored: 7,
+            render,
           };
 
           buffer = new TestBuffer(context, target.target);
@@ -610,6 +648,10 @@ describe(`Buffer`, () => {
 
         it(`does not check for context loss`, () => {
           expect(isContextLost).not.toHaveBeenCalled();
+        });
+
+        it(`does not render`, () => {
+          expect(render).not.toHaveBeenCalled();
         });
 
         it(`does not create any buffers`, () => {

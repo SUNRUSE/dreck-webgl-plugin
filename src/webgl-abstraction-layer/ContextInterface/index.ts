@@ -14,4 +14,9 @@ export interface ContextInterface<
    * The number of times that the WebGL context has been restored.
    */
   readonly timesContextRestored: number;
+
+  /**
+   * Renders the context.
+   */
+  render(): void;
 }

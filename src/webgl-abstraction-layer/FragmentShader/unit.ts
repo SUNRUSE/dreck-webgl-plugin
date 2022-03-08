@@ -357,6 +357,7 @@ describe(`FragmentShader`, () => {
     let isContextLost: jasmine.Spy;
     let getShaderInfoLog: jasmine.Spy;
     let deleteShader: jasmine.Spy;
+    let render: jasmine.Spy;
     let getHeaderLines: jasmine.Spy;
     let getBodyLines: jasmine.Spy;
 
@@ -393,6 +394,7 @@ describe(`FragmentShader`, () => {
       isContextLost = jasmine.createSpy(`isContextLost`);
       getShaderInfoLog = jasmine.createSpy(`getShaderInfoLog`);
       deleteShader = jasmine.createSpy(`deleteShader`);
+      render = jasmine.createSpy(`render`);
       getHeaderLines = jasmine.createSpy(`getHeaderLines`);
       getBodyLines = jasmine.createSpy(`getBodyLines`);
 
@@ -407,6 +409,7 @@ describe(`FragmentShader`, () => {
           deleteShader,
         },
         timesContextRestored: 7,
+        render,
       };
 
       shader = new TestShader(
@@ -460,6 +463,10 @@ describe(`FragmentShader`, () => {
       expect(deleteShader).not.toHaveBeenCalled();
     });
 
+    it(`does not render`, () => {
+      expect(render).not.toHaveBeenCalled();
+    });
+
     it(`does not get header lines`, () => {
       expect(getHeaderLines).not.toHaveBeenCalled();
     });
@@ -477,6 +484,7 @@ describe(`FragmentShader`, () => {
     let isContextLost: jasmine.Spy;
     let getShaderInfoLog: jasmine.Spy;
     let deleteShader: jasmine.Spy;
+    let render: jasmine.Spy;
     let getHeaderLines: jasmine.Spy;
     let getBodyLines: jasmine.Spy;
 
@@ -514,6 +522,7 @@ describe(`FragmentShader`, () => {
       isContextLost = jasmine.createSpy(`isContextLost`);
       getShaderInfoLog = jasmine.createSpy(`getShaderInfoLog`);
       deleteShader = jasmine.createSpy(`deleteShader`);
+      render = jasmine.createSpy(`render`);
       getHeaderLines = jasmine.createSpy(`getHeaderLines`);
       getBodyLines = jasmine.createSpy(`getBodyLines`);
 
@@ -528,6 +537,7 @@ describe(`FragmentShader`, () => {
           deleteShader,
         },
         timesContextRestored: 7,
+        render,
       };
 
       shader = new TestShader(
@@ -581,6 +591,10 @@ describe(`FragmentShader`, () => {
 
     it(`does not delete any shaders`, () => {
       expect(deleteShader).not.toHaveBeenCalled();
+    });
+
+    it(`does not render`, () => {
+      expect(render).not.toHaveBeenCalled();
     });
 
     it(`does not get header lines`, () => {

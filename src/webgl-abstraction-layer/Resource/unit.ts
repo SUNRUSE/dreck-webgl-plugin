@@ -84,6 +84,7 @@ describe(`Resource`, () => {
       it(`executes the steps as expected`, () => {
         const cullFace = jasmine.createSpy(`cullFace`);
         const isContextLost = jasmine.createSpy(`isContextLost`);
+        const render = jasmine.createSpy(`render`);
 
         const context = {
           gl: {
@@ -91,6 +92,7 @@ describe(`Resource`, () => {
             isContextLost,
           },
           timesContextRestored: 11,
+          render,
         };
 
         const createInstance = jasmine.createSpy(`createInstance`);
@@ -267,6 +269,7 @@ describe(`Resource`, () => {
         }
 
         expect(testResource.context).toBe(context);
+        expect(render).not.toHaveBeenCalled();
       });
     });
   }

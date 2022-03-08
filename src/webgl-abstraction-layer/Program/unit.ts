@@ -900,6 +900,7 @@ describe(`Program`, () => {
     let useProgram: jasmine.Spy;
     let getAttribLocation: jasmine.Spy;
     let getUniformLocation: jasmine.Spy;
+    let render: jasmine.Spy;
     let context: ContextInterface<
       | `createProgram`
       | `attachShader`
@@ -942,6 +943,7 @@ describe(`Program`, () => {
       useProgram = jasmine.createSpy(`useProgram`);
       getAttribLocation = jasmine.createSpy(`getAttribLocation`);
       getUniformLocation = jasmine.createSpy(`getUniformLocation`);
+      render = jasmine.createSpy(`render`);
       context = {
         gl: {
           createProgram,
@@ -957,6 +959,7 @@ describe(`Program`, () => {
           getUniformLocation,
         },
         timesContextRestored: 7,
+        render,
       };
 
       vertexShaderThrowIfDisposed = jasmine.createSpy(
@@ -1055,6 +1058,10 @@ describe(`Program`, () => {
       expect(getUniformLocation).not.toHaveBeenCalled();
     });
 
+    it(`does not render`, () => {
+      expect(render).not.toHaveBeenCalled();
+    });
+
     it(`does not check whether the vertex shader has been disposed`, () => {
       expect(vertexShaderThrowIfDisposed).not.toHaveBeenCalled();
     });
@@ -1105,6 +1112,7 @@ describe(`Program`, () => {
       let useProgram: jasmine.Spy;
       let getAttribLocation: jasmine.Spy;
       let getUniformLocation: jasmine.Spy;
+      let render: jasmine.Spy;
       let context: ContextInterface<
         | `createProgram`
         | `attachShader`
@@ -1149,6 +1157,7 @@ describe(`Program`, () => {
         useProgram = jasmine.createSpy(`useProgram`);
         getAttribLocation = jasmine.createSpy(`getAttribLocation`);
         getUniformLocation = jasmine.createSpy(`getUniformLocation`);
+        render = jasmine.createSpy(`render`);
         context = {
           gl: {
             createProgram,
@@ -1164,6 +1173,7 @@ describe(`Program`, () => {
             getUniformLocation,
           },
           timesContextRestored: 7,
+          render,
         };
 
         vertexShaderThrowIfDisposed = jasmine.createSpy(
@@ -1266,6 +1276,10 @@ describe(`Program`, () => {
         expect(getUniformLocation).not.toHaveBeenCalled();
       });
 
+      it(`does not render`, () => {
+        expect(render).not.toHaveBeenCalled();
+      });
+
       it(`does not check whether the vertex shader has been disposed`, () => {
         expect(vertexShaderThrowIfDisposed).not.toHaveBeenCalled();
       });
@@ -1309,6 +1323,7 @@ describe(`Program`, () => {
       let useProgram: jasmine.Spy;
       let getAttribLocation: jasmine.Spy;
       let getUniformLocation: jasmine.Spy;
+      let render: jasmine.Spy;
       let context: ContextInterface<
         | `createProgram`
         | `attachShader`
@@ -1353,6 +1368,7 @@ describe(`Program`, () => {
         useProgram = jasmine.createSpy(`useProgram`);
         getAttribLocation = jasmine.createSpy(`getAttribLocation`);
         getUniformLocation = jasmine.createSpy(`getUniformLocation`);
+        render = jasmine.createSpy(`render`);
         context = {
           gl: {
             createProgram,
@@ -1368,6 +1384,7 @@ describe(`Program`, () => {
             getUniformLocation,
           },
           timesContextRestored: 7,
+          render,
         };
 
         vertexShaderThrowIfDisposed = jasmine.createSpy(
@@ -1470,6 +1487,10 @@ describe(`Program`, () => {
         expect(getUniformLocation).not.toHaveBeenCalled();
       });
 
+      it(`does not render`, () => {
+        expect(render).not.toHaveBeenCalled();
+      });
+
       it(`does not check whether the vertex shader has been disposed`, () => {
         expect(vertexShaderThrowIfDisposed).not.toHaveBeenCalled();
       });
@@ -1513,6 +1534,7 @@ describe(`Program`, () => {
       let useProgram: jasmine.Spy;
       let getAttribLocation: jasmine.Spy;
       let getUniformLocation: jasmine.Spy;
+      let render: jasmine.Spy;
       let context: ContextInterface<
         | `createProgram`
         | `attachShader`
@@ -1559,6 +1581,7 @@ describe(`Program`, () => {
         useProgram = jasmine.createSpy(`useProgram`);
         getAttribLocation = jasmine.createSpy(`getAttribLocation`);
         getUniformLocation = jasmine.createSpy(`getUniformLocation`);
+        render = jasmine.createSpy(`render`);
         context = {
           gl: {
             createProgram,
@@ -1574,6 +1597,7 @@ describe(`Program`, () => {
             getUniformLocation,
           },
           timesContextRestored: 7,
+          render,
         };
 
         vertexShaderThrowIfDisposed = jasmine.createSpy(
@@ -1676,6 +1700,10 @@ describe(`Program`, () => {
         expect(getUniformLocation).not.toHaveBeenCalled();
       });
 
+      it(`does not render`, () => {
+        expect(render).not.toHaveBeenCalled();
+      });
+
       it(`does not check whether the vertex shader has been disposed`, () => {
         expect(vertexShaderThrowIfDisposed).not.toHaveBeenCalled();
       });
@@ -1719,6 +1747,7 @@ describe(`Program`, () => {
       let useProgram: jasmine.Spy;
       let getAttribLocation: jasmine.Spy;
       let getUniformLocation: jasmine.Spy;
+      let render: jasmine.Spy;
       let context: ContextInterface<
         | `createProgram`
         | `attachShader`
@@ -1771,6 +1800,7 @@ describe(`Program`, () => {
         useProgram = jasmine.createSpy(`useProgram`);
         getAttribLocation = jasmine.createSpy(`getAttribLocation`);
         getUniformLocation = jasmine.createSpy(`getUniformLocation`);
+        render = jasmine.createSpy(`render`);
         context = {
           gl: {
             createProgram,
@@ -1786,6 +1816,7 @@ describe(`Program`, () => {
             getUniformLocation,
           },
           timesContextRestored: 7,
+          render,
         };
 
         vertexShaderThrowIfDisposed = jasmine.createSpy(
@@ -1913,6 +1944,10 @@ describe(`Program`, () => {
         expect(getUniformLocation).not.toHaveBeenCalled();
       });
 
+      it(`does not render`, () => {
+        expect(render).not.toHaveBeenCalled();
+      });
+
       it(`does not check whether the vertex shader has been disposed`, () => {
         expect(vertexShaderThrowIfDisposed).not.toHaveBeenCalled();
       });
@@ -1988,6 +2023,7 @@ describe(`Program`, () => {
       let useProgram: jasmine.Spy;
       let getAttribLocation: jasmine.Spy;
       let getUniformLocation: jasmine.Spy;
+      let render: jasmine.Spy;
       let context: ContextInterface<
         | `createProgram`
         | `attachShader`
@@ -2040,6 +2076,7 @@ describe(`Program`, () => {
         useProgram = jasmine.createSpy(`useProgram`);
         getAttribLocation = jasmine.createSpy(`getAttribLocation`);
         getUniformLocation = jasmine.createSpy(`getUniformLocation`);
+        render = jasmine.createSpy(`render`);
         context = {
           gl: {
             createProgram,
@@ -2055,6 +2092,7 @@ describe(`Program`, () => {
             getUniformLocation,
           },
           timesContextRestored: 7,
+          render,
         };
 
         vertexShaderThrowIfDisposed = jasmine.createSpy(
@@ -2209,6 +2247,10 @@ describe(`Program`, () => {
         expect(getUniformLocation).not.toHaveBeenCalled();
       });
 
+      it(`does not render`, () => {
+        expect(render).not.toHaveBeenCalled();
+      });
+
       it(`does not check whether the vertex shader has been disposed`, () => {
         expect(vertexShaderThrowIfDisposed).not.toHaveBeenCalled();
       });
@@ -2298,6 +2340,7 @@ describe(`Program`, () => {
       let useProgram: jasmine.Spy;
       let getAttribLocation: jasmine.Spy;
       let getUniformLocation: jasmine.Spy;
+      let render: jasmine.Spy;
       let context: ContextInterface<
         | `createProgram`
         | `attachShader`
@@ -2560,6 +2603,7 @@ describe(`Program`, () => {
 
             throw new Error(`Unexpected uniform name ${JSON.stringify(name)}`);
           });
+        render = jasmine.createSpy(`render`);
         context = {
           gl: {
             createProgram,
@@ -2575,6 +2619,7 @@ describe(`Program`, () => {
             getUniformLocation,
           },
           timesContextRestored: 7,
+          render,
         };
 
         vertexShaderThrowIfDisposed = jasmine.createSpy(
@@ -3014,6 +3059,10 @@ describe(`Program`, () => {
         expect(getUniformLocation).toHaveBeenCalledTimes(42);
       });
 
+      it(`does not render`, () => {
+        expect(render).not.toHaveBeenCalled();
+      });
+
       it(`does not check whether the vertex shader has been disposed`, () => {
         expect(vertexShaderThrowIfDisposed).not.toHaveBeenCalled();
       });
@@ -3221,6 +3270,7 @@ describe(`Program`, () => {
       let useProgram: jasmine.Spy;
       let getAttribLocation: jasmine.Spy;
       let getUniformLocation: jasmine.Spy;
+      let render: jasmine.Spy;
       let context: ContextInterface<
         | `createProgram`
         | `attachShader`
@@ -3263,6 +3313,7 @@ describe(`Program`, () => {
         useProgram = jasmine.createSpy(`useProgram`);
         getAttribLocation = jasmine.createSpy(`getAttribLocation`);
         getUniformLocation = jasmine.createSpy(`getUniformLocation`);
+        render = jasmine.createSpy(`render`);
         context = {
           gl: {
             createProgram,
@@ -3278,6 +3329,7 @@ describe(`Program`, () => {
             getUniformLocation,
           },
           timesContextRestored: 7,
+          render,
         };
 
         vertexShaderThrowIfDisposed = jasmine.createSpy(
@@ -3528,6 +3580,10 @@ describe(`Program`, () => {
         expect(getUniformLocation).not.toHaveBeenCalled();
       });
 
+      it(`does not render`, () => {
+        expect(render).not.toHaveBeenCalled();
+      });
+
       it(`does not check whether the vertex shader has been disposed`, () => {
         expect(vertexShaderThrowIfDisposed).not.toHaveBeenCalled();
       });
@@ -3583,6 +3639,7 @@ describe(`Program`, () => {
       let useProgram: jasmine.Spy;
       let getAttribLocation: jasmine.Spy;
       let getUniformLocation: jasmine.Spy;
+      let render: jasmine.Spy;
       let context: ContextInterface<
         | `createProgram`
         | `attachShader`
@@ -3625,6 +3682,7 @@ describe(`Program`, () => {
         useProgram = jasmine.createSpy(`useProgram`);
         getAttribLocation = jasmine.createSpy(`getAttribLocation`);
         getUniformLocation = jasmine.createSpy(`getUniformLocation`);
+        render = jasmine.createSpy(`render`);
         context = {
           gl: {
             createProgram,
@@ -3640,6 +3698,7 @@ describe(`Program`, () => {
             getUniformLocation,
           },
           timesContextRestored: 7,
+          render,
         };
 
         vertexShaderThrowIfDisposed = jasmine.createSpy(
@@ -3738,6 +3797,10 @@ describe(`Program`, () => {
 
       it(`does not get any uniform locations`, () => {
         expect(getUniformLocation).not.toHaveBeenCalled();
+      });
+
+      it(`does not render`, () => {
+        expect(render).not.toHaveBeenCalled();
       });
 
       it(`does not check whether the vertex shader has been disposed`, () => {

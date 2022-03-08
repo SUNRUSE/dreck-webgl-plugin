@@ -284,6 +284,7 @@ describe(`Shader`, () => {
     let isContextLost: jasmine.Spy;
     let getShaderInfoLog: jasmine.Spy;
     let deleteShader: jasmine.Spy;
+    let render: jasmine.Spy;
     let getHeaderLines: jasmine.Spy;
     let getDeclarations: jasmine.Spy;
     let getBodyLines: jasmine.Spy;
@@ -322,6 +323,7 @@ describe(`Shader`, () => {
       isContextLost = jasmine.createSpy(`isContextLost`);
       getShaderInfoLog = jasmine.createSpy(`getShaderInfoLog`);
       deleteShader = jasmine.createSpy(`deleteShader`);
+      render = jasmine.createSpy(`render`);
       getHeaderLines = jasmine.createSpy(`getHeaderLines`);
       getDeclarations = jasmine.createSpy(`getDeclarations`);
       getBodyLines = jasmine.createSpy(`getBodyLines`);
@@ -337,6 +339,7 @@ describe(`Shader`, () => {
           deleteShader,
         },
         timesContextRestored: 7,
+        render,
       };
 
       shader = new TestShader(context, Constants.FragmentShader);
@@ -378,6 +381,10 @@ describe(`Shader`, () => {
       expect(deleteShader).not.toHaveBeenCalled();
     });
 
+    it(`does not render`, () => {
+      expect(render).not.toHaveBeenCalled();
+    });
+
     it(`does not get header lines`, () => {
       expect(getHeaderLines).not.toHaveBeenCalled();
     });
@@ -400,6 +407,7 @@ describe(`Shader`, () => {
       let isContextLost: jasmine.Spy;
       let getShaderInfoLog: jasmine.Spy;
       let deleteShader: jasmine.Spy;
+      let render: jasmine.Spy;
       let getHeaderLines: jasmine.Spy;
       let getDeclarations: jasmine.Spy;
       let getBodyLines: jasmine.Spy;
@@ -440,6 +448,7 @@ describe(`Shader`, () => {
         isContextLost = jasmine.createSpy(`isContextLost`);
         getShaderInfoLog = jasmine.createSpy(`getShaderInfoLog`);
         deleteShader = jasmine.createSpy(`deleteShader`);
+        render = jasmine.createSpy(`render`);
         getHeaderLines = jasmine.createSpy(`getHeaderLines`);
         getDeclarations = jasmine.createSpy(`getDeclarations`);
         getBodyLines = jasmine.createSpy(`getBodyLines`);
@@ -455,6 +464,7 @@ describe(`Shader`, () => {
             deleteShader,
           },
           timesContextRestored: 7,
+          render,
         };
 
         shader = new TestShader(context, Constants.FragmentShader);
@@ -502,6 +512,10 @@ describe(`Shader`, () => {
         expect(deleteShader).not.toHaveBeenCalled();
       });
 
+      it(`does not render`, () => {
+        expect(render).not.toHaveBeenCalled();
+      });
+
       it(`does not get header lines`, () => {
         expect(getHeaderLines).not.toHaveBeenCalled();
       });
@@ -527,6 +541,7 @@ describe(`Shader`, () => {
       let isContextLost: jasmine.Spy;
       let getShaderInfoLog: jasmine.Spy;
       let deleteShader: jasmine.Spy;
+      let render: jasmine.Spy;
       let getHeaderLines: jasmine.Spy;
       let getDeclarations: jasmine.Spy;
       let getBodyLines: jasmine.Spy;
@@ -573,6 +588,7 @@ describe(`Shader`, () => {
           .and.returnValue(true);
         getShaderInfoLog = jasmine.createSpy(`getShaderInfoLog`);
         deleteShader = jasmine.createSpy(`deleteShader`);
+        render = jasmine.createSpy(`render`);
         getHeaderLines = jasmine
           .createSpy(`getHeaderLines`)
           .and.returnValue([
@@ -604,6 +620,7 @@ describe(`Shader`, () => {
             deleteShader,
           },
           timesContextRestored: 7,
+          render,
         };
 
         shader = new TestShader(context, Constants.FragmentShader);
@@ -722,6 +739,10 @@ Test Body Line E`
         expect(deleteShader).not.toHaveBeenCalled();
       });
 
+      it(`does not render`, () => {
+        expect(render).not.toHaveBeenCalled();
+      });
+
       it(`compiles the shader after providing source`, () => {
         expect(shaderSource).toHaveBeenCalledBefore(compileShader);
       });
@@ -759,6 +780,7 @@ Test Body Line E`
       let isContextLost: jasmine.Spy;
       let getShaderInfoLog: jasmine.Spy;
       let deleteShader: jasmine.Spy;
+      let render: jasmine.Spy;
       let getHeaderLines: jasmine.Spy;
       let getDeclarations: jasmine.Spy;
       let getBodyLines: jasmine.Spy;
@@ -807,6 +829,7 @@ Test Body Line E`
           .createSpy(`getShaderInfoLog`)
           .and.returnValue(`Test Shader Info Log`);
         deleteShader = jasmine.createSpy(`deleteShader`);
+        render = jasmine.createSpy(`render`);
         getHeaderLines = jasmine
           .createSpy(`getHeaderLines`)
           .and.returnValue([
@@ -838,6 +861,7 @@ Test Body Line E`
             deleteShader,
           },
           timesContextRestored: 7,
+          render,
         };
 
         shader = new TestShader(context, Constants.FragmentShader);
@@ -965,6 +989,10 @@ Test Body Line E`
         expect(deleteShader).toHaveBeenCalledWith({ test: `shader` });
       });
 
+      it(`does not render`, () => {
+        expect(render).not.toHaveBeenCalled();
+      });
+
       it(`compiles the shader after providing source`, () => {
         expect(shaderSource).toHaveBeenCalledBefore(compileShader);
       });
@@ -1012,6 +1040,7 @@ Test Body Line E`
       let isContextLost: jasmine.Spy;
       let getShaderInfoLog: jasmine.Spy;
       let deleteShader: jasmine.Spy;
+      let render: jasmine.Spy;
       let getHeaderLines: jasmine.Spy;
       let getDeclarations: jasmine.Spy;
       let getBodyLines: jasmine.Spy;
@@ -1056,6 +1085,7 @@ Test Body Line E`
         isContextLost = jasmine.createSpy(`isContextLost`);
         getShaderInfoLog = jasmine.createSpy(`getShaderInfoLog`);
         deleteShader = jasmine.createSpy(`deleteShader`);
+        render = jasmine.createSpy(`render`);
         getHeaderLines = jasmine
           .createSpy(`getHeaderLines`)
           .and.returnValue([
@@ -1087,6 +1117,7 @@ Test Body Line E`
             deleteShader,
           },
           timesContextRestored: 7,
+          render,
         };
 
         shader = new TestShader(context, Constants.FragmentShader);
@@ -1213,6 +1244,10 @@ Test Body Line E`
         expect(deleteShader).not.toHaveBeenCalled();
       });
 
+      it(`does not render`, () => {
+        expect(render).not.toHaveBeenCalled();
+      });
+
       it(`gets one set of header lines`, () => {
         expect(getHeaderLines).toHaveBeenCalledTimes(1);
       });
@@ -1240,6 +1275,7 @@ Test Body Line E`
       let isContextLost: jasmine.Spy;
       let getShaderInfoLog: jasmine.Spy;
       let deleteShader: jasmine.Spy;
+      let render: jasmine.Spy;
       let getHeaderLines: jasmine.Spy;
       let getDeclarations: jasmine.Spy;
       let getBodyLines: jasmine.Spy;
@@ -1278,6 +1314,7 @@ Test Body Line E`
         isContextLost = jasmine.createSpy(`isContextLost`);
         getShaderInfoLog = jasmine.createSpy(`getShaderInfoLog`);
         deleteShader = jasmine.createSpy(`deleteShader`);
+        render = jasmine.createSpy(`render`);
         getHeaderLines = jasmine.createSpy(`getHeaderLines`);
         getDeclarations = jasmine.createSpy(`getDeclarations`);
         getBodyLines = jasmine.createSpy(`getBodyLines`);
@@ -1293,6 +1330,7 @@ Test Body Line E`
             deleteShader,
           },
           timesContextRestored: 7,
+          render,
         };
 
         shader = new TestShader(context, Constants.FragmentShader);
@@ -1340,6 +1378,10 @@ Test Body Line E`
         expect(deleteShader).toHaveBeenCalledWith({ test: `shader` });
       });
 
+      it(`does not render`, () => {
+        expect(render).not.toHaveBeenCalled();
+      });
+
       it(`does not get header lines`, () => {
         expect(getHeaderLines).not.toHaveBeenCalled();
       });
@@ -1361,6 +1403,7 @@ Test Body Line E`
       let isContextLost: jasmine.Spy;
       let getShaderInfoLog: jasmine.Spy;
       let deleteShader: jasmine.Spy;
+      let render: jasmine.Spy;
       let getHeaderLines: jasmine.Spy;
       let getDeclarations: jasmine.Spy;
       let getBodyLines: jasmine.Spy;
@@ -1399,6 +1442,7 @@ Test Body Line E`
         isContextLost = jasmine.createSpy(`isContextLost`);
         getShaderInfoLog = jasmine.createSpy(`getShaderInfoLog`);
         deleteShader = jasmine.createSpy(`deleteShader`);
+        render = jasmine.createSpy(`render`);
         getHeaderLines = jasmine.createSpy(`getHeaderLines`);
         getDeclarations = jasmine.createSpy(`getDeclarations`);
         getBodyLines = jasmine.createSpy(`getBodyLines`);
@@ -1414,6 +1458,7 @@ Test Body Line E`
             deleteShader,
           },
           timesContextRestored: 7,
+          render,
         };
 
         shader = new TestShader(context, Constants.FragmentShader);
@@ -1455,6 +1500,10 @@ Test Body Line E`
 
       it(`does not delete any shaders`, () => {
         expect(deleteShader).not.toHaveBeenCalled();
+      });
+
+      it(`does not render`, () => {
+        expect(render).not.toHaveBeenCalled();
       });
 
       it(`does not get header lines`, () => {

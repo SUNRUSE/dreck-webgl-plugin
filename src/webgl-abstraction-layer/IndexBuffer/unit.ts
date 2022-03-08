@@ -53,6 +53,7 @@ describe(`IndexBuffer`, () => {
         let deleteBuffer: jasmine.Spy;
         let drawElements: jasmine.Spy;
         let isContextLost: jasmine.Spy;
+        let render: jasmine.Spy;
 
         class TestIndexBuffer extends IndexBuffer {
           generateIndices(): readonly number[] {
@@ -79,6 +80,7 @@ describe(`IndexBuffer`, () => {
           deleteBuffer = jasmine.createSpy(`deleteBuffer`);
           drawElements = jasmine.createSpy(`drawElements`);
           isContextLost = jasmine.createSpy(`isContextLost`);
+          render = jasmine.createSpy(`render`);
 
           context = {
             gl: {
@@ -90,6 +92,7 @@ describe(`IndexBuffer`, () => {
               isContextLost,
             },
             timesContextRestored: 7,
+            render,
           };
 
           indexBuffer = new TestIndexBuffer(context, mode.mode);
@@ -134,6 +137,10 @@ describe(`IndexBuffer`, () => {
         it(`does not check for context loss`, () => {
           expect(isContextLost).not.toHaveBeenCalled();
         });
+
+        it(`does not render`, () => {
+          expect(render).not.toHaveBeenCalled();
+        });
       });
 
       describe(`on generating data`, () => {
@@ -145,6 +152,7 @@ describe(`IndexBuffer`, () => {
           let deleteBuffer: jasmine.Spy;
           let drawElements: jasmine.Spy;
           let isContextLost: jasmine.Spy;
+          let render: jasmine.Spy;
 
           class TestIndexBuffer extends IndexBuffer {
             generateIndices(): readonly number[] {
@@ -181,6 +189,7 @@ describe(`IndexBuffer`, () => {
             deleteBuffer = jasmine.createSpy(`deleteBuffer`);
             drawElements = jasmine.createSpy(`drawElements`);
             isContextLost = jasmine.createSpy(`isContextLost`);
+            render = jasmine.createSpy(`render`);
 
             context = {
               gl: {
@@ -192,6 +201,7 @@ describe(`IndexBuffer`, () => {
                 isContextLost,
               },
               timesContextRestored: 7,
+              render,
             };
 
             indexBuffer = new TestIndexBuffer(context, mode.mode);
@@ -239,6 +249,10 @@ describe(`IndexBuffer`, () => {
             expect(isContextLost).not.toHaveBeenCalled();
           });
 
+          it(`does not render`, () => {
+            expect(render).not.toHaveBeenCalled();
+          });
+
           it(`returns the expected data`, () => {
             expect(result).toEqual({
               bufferContent: Uint8Array.from([]),
@@ -258,6 +272,7 @@ describe(`IndexBuffer`, () => {
           let deleteBuffer: jasmine.Spy;
           let drawElements: jasmine.Spy;
           let isContextLost: jasmine.Spy;
+          let render: jasmine.Spy;
 
           class TestIndexBuffer extends IndexBuffer {
             generateIndices(): readonly number[] {
@@ -294,6 +309,7 @@ describe(`IndexBuffer`, () => {
             deleteBuffer = jasmine.createSpy(`deleteBuffer`);
             drawElements = jasmine.createSpy(`drawElements`);
             isContextLost = jasmine.createSpy(`isContextLost`);
+            render = jasmine.createSpy(`render`);
 
             context = {
               gl: {
@@ -305,6 +321,7 @@ describe(`IndexBuffer`, () => {
                 isContextLost,
               },
               timesContextRestored: 7,
+              render,
             };
 
             indexBuffer = new TestIndexBuffer(context, mode.mode);
@@ -352,6 +369,10 @@ describe(`IndexBuffer`, () => {
             expect(isContextLost).not.toHaveBeenCalled();
           });
 
+          it(`does not render`, () => {
+            expect(render).not.toHaveBeenCalled();
+          });
+
           it(`returns the expected data`, () => {
             expect(result).toEqual({
               bufferContent: Uint8Array.from([128, 0, 64, 255, 74]),
@@ -371,6 +392,7 @@ describe(`IndexBuffer`, () => {
           let deleteBuffer: jasmine.Spy;
           let drawElements: jasmine.Spy;
           let isContextLost: jasmine.Spy;
+          let render: jasmine.Spy;
 
           class TestIndexBuffer extends IndexBuffer {
             generateIndices(): readonly number[] {
@@ -407,6 +429,7 @@ describe(`IndexBuffer`, () => {
             deleteBuffer = jasmine.createSpy(`deleteBuffer`);
             drawElements = jasmine.createSpy(`drawElements`);
             isContextLost = jasmine.createSpy(`isContextLost`);
+            render = jasmine.createSpy(`render`);
 
             context = {
               gl: {
@@ -418,6 +441,7 @@ describe(`IndexBuffer`, () => {
                 isContextLost,
               },
               timesContextRestored: 7,
+              render,
             };
 
             indexBuffer = new TestIndexBuffer(context, mode.mode);
@@ -465,6 +489,10 @@ describe(`IndexBuffer`, () => {
             expect(isContextLost).not.toHaveBeenCalled();
           });
 
+          it(`does not render`, () => {
+            expect(render).not.toHaveBeenCalled();
+          });
+
           it(`returns the expected data`, () => {
             expect(result).toEqual({
               bufferContent: Uint16Array.from([128, 0, 64, 256, 74]),
@@ -484,6 +512,7 @@ describe(`IndexBuffer`, () => {
           let deleteBuffer: jasmine.Spy;
           let drawElements: jasmine.Spy;
           let isContextLost: jasmine.Spy;
+          let render: jasmine.Spy;
 
           class TestIndexBuffer extends IndexBuffer {
             generateIndices(): readonly number[] {
@@ -514,6 +543,7 @@ describe(`IndexBuffer`, () => {
             deleteBuffer = jasmine.createSpy(`deleteBuffer`);
             drawElements = jasmine.createSpy(`drawElements`);
             isContextLost = jasmine.createSpy(`isContextLost`);
+            render = jasmine.createSpy(`render`);
 
             context = {
               gl: {
@@ -525,6 +555,7 @@ describe(`IndexBuffer`, () => {
                 isContextLost,
               },
               timesContextRestored: 7,
+              render,
             };
 
             indexBuffer = new TestIndexBuffer(context, mode.mode);
@@ -577,6 +608,10 @@ describe(`IndexBuffer`, () => {
             expect(isContextLost).not.toHaveBeenCalled();
           });
 
+          it(`does not render`, () => {
+            expect(render).not.toHaveBeenCalled();
+          });
+
           it(`throws the expected error`, () => {
             expect(error).toEqual(new Error(`Indices cannot be NaN.`));
           });
@@ -590,6 +625,7 @@ describe(`IndexBuffer`, () => {
           let deleteBuffer: jasmine.Spy;
           let drawElements: jasmine.Spy;
           let isContextLost: jasmine.Spy;
+          let render: jasmine.Spy;
 
           class TestIndexBuffer extends IndexBuffer {
             generateIndices(): readonly number[] {
@@ -620,6 +656,7 @@ describe(`IndexBuffer`, () => {
             deleteBuffer = jasmine.createSpy(`deleteBuffer`);
             drawElements = jasmine.createSpy(`drawElements`);
             isContextLost = jasmine.createSpy(`isContextLost`);
+            render = jasmine.createSpy(`render`);
 
             context = {
               gl: {
@@ -631,6 +668,7 @@ describe(`IndexBuffer`, () => {
                 isContextLost,
               },
               timesContextRestored: 7,
+              render,
             };
 
             indexBuffer = new TestIndexBuffer(context, mode.mode);
@@ -683,6 +721,10 @@ describe(`IndexBuffer`, () => {
             expect(isContextLost).not.toHaveBeenCalled();
           });
 
+          it(`does not render`, () => {
+            expect(render).not.toHaveBeenCalled();
+          });
+
           it(`throws the expected error`, () => {
             expect(error).toEqual(new Error(`Indices must be integers.`));
           });
@@ -696,6 +738,7 @@ describe(`IndexBuffer`, () => {
           let deleteBuffer: jasmine.Spy;
           let drawElements: jasmine.Spy;
           let isContextLost: jasmine.Spy;
+          let render: jasmine.Spy;
 
           class TestIndexBuffer extends IndexBuffer {
             generateIndices(): readonly number[] {
@@ -726,6 +769,7 @@ describe(`IndexBuffer`, () => {
             deleteBuffer = jasmine.createSpy(`deleteBuffer`);
             drawElements = jasmine.createSpy(`drawElements`);
             isContextLost = jasmine.createSpy(`isContextLost`);
+            render = jasmine.createSpy(`render`);
 
             context = {
               gl: {
@@ -737,6 +781,7 @@ describe(`IndexBuffer`, () => {
                 isContextLost,
               },
               timesContextRestored: 7,
+              render,
             };
 
             indexBuffer = new TestIndexBuffer(context, mode.mode);
@@ -789,6 +834,10 @@ describe(`IndexBuffer`, () => {
             expect(isContextLost).not.toHaveBeenCalled();
           });
 
+          it(`does not render`, () => {
+            expect(render).not.toHaveBeenCalled();
+          });
+
           it(`throws the expected error`, () => {
             expect(error).toEqual(new Error(`Indices must be finite.`));
           });
@@ -802,6 +851,7 @@ describe(`IndexBuffer`, () => {
           let deleteBuffer: jasmine.Spy;
           let drawElements: jasmine.Spy;
           let isContextLost: jasmine.Spy;
+          let render: jasmine.Spy;
 
           class TestIndexBuffer extends IndexBuffer {
             generateIndices(): readonly number[] {
@@ -832,6 +882,7 @@ describe(`IndexBuffer`, () => {
             deleteBuffer = jasmine.createSpy(`deleteBuffer`);
             drawElements = jasmine.createSpy(`drawElements`);
             isContextLost = jasmine.createSpy(`isContextLost`);
+            render = jasmine.createSpy(`render`);
 
             context = {
               gl: {
@@ -843,6 +894,7 @@ describe(`IndexBuffer`, () => {
                 isContextLost,
               },
               timesContextRestored: 7,
+              render,
             };
 
             indexBuffer = new TestIndexBuffer(context, mode.mode);
@@ -895,6 +947,10 @@ describe(`IndexBuffer`, () => {
             expect(isContextLost).not.toHaveBeenCalled();
           });
 
+          it(`does not render`, () => {
+            expect(render).not.toHaveBeenCalled();
+          });
+
           it(`throws the expected error`, () => {
             expect(error).toEqual(new Error(`Indices must be finite.`));
           });
@@ -908,6 +964,7 @@ describe(`IndexBuffer`, () => {
           let deleteBuffer: jasmine.Spy;
           let drawElements: jasmine.Spy;
           let isContextLost: jasmine.Spy;
+          let render: jasmine.Spy;
 
           class TestIndexBuffer extends IndexBuffer {
             generateIndices(): readonly number[] {
@@ -944,6 +1001,7 @@ describe(`IndexBuffer`, () => {
             deleteBuffer = jasmine.createSpy(`deleteBuffer`);
             drawElements = jasmine.createSpy(`drawElements`);
             isContextLost = jasmine.createSpy(`isContextLost`);
+            render = jasmine.createSpy(`render`);
 
             context = {
               gl: {
@@ -955,6 +1013,7 @@ describe(`IndexBuffer`, () => {
                 isContextLost,
               },
               timesContextRestored: 7,
+              render,
             };
 
             indexBuffer = new TestIndexBuffer(context, mode.mode);
@@ -1002,6 +1061,10 @@ describe(`IndexBuffer`, () => {
             expect(isContextLost).not.toHaveBeenCalled();
           });
 
+          it(`does not render`, () => {
+            expect(render).not.toHaveBeenCalled();
+          });
+
           it(`returns the expected data`, () => {
             expect(result).toEqual({
               bufferContent: Uint16Array.from([128, 0, 64, 65535, 74]),
@@ -1021,6 +1084,7 @@ describe(`IndexBuffer`, () => {
           let deleteBuffer: jasmine.Spy;
           let drawElements: jasmine.Spy;
           let isContextLost: jasmine.Spy;
+          let render: jasmine.Spy;
 
           class TestIndexBuffer extends IndexBuffer {
             generateIndices(): readonly number[] {
@@ -1051,6 +1115,7 @@ describe(`IndexBuffer`, () => {
             deleteBuffer = jasmine.createSpy(`deleteBuffer`);
             drawElements = jasmine.createSpy(`drawElements`);
             isContextLost = jasmine.createSpy(`isContextLost`);
+            render = jasmine.createSpy(`render`);
 
             context = {
               gl: {
@@ -1062,6 +1127,7 @@ describe(`IndexBuffer`, () => {
                 isContextLost,
               },
               timesContextRestored: 7,
+              render,
             };
 
             indexBuffer = new TestIndexBuffer(context, mode.mode);
@@ -1114,6 +1180,10 @@ describe(`IndexBuffer`, () => {
             expect(isContextLost).not.toHaveBeenCalled();
           });
 
+          it(`does not render`, () => {
+            expect(render).not.toHaveBeenCalled();
+          });
+
           it(`throws the expected error`, () => {
             expect(error).toEqual(
               new Error(`Indices cannot be greater than 65535.`)
@@ -1129,6 +1199,7 @@ describe(`IndexBuffer`, () => {
           let deleteBuffer: jasmine.Spy;
           let drawElements: jasmine.Spy;
           let isContextLost: jasmine.Spy;
+          let render: jasmine.Spy;
 
           class TestIndexBuffer extends IndexBuffer {
             generateIndices(): readonly number[] {
@@ -1159,6 +1230,7 @@ describe(`IndexBuffer`, () => {
             deleteBuffer = jasmine.createSpy(`deleteBuffer`);
             drawElements = jasmine.createSpy(`drawElements`);
             isContextLost = jasmine.createSpy(`isContextLost`);
+            render = jasmine.createSpy(`render`);
 
             context = {
               gl: {
@@ -1170,6 +1242,7 @@ describe(`IndexBuffer`, () => {
                 isContextLost,
               },
               timesContextRestored: 7,
+              render,
             };
 
             indexBuffer = new TestIndexBuffer(context, mode.mode);
@@ -1222,6 +1295,10 @@ describe(`IndexBuffer`, () => {
             expect(isContextLost).not.toHaveBeenCalled();
           });
 
+          it(`does not render`, () => {
+            expect(render).not.toHaveBeenCalled();
+          });
+
           it(`throws the expected error`, () => {
             expect(error).toEqual(
               new Error(`Indices cannot be greater than 65535.`)
@@ -1237,6 +1314,7 @@ describe(`IndexBuffer`, () => {
           let deleteBuffer: jasmine.Spy;
           let drawElements: jasmine.Spy;
           let isContextLost: jasmine.Spy;
+          let render: jasmine.Spy;
 
           class TestIndexBuffer extends IndexBuffer {
             generateIndices(): readonly number[] {
@@ -1267,6 +1345,7 @@ describe(`IndexBuffer`, () => {
             deleteBuffer = jasmine.createSpy(`deleteBuffer`);
             drawElements = jasmine.createSpy(`drawElements`);
             isContextLost = jasmine.createSpy(`isContextLost`);
+            render = jasmine.createSpy(`render`);
 
             context = {
               gl: {
@@ -1278,6 +1357,7 @@ describe(`IndexBuffer`, () => {
                 isContextLost,
               },
               timesContextRestored: 7,
+              render,
             };
 
             indexBuffer = new TestIndexBuffer(context, mode.mode);
@@ -1330,6 +1410,10 @@ describe(`IndexBuffer`, () => {
             expect(isContextLost).not.toHaveBeenCalled();
           });
 
+          it(`does not render`, () => {
+            expect(render).not.toHaveBeenCalled();
+          });
+
           it(`throws the expected error`, () => {
             expect(error).toEqual(new Error(`Indices cannot be less than 0.`));
           });
@@ -1343,6 +1427,7 @@ describe(`IndexBuffer`, () => {
           let deleteBuffer: jasmine.Spy;
           let drawElements: jasmine.Spy;
           let isContextLost: jasmine.Spy;
+          let render: jasmine.Spy;
 
           class TestIndexBuffer extends IndexBuffer {
             generateIndices(): readonly number[] {
@@ -1373,6 +1458,7 @@ describe(`IndexBuffer`, () => {
             deleteBuffer = jasmine.createSpy(`deleteBuffer`);
             drawElements = jasmine.createSpy(`drawElements`);
             isContextLost = jasmine.createSpy(`isContextLost`);
+            render = jasmine.createSpy(`render`);
 
             context = {
               gl: {
@@ -1384,6 +1470,7 @@ describe(`IndexBuffer`, () => {
                 isContextLost,
               },
               timesContextRestored: 7,
+              render,
             };
 
             indexBuffer = new TestIndexBuffer(context, mode.mode);
@@ -1436,6 +1523,10 @@ describe(`IndexBuffer`, () => {
             expect(isContextLost).not.toHaveBeenCalled();
           });
 
+          it(`does not render`, () => {
+            expect(render).not.toHaveBeenCalled();
+          });
+
           it(`throws the expected error`, () => {
             expect(error).toEqual(new Error(`Indices cannot be less than 0.`));
           });
@@ -1451,6 +1542,7 @@ describe(`IndexBuffer`, () => {
           let deleteBuffer: jasmine.Spy;
           let drawElements: jasmine.Spy;
           let isContextLost: jasmine.Spy;
+          let render: jasmine.Spy;
 
           class TestIndexBuffer extends IndexBuffer {
             generateIndices(): readonly number[] {
@@ -1483,6 +1575,7 @@ describe(`IndexBuffer`, () => {
             isContextLost = jasmine
               .createSpy(`isContextLost`)
               .and.returnValue(false);
+            render = jasmine.createSpy(`render`);
 
             context = {
               gl: {
@@ -1494,6 +1587,7 @@ describe(`IndexBuffer`, () => {
                 isContextLost,
               },
               timesContextRestored: 7,
+              render,
             };
 
             indexBuffer = new TestIndexBuffer(context, mode.mode);
@@ -1540,6 +1634,10 @@ describe(`IndexBuffer`, () => {
           it(`checks for context loss once`, () => {
             expect(isContextLost).toHaveBeenCalledTimes(1);
           });
+
+          it(`does not render`, () => {
+            expect(render).not.toHaveBeenCalled();
+          });
         });
 
         describe(`a buffer of 8-bit indices`, () => {
@@ -1550,6 +1648,7 @@ describe(`IndexBuffer`, () => {
           let deleteBuffer: jasmine.Spy;
           let drawElements: jasmine.Spy;
           let isContextLost: jasmine.Spy;
+          let render: jasmine.Spy;
 
           class TestIndexBuffer extends IndexBuffer {
             generateIndices(): readonly number[] {
@@ -1582,6 +1681,7 @@ describe(`IndexBuffer`, () => {
             isContextLost = jasmine
               .createSpy(`isContextLost`)
               .and.returnValue(false);
+            render = jasmine.createSpy(`render`);
 
             context = {
               gl: {
@@ -1593,6 +1693,7 @@ describe(`IndexBuffer`, () => {
                 isContextLost,
               },
               timesContextRestored: 7,
+              render,
             };
 
             indexBuffer = new TestIndexBuffer(context, mode.mode);
@@ -1605,6 +1706,7 @@ describe(`IndexBuffer`, () => {
             bufferData.calls.reset();
             deleteBuffer.calls.reset();
             isContextLost.calls.reset();
+            render.calls.reset();
 
             indexBuffer.draw();
           });
@@ -1664,6 +1766,10 @@ describe(`IndexBuffer`, () => {
           it(`does not check for context loss`, () => {
             expect(isContextLost).not.toHaveBeenCalled();
           });
+
+          it(`does not render`, () => {
+            expect(render).not.toHaveBeenCalled();
+          });
         });
 
         describe(`a buffer of 16-bit indices`, () => {
@@ -1674,6 +1780,7 @@ describe(`IndexBuffer`, () => {
           let deleteBuffer: jasmine.Spy;
           let drawElements: jasmine.Spy;
           let isContextLost: jasmine.Spy;
+          let render: jasmine.Spy;
 
           class TestIndexBuffer extends IndexBuffer {
             generateIndices(): readonly number[] {
@@ -1706,6 +1813,7 @@ describe(`IndexBuffer`, () => {
             isContextLost = jasmine
               .createSpy(`isContextLost`)
               .and.returnValue(false);
+            render = jasmine.createSpy(`render`);
 
             context = {
               gl: {
@@ -1717,6 +1825,7 @@ describe(`IndexBuffer`, () => {
                 isContextLost,
               },
               timesContextRestored: 7,
+              render,
             };
 
             indexBuffer = new TestIndexBuffer(context, mode.mode);
@@ -1729,6 +1838,7 @@ describe(`IndexBuffer`, () => {
             bufferData.calls.reset();
             deleteBuffer.calls.reset();
             isContextLost.calls.reset();
+            render.calls.reset();
 
             indexBuffer.draw();
           });
@@ -1787,6 +1897,10 @@ describe(`IndexBuffer`, () => {
 
           it(`does not check for context loss`, () => {
             expect(isContextLost).not.toHaveBeenCalled();
+          });
+
+          it(`does not render`, () => {
+            expect(render).not.toHaveBeenCalled();
           });
         });
       });
