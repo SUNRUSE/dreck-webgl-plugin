@@ -27,6 +27,7 @@ export { PackedAttributeDefinitionSet } from "./webgl-abstraction-layer/PackedAt
 export { Program } from "./webgl-abstraction-layer/Program";
 export { Resource } from "./webgl-abstraction-layer/Resource";
 export { ResourceInterface } from "./webgl-abstraction-layer/ResourceInterface";
+export { runRenderLoop } from "./webgl-abstraction-layer/runRenderLoop";
 export { S16 } from "./webgl-abstraction-layer/S16";
 export { S8 } from "./webgl-abstraction-layer/S8";
 export { sampleBooleanAnimation } from "./animation/sampleBooleanAnimation";
