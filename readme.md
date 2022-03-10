@@ -4,9 +4,9 @@ A collection of bits and bobs you can use to make your own browser-based 3D appl
 
 ## Features
 
-- [Animation](./src/animation/readme.md)
-- [Math](./src/math/readme.md)
-- [WebGL abstraction layer](./src/webgl-abstraction-layer/readme.md)
+- [Animation](./animation/readme.md)
+- [Math](./math/readme.md)
+- [WebGL abstraction layer](./webgl-abstraction-layer/readme.md)
 
 ## Setup
 
