@@ -43,6 +43,7 @@ export { U16 } from "./webgl-abstraction-layer/U16";
 export { U8 } from "./webgl-abstraction-layer/U8";
 export { UniformDefinition } from "./webgl-abstraction-layer/UniformDefinition";
 export { UniformDefinitionSet } from "./webgl-abstraction-layer/UniformDefinitionSet";
+export { UniformValueSet } from "./webgl-abstraction-layer/UniformValueSet";
 export { VaryingDefinition } from "./webgl-abstraction-layer/VaryingDefinition";
 export { VaryingDefinitionSet } from "./webgl-abstraction-layer/VaryingDefinitionSet";
 export { Vec2 } from "./math/Vec2";
