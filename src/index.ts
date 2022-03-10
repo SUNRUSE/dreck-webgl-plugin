@@ -12,6 +12,7 @@ export { Buffer } from "./webgl-abstraction-layer/Buffer";
 export { calculateTransform } from "./math/calculateTransform";
 export { Constants } from "./webgl-abstraction-layer/Constants";
 export { ContextInterface } from "./webgl-abstraction-layer/ContextInterface";
+export { createCanvas } from "./webgl-abstraction-layer/createCanvas";
 export { createContext } from "./webgl-abstraction-layer/createContext";
 export { F32 } from "./webgl-abstraction-layer/F32";
 export { Float } from "./math/Float";
