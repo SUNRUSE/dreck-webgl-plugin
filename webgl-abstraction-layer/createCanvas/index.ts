@@ -9,8 +9,8 @@ export function createCanvas(parent: Element): HTMLCanvasElement {
   canvas.style.position = `absolute`;
   canvas.style.left = `0`;
   canvas.style.top = `0`;
-  canvas.style.right = `0`;
-  canvas.style.bottom = `0`;
+  canvas.style.width = `100%`;
+  canvas.style.height = `100%`;
   canvas.style.touchAction = `none`;
 
   parent.appendChild(canvas);
