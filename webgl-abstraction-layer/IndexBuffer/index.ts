@@ -6,7 +6,7 @@ import { Constants } from "../Constants";
  * A buffer of element indices.
  */
 export abstract class IndexBuffer extends Buffer<
-  `drawElements`,
+  never,
   {
     /**
      * The number of primitives.
@@ -22,7 +22,6 @@ export abstract class IndexBuffer extends Buffer<
   /**
    * Creates a new buffer of element indices.
    * @param context The context under which the buffer will be created.
-   * @param mode The mode which should be used to render elements from this buffer.
    */
   constructor(
     context: ContextInterface<
@@ -31,16 +30,7 @@ export abstract class IndexBuffer extends Buffer<
       | `bufferData`
       | `deleteBuffer`
       | `isContextLost`
-      | `drawElements`
-    >,
-    public readonly mode:
-      | Constants.Points
-      | Constants.LineStrip
-      | Constants.LineLoop
-      | Constants.Lines
-      | Constants.TriangleStrip
-      | Constants.TriangleFan
-      | Constants.Triangles
+    >
   ) {
     super(context, Constants.ElementArrayBuffer);
   }
@@ -88,21 +78,4 @@ export abstract class IndexBuffer extends Buffer<
    * @returns The indices which are to be included in the buffer.  All must be integers between 0 and 65535, inclusive.  Cannot be empty.
    */
   abstract generateIndices(): ReadonlyArray<number>;
-
-  /**
-   * Binds this buffer and draws its contained primitives.
-   */
-  draw(): void {
-    const instance = this.getInstance();
-
-    if (instance !== null) {
-      this.context.gl.bindBuffer(Constants.ElementArrayBuffer, instance.buffer);
-      this.context.gl.drawElements(
-        this.mode,
-        instance.data.count,
-        instance.data.type,
-        0
-      );
-    }
-  }
 }

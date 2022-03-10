@@ -25,6 +25,7 @@ export abstract class VertexBuffer<
   /**
    * Creates a new buffer of vertex attributes.
    * @param context The context under which the buffer will be created.
+   * @param mode The mode which should be used to render elements from this buffer.
    * @param packedAttributeDefinitionSet The packed attributes which are stored for each vertex.
    */
   constructor(
@@ -35,6 +36,14 @@ export abstract class VertexBuffer<
       | `deleteBuffer`
       | `isContextLost`
     >,
+    public readonly mode:
+      | Constants.Points
+      | Constants.LineStrip
+      | Constants.LineLoop
+      | Constants.Lines
+      | Constants.TriangleStrip
+      | Constants.TriangleFan
+      | Constants.Triangles,
     public readonly packedAttributeDefinitionSet: PackedAttributeDefinitionSet<TAttributeDefinitionSet>
   ) {
     super(context, Constants.ArrayBuffer);
