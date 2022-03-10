@@ -5,19 +5,7 @@ import type { VaryingDefinitionSet } from "../VaryingDefinitionSet";
 import type { ContextInterface } from "../ContextInterface";
 import { Constants } from "../Constants";
 import type { ResourceInterface } from "../ResourceInterface";
-
-type Instance<
-  TAttributeDefinitionSet extends AttributeDefinitionSet,
-  TUniformDefinitionSet extends UniformDefinitionSet
-> = {
-  readonly program: WebGLProgram;
-  readonly attributeLocations: {
-    readonly [TKey in keyof TAttributeDefinitionSet]: number;
-  };
-  readonly uniformLocations: {
-    readonly [TKey in keyof TUniformDefinitionSet]: null | WebGLUniformLocation;
-  };
-};
+import type { ProgramInstance } from "../ProgramInstance";
 
 /**
  * A WebGL program.
@@ -30,7 +18,7 @@ export class Program<
   TUniformDefinitionSet extends UniformDefinitionSet,
   TVaryingDefinitionSet extends VaryingDefinitionSet
 > extends Resource<
-  null | Instance<TAttributeDefinitionSet, TUniformDefinitionSet>,
+  null | ProgramInstance<TAttributeDefinitionSet, TUniformDefinitionSet>,
   | `createProgram`
   | `attachShader`
   | `linkProgram`
@@ -152,7 +140,10 @@ export class Program<
   }
 
   deleteInstance(
-    instance: null | Instance<TAttributeDefinitionSet, TUniformDefinitionSet>
+    instance: null | ProgramInstance<
+      TAttributeDefinitionSet,
+      TUniformDefinitionSet
+    >
   ): void {
     if (instance !== null) {
       const fragmentShader = this.fragmentShader.getInstance();

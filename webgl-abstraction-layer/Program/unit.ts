@@ -1,4 +1,10 @@
-import { Constants, ContextInterface, ResourceInterface, Program } from "../..";
+import {
+  Constants,
+  ContextInterface,
+  ResourceInterface,
+  Program,
+  ProgramInstance,
+} from "../..";
 
 describe(`Program`, () => {
   type TestVaryingDefinitionSet = {
@@ -1143,7 +1149,10 @@ describe(`Program`, () => {
         TestVaryingDefinitionSet
       >;
 
-      let result: unknown;
+      let result: null | ProgramInstance<
+        TestAttributeDefinitionSet,
+        TestUniformDefinitionSet
+      >;
 
       beforeAll(() => {
         createProgram = jasmine.createSpy(`createProgram`);
@@ -1354,7 +1363,10 @@ describe(`Program`, () => {
         TestVaryingDefinitionSet
       >;
 
-      let result: unknown;
+      let result: null | ProgramInstance<
+        TestAttributeDefinitionSet,
+        TestUniformDefinitionSet
+      >;
 
       beforeAll(() => {
         createProgram = jasmine.createSpy(`createProgram`);
@@ -1565,7 +1577,10 @@ describe(`Program`, () => {
         TestVaryingDefinitionSet
       >;
 
-      let result: unknown;
+      let result: null | ProgramInstance<
+        TestAttributeDefinitionSet,
+        TestUniformDefinitionSet
+      >;
 
       beforeAll(() => {
         createProgram = jasmine
@@ -1778,7 +1793,10 @@ describe(`Program`, () => {
         TestVaryingDefinitionSet
       >;
 
-      let result: unknown;
+      let result: null | ProgramInstance<
+        TestAttributeDefinitionSet,
+        TestUniformDefinitionSet
+      >;
 
       beforeAll(() => {
         createProgram = jasmine
@@ -2371,7 +2389,10 @@ describe(`Program`, () => {
         TestVaryingDefinitionSet
       >;
 
-      let result: unknown;
+      let result: null | ProgramInstance<
+        TestAttributeDefinitionSet,
+        TestUniformDefinitionSet
+      >;
 
       beforeAll(() => {
         createProgram = jasmine

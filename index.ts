@@ -26,6 +26,7 @@ export { Mat3 } from "./math/Mat3";
 export { Mat4 } from "./math/Mat4";
 export { PackedAttributeDefinitionSet } from "./webgl-abstraction-layer/PackedAttributeDefinitionSet";
 export { Program } from "./webgl-abstraction-layer/Program";
+export { ProgramInstance } from "./webgl-abstraction-layer/ProgramInstance";
 export { Resource } from "./webgl-abstraction-layer/Resource";
 export { ResourceInterface } from "./webgl-abstraction-layer/ResourceInterface";
 export { runRenderLoop } from "./webgl-abstraction-layer/runRenderLoop";
