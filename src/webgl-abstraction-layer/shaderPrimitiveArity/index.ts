@@ -1,12 +1,9 @@
-import type { ShaderPrimitive } from "../ShaderPrimitive";
 import { Constants } from "../Constants";
 
 /**
  * Maps shader types to their arities (vec3 = 3, etc.).
  */
-export const shaderPrimitiveArity: {
-  readonly [T in keyof ShaderPrimitive]: number;
-} = {
+export const shaderPrimitiveArity = {
   /**
    * A 1-dimensional float.
    */
