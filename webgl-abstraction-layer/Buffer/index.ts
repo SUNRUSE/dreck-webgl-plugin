@@ -1,6 +1,7 @@
 import type { ContextInterface } from "../ContextInterface";
 import { Constants } from "../Constants";
 import { Resource } from "../Resource";
+import type { BufferInstance } from "../BufferInstance";
 
 /**
  * A WebGL buffer, for either vertices or indices.
@@ -11,7 +12,7 @@ export abstract class Buffer<
   TWebGLRenderingContextKey extends keyof WebGLRenderingContext,
   TInstanceData
 > extends Resource<
-  null | { readonly buffer: WebGLBuffer; readonly data: TInstanceData },
+  null | BufferInstance<TInstanceData>,
   | `createBuffer`
   | `bindBuffer`
   | `bufferData`
@@ -37,10 +38,7 @@ export abstract class Buffer<
     super(context);
   }
 
-  createInstance(): null | {
-    readonly buffer: WebGLBuffer;
-    readonly data: TInstanceData;
-  } {
+  createInstance(): null | BufferInstance<TInstanceData> {
     const data = this.generateData();
 
     if (data.bufferContent.byteLength === 0) {
