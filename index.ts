@@ -49,4 +49,5 @@ export { Vec2 } from "./math/Vec2";
 export { Vec3 } from "./math/Vec3";
 export { Vec4 } from "./math/Vec4";
 export { VertexBuffer } from "./webgl-abstraction-layer/VertexBuffer";
+export { VertexBufferInstance } from "./webgl-abstraction-layer/VertexBufferInstance";
 export { VertexShader } from "./webgl-abstraction-layer/VertexShader";

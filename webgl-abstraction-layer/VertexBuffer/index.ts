@@ -14,6 +14,7 @@ import { binaryTypeBytes } from "../binaryTypeBytes";
 import { binaryTypeMinimum } from "../binaryTypeMinimum";
 import { binaryTypeMaximum } from "../binaryTypeMaximum";
 import { binaryTypeType } from "../binaryTypeType";
+import type { VertexBufferInstance } from "../VertexBufferInstance";
 
 /**
  * A buffer of vertex attributes.
@@ -21,7 +22,7 @@ import { binaryTypeType } from "../binaryTypeType";
  */
 export abstract class VertexBuffer<
   TAttributeDefinitionSet extends AttributeDefinitionSet
-> extends Buffer<never, { readonly numberOfVertices: number }> {
+> extends Buffer<never, VertexBufferInstance[`data`]> {
   /**
    * Creates a new buffer of vertex attributes.
    * @param context The context under which the buffer will be created.
