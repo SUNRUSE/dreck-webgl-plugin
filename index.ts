@@ -21,6 +21,7 @@ export { FloatAnimation } from "./animation/FloatAnimation";
 export { FloatKeyframeData } from "./animation/FloatKeyframeData";
 export { FragmentShader } from "./webgl-abstraction-layer/FragmentShader";
 export { IndexBuffer } from "./webgl-abstraction-layer/IndexBuffer";
+export { IndexBufferInstance } from "./webgl-abstraction-layer/IndexBufferInstance";
 export { Keyframe } from "./animation/Keyframe";
 export { Mat2 } from "./math/Mat2";
 export { Mat3 } from "./math/Mat3";

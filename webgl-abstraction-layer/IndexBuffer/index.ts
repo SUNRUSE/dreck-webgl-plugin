@@ -1,23 +1,14 @@
 import type { ContextInterface } from "../ContextInterface";
 import { Buffer } from "../Buffer";
 import { Constants } from "../Constants";
+import type { IndexBufferInstance } from "../IndexBufferInstance";
 
 /**
  * A buffer of element indices.
  */
 export abstract class IndexBuffer extends Buffer<
   never,
-  {
-    /**
-     * The number of primitives.
-     */
-    readonly count: number;
-
-    /**
-     * The type of the indices in the buffer.
-     */
-    readonly type: Constants.UnsignedByte | Constants.UnsignedShort;
-  }
+  IndexBufferInstance[`data`]
 > {
   /**
    * Creates a new buffer of element indices.
