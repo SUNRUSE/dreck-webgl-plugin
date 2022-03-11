@@ -41,6 +41,7 @@ export { ShaderPrimitive } from "./webgl-abstraction-layer/ShaderPrimitive";
 export { shaderPrimitiveArity } from "./webgl-abstraction-layer/shaderPrimitiveArity";
 export { shaderPrimitiveKeyword } from "./webgl-abstraction-layer/shaderPrimitiveKeyword";
 export { StaticFragmentShader } from "./webgl-abstraction-layer/StaticFragmentShader";
+export { StaticProgram } from "./webgl-abstraction-layer/StaticProgram";
 export { StaticVertexBuffer } from "./webgl-abstraction-layer/StaticVertexBuffer";
 export { StaticVertexShader } from "./webgl-abstraction-layer/StaticVertexShader";
 export { U16 } from "./webgl-abstraction-layer/U16";
