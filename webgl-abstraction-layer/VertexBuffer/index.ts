@@ -18,7 +18,7 @@ import type { VertexBufferInstance } from "../VertexBufferInstance";
 
 /**
  * A buffer of vertex attributes.
- * @tempalte TAttributeDefinitionSet The set of attributes which are stored for each vertex.
+ * @template TAttributeDefinitionSet The set of attributes which are stored for each vertex.
  */
 export abstract class VertexBuffer<
   TAttributeDefinitionSet extends AttributeDefinitionSet

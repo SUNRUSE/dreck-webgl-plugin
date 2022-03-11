@@ -562,6 +562,12 @@ describe(`VertexBuffer`, () => {
           expect(vertexBuffer.mode).toEqual(mode.mode);
         });
 
+        it(`exposes the packed attribute definition set`, () => {
+          expect(vertexBuffer.packedAttributeDefinitionSet).toBe(
+            packedAttributeDefinitionSet
+          );
+        });
+
         it(`does not generate any vertices`, () => {
           expect(generateVertices).not.toHaveBeenCalled();
         });
@@ -860,6 +866,12 @@ describe(`VertexBuffer`, () => {
 
           it(`exposes the mode`, () => {
             expect(vertexBuffer.mode).toEqual(mode.mode);
+          });
+
+          it(`exposes the packed attribute definition set`, () => {
+            expect(vertexBuffer.packedAttributeDefinitionSet).toBe(
+              packedAttributeDefinitionSet
+            );
           });
 
           it(`generates one set of vertices`, () => {
@@ -1471,6 +1483,12 @@ describe(`VertexBuffer`, () => {
               expect(vertexBuffer.mode).toEqual(mode.mode);
             });
 
+            it(`exposes the packed attribute definition set`, () => {
+              expect(vertexBuffer.packedAttributeDefinitionSet).toBe(
+                packedAttributeDefinitionSet
+              );
+            });
+
             it(`generates one set of vertices`, () => {
               expect(generateVertices).toHaveBeenCalledTimes(1);
             });
@@ -1776,6 +1794,12 @@ describe(`VertexBuffer`, () => {
 
             it(`exposes the mode`, () => {
               expect(vertexBuffer.mode).toEqual(mode.mode);
+            });
+
+            it(`exposes the packed attribute definition set`, () => {
+              expect(vertexBuffer.packedAttributeDefinitionSet).toBe(
+                packedAttributeDefinitionSet
+              );
             });
 
             it(`generates one set of vertices`, () => {
@@ -2085,6 +2109,12 @@ describe(`VertexBuffer`, () => {
               expect(vertexBuffer.mode).toEqual(mode.mode);
             });
 
+            it(`exposes the packed attribute definition set`, () => {
+              expect(vertexBuffer.packedAttributeDefinitionSet).toBe(
+                packedAttributeDefinitionSet
+              );
+            });
+
             it(`generates one set of vertices`, () => {
               expect(generateVertices).toHaveBeenCalledTimes(1);
             });
@@ -2390,6 +2420,12 @@ describe(`VertexBuffer`, () => {
 
             it(`exposes the mode`, () => {
               expect(vertexBuffer.mode).toEqual(mode.mode);
+            });
+
+            it(`exposes the packed attribute definition set`, () => {
+              expect(vertexBuffer.packedAttributeDefinitionSet).toBe(
+                packedAttributeDefinitionSet
+              );
             });
 
             it(`generates one set of vertices`, () => {
@@ -2699,6 +2735,12 @@ describe(`VertexBuffer`, () => {
               expect(vertexBuffer.mode).toEqual(mode.mode);
             });
 
+            it(`exposes the packed attribute definition set`, () => {
+              expect(vertexBuffer.packedAttributeDefinitionSet).toBe(
+                packedAttributeDefinitionSet
+              );
+            });
+
             it(`generates one set of vertices`, () => {
               expect(generateVertices).toHaveBeenCalledTimes(1);
             });
@@ -3004,6 +3046,12 @@ describe(`VertexBuffer`, () => {
 
             it(`exposes the mode`, () => {
               expect(vertexBuffer.mode).toEqual(mode.mode);
+            });
+
+            it(`exposes the packed attribute definition set`, () => {
+              expect(vertexBuffer.packedAttributeDefinitionSet).toBe(
+                packedAttributeDefinitionSet
+              );
             });
 
             it(`generates one set of vertices`, () => {
@@ -3313,6 +3361,12 @@ describe(`VertexBuffer`, () => {
               expect(vertexBuffer.mode).toEqual(mode.mode);
             });
 
+            it(`exposes the packed attribute definition set`, () => {
+              expect(vertexBuffer.packedAttributeDefinitionSet).toBe(
+                packedAttributeDefinitionSet
+              );
+            });
+
             it(`generates one set of vertices`, () => {
               expect(generateVertices).toHaveBeenCalledTimes(1);
             });
@@ -3618,6 +3672,12 @@ describe(`VertexBuffer`, () => {
 
             it(`exposes the mode`, () => {
               expect(vertexBuffer.mode).toEqual(mode.mode);
+            });
+
+            it(`exposes the packed attribute definition set`, () => {
+              expect(vertexBuffer.packedAttributeDefinitionSet).toBe(
+                packedAttributeDefinitionSet
+              );
             });
 
             it(`generates one set of vertices`, () => {
@@ -3929,6 +3989,12 @@ describe(`VertexBuffer`, () => {
               expect(vertexBuffer.mode).toEqual(mode.mode);
             });
 
+            it(`exposes the packed attribute definition set`, () => {
+              expect(vertexBuffer.packedAttributeDefinitionSet).toBe(
+                packedAttributeDefinitionSet
+              );
+            });
+
             it(`generates one set of vertices`, () => {
               expect(generateVertices).toHaveBeenCalledTimes(1);
             });
@@ -4234,6 +4300,12 @@ describe(`VertexBuffer`, () => {
 
             it(`exposes the mode`, () => {
               expect(vertexBuffer.mode).toEqual(mode.mode);
+            });
+
+            it(`exposes the packed attribute definition set`, () => {
+              expect(vertexBuffer.packedAttributeDefinitionSet).toBe(
+                packedAttributeDefinitionSet
+              );
             });
 
             it(`generates one set of vertices`, () => {
@@ -4543,6 +4615,12 @@ describe(`VertexBuffer`, () => {
               expect(vertexBuffer.mode).toEqual(mode.mode);
             });
 
+            it(`exposes the packed attribute definition set`, () => {
+              expect(vertexBuffer.packedAttributeDefinitionSet).toBe(
+                packedAttributeDefinitionSet
+              );
+            });
+
             it(`generates one set of vertices`, () => {
               expect(generateVertices).toHaveBeenCalledTimes(1);
             });
@@ -4848,6 +4926,12 @@ describe(`VertexBuffer`, () => {
 
             it(`exposes the mode`, () => {
               expect(vertexBuffer.mode).toEqual(mode.mode);
+            });
+
+            it(`exposes the packed attribute definition set`, () => {
+              expect(vertexBuffer.packedAttributeDefinitionSet).toBe(
+                packedAttributeDefinitionSet
+              );
             });
 
             it(`generates one set of vertices`, () => {
@@ -5157,6 +5241,12 @@ describe(`VertexBuffer`, () => {
               expect(vertexBuffer.mode).toEqual(mode.mode);
             });
 
+            it(`exposes the packed attribute definition set`, () => {
+              expect(vertexBuffer.packedAttributeDefinitionSet).toBe(
+                packedAttributeDefinitionSet
+              );
+            });
+
             it(`generates one set of vertices`, () => {
               expect(generateVertices).toHaveBeenCalledTimes(1);
             });
@@ -5462,6 +5552,12 @@ describe(`VertexBuffer`, () => {
 
             it(`exposes the mode`, () => {
               expect(vertexBuffer.mode).toEqual(mode.mode);
+            });
+
+            it(`exposes the packed attribute definition set`, () => {
+              expect(vertexBuffer.packedAttributeDefinitionSet).toBe(
+                packedAttributeDefinitionSet
+              );
             });
 
             it(`generates one set of vertices`, () => {
@@ -5771,6 +5867,12 @@ describe(`VertexBuffer`, () => {
               expect(vertexBuffer.mode).toEqual(mode.mode);
             });
 
+            it(`exposes the packed attribute definition set`, () => {
+              expect(vertexBuffer.packedAttributeDefinitionSet).toBe(
+                packedAttributeDefinitionSet
+              );
+            });
+
             it(`generates one set of vertices`, () => {
               expect(generateVertices).toHaveBeenCalledTimes(1);
             });
@@ -6076,6 +6178,12 @@ describe(`VertexBuffer`, () => {
 
             it(`exposes the mode`, () => {
               expect(vertexBuffer.mode).toEqual(mode.mode);
+            });
+
+            it(`exposes the packed attribute definition set`, () => {
+              expect(vertexBuffer.packedAttributeDefinitionSet).toBe(
+                packedAttributeDefinitionSet
+              );
             });
 
             it(`generates one set of vertices`, () => {
@@ -6387,6 +6495,12 @@ describe(`VertexBuffer`, () => {
               expect(vertexBuffer.mode).toEqual(mode.mode);
             });
 
+            it(`exposes the packed attribute definition set`, () => {
+              expect(vertexBuffer.packedAttributeDefinitionSet).toBe(
+                packedAttributeDefinitionSet
+              );
+            });
+
             it(`generates one set of vertices`, () => {
               expect(generateVertices).toHaveBeenCalledTimes(1);
             });
@@ -6692,6 +6806,12 @@ describe(`VertexBuffer`, () => {
 
             it(`exposes the mode`, () => {
               expect(vertexBuffer.mode).toEqual(mode.mode);
+            });
+
+            it(`exposes the packed attribute definition set`, () => {
+              expect(vertexBuffer.packedAttributeDefinitionSet).toBe(
+                packedAttributeDefinitionSet
+              );
             });
 
             it(`generates one set of vertices`, () => {
@@ -7001,6 +7121,12 @@ describe(`VertexBuffer`, () => {
               expect(vertexBuffer.mode).toEqual(mode.mode);
             });
 
+            it(`exposes the packed attribute definition set`, () => {
+              expect(vertexBuffer.packedAttributeDefinitionSet).toBe(
+                packedAttributeDefinitionSet
+              );
+            });
+
             it(`generates one set of vertices`, () => {
               expect(generateVertices).toHaveBeenCalledTimes(1);
             });
@@ -7306,6 +7432,12 @@ describe(`VertexBuffer`, () => {
 
             it(`exposes the mode`, () => {
               expect(vertexBuffer.mode).toEqual(mode.mode);
+            });
+
+            it(`exposes the packed attribute definition set`, () => {
+              expect(vertexBuffer.packedAttributeDefinitionSet).toBe(
+                packedAttributeDefinitionSet
+              );
             });
 
             it(`generates one set of vertices`, () => {
@@ -7615,6 +7747,12 @@ describe(`VertexBuffer`, () => {
               expect(vertexBuffer.mode).toEqual(mode.mode);
             });
 
+            it(`exposes the packed attribute definition set`, () => {
+              expect(vertexBuffer.packedAttributeDefinitionSet).toBe(
+                packedAttributeDefinitionSet
+              );
+            });
+
             it(`generates one set of vertices`, () => {
               expect(generateVertices).toHaveBeenCalledTimes(1);
             });
@@ -7920,6 +8058,12 @@ describe(`VertexBuffer`, () => {
 
             it(`exposes the mode`, () => {
               expect(vertexBuffer.mode).toEqual(mode.mode);
+            });
+
+            it(`exposes the packed attribute definition set`, () => {
+              expect(vertexBuffer.packedAttributeDefinitionSet).toBe(
+                packedAttributeDefinitionSet
+              );
             });
 
             it(`generates one set of vertices`, () => {
@@ -8229,6 +8373,12 @@ describe(`VertexBuffer`, () => {
               expect(vertexBuffer.mode).toEqual(mode.mode);
             });
 
+            it(`exposes the packed attribute definition set`, () => {
+              expect(vertexBuffer.packedAttributeDefinitionSet).toBe(
+                packedAttributeDefinitionSet
+              );
+            });
+
             it(`generates one set of vertices`, () => {
               expect(generateVertices).toHaveBeenCalledTimes(1);
             });
@@ -8534,6 +8684,12 @@ describe(`VertexBuffer`, () => {
 
             it(`exposes the mode`, () => {
               expect(vertexBuffer.mode).toEqual(mode.mode);
+            });
+
+            it(`exposes the packed attribute definition set`, () => {
+              expect(vertexBuffer.packedAttributeDefinitionSet).toBe(
+                packedAttributeDefinitionSet
+              );
             });
 
             it(`generates one set of vertices`, () => {
@@ -8845,6 +9001,12 @@ describe(`VertexBuffer`, () => {
               expect(vertexBuffer.mode).toEqual(mode.mode);
             });
 
+            it(`exposes the packed attribute definition set`, () => {
+              expect(vertexBuffer.packedAttributeDefinitionSet).toBe(
+                packedAttributeDefinitionSet
+              );
+            });
+
             it(`generates one set of vertices`, () => {
               expect(generateVertices).toHaveBeenCalledTimes(1);
             });
@@ -9150,6 +9312,12 @@ describe(`VertexBuffer`, () => {
 
             it(`exposes the mode`, () => {
               expect(vertexBuffer.mode).toEqual(mode.mode);
+            });
+
+            it(`exposes the packed attribute definition set`, () => {
+              expect(vertexBuffer.packedAttributeDefinitionSet).toBe(
+                packedAttributeDefinitionSet
+              );
             });
 
             it(`generates one set of vertices`, () => {
@@ -9459,6 +9627,12 @@ describe(`VertexBuffer`, () => {
               expect(vertexBuffer.mode).toEqual(mode.mode);
             });
 
+            it(`exposes the packed attribute definition set`, () => {
+              expect(vertexBuffer.packedAttributeDefinitionSet).toBe(
+                packedAttributeDefinitionSet
+              );
+            });
+
             it(`generates one set of vertices`, () => {
               expect(generateVertices).toHaveBeenCalledTimes(1);
             });
@@ -9764,6 +9938,12 @@ describe(`VertexBuffer`, () => {
 
             it(`exposes the mode`, () => {
               expect(vertexBuffer.mode).toEqual(mode.mode);
+            });
+
+            it(`exposes the packed attribute definition set`, () => {
+              expect(vertexBuffer.packedAttributeDefinitionSet).toBe(
+                packedAttributeDefinitionSet
+              );
             });
 
             it(`generates one set of vertices`, () => {
@@ -10073,6 +10253,12 @@ describe(`VertexBuffer`, () => {
               expect(vertexBuffer.mode).toEqual(mode.mode);
             });
 
+            it(`exposes the packed attribute definition set`, () => {
+              expect(vertexBuffer.packedAttributeDefinitionSet).toBe(
+                packedAttributeDefinitionSet
+              );
+            });
+
             it(`generates one set of vertices`, () => {
               expect(generateVertices).toHaveBeenCalledTimes(1);
             });
@@ -10378,6 +10564,12 @@ describe(`VertexBuffer`, () => {
 
             it(`exposes the mode`, () => {
               expect(vertexBuffer.mode).toEqual(mode.mode);
+            });
+
+            it(`exposes the packed attribute definition set`, () => {
+              expect(vertexBuffer.packedAttributeDefinitionSet).toBe(
+                packedAttributeDefinitionSet
+              );
             });
 
             it(`generates one set of vertices`, () => {
@@ -10687,6 +10879,12 @@ describe(`VertexBuffer`, () => {
               expect(vertexBuffer.mode).toEqual(mode.mode);
             });
 
+            it(`exposes the packed attribute definition set`, () => {
+              expect(vertexBuffer.packedAttributeDefinitionSet).toBe(
+                packedAttributeDefinitionSet
+              );
+            });
+
             it(`generates one set of vertices`, () => {
               expect(generateVertices).toHaveBeenCalledTimes(1);
             });
@@ -10992,6 +11190,12 @@ describe(`VertexBuffer`, () => {
 
             it(`exposes the mode`, () => {
               expect(vertexBuffer.mode).toEqual(mode.mode);
+            });
+
+            it(`exposes the packed attribute definition set`, () => {
+              expect(vertexBuffer.packedAttributeDefinitionSet).toBe(
+                packedAttributeDefinitionSet
+              );
             });
 
             it(`generates one set of vertices`, () => {
@@ -11303,6 +11507,12 @@ describe(`VertexBuffer`, () => {
               expect(vertexBuffer.mode).toEqual(mode.mode);
             });
 
+            it(`exposes the packed attribute definition set`, () => {
+              expect(vertexBuffer.packedAttributeDefinitionSet).toBe(
+                packedAttributeDefinitionSet
+              );
+            });
+
             it(`generates one set of vertices`, () => {
               expect(generateVertices).toHaveBeenCalledTimes(1);
             });
@@ -11610,6 +11820,12 @@ describe(`VertexBuffer`, () => {
               expect(vertexBuffer.mode).toEqual(mode.mode);
             });
 
+            it(`exposes the packed attribute definition set`, () => {
+              expect(vertexBuffer.packedAttributeDefinitionSet).toBe(
+                packedAttributeDefinitionSet
+              );
+            });
+
             it(`generates one set of vertices`, () => {
               expect(generateVertices).toHaveBeenCalledTimes(1);
             });
@@ -11915,6 +12131,12 @@ describe(`VertexBuffer`, () => {
 
             it(`exposes the mode`, () => {
               expect(vertexBuffer.mode).toEqual(mode.mode);
+            });
+
+            it(`exposes the packed attribute definition set`, () => {
+              expect(vertexBuffer.packedAttributeDefinitionSet).toBe(
+                packedAttributeDefinitionSet
+              );
             });
 
             it(`generates one set of vertices`, () => {

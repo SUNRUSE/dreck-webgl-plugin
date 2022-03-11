@@ -7,7 +7,7 @@ import type { Constants } from "../Constants";
 
 /**
  * A buffer of vertex attributes which are pre-determined at construction.
- * @tempalte TAttributeDefinitionSet The set of attributes which are stored for each vertex.
+ * @template TAttributeDefinitionSet The set of attributes which are stored for each vertex.
  */
 export class StaticVertexBuffer<
   TAttributeDefinitionSet extends AttributeDefinitionSet

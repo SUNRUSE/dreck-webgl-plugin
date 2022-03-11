@@ -7,7 +7,7 @@ import {
   StaticVertexBuffer,
 } from "../..";
 
-describe(`VertexBuffer`, () => {
+describe(`StaticVertexBuffer`, () => {
   type TestAttributeSet = {
     readonly unsignedByteVec3: {
       readonly binaryType: Constants.UnsignedByte;
@@ -127,6 +127,12 @@ describe(`VertexBuffer`, () => {
       expect(staticVertexBuffer.mode).toEqual(Constants.LineStrip);
     });
 
+    it(`exposes the packed attribute definition set`, () => {
+      expect(staticVertexBuffer.packedAttributeDefinitionSet).toBe(
+        packedAttributeDefinitionSet
+      );
+    });
+
     it(`exposes the vertices`, () => {
       expect(staticVertexBuffer.vertices).toBe(testVertices);
     });
@@ -212,6 +218,12 @@ describe(`VertexBuffer`, () => {
 
     it(`exposes the mode`, () => {
       expect(staticVertexBuffer.mode).toEqual(Constants.LineStrip);
+    });
+
+    it(`exposes the packed attribute definition set`, () => {
+      expect(staticVertexBuffer.packedAttributeDefinitionSet).toBe(
+        packedAttributeDefinitionSet
+      );
     });
 
     it(`exposes the vertices`, () => {
