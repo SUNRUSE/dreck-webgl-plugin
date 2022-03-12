@@ -12,6 +12,7 @@ export { Buffer } from "./webgl-abstraction-layer/Buffer";
 export { BufferInstance } from "./webgl-abstraction-layer/BufferInstance";
 export { calculatePerspective } from "./math/calculatePerspective";
 export { calculateTransform } from "./math/calculateTransform";
+export { combineMatrices } from "./math/combineMatrices";
 export { Constants } from "./webgl-abstraction-layer/Constants";
 export { ContextInterface } from "./webgl-abstraction-layer/ContextInterface";
 export { createCanvas } from "./webgl-abstraction-layer/createCanvas";
