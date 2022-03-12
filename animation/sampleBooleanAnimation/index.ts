@@ -12,29 +12,37 @@ export function sampleBooleanAnimation(
   animation: BooleanAnimation,
   atFrame: number
 ): boolean {
-  for (let i = 0; i < animation.keyframes.length - 1; i++) {
-    const previousKeyframe = animation.keyframes[
-      i
-    ] as Keyframe<BooleanKeyframeData>;
-
-    const nextKeyframe = animation.keyframes[
-      i + 1
-    ] as Keyframe<BooleanKeyframeData>;
-
-    if (previousKeyframe.atFrame <= atFrame && nextKeyframe.atFrame > atFrame) {
-      return previousKeyframe.value;
-    }
-  }
-
-  const firstKeyframe = animation.keyframes[0] as Keyframe<BooleanKeyframeData>;
-
-  if (atFrame < firstKeyframe.atFrame) {
-    return firstKeyframe.value;
+  if (animation.type === `static`) {
+    return animation.value;
   } else {
-    const lastKeyframe = animation.keyframes[
-      animation.keyframes.length - 1
-    ] as Keyframe<BooleanKeyframeData>;
+    for (let i = 0; i < animation.keyframes.length - 1; i++) {
+      const previousKeyframe = animation.keyframes[
+        i
+      ] as Keyframe<BooleanKeyframeData>;
 
-    return lastKeyframe.value;
+      const nextKeyframe = animation.keyframes[
+        i + 1
+      ] as Keyframe<BooleanKeyframeData>;
+
+      if (
+        previousKeyframe.atFrame <= atFrame &&
+        nextKeyframe.atFrame > atFrame
+      ) {
+        return previousKeyframe.value;
+      }
+    }
+
+    const firstKeyframe = animation
+      .keyframes[0] as Keyframe<BooleanKeyframeData>;
+
+    if (atFrame < firstKeyframe.atFrame) {
+      return firstKeyframe.value;
+    } else {
+      const lastKeyframe = animation.keyframes[
+        animation.keyframes.length - 1
+      ] as Keyframe<BooleanKeyframeData>;
+
+      return lastKeyframe.value;
+    }
   }
 }

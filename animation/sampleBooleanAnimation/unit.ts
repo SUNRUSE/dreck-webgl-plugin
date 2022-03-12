@@ -29,6 +29,7 @@ describe(`sampleBooleanAnimation`, () => {
   Scenario(
     `before first keyframe`,
     (expected) => ({
+      type: `animated`,
       keyframes: [
         {
           atFrame: 8,
@@ -58,6 +59,7 @@ describe(`sampleBooleanAnimation`, () => {
   Scenario(
     `on first keyframe`,
     (expected) => ({
+      type: `animated`,
       keyframes: [
         {
           atFrame: 8,
@@ -87,6 +89,7 @@ describe(`sampleBooleanAnimation`, () => {
   Scenario(
     `between first and second keyframes`,
     (expected) => ({
+      type: `animated`,
       keyframes: [
         {
           atFrame: 8,
@@ -116,6 +119,7 @@ describe(`sampleBooleanAnimation`, () => {
   Scenario(
     `on second keyframe`,
     (expected) => ({
+      type: `animated`,
       keyframes: [
         {
           atFrame: 8,
@@ -145,6 +149,7 @@ describe(`sampleBooleanAnimation`, () => {
   Scenario(
     `between second and third keyframes`,
     (expected) => ({
+      type: `animated`,
       keyframes: [
         {
           atFrame: 8,
@@ -174,6 +179,7 @@ describe(`sampleBooleanAnimation`, () => {
   Scenario(
     `on third keyframe`,
     (expected) => ({
+      type: `animated`,
       keyframes: [
         {
           atFrame: 8,
@@ -203,6 +209,7 @@ describe(`sampleBooleanAnimation`, () => {
   Scenario(
     `on final keyframe`,
     (expected) => ({
+      type: `animated`,
       keyframes: [
         {
           atFrame: 8,
@@ -232,6 +239,7 @@ describe(`sampleBooleanAnimation`, () => {
   Scenario(
     `after final keyframe`,
     (expected) => ({
+      type: `animated`,
       keyframes: [
         {
           atFrame: 8,
@@ -261,6 +269,7 @@ describe(`sampleBooleanAnimation`, () => {
   Scenario(
     `before single keyframe`,
     (expected) => ({
+      type: `animated`,
       keyframes: [
         {
           atFrame: 8,
@@ -274,6 +283,7 @@ describe(`sampleBooleanAnimation`, () => {
   Scenario(
     `on single keyframe`,
     (expected) => ({
+      type: `animated`,
       keyframes: [
         {
           atFrame: 8,
@@ -287,12 +297,22 @@ describe(`sampleBooleanAnimation`, () => {
   Scenario(
     `after single keyframe`,
     (expected) => ({
+      type: `animated`,
       keyframes: [
         {
           atFrame: 8,
           value: expected,
         },
       ],
+    }),
+    9
+  );
+
+  Scenario(
+    `static`,
+    (expected) => ({
+      type: `static`,
+      value: expected,
     }),
     9
   );

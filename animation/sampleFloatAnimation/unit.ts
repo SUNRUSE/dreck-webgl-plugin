@@ -23,6 +23,7 @@ describe(`sampleFloatAnimation`, () => {
   Scenario(
     `before first keyframe constant`,
     {
+      type: `animated`,
       keyframes: [
         {
           type: `constant`,
@@ -58,6 +59,7 @@ describe(`sampleFloatAnimation`, () => {
   Scenario(
     `on first keyframe constant`,
     {
+      type: `animated`,
       keyframes: [
         {
           type: `constant`,
@@ -93,6 +95,7 @@ describe(`sampleFloatAnimation`, () => {
   Scenario(
     `between first and second keyframes constant`,
     {
+      type: `animated`,
       keyframes: [
         {
           type: `constant`,
@@ -128,6 +131,7 @@ describe(`sampleFloatAnimation`, () => {
   Scenario(
     `before first keyframe linear`,
     {
+      type: `animated`,
       keyframes: [
         {
           type: `linear`,
@@ -163,6 +167,7 @@ describe(`sampleFloatAnimation`, () => {
   Scenario(
     `on first keyframe linear`,
     {
+      type: `animated`,
       keyframes: [
         {
           type: `linear`,
@@ -198,6 +203,7 @@ describe(`sampleFloatAnimation`, () => {
   Scenario(
     `between first and second keyframes linear`,
     {
+      type: `animated`,
       keyframes: [
         {
           type: `linear`,
@@ -233,6 +239,7 @@ describe(`sampleFloatAnimation`, () => {
   Scenario(
     `on second keyframe constant`,
     {
+      type: `animated`,
       keyframes: [
         {
           type: Math.random() >= 0.5 ? `constant` : `linear`,
@@ -268,6 +275,7 @@ describe(`sampleFloatAnimation`, () => {
   Scenario(
     `between second and third keyframes constant`,
     {
+      type: `animated`,
       keyframes: [
         {
           type: Math.random() >= 0.5 ? `constant` : `linear`,
@@ -303,6 +311,7 @@ describe(`sampleFloatAnimation`, () => {
   Scenario(
     `on second keyframe linear`,
     {
+      type: `animated`,
       keyframes: [
         {
           type: Math.random() >= 0.5 ? `constant` : `linear`,
@@ -338,6 +347,7 @@ describe(`sampleFloatAnimation`, () => {
   Scenario(
     `between second and third keyframes linear`,
     {
+      type: `animated`,
       keyframes: [
         {
           type: Math.random() >= 0.5 ? `constant` : `linear`,
@@ -373,6 +383,7 @@ describe(`sampleFloatAnimation`, () => {
   Scenario(
     `on third keyframe constant`,
     {
+      type: `animated`,
       keyframes: [
         {
           type: Math.random() >= 0.5 ? `constant` : `linear`,
@@ -408,6 +419,7 @@ describe(`sampleFloatAnimation`, () => {
   Scenario(
     `between third and fourth keyframes constant`,
     {
+      type: `animated`,
       keyframes: [
         {
           type: Math.random() >= 0.5 ? `constant` : `linear`,
@@ -444,6 +456,7 @@ describe(`sampleFloatAnimation`, () => {
   Scenario(
     `on third keyframe linear`,
     {
+      type: `animated`,
       keyframes: [
         {
           type: Math.random() >= 0.5 ? `constant` : `linear`,
@@ -480,6 +493,7 @@ describe(`sampleFloatAnimation`, () => {
   Scenario(
     `between third and fourth keyframes linear`,
     {
+      type: `animated`,
       keyframes: [
         {
           type: Math.random() >= 0.5 ? `constant` : `linear`,
@@ -516,6 +530,7 @@ describe(`sampleFloatAnimation`, () => {
   Scenario(
     `on final keyframe constant`,
     {
+      type: `animated`,
       keyframes: [
         {
           type: Math.random() >= 0.5 ? `constant` : `linear`,
@@ -551,6 +566,7 @@ describe(`sampleFloatAnimation`, () => {
   Scenario(
     `after final keyframe constant`,
     {
+      type: `animated`,
       keyframes: [
         {
           type: Math.random() >= 0.5 ? `constant` : `linear`,
@@ -587,6 +603,7 @@ describe(`sampleFloatAnimation`, () => {
   Scenario(
     `on final keyframe linear`,
     {
+      type: `animated`,
       keyframes: [
         {
           type: Math.random() >= 0.5 ? `constant` : `linear`,
@@ -623,6 +640,7 @@ describe(`sampleFloatAnimation`, () => {
   Scenario(
     `after final keyframe linear`,
     {
+      type: `animated`,
       keyframes: [
         {
           type: Math.random() >= 0.5 ? `constant` : `linear`,
@@ -659,6 +677,7 @@ describe(`sampleFloatAnimation`, () => {
   Scenario(
     `before single keyframe constant`,
     {
+      type: `animated`,
       keyframes: [
         {
           type: `constant`,
@@ -674,6 +693,7 @@ describe(`sampleFloatAnimation`, () => {
   Scenario(
     `on single keyframe constant`,
     {
+      type: `animated`,
       keyframes: [
         {
           type: `constant`,
@@ -689,6 +709,7 @@ describe(`sampleFloatAnimation`, () => {
   Scenario(
     `after single keyframe constant`,
     {
+      type: `animated`,
       keyframes: [
         {
           type: `constant`,
@@ -704,6 +725,7 @@ describe(`sampleFloatAnimation`, () => {
   Scenario(
     `before single keyframe linear`,
     {
+      type: `animated`,
       keyframes: [
         {
           type: `linear`,
@@ -719,6 +741,7 @@ describe(`sampleFloatAnimation`, () => {
   Scenario(
     `on single keyframe linear`,
     {
+      type: `animated`,
       keyframes: [
         {
           type: `linear`,
@@ -734,6 +757,7 @@ describe(`sampleFloatAnimation`, () => {
   Scenario(
     `after single keyframe linear`,
     {
+      type: `animated`,
       keyframes: [
         {
           type: `linear`,
@@ -744,5 +768,15 @@ describe(`sampleFloatAnimation`, () => {
     },
     9,
     14
+  );
+
+  Scenario(
+    `static`,
+    {
+      type: `static`,
+      value: 7.3,
+    },
+    9,
+    7.3
   );
 });

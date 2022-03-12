@@ -4,4 +4,4 @@ import type { BooleanKeyframeData } from "../BooleanKeyframeData";
 /**
  * An animation of a boolean value.
  */
-export type BooleanAnimation = Animation<BooleanKeyframeData>;
+export type BooleanAnimation = Animation<boolean, BooleanKeyframeData>;
