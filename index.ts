@@ -10,6 +10,7 @@ export { BooleanAnimation } from "./animation/BooleanAnimation";
 export { BooleanKeyframeData } from "./animation/BooleanKeyframeData";
 export { Buffer } from "./webgl-abstraction-layer/Buffer";
 export { BufferInstance } from "./webgl-abstraction-layer/BufferInstance";
+export { calculatePerspective } from "./math/calculatePerspective";
 export { calculateTransform } from "./math/calculateTransform";
 export { Constants } from "./webgl-abstraction-layer/Constants";
 export { ContextInterface } from "./webgl-abstraction-layer/ContextInterface";
