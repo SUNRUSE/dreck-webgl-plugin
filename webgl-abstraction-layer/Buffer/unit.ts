@@ -22,6 +22,7 @@ describe(`Buffer`, () => {
         let deleteBuffer: jasmine.Spy;
         let isContextLost: jasmine.Spy;
         let render: jasmine.Spy;
+        let addEventListener: jasmine.Spy;
         let generateData: jasmine.Spy;
 
         class TestBuffer extends Buffer<
@@ -54,6 +55,7 @@ describe(`Buffer`, () => {
           deleteBuffer = jasmine.createSpy(`deleteBuffer`);
           isContextLost = jasmine.createSpy(`isContextLost`);
           render = jasmine.createSpy(`render`);
+          addEventListener = jasmine.createSpy(`addEventListener`);
 
           generateData = jasmine.createSpy(`generateData`).and.returnValue({
             bufferContent: Uint16Array.from([32, 768, 1024, 512]),
@@ -71,6 +73,7 @@ describe(`Buffer`, () => {
             },
             timesContextRestored: 7,
             render,
+            addEventListener,
           };
 
           buffer = new TestBuffer(context, target.target);
@@ -82,6 +85,10 @@ describe(`Buffer`, () => {
 
         it(`does not render`, () => {
           expect(render).not.toHaveBeenCalled();
+        });
+
+        it(`does not add any event listeners`, () => {
+          expect(addEventListener).not.toHaveBeenCalled();
         });
 
         it(`does not create any buffers`, () => {
@@ -125,6 +132,7 @@ describe(`Buffer`, () => {
         let deleteBuffer: jasmine.Spy;
         let isContextLost: jasmine.Spy;
         let render: jasmine.Spy;
+        let addEventListener: jasmine.Spy;
         let generateData: jasmine.Spy;
         let result: null | WebGLBuffer;
 
@@ -160,6 +168,7 @@ describe(`Buffer`, () => {
           deleteBuffer = jasmine.createSpy(`deleteBuffer`);
           isContextLost = jasmine.createSpy(`isContextLost`);
           render = jasmine.createSpy(`render`);
+          addEventListener = jasmine.createSpy(`addEventListener`);
 
           generateData = jasmine.createSpy(`generateData`).and.returnValue({
             bufferContent: Uint16Array.from([32, 768, 1024, 512]),
@@ -177,6 +186,7 @@ describe(`Buffer`, () => {
             },
             timesContextRestored: 7,
             render,
+            addEventListener,
           };
 
           buffer = new TestBuffer(context, target.target);
@@ -190,6 +200,10 @@ describe(`Buffer`, () => {
 
         it(`does not render`, () => {
           expect(render).not.toHaveBeenCalled();
+        });
+
+        it(`does not add any event listeners`, () => {
+          expect(addEventListener).not.toHaveBeenCalled();
         });
 
         it(`creates one buffer`, () => {
@@ -258,6 +272,7 @@ describe(`Buffer`, () => {
         let deleteBuffer: jasmine.Spy;
         let isContextLost: jasmine.Spy;
         let render: jasmine.Spy;
+        let addEventListener: jasmine.Spy;
         let generateData: jasmine.Spy;
         let result: null | WebGLBuffer;
 
@@ -293,6 +308,7 @@ describe(`Buffer`, () => {
           deleteBuffer = jasmine.createSpy(`deleteBuffer`);
           isContextLost = jasmine.createSpy(`isContextLost`);
           render = jasmine.createSpy(`render`);
+          addEventListener = jasmine.createSpy(`addEventListener`);
 
           generateData = jasmine.createSpy(`generateData`).and.returnValue({
             bufferContent: Uint16Array.from([32, 768, 1024, 512]),
@@ -310,6 +326,7 @@ describe(`Buffer`, () => {
             },
             timesContextRestored: 7,
             render,
+            addEventListener,
           };
 
           buffer = new TestBuffer(context, target.target);
@@ -323,6 +340,10 @@ describe(`Buffer`, () => {
 
         it(`does not render`, () => {
           expect(render).not.toHaveBeenCalled();
+        });
+
+        it(`does not add any event listeners`, () => {
+          expect(addEventListener).not.toHaveBeenCalled();
         });
 
         it(`creates one buffer`, () => {
@@ -370,6 +391,7 @@ describe(`Buffer`, () => {
         let deleteBuffer: jasmine.Spy;
         let isContextLost: jasmine.Spy;
         let render: jasmine.Spy;
+        let addEventListener: jasmine.Spy;
         let generateData: jasmine.Spy;
         let error: unknown;
 
@@ -403,6 +425,7 @@ describe(`Buffer`, () => {
           deleteBuffer = jasmine.createSpy(`deleteBuffer`);
           isContextLost = jasmine.createSpy(`isContextLost`);
           render = jasmine.createSpy(`render`);
+          addEventListener = jasmine.createSpy(`addEventListener`);
 
           generateData = jasmine.createSpy(`generateData`).and.returnValue({
             bufferContent: Uint16Array.from([]),
@@ -420,6 +443,7 @@ describe(`Buffer`, () => {
             },
             timesContextRestored: 7,
             render,
+            addEventListener,
           };
 
           buffer = new TestBuffer(context, target.target);
@@ -438,6 +462,10 @@ describe(`Buffer`, () => {
 
         it(`does not render`, () => {
           expect(render).not.toHaveBeenCalled();
+        });
+
+        it(`does not add any event listeners`, () => {
+          expect(addEventListener).not.toHaveBeenCalled();
         });
 
         it(`does not create any buffers`, () => {
@@ -485,6 +513,7 @@ describe(`Buffer`, () => {
         let deleteBuffer: jasmine.Spy;
         let isContextLost: jasmine.Spy;
         let render: jasmine.Spy;
+        let addEventListener: jasmine.Spy;
         let generateData: jasmine.Spy;
 
         class TestBuffer extends Buffer<
@@ -517,6 +546,7 @@ describe(`Buffer`, () => {
           deleteBuffer = jasmine.createSpy(`deleteBuffer`);
           isContextLost = jasmine.createSpy(`isContextLost`);
           render = jasmine.createSpy(`render`);
+          addEventListener = jasmine.createSpy(`addEventListener`);
 
           generateData = jasmine.createSpy(`generateData`).and.returnValue({
             bufferContent: Uint16Array.from([32, 768, 1024, 512]),
@@ -534,6 +564,7 @@ describe(`Buffer`, () => {
             },
             timesContextRestored: 7,
             render,
+            addEventListener,
           };
 
           buffer = new TestBuffer(context, target.target);
@@ -547,6 +578,10 @@ describe(`Buffer`, () => {
 
         it(`does not render`, () => {
           expect(render).not.toHaveBeenCalled();
+        });
+
+        it(`does not add any event listeners`, () => {
+          expect(addEventListener).not.toHaveBeenCalled();
         });
 
         it(`does not create any buffers`, () => {
@@ -590,6 +625,7 @@ describe(`Buffer`, () => {
         let deleteBuffer: jasmine.Spy;
         let isContextLost: jasmine.Spy;
         let render: jasmine.Spy;
+        let addEventListener: jasmine.Spy;
         let generateData: jasmine.Spy;
 
         class TestBuffer extends Buffer<
@@ -622,6 +658,7 @@ describe(`Buffer`, () => {
           deleteBuffer = jasmine.createSpy(`deleteBuffer`);
           isContextLost = jasmine.createSpy(`isContextLost`);
           render = jasmine.createSpy(`render`);
+          addEventListener = jasmine.createSpy(`addEventListener`);
 
           generateData = jasmine.createSpy(`generateData`).and.returnValue({
             bufferContent: Uint16Array.from([32, 768, 1024, 512]),
@@ -639,6 +676,7 @@ describe(`Buffer`, () => {
             },
             timesContextRestored: 7,
             render,
+            addEventListener,
           };
 
           buffer = new TestBuffer(context, target.target);
@@ -652,6 +690,10 @@ describe(`Buffer`, () => {
 
         it(`does not render`, () => {
           expect(render).not.toHaveBeenCalled();
+        });
+
+        it(`does not add any event listeners`, () => {
+          expect(addEventListener).not.toHaveBeenCalled();
         });
 
         it(`does not create any buffers`, () => {

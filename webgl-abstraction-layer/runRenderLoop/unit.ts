@@ -47,7 +47,10 @@ describe(`runRenderLoop`, () => {
           `canvas.addEventListener`
         );
         const isContextLost = jasmine.createSpy(`isContextLost`);
-        const render = jasmine.createSpy(`render`);
+        const contextRender = jasmine.createSpy(`contextRender`);
+        const contextAddEventListener = jasmine.createSpy(
+          `contextAddEventListener`
+        );
         const documentHasFocus = jasmine.createSpy(`document.hasFocus`);
         global.document = { hasFocus: documentHasFocus } as unknown as Document;
 
@@ -82,8 +85,8 @@ describe(`runRenderLoop`, () => {
           followingFrameStep: boolean
         ): void => {
           if (state.shouldBeRunning && followingFrameStep) {
-            expect(render).toHaveBeenCalledTimes(1);
-            render.calls.reset();
+            expect(contextRender).toHaveBeenCalledTimes(1);
+            contextRender.calls.reset();
           }
 
           if (
@@ -127,7 +130,8 @@ describe(`runRenderLoop`, () => {
               isContextLost,
             },
             timesContextRestored: 7,
-            render,
+            render: contextRender,
+            addEventListener: contextAddEventListener,
           },
           pauseOnFocusLoss
         );

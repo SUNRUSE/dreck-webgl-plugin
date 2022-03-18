@@ -1255,6 +1255,7 @@ describe(`render`, () => {
     let uniformMatrix3fv: jasmine.Spy;
     let uniformMatrix4fv: jasmine.Spy;
     let contextRender: jasmine.Spy;
+    let contextAddEventListener: jasmine.Spy;
     let context: ContextInterface<
       | `useProgram`
       | `bindBuffer`
@@ -1300,7 +1301,8 @@ describe(`render`, () => {
       uniformMatrix2fv = jasmine.createSpy(`uniformMatrix2fv`);
       uniformMatrix3fv = jasmine.createSpy(`uniformMatrix3fv`);
       uniformMatrix4fv = jasmine.createSpy(`uniformMatrix4fv`);
-      contextRender = jasmine.createSpy(`render`);
+      contextRender = jasmine.createSpy(`contextRender`);
+      contextAddEventListener = jasmine.createSpy(`addEventListener`);
       context = {
         gl: {
           useProgram,
@@ -1323,6 +1325,7 @@ describe(`render`, () => {
         },
         timesContextRestored: 7,
         render: contextRender,
+        addEventListener: contextAddEventListener,
       };
       vertexBufferThrowIfDisposed = jasmine.createSpy(
         `vertexBufferThrowIfDisposed`
@@ -1484,6 +1487,7 @@ describe(`render`, () => {
     let uniformMatrix3fv: jasmine.Spy;
     let uniformMatrix4fv: jasmine.Spy;
     let contextRender: jasmine.Spy;
+    let contextAddEventListener: jasmine.Spy;
     let context: ContextInterface<
       | `useProgram`
       | `bindBuffer`
@@ -1529,7 +1533,8 @@ describe(`render`, () => {
       uniformMatrix2fv = jasmine.createSpy(`uniformMatrix2fv`);
       uniformMatrix3fv = jasmine.createSpy(`uniformMatrix3fv`);
       uniformMatrix4fv = jasmine.createSpy(`uniformMatrix4fv`);
-      contextRender = jasmine.createSpy(`render`);
+      contextRender = jasmine.createSpy(`contextRender`);
+      contextAddEventListener = jasmine.createSpy(`addEventListener`);
       context = {
         gl: {
           useProgram,
@@ -1552,6 +1557,7 @@ describe(`render`, () => {
         },
         timesContextRestored: 7,
         render: contextRender,
+        addEventListener: contextAddEventListener,
       };
       vertexBufferThrowIfDisposed = jasmine.createSpy(
         `vertexBufferThrowIfDisposed`
@@ -1713,6 +1719,7 @@ describe(`render`, () => {
     let uniformMatrix3fv: jasmine.Spy;
     let uniformMatrix4fv: jasmine.Spy;
     let contextRender: jasmine.Spy;
+    let contextAddEventListener: jasmine.Spy;
     let context: ContextInterface<
       | `useProgram`
       | `bindBuffer`
@@ -1757,7 +1764,8 @@ describe(`render`, () => {
       uniformMatrix2fv = jasmine.createSpy(`uniformMatrix2fv`);
       uniformMatrix3fv = jasmine.createSpy(`uniformMatrix3fv`);
       uniformMatrix4fv = jasmine.createSpy(`uniformMatrix4fv`);
-      contextRender = jasmine.createSpy(`render`);
+      contextRender = jasmine.createSpy(`contextRender`);
+      contextAddEventListener = jasmine.createSpy(`addEventListener`);
       context = {
         gl: {
           useProgram,
@@ -1780,6 +1788,7 @@ describe(`render`, () => {
         },
         timesContextRestored: 7,
         render: contextRender,
+        addEventListener: contextAddEventListener,
       };
       vertexBufferThrowIfDisposed = jasmine.createSpy(
         `vertexBufferThrowIfDisposed`
@@ -2060,7 +2069,7 @@ describe(`render`, () => {
       expect(vertexBufferThrowIfFromAnotherContext).not.toHaveBeenCalled();
     });
 
-    it(`gets one instance of the vertexBuffer`, () => {
+    it(`gets one instance of the vertex buffer`, () => {
       expect(vertexBufferGetInstance).toHaveBeenCalledTimes(1);
     });
 
@@ -2096,6 +2105,7 @@ describe(`render`, () => {
     let uniformMatrix3fv: jasmine.Spy;
     let uniformMatrix4fv: jasmine.Spy;
     let contextRender: jasmine.Spy;
+    let contextAddEventListener: jasmine.Spy;
     let context: ContextInterface<
       | `useProgram`
       | `bindBuffer`
@@ -2140,7 +2150,8 @@ describe(`render`, () => {
       uniformMatrix2fv = jasmine.createSpy(`uniformMatrix2fv`);
       uniformMatrix3fv = jasmine.createSpy(`uniformMatrix3fv`);
       uniformMatrix4fv = jasmine.createSpy(`uniformMatrix4fv`);
-      contextRender = jasmine.createSpy(`render`);
+      contextRender = jasmine.createSpy(`contextRender`);
+      contextAddEventListener = jasmine.createSpy(`addEventListener`);
       context = {
         gl: {
           useProgram,
@@ -2163,6 +2174,7 @@ describe(`render`, () => {
         },
         timesContextRestored: 7,
         render: contextRender,
+        addEventListener: contextAddEventListener,
       };
       vertexBufferThrowIfDisposed = jasmine.createSpy(
         `vertexBufferThrowIfDisposed`
@@ -2320,6 +2332,7 @@ describe(`render`, () => {
     let uniformMatrix3fv: jasmine.Spy;
     let uniformMatrix4fv: jasmine.Spy;
     let contextRender: jasmine.Spy;
+    let contextAddEventListener: jasmine.Spy;
     let context: ContextInterface<
       | `useProgram`
       | `bindBuffer`
@@ -2364,7 +2377,8 @@ describe(`render`, () => {
       uniformMatrix2fv = jasmine.createSpy(`uniformMatrix2fv`);
       uniformMatrix3fv = jasmine.createSpy(`uniformMatrix3fv`);
       uniformMatrix4fv = jasmine.createSpy(`uniformMatrix4fv`);
-      contextRender = jasmine.createSpy(`render`);
+      contextRender = jasmine.createSpy(`contextRender`);
+      contextAddEventListener = jasmine.createSpy(`addEventListener`);
       context = {
         gl: {
           useProgram,
@@ -2387,6 +2401,7 @@ describe(`render`, () => {
         },
         timesContextRestored: 7,
         render: contextRender,
+        addEventListener: contextAddEventListener,
       };
       vertexBufferThrowIfDisposed = jasmine.createSpy(
         `vertexBufferThrowIfDisposed`

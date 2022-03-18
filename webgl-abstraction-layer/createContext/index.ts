@@ -17,6 +17,10 @@ export function createContext(
   if (gl === null) {
     throw new Error(`Failed to create a WebGL context.`);
   } else {
+    const callbacks: {
+      readonly [T in `postRender`]: (() => void)[];
+    } = { postRender: [] };
+
     const output = {
       gl,
       timesContextRestored: 0,
@@ -29,6 +33,13 @@ export function createContext(
         canvas.height = height;
 
         render(width, height);
+
+        for (const callback of callbacks.postRender) {
+          callback();
+        }
+      },
+      addEventListener(type: `postRender`, callback: () => void) {
+        callbacks[type].push(callback);
       },
     };
 

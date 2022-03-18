@@ -10,6 +10,7 @@ describe(`StaticIndexBuffer`, () => {
     let deleteBuffer: jasmine.Spy;
     let isContextLost: jasmine.Spy;
     let render: jasmine.Spy;
+    let addEventListener: jasmine.Spy;
 
     let context: ContextInterface<
       | `createBuffer`
@@ -28,6 +29,7 @@ describe(`StaticIndexBuffer`, () => {
       deleteBuffer = jasmine.createSpy(`deleteBuffer`);
       isContextLost = jasmine.createSpy(`isContextLost`);
       render = jasmine.createSpy(`render`);
+      addEventListener = jasmine.createSpy(`addEventListener`);
 
       context = {
         gl: {
@@ -39,6 +41,7 @@ describe(`StaticIndexBuffer`, () => {
         },
         timesContextRestored: 7,
         render,
+        addEventListener,
       };
 
       staticIndexBuffer = new StaticIndexBuffer(context, testIndices);
@@ -75,6 +78,10 @@ describe(`StaticIndexBuffer`, () => {
     it(`does not render`, () => {
       expect(render).not.toHaveBeenCalled();
     });
+
+    it(`does not add any event listeners`, () => {
+      expect(addEventListener).not.toHaveBeenCalled();
+    });
   });
 
   describe(`on generating indices`, () => {
@@ -84,6 +91,7 @@ describe(`StaticIndexBuffer`, () => {
     let deleteBuffer: jasmine.Spy;
     let isContextLost: jasmine.Spy;
     let render: jasmine.Spy;
+    let addEventListener: jasmine.Spy;
 
     let context: ContextInterface<
       | `createBuffer`
@@ -104,6 +112,7 @@ describe(`StaticIndexBuffer`, () => {
       deleteBuffer = jasmine.createSpy(`deleteBuffer`);
       isContextLost = jasmine.createSpy(`isContextLost`);
       render = jasmine.createSpy(`render`);
+      addEventListener = jasmine.createSpy(`addEventListener`);
 
       context = {
         gl: {
@@ -115,6 +124,7 @@ describe(`StaticIndexBuffer`, () => {
         },
         timesContextRestored: 7,
         render,
+        addEventListener,
       };
 
       staticIndexBuffer = new StaticIndexBuffer(context, testIndices);
@@ -152,6 +162,10 @@ describe(`StaticIndexBuffer`, () => {
 
     it(`does not render`, () => {
       expect(render).not.toHaveBeenCalled();
+    });
+
+    it(`does not add any event listeners`, () => {
+      expect(addEventListener).not.toHaveBeenCalled();
     });
 
     it(`returns the indices`, () => {

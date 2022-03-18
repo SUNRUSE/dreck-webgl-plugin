@@ -472,6 +472,7 @@ describe(`VertexBuffer`, () => {
         let deleteBuffer: jasmine.Spy;
         let isContextLost: jasmine.Spy;
         let render: jasmine.Spy;
+        let addEventListener: jasmine.Spy;
 
         class TestVertexBuffer extends VertexBuffer<TestAttributeSet> {
           generateVertices(): {
@@ -534,6 +535,7 @@ describe(`VertexBuffer`, () => {
           deleteBuffer = jasmine.createSpy(`deleteBuffer`);
           isContextLost = jasmine.createSpy(`isContextLost`);
           render = jasmine.createSpy(`render`);
+          addEventListener = jasmine.createSpy(`addEventListener`);
 
           context = {
             gl: {
@@ -545,6 +547,7 @@ describe(`VertexBuffer`, () => {
             },
             timesContextRestored: 7,
             render,
+            addEventListener,
           };
 
           vertexBuffer = new TestVertexBuffer(
@@ -595,6 +598,10 @@ describe(`VertexBuffer`, () => {
         it(`does not render`, () => {
           expect(render).not.toHaveBeenCalled();
         });
+
+        it(`does not add any event listeners`, () => {
+          expect(addEventListener).not.toHaveBeenCalled();
+        });
       });
 
       describe(`on generating data`, () => {
@@ -606,6 +613,7 @@ describe(`VertexBuffer`, () => {
           let deleteBuffer: jasmine.Spy;
           let isContextLost: jasmine.Spy;
           let render: jasmine.Spy;
+          let addEventListener: jasmine.Spy;
 
           class TestVertexBuffer extends VertexBuffer<TestAttributeSet> {
             generateVertices(): TestGeneratedVertices {
@@ -838,6 +846,7 @@ describe(`VertexBuffer`, () => {
             deleteBuffer = jasmine.createSpy(`deleteBuffer`);
             isContextLost = jasmine.createSpy(`isContextLost`);
             render = jasmine.createSpy(`render`);
+            addEventListener = jasmine.createSpy(`addEventListener`);
 
             context = {
               gl: {
@@ -849,6 +858,7 @@ describe(`VertexBuffer`, () => {
               },
               timesContextRestored: 7,
               render,
+              addEventListener,
             };
 
             vertexBuffer = new TestVertexBuffer(
@@ -900,6 +910,10 @@ describe(`VertexBuffer`, () => {
 
           it(`does not render`, () => {
             expect(render).not.toHaveBeenCalled();
+          });
+
+          it(`does not add any event listeners`, () => {
+            expect(addEventListener).not.toHaveBeenCalled();
           });
 
           describe(`returns bytes including`, () => {
@@ -1221,6 +1235,7 @@ describe(`VertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
+            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends VertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -1448,6 +1463,7 @@ describe(`VertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
+              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -1459,6 +1475,7 @@ describe(`VertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
+                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -1517,6 +1534,10 @@ describe(`VertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
+            it(`does not add any event listeners`, () => {
+              expect(addEventListener).not.toHaveBeenCalled();
+            });
+
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -1534,6 +1555,7 @@ describe(`VertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
+            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends VertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -1761,6 +1783,7 @@ describe(`VertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
+              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -1772,6 +1795,7 @@ describe(`VertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
+                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -1830,6 +1854,10 @@ describe(`VertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
+            it(`does not add any event listeners`, () => {
+              expect(addEventListener).not.toHaveBeenCalled();
+            });
+
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -1847,6 +1875,7 @@ describe(`VertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
+            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends VertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -2074,6 +2103,7 @@ describe(`VertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
+              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -2085,6 +2115,7 @@ describe(`VertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
+                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -2143,6 +2174,10 @@ describe(`VertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
+            it(`does not add any event listeners`, () => {
+              expect(addEventListener).not.toHaveBeenCalled();
+            });
+
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -2160,6 +2195,7 @@ describe(`VertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
+            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends VertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -2387,6 +2423,7 @@ describe(`VertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
+              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -2398,6 +2435,7 @@ describe(`VertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
+                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -2456,6 +2494,10 @@ describe(`VertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
+            it(`does not add any event listeners`, () => {
+              expect(addEventListener).not.toHaveBeenCalled();
+            });
+
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -2473,6 +2515,7 @@ describe(`VertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
+            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends VertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -2700,6 +2743,7 @@ describe(`VertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
+              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -2711,6 +2755,7 @@ describe(`VertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
+                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -2769,6 +2814,10 @@ describe(`VertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
+            it(`does not add any event listeners`, () => {
+              expect(addEventListener).not.toHaveBeenCalled();
+            });
+
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -2786,6 +2835,7 @@ describe(`VertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
+            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends VertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -3013,6 +3063,7 @@ describe(`VertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
+              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -3024,6 +3075,7 @@ describe(`VertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
+                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -3082,6 +3134,10 @@ describe(`VertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
+            it(`does not add any event listeners`, () => {
+              expect(addEventListener).not.toHaveBeenCalled();
+            });
+
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -3099,6 +3155,7 @@ describe(`VertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
+            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends VertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -3326,6 +3383,7 @@ describe(`VertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
+              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -3337,6 +3395,7 @@ describe(`VertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
+                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -3395,6 +3454,10 @@ describe(`VertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
+            it(`does not add any event listeners`, () => {
+              expect(addEventListener).not.toHaveBeenCalled();
+            });
+
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -3412,6 +3475,7 @@ describe(`VertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
+            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends VertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -3639,6 +3703,7 @@ describe(`VertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
+              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -3650,6 +3715,7 @@ describe(`VertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
+                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -3708,6 +3774,10 @@ describe(`VertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
+            it(`does not add any event listeners`, () => {
+              expect(addEventListener).not.toHaveBeenCalled();
+            });
+
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -3727,6 +3797,7 @@ describe(`VertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
+            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends VertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -3954,6 +4025,7 @@ describe(`VertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
+              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -3965,6 +4037,7 @@ describe(`VertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
+                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -4023,6 +4096,10 @@ describe(`VertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
+            it(`does not add any event listeners`, () => {
+              expect(addEventListener).not.toHaveBeenCalled();
+            });
+
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -4040,6 +4117,7 @@ describe(`VertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
+            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends VertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -4267,6 +4345,7 @@ describe(`VertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
+              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -4278,6 +4357,7 @@ describe(`VertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
+                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -4336,6 +4416,10 @@ describe(`VertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
+            it(`does not add any event listeners`, () => {
+              expect(addEventListener).not.toHaveBeenCalled();
+            });
+
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -4353,6 +4437,7 @@ describe(`VertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
+            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends VertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -4580,6 +4665,7 @@ describe(`VertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
+              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -4591,6 +4677,7 @@ describe(`VertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
+                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -4649,6 +4736,10 @@ describe(`VertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
+            it(`does not add any event listeners`, () => {
+              expect(addEventListener).not.toHaveBeenCalled();
+            });
+
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -4666,6 +4757,7 @@ describe(`VertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
+            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends VertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -4893,6 +4985,7 @@ describe(`VertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
+              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -4904,6 +4997,7 @@ describe(`VertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
+                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -4962,6 +5056,10 @@ describe(`VertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
+            it(`does not add any event listeners`, () => {
+              expect(addEventListener).not.toHaveBeenCalled();
+            });
+
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -4979,6 +5077,7 @@ describe(`VertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
+            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends VertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -5206,6 +5305,7 @@ describe(`VertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
+              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -5217,6 +5317,7 @@ describe(`VertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
+                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -5275,6 +5376,10 @@ describe(`VertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
+            it(`does not add any event listeners`, () => {
+              expect(addEventListener).not.toHaveBeenCalled();
+            });
+
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -5292,6 +5397,7 @@ describe(`VertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
+            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends VertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -5519,6 +5625,7 @@ describe(`VertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
+              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -5530,6 +5637,7 @@ describe(`VertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
+                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -5588,6 +5696,10 @@ describe(`VertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
+            it(`does not add any event listeners`, () => {
+              expect(addEventListener).not.toHaveBeenCalled();
+            });
+
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -5605,6 +5717,7 @@ describe(`VertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
+            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends VertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -5832,6 +5945,7 @@ describe(`VertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
+              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -5843,6 +5957,7 @@ describe(`VertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
+                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -5901,6 +6016,10 @@ describe(`VertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
+            it(`does not add any event listeners`, () => {
+              expect(addEventListener).not.toHaveBeenCalled();
+            });
+
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -5918,6 +6037,7 @@ describe(`VertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
+            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends VertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -6145,6 +6265,7 @@ describe(`VertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
+              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -6156,6 +6277,7 @@ describe(`VertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
+                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -6214,6 +6336,10 @@ describe(`VertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
+            it(`does not add any event listeners`, () => {
+              expect(addEventListener).not.toHaveBeenCalled();
+            });
+
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -6233,6 +6359,7 @@ describe(`VertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
+            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends VertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -6460,6 +6587,7 @@ describe(`VertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
+              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -6471,6 +6599,7 @@ describe(`VertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
+                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -6529,6 +6658,10 @@ describe(`VertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
+            it(`does not add any event listeners`, () => {
+              expect(addEventListener).not.toHaveBeenCalled();
+            });
+
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -6546,6 +6679,7 @@ describe(`VertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
+            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends VertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -6773,6 +6907,7 @@ describe(`VertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
+              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -6784,6 +6919,7 @@ describe(`VertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
+                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -6842,6 +6978,10 @@ describe(`VertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
+            it(`does not add any event listeners`, () => {
+              expect(addEventListener).not.toHaveBeenCalled();
+            });
+
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -6859,6 +6999,7 @@ describe(`VertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
+            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends VertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -7086,6 +7227,7 @@ describe(`VertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
+              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -7097,6 +7239,7 @@ describe(`VertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
+                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -7155,6 +7298,10 @@ describe(`VertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
+            it(`does not add any event listeners`, () => {
+              expect(addEventListener).not.toHaveBeenCalled();
+            });
+
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -7172,6 +7319,7 @@ describe(`VertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
+            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends VertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -7399,6 +7547,7 @@ describe(`VertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
+              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -7410,6 +7559,7 @@ describe(`VertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
+                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -7468,6 +7618,10 @@ describe(`VertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
+            it(`does not add any event listeners`, () => {
+              expect(addEventListener).not.toHaveBeenCalled();
+            });
+
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -7485,6 +7639,7 @@ describe(`VertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
+            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends VertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -7712,6 +7867,7 @@ describe(`VertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
+              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -7723,6 +7879,7 @@ describe(`VertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
+                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -7781,6 +7938,10 @@ describe(`VertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
+            it(`does not add any event listeners`, () => {
+              expect(addEventListener).not.toHaveBeenCalled();
+            });
+
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -7798,6 +7959,7 @@ describe(`VertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
+            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends VertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -8025,6 +8187,7 @@ describe(`VertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
+              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -8036,6 +8199,7 @@ describe(`VertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
+                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -8094,6 +8258,10 @@ describe(`VertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
+            it(`does not add any event listeners`, () => {
+              expect(addEventListener).not.toHaveBeenCalled();
+            });
+
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -8111,6 +8279,7 @@ describe(`VertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
+            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends VertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -8338,6 +8507,7 @@ describe(`VertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
+              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -8349,6 +8519,7 @@ describe(`VertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
+                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -8407,6 +8578,10 @@ describe(`VertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
+            it(`does not add any event listeners`, () => {
+              expect(addEventListener).not.toHaveBeenCalled();
+            });
+
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -8424,6 +8599,7 @@ describe(`VertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
+            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends VertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -8651,6 +8827,7 @@ describe(`VertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
+              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -8662,6 +8839,7 @@ describe(`VertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
+                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -8720,6 +8898,10 @@ describe(`VertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
+            it(`does not add any event listeners`, () => {
+              expect(addEventListener).not.toHaveBeenCalled();
+            });
+
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -8739,6 +8921,7 @@ describe(`VertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
+            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends VertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -8966,6 +9149,7 @@ describe(`VertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
+              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -8977,6 +9161,7 @@ describe(`VertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
+                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -9035,6 +9220,10 @@ describe(`VertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
+            it(`does not add any event listeners`, () => {
+              expect(addEventListener).not.toHaveBeenCalled();
+            });
+
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -9052,6 +9241,7 @@ describe(`VertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
+            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends VertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -9279,6 +9469,7 @@ describe(`VertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
+              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -9290,6 +9481,7 @@ describe(`VertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
+                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -9348,6 +9540,10 @@ describe(`VertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
+            it(`does not add any event listeners`, () => {
+              expect(addEventListener).not.toHaveBeenCalled();
+            });
+
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -9365,6 +9561,7 @@ describe(`VertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
+            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends VertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -9592,6 +9789,7 @@ describe(`VertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
+              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -9603,6 +9801,7 @@ describe(`VertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
+                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -9661,6 +9860,10 @@ describe(`VertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
+            it(`does not add any event listeners`, () => {
+              expect(addEventListener).not.toHaveBeenCalled();
+            });
+
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -9678,6 +9881,7 @@ describe(`VertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
+            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends VertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -9905,6 +10109,7 @@ describe(`VertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
+              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -9916,6 +10121,7 @@ describe(`VertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
+                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -9974,6 +10180,10 @@ describe(`VertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
+            it(`does not add any event listeners`, () => {
+              expect(addEventListener).not.toHaveBeenCalled();
+            });
+
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -9991,6 +10201,7 @@ describe(`VertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
+            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends VertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -10218,6 +10429,7 @@ describe(`VertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
+              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -10229,6 +10441,7 @@ describe(`VertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
+                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -10287,6 +10500,10 @@ describe(`VertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
+            it(`does not add any event listeners`, () => {
+              expect(addEventListener).not.toHaveBeenCalled();
+            });
+
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -10304,6 +10521,7 @@ describe(`VertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
+            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends VertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -10531,6 +10749,7 @@ describe(`VertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
+              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -10542,6 +10761,7 @@ describe(`VertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
+                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -10600,6 +10820,10 @@ describe(`VertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
+            it(`does not add any event listeners`, () => {
+              expect(addEventListener).not.toHaveBeenCalled();
+            });
+
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -10617,6 +10841,7 @@ describe(`VertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
+            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends VertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -10844,6 +11069,7 @@ describe(`VertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
+              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -10855,6 +11081,7 @@ describe(`VertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
+                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -10913,6 +11140,10 @@ describe(`VertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
+            it(`does not add any event listeners`, () => {
+              expect(addEventListener).not.toHaveBeenCalled();
+            });
+
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -10930,6 +11161,7 @@ describe(`VertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
+            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends VertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -11157,6 +11389,7 @@ describe(`VertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
+              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -11168,6 +11401,7 @@ describe(`VertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
+                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -11226,6 +11460,10 @@ describe(`VertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
+            it(`does not add any event listeners`, () => {
+              expect(addEventListener).not.toHaveBeenCalled();
+            });
+
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -11245,6 +11483,7 @@ describe(`VertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
+            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends VertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -11472,6 +11711,7 @@ describe(`VertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
+              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -11483,6 +11723,7 @@ describe(`VertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
+                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -11541,6 +11782,10 @@ describe(`VertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
+            it(`does not add any event listeners`, () => {
+              expect(addEventListener).not.toHaveBeenCalled();
+            });
+
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -11558,6 +11803,7 @@ describe(`VertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
+            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends VertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -11785,6 +12031,7 @@ describe(`VertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
+              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -11796,6 +12043,7 @@ describe(`VertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
+                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -11854,6 +12102,10 @@ describe(`VertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
+            it(`does not add any event listeners`, () => {
+              expect(addEventListener).not.toHaveBeenCalled();
+            });
+
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -11871,6 +12123,7 @@ describe(`VertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
+            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends VertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -12098,6 +12351,7 @@ describe(`VertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
+              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -12109,6 +12363,7 @@ describe(`VertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
+                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -12165,6 +12420,10 @@ describe(`VertexBuffer`, () => {
 
             it(`does not render`, () => {
               expect(render).not.toHaveBeenCalled();
+            });
+
+            it(`does not add any event listeners`, () => {
+              expect(addEventListener).not.toHaveBeenCalled();
             });
 
             it(`throws the expected error`, () => {
