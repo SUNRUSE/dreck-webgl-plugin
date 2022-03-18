@@ -29,6 +29,7 @@ export { Mat2 } from "./math/Mat2";
 export { Mat3 } from "./math/Mat3";
 export { Mat4 } from "./math/Mat4";
 export { PackedAttributeDefinitionSet } from "./webgl-abstraction-layer/PackedAttributeDefinitionSet";
+export { PollableMouseInput } from "./webgl-abstraction-layer/PollableMouseInput";
 export { Program } from "./webgl-abstraction-layer/Program";
 export { ProgramInstance } from "./webgl-abstraction-layer/ProgramInstance";
 export { render } from "./webgl-abstraction-layer/render";
