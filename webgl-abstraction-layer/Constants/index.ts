@@ -136,4 +136,149 @@ export const enum Constants {
    * The program parameter which retrieves whether linking succeeded.
    */
   LinkStatus = 35714,
+
+  /**
+   * The texture is to repeat without mirroring.
+   */
+  Repeat = 10497,
+
+  /**
+   * The texture's final row and column is to be repeated into infinity.
+   */
+  ClampToEdge = 33071,
+
+  /**
+   * The texture is to repeat, mirroring each time it does.
+   */
+  MirroredRepeat = 33648,
+
+  /**
+   * The nearest texture pixel to the sampled coordinate is to be used, making square, sharp pixels.  No mip-mapping is to be applied.
+   */
+  Nearest = 9728,
+
+  /**
+   * The texture is to be interpolated using bilinear interpolation, without mip-mapping.
+   */
+  Linear = 9729,
+
+  /**
+   * The nearest texture pixel to the sampled coordinate is to be used, making square, sharp pixels.  Mip maps are present but not interpolated between.
+   */
+  NearestMipmapNearest = 9984,
+
+  /**
+   * The texture is to be interpolated using bilinear interpolation.  Mip maps are present but not interpolated between.
+   */
+  LinearMipmapNearest = 9985,
+
+  /**
+   * The nearest texture pixel to the sampled coordinate is to be used, making square, sharp pixels.  Mip maps are present and linearly interpolated between.
+   */
+  NearestMipmapLinear = 9986,
+
+  /**
+   * The texture is to be interpolated using bilinear interpolation.  Mip maps are present and linearly interpolated between.
+   */
+  LinearMipmapLinear = 9987,
+
+  /**
+   * The filter to apply when enlarging a texture.
+   */
+  TextureMagnificationFilter = 10240,
+
+  /**
+   * The filter to apply when shrinking a texture.
+   */
+  TextureMinificationFilter = 10241,
+
+  /**
+   * The wrapping applied on the X axis.
+   */
+  TextureWrapX = 10242,
+
+  /**
+   * The wrapping applied on the Y axis.
+   */
+  TextureWrapY = 10243,
+
+  /**
+   * A 2D texture.
+   */
+  Texture2D = 3553,
+
+  /**
+   * A cube-map texture.
+   */
+  TextureCubeMap = 34067,
+
+  /**
+   * The texture on the face on the positive X axis of the cube.
+   */
+  TextureCubeMapPositiveX = 34069,
+
+  /**
+   * The texture on the face on the negative X axis of the cube.
+   */
+  TextureCubeMapNegativeX = 34070,
+
+  /**
+   * The texture on the face on the positive Y axis of the cube.
+   */
+  TextureCubeMapPositiveY = 34071,
+
+  /**
+   * The texture on the face on the negative Y axis of the cube.
+   */
+  TextureCubeMapNegativeY = 34072,
+
+  /**
+   * The texture on the face on the positive Z axis of the cube.
+   */
+  TextureCubeMapPositiveZ = 34073,
+
+  /**
+   * The texture on the face on the negative Z axis of the cube.
+   */
+  TextureCubeMapNegativeZ = 34074,
+
+  /**
+   * The texture contains only a luminance channel (specifying equal red, green and blue values).
+   */
+  Luminance = 6409,
+
+  /**
+   * The texture contains only an alpha channel.
+   */
+  Alpha = 6406,
+
+  /**
+   * The texture contains both a luminance channel (specifying equal red, green and blue values) and an alpha channel.
+   */
+  LuminanceAlpha = 6410,
+
+  /**
+   * The texture contains distinct red, green and blue channels.
+   */
+  Rgb = 6407,
+
+  /**
+   * The texture contains distinct red, green, blue and alpha channels.
+   */
+  Rgba = 6408,
+
+  /**
+   * Each pixel in the texture is composed of 4 4-bit values.
+   */
+  UnsignedShort4444 = 32819,
+
+  /**
+   * Each pixel in the texture is composed of 3 5-bit values, and a single 1 bit value.
+   */
+  UnsignedShort5551 = 32820,
+
+  /**
+   * Each pixel in the texture is composed of a 5-bit value, a 6-bit value, and a 5-bit value.
+   */
+  UnsignedShort565 = 33635,
 }
