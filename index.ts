@@ -36,6 +36,8 @@ export { PollableMouseInput } from "./webgl-abstraction-layer/PollableMouseInput
 export { Program } from "./webgl-abstraction-layer/Program";
 export { ProgramInstance } from "./webgl-abstraction-layer/ProgramInstance";
 export { render } from "./webgl-abstraction-layer/render";
+export { Renderbuffer } from "./webgl-abstraction-layer/Renderbuffer";
+export { RenderbufferFormat } from "./webgl-abstraction-layer/RenderbufferFormat";
 export { renderIndexed } from "./webgl-abstraction-layer/renderIndexed";
 export { Resource } from "./webgl-abstraction-layer/Resource";
 export { ResourceInterface } from "./webgl-abstraction-layer/ResourceInterface";
