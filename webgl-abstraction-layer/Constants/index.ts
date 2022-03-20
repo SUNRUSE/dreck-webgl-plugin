@@ -281,4 +281,69 @@ export const enum Constants {
    * Each pixel in the texture is composed of a 5-bit value, a 6-bit value, and a 5-bit value.
    */
   UnsignedShort565 = 33635,
+
+  /**
+   * The renderbuffer contains 4 red bits, 4 green bits, 4 blue bits and 4 alpha bits per pixel.
+   */
+  Rgba4 = 32854,
+
+  /**
+   * The renderbuffer contains 5 red bits, 6 green bits and 5 blue bits per pixel.
+   */
+  Rgb565 = 36194,
+
+  /**
+   * The renderbuffer contains 5 red bits, 5 green bits, 5 blue bits and 1 alpha bit per pixel.
+   */
+  Rgba5551 = 32855,
+
+  /**
+   * The renderbuffer contains a 16-bit depth value per pixel.
+   */
+  DepthComponent16 = 33189,
+
+  /**
+   * The renderbuffer contains an 8-bit stencil value per pixel.
+   */
+  StencilIndex8 = 36168,
+
+  /**
+   * The renderbuffer contains an both a depth and stencil value per pixel.
+   */
+  DepthStencil = 34041,
+
+  /**
+   * Specifies that a renderbuffer is to be bound.
+   */
+  Renderbuffer = 36161,
+
+  /**
+   * Specifies that the renderbuffer is to be attached to the framebuffer as a depth buffer.
+   */
+  DepthAttachment = 36096,
+
+  /**
+   * Specifies that the renderbuffer is to be attached to the framebuffer as a stencil buffer.
+   */
+  StencilAttachment = 36128,
+
+  /**
+   * Specifies that the renderbuffer is to be attached to the framebuffer as a combined depth and stencil buffer.
+   */
+  DepthStencilAttachment = 33306,
+
+  /**
+   * Specifies that a framebuffer is to be bound.
+   */
+  Framebuffer = 36160,
+
+  /**
+   * Specifies that the texture or renderbuffer is to be attached to the framebuffer as the first color buffer.
+   */
+  ColorAttachment0 = 36064,
+
+  /**
+   * The framebuffer was successfully assembled.
+   */
+  FramebufferComplete = 36053,
 }
