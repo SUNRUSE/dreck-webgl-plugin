@@ -10,6 +10,8 @@ import type { WrappingMode } from "../WrappingMode";
 
 /**
  * A WebGL texture.
+ * @template TFormat The format of the texture.
+ * @template TType The type of the texture.
  */
 export abstract class Texture2D<
   TFormat extends TextureFormat,
