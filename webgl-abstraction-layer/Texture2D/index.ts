@@ -10,10 +10,12 @@ import type { WrappingMode } from "../WrappingMode";
 
 /**
  * A WebGL texture.
+ * @template TWebGLRenderingContextKey The key(s) of the WebGL rendering context which are used by the resource.
  * @template TFormat The format of the texture.
  * @template TType The type of the texture.
  */
 export abstract class Texture2D<
+  TWebGLRenderingContextKey extends keyof WebGLRenderingContext,
   TFormat extends TextureFormat,
   TType extends TextureTypesByFormat[TFormat]
 > extends Resource<
@@ -23,6 +25,7 @@ export abstract class Texture2D<
   | `texParameteri`
   | `deleteTexture`
   | `generateMipmap`
+  | TWebGLRenderingContextKey
 > {
   /**
    * Creates a new WebGL texture.
@@ -42,6 +45,7 @@ export abstract class Texture2D<
       | `deleteTexture`
       | `generateMipmap`
       | `isContextLost`
+      | TWebGLRenderingContextKey
     >,
     public readonly wrapX: WrappingMode,
     public readonly wrapY: WrappingMode,

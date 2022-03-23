@@ -136,11 +136,16 @@ describe(`Texture2D`, () => {
         let deleteTexture: jasmine.Spy;
         let generateMipmap: jasmine.Spy;
         let isContextLost: jasmine.Spy;
+        let getContextAttributes: jasmine.Spy;
         let render: jasmine.Spy;
         let addEventListener: jasmine.Spy;
         let populate: jasmine.Spy;
 
-        class TestTexture2D extends Texture2D<TFormat, TType> {
+        class TestTexture2D extends Texture2D<
+          `getContextAttributes`,
+          TFormat,
+          TType
+        > {
           populate(): void {
             return populate();
           }
@@ -153,6 +158,7 @@ describe(`Texture2D`, () => {
           | `deleteTexture`
           | `generateMipmap`
           | `isContextLost`
+          | `getContextAttributes`
         >;
         let texture: TestTexture2D;
 
@@ -164,6 +170,7 @@ describe(`Texture2D`, () => {
           generateMipmap = jasmine.createSpy(`generateMipmap`);
           populate = jasmine.createSpy(`populate`);
           isContextLost = jasmine.createSpy(`isContextLost`);
+          getContextAttributes = jasmine.createSpy(`getContextAttributes`);
           render = jasmine.createSpy(`render`);
           addEventListener = jasmine.createSpy(`addEventListener`);
 
@@ -175,6 +182,7 @@ describe(`Texture2D`, () => {
               deleteTexture,
               generateMipmap,
               isContextLost,
+              getContextAttributes,
             },
             timesContextRestored: 7,
             render,
@@ -255,6 +263,10 @@ describe(`Texture2D`, () => {
         it(`exposes the context`, () => {
           expect(texture.context).toBe(context);
         });
+
+        it(`does not interact with additional elements of the context`, () => {
+          expect(getContextAttributes).not.toHaveBeenCalled();
+        });
       });
 
       describe(`on failing to create an instance`, () => {
@@ -264,11 +276,16 @@ describe(`Texture2D`, () => {
         let deleteTexture: jasmine.Spy;
         let generateMipmap: jasmine.Spy;
         let isContextLost: jasmine.Spy;
+        let getContextAttributes: jasmine.Spy;
         let render: jasmine.Spy;
         let addEventListener: jasmine.Spy;
         let populate: jasmine.Spy;
 
-        class TestTexture2D extends Texture2D<TFormat, TType> {
+        class TestTexture2D extends Texture2D<
+          `getContextAttributes`,
+          TFormat,
+          TType
+        > {
           populate(): void {
             return populate();
           }
@@ -281,6 +298,7 @@ describe(`Texture2D`, () => {
           | `deleteTexture`
           | `generateMipmap`
           | `isContextLost`
+          | `getContextAttributes`
         >;
         let texture: TestTexture2D;
         let result: null | WebGLTexture;
@@ -295,6 +313,7 @@ describe(`Texture2D`, () => {
           generateMipmap = jasmine.createSpy(`generateMipmap`);
           populate = jasmine.createSpy(`populate`);
           isContextLost = jasmine.createSpy(`isContextLost`);
+          getContextAttributes = jasmine.createSpy(`getContextAttributes`);
           render = jasmine.createSpy(`render`);
           addEventListener = jasmine.createSpy(`addEventListener`);
 
@@ -306,6 +325,7 @@ describe(`Texture2D`, () => {
               deleteTexture,
               generateMipmap,
               isContextLost,
+              getContextAttributes,
             },
             timesContextRestored: 7,
             render,
@@ -389,6 +409,10 @@ describe(`Texture2D`, () => {
           expect(texture.context).toBe(context);
         });
 
+        it(`does not interact with additional elements of the context`, () => {
+          expect(getContextAttributes).not.toHaveBeenCalled();
+        });
+
         it(`returns null`, () => {
           expect(result).toBeNull();
         });
@@ -401,6 +425,7 @@ describe(`Texture2D`, () => {
         let deleteTexture: jasmine.Spy;
         let generateMipmap: jasmine.Spy;
         let isContextLost: jasmine.Spy;
+        let getContextAttributes: jasmine.Spy;
         let render: jasmine.Spy;
         let addEventListener: jasmine.Spy;
         let populate: jasmine.Spy;
@@ -408,7 +433,11 @@ describe(`Texture2D`, () => {
         let textureUnboundBeforePopulateCalled: boolean;
         let textureUnboundBeforeMipmapsGenerated: boolean;
 
-        class TestTexture2D extends Texture2D<TFormat, TType> {
+        class TestTexture2D extends Texture2D<
+          `getContextAttributes`,
+          TFormat,
+          TType
+        > {
           populate(): void {
             return populate();
           }
@@ -421,6 +450,7 @@ describe(`Texture2D`, () => {
           | `deleteTexture`
           | `generateMipmap`
           | `isContextLost`
+          | `getContextAttributes`
         >;
         let texture: TestTexture2D;
         let result: null | WebGLTexture;
@@ -458,6 +488,7 @@ describe(`Texture2D`, () => {
             }
           });
           isContextLost = jasmine.createSpy(`isContextLost`);
+          getContextAttributes = jasmine.createSpy(`getContextAttributes`);
           render = jasmine.createSpy(`render`);
           addEventListener = jasmine.createSpy(`addEventListener`);
 
@@ -469,6 +500,7 @@ describe(`Texture2D`, () => {
               deleteTexture,
               generateMipmap,
               isContextLost,
+              getContextAttributes,
             },
             timesContextRestored: 7,
             render,
@@ -624,6 +656,10 @@ describe(`Texture2D`, () => {
           expect(texture.context).toBe(context);
         });
 
+        it(`does not interact with additional elements of the context`, () => {
+          expect(getContextAttributes).not.toHaveBeenCalled();
+        });
+
         it(`returns the created texture`, () => {
           expect(result).toEqual({ test: `texture` });
         });
@@ -636,11 +672,16 @@ describe(`Texture2D`, () => {
         let deleteTexture: jasmine.Spy;
         let generateMipmap: jasmine.Spy;
         let isContextLost: jasmine.Spy;
+        let getContextAttributes: jasmine.Spy;
         let render: jasmine.Spy;
         let addEventListener: jasmine.Spy;
         let populate: jasmine.Spy;
 
-        class TestTexture2D extends Texture2D<TFormat, TType> {
+        class TestTexture2D extends Texture2D<
+          `getContextAttributes`,
+          TFormat,
+          TType
+        > {
           populate(): void {
             return populate();
           }
@@ -653,6 +694,7 @@ describe(`Texture2D`, () => {
           | `deleteTexture`
           | `generateMipmap`
           | `isContextLost`
+          | `getContextAttributes`
         >;
         let texture: TestTexture2D;
 
@@ -664,6 +706,7 @@ describe(`Texture2D`, () => {
           generateMipmap = jasmine.createSpy(`generateMipmap`);
           populate = jasmine.createSpy(`populate`);
           isContextLost = jasmine.createSpy(`isContextLost`);
+          getContextAttributes = jasmine.createSpy(`getContextAttributes`);
           render = jasmine.createSpy(`render`);
           addEventListener = jasmine.createSpy(`addEventListener`);
 
@@ -675,6 +718,7 @@ describe(`Texture2D`, () => {
               deleteTexture,
               generateMipmap,
               isContextLost,
+              getContextAttributes,
             },
             timesContextRestored: 7,
             render,
@@ -757,6 +801,10 @@ describe(`Texture2D`, () => {
         it(`exposes the context`, () => {
           expect(texture.context).toBe(context);
         });
+
+        it(`does not interact with additional elements of the context`, () => {
+          expect(getContextAttributes).not.toHaveBeenCalled();
+        });
       });
 
       describe(`on deleting a non-null instance`, () => {
@@ -766,11 +814,16 @@ describe(`Texture2D`, () => {
         let deleteTexture: jasmine.Spy;
         let generateMipmap: jasmine.Spy;
         let isContextLost: jasmine.Spy;
+        let getContextAttributes: jasmine.Spy;
         let render: jasmine.Spy;
         let addEventListener: jasmine.Spy;
         let populate: jasmine.Spy;
 
-        class TestTexture2D extends Texture2D<TFormat, TType> {
+        class TestTexture2D extends Texture2D<
+          `getContextAttributes`,
+          TFormat,
+          TType
+        > {
           populate(): void {
             return populate();
           }
@@ -783,6 +836,7 @@ describe(`Texture2D`, () => {
           | `deleteTexture`
           | `generateMipmap`
           | `isContextLost`
+          | `getContextAttributes`
         >;
         let texture: TestTexture2D;
 
@@ -794,6 +848,7 @@ describe(`Texture2D`, () => {
           generateMipmap = jasmine.createSpy(`generateMipmap`);
           populate = jasmine.createSpy(`populate`);
           isContextLost = jasmine.createSpy(`isContextLost`);
+          getContextAttributes = jasmine.createSpy(`getContextAttributes`);
           render = jasmine.createSpy(`render`);
           addEventListener = jasmine.createSpy(`addEventListener`);
 
@@ -805,6 +860,7 @@ describe(`Texture2D`, () => {
               deleteTexture,
               generateMipmap,
               isContextLost,
+              getContextAttributes,
             },
             timesContextRestored: 7,
             render,
@@ -890,6 +946,10 @@ describe(`Texture2D`, () => {
 
         it(`exposes the context`, () => {
           expect(texture.context).toBe(context);
+        });
+
+        it(`does not interact with additional elements of the context`, () => {
+          expect(getContextAttributes).not.toHaveBeenCalled();
         });
       });
     });
