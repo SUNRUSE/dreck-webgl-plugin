@@ -61,6 +61,7 @@ export { StaticProgram } from "./webgl-abstraction-layer/StaticProgram";
 export { StaticVertexBuffer } from "./webgl-abstraction-layer/StaticVertexBuffer";
 export { StaticVertexShader } from "./webgl-abstraction-layer/StaticVertexShader";
 export { Texture2D } from "./webgl-abstraction-layer/Texture2D";
+export { TextureCube } from "./webgl-abstraction-layer/TextureCube";
 export { TextureFormat } from "./webgl-abstraction-layer/TextureFormat";
 export { TextureTypesByFormat } from "./webgl-abstraction-layer/TextureTypesByFormat";
 export { U16 } from "./webgl-abstraction-layer/U16";

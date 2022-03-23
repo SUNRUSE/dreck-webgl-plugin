@@ -203,6 +203,11 @@ export const enum Constants {
   TextureWrapY = 10243,
 
   /**
+   * The wrapping applied on the Z axis.
+   */
+  TextureWrapZ = 32882,
+
+  /**
    * A 2D texture.
    */
   Texture2D = 3553,
