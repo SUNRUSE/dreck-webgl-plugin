@@ -17,6 +17,7 @@ export { Constants } from "./webgl-abstraction-layer/Constants";
 export { ContextInterface } from "./webgl-abstraction-layer/ContextInterface";
 export { createCanvas } from "./webgl-abstraction-layer/createCanvas";
 export { createContext } from "./webgl-abstraction-layer/createContext";
+export { EmptyTexture2D } from "./webgl-abstraction-layer/EmptyTexture2D";
 export { F32 } from "./webgl-abstraction-layer/F32";
 export { Float } from "./math/Float";
 export { FloatAnimation } from "./animation/FloatAnimation";
