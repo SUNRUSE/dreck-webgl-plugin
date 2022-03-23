@@ -3,23 +3,16 @@ import {
   MinificationFilter,
   MagnificationFilter,
   Texture2D,
-  TextureTypesByFormat,
   Constants,
-  TextureFormat,
   ContextInterface,
 } from "../..";
 
 describe(`Texture2D`, () => {
-  function Scenario<
-    TFormat extends TextureFormat,
-    TType extends TextureTypesByFormat[TFormat]
-  >(
+  function Scenario(
     wrapX: WrappingMode,
     wrapY: WrappingMode,
     minificationFilter: MinificationFilter,
     magnificationFilter: MagnificationFilter,
-    format: TFormat,
-    type: TType,
     generatesMipmaps: boolean
   ): void {
     const descriptionFragments: string[] = [];
@@ -82,52 +75,6 @@ describe(`Texture2D`, () => {
         break;
     }
 
-    switch (format) {
-      case Constants.Rgb:
-        descriptionFragments.push(`with red, green and blue channels`);
-        break;
-
-      case Constants.Rgba:
-        descriptionFragments.push(`with red, green, blue and alpha channels`);
-        break;
-
-      case Constants.Luminance:
-        descriptionFragments.push(`with a luminance channel`);
-        break;
-
-      case Constants.Alpha:
-        descriptionFragments.push(`with an alpha channel`);
-        break;
-
-      case Constants.LuminanceAlpha:
-        descriptionFragments.push(`with luminance and alpha channels`);
-        break;
-    }
-
-    switch (type) {
-      case Constants.UnsignedByte:
-        descriptionFragments.push(`formatted as unsigned bytes`);
-        break;
-
-      case Constants.UnsignedShort565:
-        descriptionFragments.push(
-          `packed as 5, 6 and 5 bits into an unsigned short`
-        );
-        break;
-
-      case Constants.UnsignedShort5551:
-        descriptionFragments.push(
-          `packed as 5, 5, 5 and 1 bits into an unsigned short`
-        );
-        break;
-
-      case Constants.UnsignedShort4444:
-        descriptionFragments.push(
-          `packed as 4, 4, 4 and 4 into an unsigned short`
-        );
-        break;
-    }
-
     describe(descriptionFragments.join(` `), () => {
       describe(`on construction`, () => {
         let createTexture: jasmine.Spy;
@@ -141,11 +88,7 @@ describe(`Texture2D`, () => {
         let addEventListener: jasmine.Spy;
         let populate: jasmine.Spy;
 
-        class TestTexture2D extends Texture2D<
-          `getContextAttributes`,
-          TFormat,
-          TType
-        > {
+        class TestTexture2D extends Texture2D<`getContextAttributes`> {
           populate(): void {
             return populate();
           }
@@ -194,9 +137,7 @@ describe(`Texture2D`, () => {
             wrapX,
             wrapY,
             minificationFilter,
-            magnificationFilter,
-            format,
-            type
+            magnificationFilter
           );
         });
 
@@ -252,14 +193,6 @@ describe(`Texture2D`, () => {
           expect(texture.magnificationFilter).toEqual(magnificationFilter);
         });
 
-        it(`exposes the format`, () => {
-          expect(texture.format).toEqual(format);
-        });
-
-        it(`exposes the type`, () => {
-          expect(texture.type).toEqual(type);
-        });
-
         it(`exposes the context`, () => {
           expect(texture.context).toBe(context);
         });
@@ -281,11 +214,7 @@ describe(`Texture2D`, () => {
         let addEventListener: jasmine.Spy;
         let populate: jasmine.Spy;
 
-        class TestTexture2D extends Texture2D<
-          `getContextAttributes`,
-          TFormat,
-          TType
-        > {
+        class TestTexture2D extends Texture2D<`getContextAttributes`> {
           populate(): void {
             return populate();
           }
@@ -337,9 +266,7 @@ describe(`Texture2D`, () => {
             wrapX,
             wrapY,
             minificationFilter,
-            magnificationFilter,
-            format,
-            type
+            magnificationFilter
           );
 
           result = texture.createInstance();
@@ -397,14 +324,6 @@ describe(`Texture2D`, () => {
           expect(texture.magnificationFilter).toEqual(magnificationFilter);
         });
 
-        it(`exposes the format`, () => {
-          expect(texture.format).toEqual(format);
-        });
-
-        it(`exposes the type`, () => {
-          expect(texture.type).toEqual(type);
-        });
-
         it(`exposes the context`, () => {
           expect(texture.context).toBe(context);
         });
@@ -433,11 +352,7 @@ describe(`Texture2D`, () => {
         let textureUnboundBeforePopulateCalled: boolean;
         let textureUnboundBeforeMipmapsGenerated: boolean;
 
-        class TestTexture2D extends Texture2D<
-          `getContextAttributes`,
-          TFormat,
-          TType
-        > {
+        class TestTexture2D extends Texture2D<`getContextAttributes`> {
           populate(): void {
             return populate();
           }
@@ -512,9 +427,7 @@ describe(`Texture2D`, () => {
             wrapX,
             wrapY,
             minificationFilter,
-            magnificationFilter,
-            format,
-            type
+            magnificationFilter
           );
 
           result = texture.createInstance();
@@ -644,14 +557,6 @@ describe(`Texture2D`, () => {
           expect(texture.magnificationFilter).toEqual(magnificationFilter);
         });
 
-        it(`exposes the format`, () => {
-          expect(texture.format).toEqual(format);
-        });
-
-        it(`exposes the type`, () => {
-          expect(texture.type).toEqual(type);
-        });
-
         it(`exposes the context`, () => {
           expect(texture.context).toBe(context);
         });
@@ -677,11 +582,7 @@ describe(`Texture2D`, () => {
         let addEventListener: jasmine.Spy;
         let populate: jasmine.Spy;
 
-        class TestTexture2D extends Texture2D<
-          `getContextAttributes`,
-          TFormat,
-          TType
-        > {
+        class TestTexture2D extends Texture2D<`getContextAttributes`> {
           populate(): void {
             return populate();
           }
@@ -730,9 +631,7 @@ describe(`Texture2D`, () => {
             wrapX,
             wrapY,
             minificationFilter,
-            magnificationFilter,
-            format,
-            type
+            magnificationFilter
           );
 
           texture.deleteInstance(null);
@@ -790,14 +689,6 @@ describe(`Texture2D`, () => {
           expect(texture.magnificationFilter).toEqual(magnificationFilter);
         });
 
-        it(`exposes the format`, () => {
-          expect(texture.format).toEqual(format);
-        });
-
-        it(`exposes the type`, () => {
-          expect(texture.type).toEqual(type);
-        });
-
         it(`exposes the context`, () => {
           expect(texture.context).toBe(context);
         });
@@ -819,11 +710,7 @@ describe(`Texture2D`, () => {
         let addEventListener: jasmine.Spy;
         let populate: jasmine.Spy;
 
-        class TestTexture2D extends Texture2D<
-          `getContextAttributes`,
-          TFormat,
-          TType
-        > {
+        class TestTexture2D extends Texture2D<`getContextAttributes`> {
           populate(): void {
             return populate();
           }
@@ -872,9 +759,7 @@ describe(`Texture2D`, () => {
             wrapX,
             wrapY,
             minificationFilter,
-            magnificationFilter,
-            format,
-            type
+            magnificationFilter
           );
 
           texture.deleteInstance({ test: `texture` });
@@ -936,14 +821,6 @@ describe(`Texture2D`, () => {
           expect(texture.magnificationFilter).toEqual(magnificationFilter);
         });
 
-        it(`exposes the format`, () => {
-          expect(texture.format).toEqual(format);
-        });
-
-        it(`exposes the type`, () => {
-          expect(texture.type).toEqual(type);
-        });
-
         it(`exposes the context`, () => {
           expect(texture.context).toBe(context);
         });
@@ -978,71 +855,6 @@ describe(`Texture2D`, () => {
             wrapY,
             minificationFilter,
             magnificationFilter,
-            Constants.Rgb,
-            Constants.UnsignedByte,
-            false
-          );
-          Scenario(
-            wrapX,
-            wrapY,
-            minificationFilter,
-            magnificationFilter,
-            Constants.Rgb,
-            Constants.UnsignedShort565,
-            false
-          );
-          Scenario(
-            wrapX,
-            wrapY,
-            minificationFilter,
-            magnificationFilter,
-            Constants.Rgba,
-            Constants.UnsignedByte,
-            false
-          );
-          Scenario(
-            wrapX,
-            wrapY,
-            minificationFilter,
-            magnificationFilter,
-            Constants.Rgba,
-            Constants.UnsignedShort4444,
-            false
-          );
-          Scenario(
-            wrapX,
-            wrapY,
-            minificationFilter,
-            magnificationFilter,
-            Constants.Rgba,
-            Constants.UnsignedShort5551,
-            false
-          );
-          Scenario(
-            wrapX,
-            wrapY,
-            minificationFilter,
-            magnificationFilter,
-            Constants.Luminance,
-            Constants.UnsignedByte,
-            false
-          );
-          Scenario(
-            wrapX,
-            wrapY,
-            minificationFilter,
-            magnificationFilter,
-            Constants.Alpha,
-            Constants.UnsignedByte,
-            false
-          );
-          Scenario(
-            wrapX,
-            wrapY,
-            minificationFilter,
-            magnificationFilter,
-            Constants.LuminanceAlpha,
-            Constants.UnsignedByte,
             false
           );
         }
@@ -1052,78 +864,7 @@ describe(`Texture2D`, () => {
           Constants.LinearMipmapNearest,
           Constants.NearestMipmapNearest,
         ] as ReadonlyArray<MinificationFilter>) {
-          Scenario(
-            wrapX,
-            wrapY,
-            minificationFilter,
-            magnificationFilter,
-            Constants.Rgb,
-            Constants.UnsignedByte,
-            true
-          );
-          Scenario(
-            wrapX,
-            wrapY,
-            minificationFilter,
-            magnificationFilter,
-            Constants.Rgb,
-            Constants.UnsignedShort565,
-            true
-          );
-          Scenario(
-            wrapX,
-            wrapY,
-            minificationFilter,
-            magnificationFilter,
-            Constants.Rgba,
-            Constants.UnsignedByte,
-            true
-          );
-          Scenario(
-            wrapX,
-            wrapY,
-            minificationFilter,
-            magnificationFilter,
-            Constants.Rgba,
-            Constants.UnsignedShort4444,
-            true
-          );
-          Scenario(
-            wrapX,
-            wrapY,
-            minificationFilter,
-            magnificationFilter,
-            Constants.Rgba,
-            Constants.UnsignedShort5551,
-            true
-          );
-          Scenario(
-            wrapX,
-            wrapY,
-            minificationFilter,
-            magnificationFilter,
-            Constants.Luminance,
-            Constants.UnsignedByte,
-            true
-          );
-          Scenario(
-            wrapX,
-            wrapY,
-            minificationFilter,
-            magnificationFilter,
-            Constants.Alpha,
-            Constants.UnsignedByte,
-            true
-          );
-          Scenario(
-            wrapX,
-            wrapY,
-            minificationFilter,
-            magnificationFilter,
-            Constants.LuminanceAlpha,
-            Constants.UnsignedByte,
-            true
-          );
+          Scenario(wrapX, wrapY, minificationFilter, magnificationFilter, true);
         }
       }
     }

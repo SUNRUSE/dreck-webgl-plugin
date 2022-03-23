@@ -15,7 +15,7 @@ import type { WrappingMode } from "../WrappingMode";
 export class EmptyTexture2D<
   TFormat extends TextureFormat,
   TType extends TextureTypesByFormat[TFormat]
-> extends Texture2D<`texImage2D`, TFormat, TType> {
+> extends Texture2D<`texImage2D`> {
   /**
    * Creates a new WebGL texture.
    * @param context The context under which to create a new texture.
@@ -42,20 +42,12 @@ export class EmptyTexture2D<
     wrapY: WrappingMode,
     minificationFilter: MinificationFilter,
     magnificationFilter: MagnificationFilter,
-    format: TFormat,
-    type: TType,
+    public readonly format: TFormat,
+    public readonly type: TType,
     public readonly width: number,
     public readonly height: number
   ) {
-    super(
-      context,
-      wrapX,
-      wrapY,
-      minificationFilter,
-      magnificationFilter,
-      format,
-      type
-    );
+    super(context, wrapX, wrapY, minificationFilter, magnificationFilter);
   }
 
   populate(): void {

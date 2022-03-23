@@ -4,8 +4,6 @@ import type { MagnificationFilter } from "../MagnificationFilter";
 import type { MinificationFilter } from "../MinificationFilter";
 import { minificationFilterIncludesMipmaps } from "../minificationFilterIncludesMipmaps";
 import { Resource } from "../Resource";
-import type { TextureFormat } from "../TextureFormat";
-import type { TextureTypesByFormat } from "../TextureTypesByFormat";
 import type { WrappingMode } from "../WrappingMode";
 
 /**
@@ -15,9 +13,7 @@ import type { WrappingMode } from "../WrappingMode";
  * @template TType The type of the texture.
  */
 export abstract class Texture2D<
-  TWebGLRenderingContextKey extends keyof WebGLRenderingContext,
-  TFormat extends TextureFormat,
-  TType extends TextureTypesByFormat[TFormat]
+  TWebGLRenderingContextKey extends keyof WebGLRenderingContext
 > extends Resource<
   null | WebGLTexture,
   | `createTexture`
@@ -34,8 +30,6 @@ export abstract class Texture2D<
    * @param wrapY The wrapping mode to use on the Y axis.
    * @param minificationFilter The filter to use when reducing the texture's size.
    * @param magnificationFilter The filter to use when increasing the texture's size.
-   * @param format The texture's channel layout.
-   * @param type The binary type used within the texture.
    */
   constructor(
     context: ContextInterface<
@@ -50,9 +44,7 @@ export abstract class Texture2D<
     public readonly wrapX: WrappingMode,
     public readonly wrapY: WrappingMode,
     public readonly minificationFilter: MinificationFilter,
-    public readonly magnificationFilter: MagnificationFilter,
-    public readonly format: TFormat,
-    public readonly type: TType
+    public readonly magnificationFilter: MagnificationFilter
   ) {
     super(context);
   }
