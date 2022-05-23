@@ -1,21 +1,90 @@
-# Celluloid Engine [![Continuous Integration](https://github.com/jameswilddev/celluloid-engine/workflows/Continuous%20Integration/badge.svg)](https://github.com/jameswilddev/celluloid-engine/actions) [![License](https://img.shields.io/github/license/jameswilddev/celluloid-engine.svg)](https://github.com/jameswilddev/celluloid-engine/blob/master/license) [![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovatebot.com/)
+# Dreck WebGL Plugin [![License](https://img.shields.io/github/license/sunruse/dreck-webgl-plugin.svg)](https://github.com/sunruse/dreck-webgl-plugin/blob/master/license) [![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovatebot.com/)
 
-A collection of bits and bobs you can use to make your own browser-based 3D applications (such as games).
+Adds a library of TypeScript classes to a Dreck project for interacting with WebGL.
 
 ## Features
 
-- [Animation](./animation/readme.md)
-- [Math](./math/readme.md)
-- [WebGL abstraction layer](./webgl-abstraction-layer/readme.md)
+- Automatic vertex attribute packing.
+- Robust context loss handling.
 
-## Setup
+## Installation
 
-### Creating an application
-
-Install as a NPM dependency of your project:
+Run the following in a Bash shell at the root of your project:
 
 ```bash
-npm install --save celluloid-engine
+git submodule add https://github.com/sunruse/dreck-webgl-plugin submodules/plugins/dreck-webgl-plugin
 ```
 
-From there, use a module bundler such as [webpack](https://webpack.js.org/) and use the exports described in the above "Features" section.
+## Example
+
+```typescript
+const vertex: AttributeDefinitionSet = {
+  location: {
+    binaryType: Constants.Byte,
+    shaderPrimitive: Constants.Vec2,
+    normalized: false,
+  },
+  color: {
+    binaryType: Constants.UnsignedByte,
+    shaderPrimitive: Constants.Vec3,
+    normalized: true,
+  },
+};
+
+const packedVertex = new PackedAttributeDefinitionSet(vertex);
+
+const canvas = createCanvas(document.body);
+const context = createContext(
+  canvas,
+  {
+    alpha: false,
+    antialias: false,
+    depth: false,
+    desynchronized: false,
+    failIfMajorPerformanceCaveat: true,
+    powerPreference: `low-power`,
+    stencil: false,
+  },
+  (width, height) => {
+    context.gl.viewport(0, 0, width, height);
+
+    render(context, vertexBuffer, program, {});
+  }
+);
+
+const vertexBuffer = new StaticVertexBuffer(
+  context,
+  Constants.Triangles,
+  packedVertex,
+  {
+    location: [
+      [-1, -1],
+      [0, 1],
+      [1, -1],
+    ],
+    color: [
+      [255, 0, 0],
+      [0, 255, 0],
+      [0, 0, 255],
+    ],
+  }
+);
+
+const program = new StaticProgram(
+  context,
+  vertex,
+  {},
+  { varyingColor: { shaderPrimitive: Constants.Vec3, quantity: 1 } },
+  [`precision mediump float;`],
+  [
+    `void main(void) {`,
+    `varyingColor = color;`,
+    `gl_Position = vec4(location, 0, 1);`,
+    `}`,
+  ],
+  [`precision mediump float;`],
+  [`void main(void) {`, `gl_FragColor = vec4(varyingColor, 1);`, `}`]
+);
+
+runRenderLoop(context, true);
+```

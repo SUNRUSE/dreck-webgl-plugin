@@ -5,17 +5,6 @@
       "label": "Run",
       "type": "shell",
       "command": "npm install && npm test",
-      "windows": {
-        "options": {
-          "shell": {
-            "executable": "C:\\Windows\\System32\\cmd.exe",
-            "args": [
-              "/d",
-              "/c"
-            ]
-          }
-        }
-      },
       "group": {
         "kind": "build",
         "isDefault": true
