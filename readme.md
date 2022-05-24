@@ -18,23 +18,23 @@ git submodule add https://github.com/sunruse/dreck-webgl-plugin submodules/plugi
 ## Example
 
 ```typescript
-const vertex: AttributeDefinitionSet = {
+const vertex: WebGlAttributeDefinitionSet = {
   location: {
-    binaryType: Constants.Byte,
-    shaderPrimitive: Constants.Vec2,
+    binaryType: WebGlConstants.Byte,
+    shaderPrimitive: WebGlConstants.Vec2,
     normalized: false,
   },
   color: {
-    binaryType: Constants.UnsignedByte,
-    shaderPrimitive: Constants.Vec3,
+    binaryType: WebGlConstants.UnsignedByte,
+    shaderPrimitive: WebGlConstants.Vec3,
     normalized: true,
   },
 };
 
-const packedVertex = new PackedAttributeDefinitionSet(vertex);
+const packedVertex = new WebGlPackedAttributeDefinitionSet(vertex);
 
-const canvas = createCanvas(document.body);
-const context = createContext(
+const canvas = webGlCreateCanvas(document.body);
+const context = webGlCreateContext(
   canvas,
   {
     alpha: false,
@@ -48,13 +48,13 @@ const context = createContext(
   (width, height) => {
     context.gl.viewport(0, 0, width, height);
 
-    render(context, vertexBuffer, program, {});
+    webGlRender(context, vertexBuffer, program, {});
   }
 );
 
-const vertexBuffer = new StaticVertexBuffer(
+const vertexBuffer = new WebGlStaticVertexBuffer(
   context,
-  Constants.Triangles,
+  WebGlConstants.Triangles,
   packedVertex,
   {
     location: [
@@ -70,11 +70,11 @@ const vertexBuffer = new StaticVertexBuffer(
   }
 );
 
-const program = new StaticProgram(
+const program = new WebGlStaticProgram(
   context,
   vertex,
   {},
-  { varyingColor: { shaderPrimitive: Constants.Vec3, quantity: 1 } },
+  { varyingColor: { shaderPrimitive: WebGlConstants.Vec3, quantity: 1 } },
   [`precision mediump float;`],
   [
     `void main(void) {`,
@@ -86,5 +86,5 @@ const program = new StaticProgram(
   [`void main(void) {`, `gl_FragColor = vec4(varyingColor, 1);`, `}`]
 );
 
-runRenderLoop(context, true);
+webGlRunRenderLoop(context, true);
 ```
