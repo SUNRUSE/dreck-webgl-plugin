@@ -1,6 +1,7 @@
 /**
  * Maps shader types to their GLSL keywords (vec2 = vec2, etc.).
  */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const webGlShaderPrimitiveKeyword = {
   /**
    * A 1-dimensional float.

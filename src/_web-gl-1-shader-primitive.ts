@@ -1,6 +1,7 @@
 /**
  * A map of shader types to Javascript equivalents.
  */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 type WebGlShaderPrimitive = {
   /**
    * A 1-dimensional float.

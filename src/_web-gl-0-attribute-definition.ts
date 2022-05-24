@@ -1,6 +1,7 @@
 /**
  * Describes how an attribute maps between an array buffer and a shader.
  */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 type WebGlAttributeDefinition =
   | {
       /**

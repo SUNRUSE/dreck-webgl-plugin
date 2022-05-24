@@ -1,6 +1,7 @@
 /**
  * Describes an attribute definition set which has been packed into a repeating structure of bytes.
  */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 class WebGlPackedAttributeDefinitionSet<
   TAttributeDefinitionSet extends WebGlAttributeDefinitionSet
 > {

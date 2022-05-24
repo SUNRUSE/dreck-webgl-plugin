@@ -1,6 +1,7 @@
 /**
  * A buffer of indices which are pre-determined at construction.
  */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 class WebGlStaticIndexBuffer extends WebGlIndexBuffer {
   /**
    * A buffer of indices which are pre-determined at construction.

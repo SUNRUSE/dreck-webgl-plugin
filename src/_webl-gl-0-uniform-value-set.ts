@@ -2,6 +2,7 @@
  * Converts a uniform definition set to a set of values.
  * @template TUniformDefinitionSet The uniform definition set to convert.
  */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 type WebGlUniformValueSet<
   TUniformDefinitionSet extends WebGlUniformDefinitionSet
 > = {

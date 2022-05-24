@@ -3,6 +3,7 @@
  * @template TUniformDefinitionSet The uniforms fed into the fragment shader.
  * @template TVaryingDefinitionSet The varyings fed into the fragment shader.
  */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 abstract class WebGlFragmentShader<
   TUniformDefinitionSet extends WebGlUniformDefinitionSet,
   TVaryingDefinitionSet extends WebGlVaryingDefinitionSet

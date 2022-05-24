@@ -1,6 +1,7 @@
 /**
  * A buffer of element indices.
  */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 abstract class WebGlIndexBuffer extends WebGlBuffer<
   never,
   WebGlIndexBufferInstance[`data`]

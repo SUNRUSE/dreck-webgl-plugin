@@ -4,6 +4,7 @@
  * @template TUniformDefinitionSet The uniforms fed into both the vertex and fragment shaders.
  * @template TVaryingDefinitionSet The varyings output from the vertex shader to the fragment shader.
  */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 class WebGlStaticProgram<
   TAttributeDefinitionSet extends WebGlAttributeDefinitionSet,
   TUniformDefinitionSet extends WebGlUniformDefinitionSet,

@@ -1,6 +1,7 @@
 /**
  * Tracks mouse events and allows for polling from within a render loop.
  */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 class WebGlPollableMouseInput {
   /**
    * The position of the mouse relative to the left edge of the canvas.  May be negative if left of the canvas.

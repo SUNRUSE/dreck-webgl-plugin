@@ -1,6 +1,7 @@
 /**
  * Maps shader types to their arities (vec3 = 3, etc.).
  */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const webGlShaderPrimitiveArity = {
   /**
    * A 1-dimensional float.

@@ -1,6 +1,7 @@
 /**
  * Describes information which is output from the vertex shader, interpolated and fed into the fragment shader.
  */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 type WebGlVaryingDefinition = {
   /**
    * The type of the value within the shader.

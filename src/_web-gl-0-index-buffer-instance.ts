@@ -1,6 +1,7 @@
 /**
  * An instance of a WebGL index buffer.
  */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 type WebGlIndexBufferInstance = WebGlBufferInstance<{
   /**
    * The number of primitives.

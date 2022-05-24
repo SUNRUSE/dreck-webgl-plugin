@@ -1,6 +1,7 @@
 /**
  * Describes the types which can be used in textures of specified formats.
  */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 type WebGlTextureTypesByFormat = {
   /**
    * The types available when the texture contains distinct red, green and blue channels.

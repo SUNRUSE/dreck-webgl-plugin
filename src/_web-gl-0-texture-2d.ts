@@ -4,6 +4,7 @@
  * @template TFormat The format of the texture.
  * @template TType The type of the texture.
  */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 abstract class WebGlTexture2D<
   TWebGlRenderingContextKey extends keyof WebGLRenderingContext
 > extends WebGlResource<

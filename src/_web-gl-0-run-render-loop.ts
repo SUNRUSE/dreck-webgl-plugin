@@ -3,6 +3,7 @@
  * @param context The context to render.
  * @param pauseOnFocusLoss When true, the render loop will be paused when the document is not focused; otherwise, the render loop will continue running as long as the browser opts to continue processing it.
  */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function webGlRunRenderLoop(
   context: WebGlContextInterface<`isContextLost` | `canvas`>,
   pauseOnFocusLoss: boolean

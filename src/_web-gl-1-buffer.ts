@@ -3,6 +3,7 @@
  * @template TWebGlRenderingContextKey The key(s) of the WebGL rendering context which are used by the resource.
  * @template TInstanceData Additional data included in an instance.
  */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 abstract class WebGlBuffer<
   TWebGlRenderingContextKey extends keyof WebGLRenderingContext,
   TInstanceData

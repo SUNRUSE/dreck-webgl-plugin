@@ -1,6 +1,7 @@
 /**
  * The format of a renderbuffer.
  */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 type WebGlRenderbufferFormat =
   | WebGlConstants.Rgba4
   | WebGlConstants.Rgb565

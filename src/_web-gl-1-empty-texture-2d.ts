@@ -3,6 +3,7 @@
  * @template TFormat The format of the texture.
  * @template TType The type of the texture.
  */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 class WebGlEmptyTexture2D<
   TFormat extends WebGlTextureFormat,
   TType extends WebGlTextureTypesByFormat[TFormat]

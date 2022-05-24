@@ -5,6 +5,7 @@
  * @param render Called when the context is to be rendered.
  * @returns The created context.
  */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function webGlCreateContext(
   canvas: HTMLCanvasElement,
   options: WebGLContextAttributes,

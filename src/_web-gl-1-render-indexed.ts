@@ -8,6 +8,7 @@
  * @param program The program to use to render.
  * @param uniforms The uniforms to provide to the program while rendering.
  */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function webGlRenderIndexed<
   TAttributeDefinitionSet extends WebGlAttributeDefinitionSet,
   TUniformDefinitionSet extends WebGlUniformDefinitionSet

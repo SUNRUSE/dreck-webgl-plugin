@@ -1,6 +1,7 @@
 /**
  * Describes an input to a shader which is uniform across all vertices and fragments of a draw call.
  */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 type WebGlUniformDefinition = {
   /**
    * The type of the value within the shader.

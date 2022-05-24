@@ -3,6 +3,7 @@
  * @template TInstance The information created when the resource is instantiated.
  * @template TWebGlRenderingContextKey The key(s) of the WebGL rendering context which are used by the resource.
  */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 abstract class WebGlResource<
   TInstance,
   TWebGlRenderingContextKey extends keyof WebGLRenderingContext

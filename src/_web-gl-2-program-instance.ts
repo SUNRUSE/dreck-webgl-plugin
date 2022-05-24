@@ -3,6 +3,7 @@
  * @template TAttributeDefinitionSet The attributes fed into the vertex shader.
  * @template TUniformDefinitionSet The uniforms fed into both the vertex and fragment shaders.
  */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 type WebGlProgramInstance<
   TAttributeDefinitionSet extends WebGlAttributeDefinitionSet,
   TUniformDefinitionSet extends WebGlUniformDefinitionSet

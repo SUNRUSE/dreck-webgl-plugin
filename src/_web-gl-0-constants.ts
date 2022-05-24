@@ -1,6 +1,7 @@
 /**
  * WebGL constants.
  */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const enum WebGlConstants {
   /**
    * The buffer contains vertex attributes.

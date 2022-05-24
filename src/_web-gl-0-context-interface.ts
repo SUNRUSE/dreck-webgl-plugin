@@ -2,6 +2,7 @@
  * The public methods and properties of a WebGL context manager.
  * @template TWebGlRenderingContextKey The key(s) of the WebGL rendering context which are required.
  */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 interface WebGlContextInterface<
   TWebGlRenderingContextKey extends keyof WebGLRenderingContext
 > {

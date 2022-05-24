@@ -1,6 +1,7 @@
 /**
  * A map of binary data types to their sizes, in bytes.
  */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const webGlBinaryTypeBytes = {
   /**
    * An unsigned 8-bit integer (0 to 255, inclusive).

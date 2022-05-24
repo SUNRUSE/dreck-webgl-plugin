@@ -2,6 +2,7 @@
  * A WebGL renderbuffer.
  * @template TFormat The format of the renderbuffer.
  */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 class WebGlRenderbuffer<
   TFormat extends WebGlRenderbufferFormat
 > extends WebGlResource<

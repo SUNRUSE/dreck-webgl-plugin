@@ -2,6 +2,7 @@
  * A WebGL shader which can be compiled into a shader.
  * @template TType The type of the shader.
  */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 abstract class WebGlShader<
   TType extends WebGlConstants.VertexShader | WebGlConstants.FragmentShader
 > extends WebGlResource<

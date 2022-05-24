@@ -1,6 +1,7 @@
 /**
  * A map of binary data types to Javascript equivalents.
  */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 type WebGlBinaryType = {
   /**
    * An unsigned 8-bit integer (0 to 255, inclusive).

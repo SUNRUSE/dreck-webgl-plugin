@@ -1,6 +1,7 @@
 /**
  * A map of binary data types to the maximum value they support (inclusive).
  */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const webGlBinaryTypeMaximum = {
   /**
    * An unsigned 8-bit integer (0 to 255, inclusive).

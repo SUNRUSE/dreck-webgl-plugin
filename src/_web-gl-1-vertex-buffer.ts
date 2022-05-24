@@ -2,6 +2,7 @@
  * A buffer of vertex attributes.
  * @template TAttributeDefinitionSet The set of attributes which are stored for each vertex.
  */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 abstract class WebGlVertexBuffer<
   TAttributeDefinitionSet extends WebGlAttributeDefinitionSet
 > extends WebGlBuffer<never, WebGlVertexBufferInstance[`data`]> {

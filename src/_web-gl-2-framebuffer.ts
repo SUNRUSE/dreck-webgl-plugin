@@ -1,6 +1,7 @@
 /**
  * A WebGL framebuffer.
  */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 class WebGlFramebuffer extends WebGlResource<
   null | WebGLFramebuffer,
   | `createFramebuffer`

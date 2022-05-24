@@ -3,6 +3,7 @@
  * @param parent The element to which to add the canvas element.
  * @returns The created canvas element.
  */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function webGlCreateCanvas(parent: Element): HTMLCanvasElement {
   const canvas = document.createElement(`canvas`);
 
