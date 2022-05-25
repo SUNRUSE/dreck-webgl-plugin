@@ -12,7 +12,7 @@ describe(`webGlCreateCanvas`, () => {
     } as unknown as HTMLCanvasElement;
 
     createElement = jasmine.createSpy(`createElement`).and.returnValue(canvas);
-    global.document = { createElement } as unknown as Document;
+    global[`document`] = { createElement } as unknown as Document;
     appendChild = jasmine.createSpy(`appendChild`);
 
     const parent: Element = {

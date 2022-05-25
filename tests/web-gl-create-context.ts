@@ -18,7 +18,7 @@ describe(`webGlCreateContext`, () => {
         clientWidth: 1021,
         clientHeight: 739,
       } as unknown as HTMLCanvasElement;
-      global.window = {
+      global[`window`] = {
         devicePixelRatio: 3.7,
       } as unknown as Window & typeof globalThis;
 
@@ -86,7 +86,7 @@ describe(`webGlCreateContext`, () => {
         clientWidth: 1021,
         clientHeight: 739,
       } as unknown as HTMLCanvasElement;
-      global.window = {
+      global[`window`] = {
         devicePixelRatio: 3.7,
       } as unknown as Window & typeof globalThis;
 
@@ -185,7 +185,7 @@ describe(`webGlCreateContext`, () => {
         clientWidth: 1021,
         clientHeight: 739,
       } as unknown as HTMLCanvasElement;
-      global.window = {
+      global[`window`] = {
         devicePixelRatio: 3.7,
       } as unknown as Window & typeof globalThis;
 
@@ -275,7 +275,7 @@ describe(`webGlCreateContext`, () => {
         clientWidth: 1021,
         clientHeight: 739,
       } as unknown as HTMLCanvasElement;
-      global.window = {
+      global[`window`] = {
         devicePixelRatio: 3.7,
       } as unknown as Window & typeof globalThis;
 
@@ -373,7 +373,7 @@ describe(`webGlCreateContext`, () => {
         clientWidth: 1021,
         clientHeight: 739,
       } as unknown as HTMLCanvasElement;
-      global.window = {
+      global[`window`] = {
         devicePixelRatio: 3.7,
       } as unknown as Window & typeof globalThis;
 
@@ -484,7 +484,7 @@ describe(`webGlCreateContext`, () => {
         clientWidth: 1021,
         clientHeight: 739,
       } as unknown as HTMLCanvasElement;
-      global.window = {
+      global[`window`] = {
         devicePixelRatio: 3.7,
       } as unknown as Window & typeof globalThis;
 
@@ -602,7 +602,7 @@ describe(`webGlCreateContext`, () => {
         clientWidth: 1021,
         clientHeight: 739,
       } as unknown as HTMLCanvasElement;
-      global.window = {
+      global[`window`] = {
         devicePixelRatio: 3.7,
       } as unknown as Window & typeof globalThis;
 
@@ -623,7 +623,7 @@ describe(`webGlCreateContext`, () => {
       canvas.height = 3281;
       (canvas as unknown as { clientWidth: number }).clientWidth = 224;
       (canvas as unknown as { clientHeight: number }).clientHeight = 301;
-      global.window = {
+      global[`window`] = {
         devicePixelRatio: 1.2,
       } as unknown as Window & typeof globalThis;
 

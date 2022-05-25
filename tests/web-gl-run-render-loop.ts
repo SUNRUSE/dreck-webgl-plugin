@@ -15,6 +15,8 @@ describe(`webGlRunRenderLoop`, () => {
     readonly state: State;
   };
 
+  let requestId = 0;
+
   const scenario = (
     pauseOnFocusLoss: boolean,
     initial: State,
@@ -33,13 +35,13 @@ describe(`webGlRunRenderLoop`, () => {
     } ${steps.map((step) => step.type).join(` `)}`, () => {
       it(`executes the steps as expected`, () => {
         const addEventListener = jasmine.createSpy(`addEventListener`);
-        global.addEventListener = addEventListener;
+        global[`addEventListener`] = addEventListener;
         const requestAnimationFrame = jasmine.createSpy(
           `requestAnimationFrame`
         );
-        global.requestAnimationFrame = requestAnimationFrame;
+        global[`requestAnimationFrame`] = requestAnimationFrame;
         const cancelAnimationFrame = jasmine.createSpy(`cancelAnimationFrame`);
-        global.cancelAnimationFrame = cancelAnimationFrame;
+        global[`cancelAnimationFrame`] = cancelAnimationFrame;
         const canvasAddEventListener = jasmine.createSpy(
           `canvas.addEventListener`
         );
@@ -49,7 +51,9 @@ describe(`webGlRunRenderLoop`, () => {
           `contextAddEventListener`
         );
         const documentHasFocus = jasmine.createSpy(`document.hasFocus`);
-        global.document = { hasFocus: documentHasFocus } as unknown as Document;
+        global[`document`] = {
+          hasFocus: documentHasFocus,
+        } as unknown as Document;
 
         let previousRequest: null | string = null;
         let nextRequest: null | string = null;
@@ -68,7 +72,7 @@ describe(`webGlRunRenderLoop`, () => {
             state.shouldBeRunning &&
             (previousRequest === null || precedingFrameStep)
           ) {
-            nextRequest = uuid.v4();
+            nextRequest = `request-${requestId++}`;
             requestAnimationFrame.and.returnValue(nextRequest);
           } else if (!state.shouldBeRunning && previousRequest !== null) {
             nextRequest = null;
