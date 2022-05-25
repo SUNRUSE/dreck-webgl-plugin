@@ -299,14 +299,17 @@ describe(`WebGlShader`, () => {
     >;
 
     class TestShader extends WebGlShader<WebGlConstants.FragmentShader> {
+      /* istanbul ignore next */
       getHeaderLines() {
         return getHeaderLines();
       }
 
+      /* istanbul ignore next */
       getDeclarations() {
         return getDeclarations();
       }
 
+      /* istanbul ignore next */
       getBodyLines() {
         return getBodyLines();
       }
@@ -429,14 +432,17 @@ describe(`WebGlShader`, () => {
       >;
 
       class TestShader extends WebGlShader<WebGlConstants.FragmentShader> {
+        /* istanbul ignore next */
         getHeaderLines() {
           return getHeaderLines();
         }
 
+        /* istanbul ignore next */
         getDeclarations() {
           return getDeclarations();
         }
 
+        /* istanbul ignore next */
         getBodyLines() {
           return getBodyLines();
         }
@@ -894,6 +900,8 @@ Test Body Line E`
 
         try {
           shader.createInstance();
+
+          /* istanbul ignore next */
           error = null;
         } catch (e) {
           error = e;
@@ -1335,14 +1343,17 @@ Test Body Line E`
       >;
 
       class TestShader extends WebGlShader<WebGlConstants.FragmentShader> {
+        /* istanbul ignore next */
         getHeaderLines() {
           return getHeaderLines();
         }
 
+        /* istanbul ignore next */
         getDeclarations() {
           return getDeclarations();
         }
 
+        /* istanbul ignore next */
         getBodyLines() {
           return getBodyLines();
         }
@@ -1470,14 +1481,17 @@ Test Body Line E`
       >;
 
       class TestShader extends WebGlShader<WebGlConstants.FragmentShader> {
+        /* istanbul ignore next */
         getHeaderLines() {
           return getHeaderLines();
         }
 
+        /* istanbul ignore next */
         getDeclarations() {
           return getDeclarations();
         }
 
+        /* istanbul ignore next */
         getBodyLines() {
           return getBodyLines();
         }

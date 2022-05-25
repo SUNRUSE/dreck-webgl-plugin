@@ -660,6 +660,7 @@ describe(`WebGlFramebuffer`, () => {
         framebufferTexture2D = jasmine
           .createSpy(`framebufferTexture2D`)
           .and.callFake(() => {
+            /* istanbul ignore next */
             if (
               !bindFramebuffer.calls.allArgs().some((args) => args[1] !== null)
             ) {
@@ -669,6 +670,7 @@ describe(`WebGlFramebuffer`, () => {
         framebufferRenderbuffer = jasmine.createSpy(`framebufferRenderbuffer`);
         unboundFramebufferBeforeCheckingForContextLoss = false;
         isContextLost = jasmine.createSpy(`isContextLost`).and.callFake(() => {
+          /* istanbul ignore next */
           if (
             bindFramebuffer.calls.allArgs().some((args) => args[1] === null)
           ) {
@@ -714,6 +716,8 @@ describe(`WebGlFramebuffer`, () => {
 
         try {
           framebuffer.createInstance();
+
+          /* istanbul ignore next */
           error = null;
         } catch (e) {
           error = e;
@@ -2443,6 +2447,7 @@ describe(`WebGlFramebuffer`, () => {
           framebufferTexture2D = jasmine
             .createSpy(`framebufferTexture2D`)
             .and.callFake(() => {
+              /* istanbul ignore next */
               if (
                 !bindFramebuffer.calls
                   .allArgs()
@@ -2455,6 +2460,7 @@ describe(`WebGlFramebuffer`, () => {
           framebufferRenderbuffer = jasmine
             .createSpy(`framebufferRenderbuffer`)
             .and.callFake(() => {
+              /* istanbul ignore next */
               if (
                 !bindFramebuffer.calls
                   .allArgs()
@@ -2467,6 +2473,7 @@ describe(`WebGlFramebuffer`, () => {
           isContextLost = jasmine
             .createSpy(`isContextLost`)
             .and.callFake(() => {
+              /* istanbul ignore next */
               if (
                 bindFramebuffer.calls.allArgs().some((args) => args[1] === null)
               ) {
@@ -2535,6 +2542,8 @@ describe(`WebGlFramebuffer`, () => {
 
           try {
             framebuffer.createInstance();
+
+            /* istanbul ignore next */
             error = null;
           } catch (e) {
             error = e;

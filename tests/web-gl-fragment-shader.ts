@@ -374,10 +374,12 @@ describe(`WebGlFragmentShader`, () => {
       TestUniformDefinitionSet,
       TestVaryingDefinitionSet
     > {
+      /* istanbul ignore next */
       getHeaderLines() {
         return getHeaderLines();
       }
 
+      /* istanbul ignore next */
       getBodyLines() {
         return getBodyLines();
       }
@@ -508,10 +510,12 @@ describe(`WebGlFragmentShader`, () => {
       TestUniformDefinitionSet,
       TestVaryingDefinitionSet
     > {
+      /* istanbul ignore next */
       getHeaderLines() {
         return getHeaderLines();
       }
 
+      /* istanbul ignore next */
       getBodyLines() {
         return getBodyLines();
       }

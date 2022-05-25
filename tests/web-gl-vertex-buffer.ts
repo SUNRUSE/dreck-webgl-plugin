@@ -464,6 +464,7 @@ describe(`WebGlVertexBuffer`, () => {
         let addEventListener: jasmine.Spy;
 
         class TestVertexBuffer extends WebGlVertexBuffer<TestAttributeSet> {
+          /* istanbul ignore next */
           generateVertices(): {
             readonly unsignedByteFloat: ReadonlyArray<WebGlFloat>;
             readonly normalizedUnsignedByteFloat: ReadonlyArray<WebGlFloat>;
@@ -909,6 +910,7 @@ describe(`WebGlVertexBuffer`, () => {
             let actualBytes: Uint8Array;
 
             beforeAll(() => {
+              /* istanbul ignore next */
               actualBytes =
                 output.bufferContent instanceof ArrayBuffer
                   ? new Uint8Array(output.bufferContent)
@@ -1475,6 +1477,8 @@ describe(`WebGlVertexBuffer`, () => {
 
               try {
                 vertexBuffer.generateData();
+
+                /* istanbul ignore next */
                 error = null;
               } catch (e) {
                 error = e;
@@ -1795,6 +1799,8 @@ describe(`WebGlVertexBuffer`, () => {
 
               try {
                 vertexBuffer.generateData();
+
+                /* istanbul ignore next */
                 error = null;
               } catch (e) {
                 error = e;
@@ -2115,6 +2121,8 @@ describe(`WebGlVertexBuffer`, () => {
 
               try {
                 vertexBuffer.generateData();
+
+                /* istanbul ignore next */
                 error = null;
               } catch (e) {
                 error = e;
@@ -2435,6 +2443,8 @@ describe(`WebGlVertexBuffer`, () => {
 
               try {
                 vertexBuffer.generateData();
+
+                /* istanbul ignore next */
                 error = null;
               } catch (e) {
                 error = e;
@@ -2755,6 +2765,8 @@ describe(`WebGlVertexBuffer`, () => {
 
               try {
                 vertexBuffer.generateData();
+
+                /* istanbul ignore next */
                 error = null;
               } catch (e) {
                 error = e;
@@ -3075,6 +3087,8 @@ describe(`WebGlVertexBuffer`, () => {
 
               try {
                 vertexBuffer.generateData();
+
+                /* istanbul ignore next */
                 error = null;
               } catch (e) {
                 error = e;
@@ -3395,6 +3409,8 @@ describe(`WebGlVertexBuffer`, () => {
 
               try {
                 vertexBuffer.generateData();
+
+                /* istanbul ignore next */
                 error = null;
               } catch (e) {
                 error = e;
@@ -3715,6 +3731,8 @@ describe(`WebGlVertexBuffer`, () => {
 
               try {
                 vertexBuffer.generateData();
+
+                /* istanbul ignore next */
                 error = null;
               } catch (e) {
                 error = e;
@@ -4037,6 +4055,8 @@ describe(`WebGlVertexBuffer`, () => {
 
               try {
                 vertexBuffer.generateData();
+
+                /* istanbul ignore next */
                 error = null;
               } catch (e) {
                 error = e;
@@ -4357,6 +4377,8 @@ describe(`WebGlVertexBuffer`, () => {
 
               try {
                 vertexBuffer.generateData();
+
+                /* istanbul ignore next */
                 error = null;
               } catch (e) {
                 error = e;
@@ -4677,6 +4699,8 @@ describe(`WebGlVertexBuffer`, () => {
 
               try {
                 vertexBuffer.generateData();
+
+                /* istanbul ignore next */
                 error = null;
               } catch (e) {
                 error = e;
@@ -4997,6 +5021,8 @@ describe(`WebGlVertexBuffer`, () => {
 
               try {
                 vertexBuffer.generateData();
+
+                /* istanbul ignore next */
                 error = null;
               } catch (e) {
                 error = e;
@@ -5317,6 +5343,8 @@ describe(`WebGlVertexBuffer`, () => {
 
               try {
                 vertexBuffer.generateData();
+
+                /* istanbul ignore next */
                 error = null;
               } catch (e) {
                 error = e;
@@ -5637,6 +5665,8 @@ describe(`WebGlVertexBuffer`, () => {
 
               try {
                 vertexBuffer.generateData();
+
+                /* istanbul ignore next */
                 error = null;
               } catch (e) {
                 error = e;
@@ -5957,6 +5987,8 @@ describe(`WebGlVertexBuffer`, () => {
 
               try {
                 vertexBuffer.generateData();
+
+                /* istanbul ignore next */
                 error = null;
               } catch (e) {
                 error = e;
@@ -6277,6 +6309,8 @@ describe(`WebGlVertexBuffer`, () => {
 
               try {
                 vertexBuffer.generateData();
+
+                /* istanbul ignore next */
                 error = null;
               } catch (e) {
                 error = e;
@@ -6599,6 +6633,8 @@ describe(`WebGlVertexBuffer`, () => {
 
               try {
                 vertexBuffer.generateData();
+
+                /* istanbul ignore next */
                 error = null;
               } catch (e) {
                 error = e;
@@ -6919,6 +6955,8 @@ describe(`WebGlVertexBuffer`, () => {
 
               try {
                 vertexBuffer.generateData();
+
+                /* istanbul ignore next */
                 error = null;
               } catch (e) {
                 error = e;
@@ -7239,6 +7277,8 @@ describe(`WebGlVertexBuffer`, () => {
 
               try {
                 vertexBuffer.generateData();
+
+                /* istanbul ignore next */
                 error = null;
               } catch (e) {
                 error = e;
@@ -7559,6 +7599,8 @@ describe(`WebGlVertexBuffer`, () => {
 
               try {
                 vertexBuffer.generateData();
+
+                /* istanbul ignore next */
                 error = null;
               } catch (e) {
                 error = e;
@@ -7879,6 +7921,8 @@ describe(`WebGlVertexBuffer`, () => {
 
               try {
                 vertexBuffer.generateData();
+
+                /* istanbul ignore next */
                 error = null;
               } catch (e) {
                 error = e;
@@ -8199,6 +8243,8 @@ describe(`WebGlVertexBuffer`, () => {
 
               try {
                 vertexBuffer.generateData();
+
+                /* istanbul ignore next */
                 error = null;
               } catch (e) {
                 error = e;
@@ -8519,6 +8565,8 @@ describe(`WebGlVertexBuffer`, () => {
 
               try {
                 vertexBuffer.generateData();
+
+                /* istanbul ignore next */
                 error = null;
               } catch (e) {
                 error = e;
@@ -8839,6 +8887,8 @@ describe(`WebGlVertexBuffer`, () => {
 
               try {
                 vertexBuffer.generateData();
+
+                /* istanbul ignore next */
                 error = null;
               } catch (e) {
                 error = e;
@@ -9161,6 +9211,8 @@ describe(`WebGlVertexBuffer`, () => {
 
               try {
                 vertexBuffer.generateData();
+
+                /* istanbul ignore next */
                 error = null;
               } catch (e) {
                 error = e;
@@ -9481,6 +9533,8 @@ describe(`WebGlVertexBuffer`, () => {
 
               try {
                 vertexBuffer.generateData();
+
+                /* istanbul ignore next */
                 error = null;
               } catch (e) {
                 error = e;
@@ -9801,6 +9855,8 @@ describe(`WebGlVertexBuffer`, () => {
 
               try {
                 vertexBuffer.generateData();
+
+                /* istanbul ignore next */
                 error = null;
               } catch (e) {
                 error = e;
@@ -10121,6 +10177,8 @@ describe(`WebGlVertexBuffer`, () => {
 
               try {
                 vertexBuffer.generateData();
+
+                /* istanbul ignore next */
                 error = null;
               } catch (e) {
                 error = e;
@@ -10441,6 +10499,8 @@ describe(`WebGlVertexBuffer`, () => {
 
               try {
                 vertexBuffer.generateData();
+
+                /* istanbul ignore next */
                 error = null;
               } catch (e) {
                 error = e;
@@ -10761,6 +10821,8 @@ describe(`WebGlVertexBuffer`, () => {
 
               try {
                 vertexBuffer.generateData();
+
+                /* istanbul ignore next */
                 error = null;
               } catch (e) {
                 error = e;
@@ -11081,6 +11143,8 @@ describe(`WebGlVertexBuffer`, () => {
 
               try {
                 vertexBuffer.generateData();
+
+                /* istanbul ignore next */
                 error = null;
               } catch (e) {
                 error = e;
@@ -11401,6 +11465,8 @@ describe(`WebGlVertexBuffer`, () => {
 
               try {
                 vertexBuffer.generateData();
+
+                /* istanbul ignore next */
                 error = null;
               } catch (e) {
                 error = e;
@@ -11723,6 +11789,8 @@ describe(`WebGlVertexBuffer`, () => {
 
               try {
                 vertexBuffer.generateData();
+
+                /* istanbul ignore next */
                 error = null;
               } catch (e) {
                 error = e;
@@ -12043,6 +12111,8 @@ describe(`WebGlVertexBuffer`, () => {
 
               try {
                 vertexBuffer.generateData();
+
+                /* istanbul ignore next */
                 error = null;
               } catch (e) {
                 error = e;
@@ -12363,6 +12433,8 @@ describe(`WebGlVertexBuffer`, () => {
 
               try {
                 vertexBuffer.generateData();
+
+                /* istanbul ignore next */
                 error = null;
               } catch (e) {
                 error = e;

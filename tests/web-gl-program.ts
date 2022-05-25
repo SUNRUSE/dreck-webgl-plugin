@@ -2186,6 +2186,8 @@ describe(`WebGlProgram`, () => {
 
         try {
           program.createInstance();
+
+          /* istanbul ignore next */
           error = null;
         } catch (e) {
           error = e;
@@ -2523,6 +2525,7 @@ describe(`WebGlProgram`, () => {
                 return 64;
             }
 
+            /* istanbul ignore next */
             throw new Error(
               `Unexpected attribute name ${JSON.stringify(name)}`
             );
@@ -2659,6 +2662,7 @@ describe(`WebGlProgram`, () => {
                 return null;
             }
 
+            /* istanbul ignore next */
             throw new Error(`Unexpected uniform name ${JSON.stringify(name)}`);
           });
         render = jasmine.createSpy(`render`);

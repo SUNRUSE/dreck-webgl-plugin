@@ -29,6 +29,7 @@ describe(`WebGlBuffer`, () => {
           `getContextAttributes`,
           `Test Instance Data`
         > {
+          /* istanbul ignore next */
           generateData(): {
             readonly bufferContent: BufferSource;
             readonly instanceData: `Test Instance Data`;
@@ -450,6 +451,8 @@ describe(`WebGlBuffer`, () => {
 
           try {
             buffer.createInstance();
+
+            /* istanbul ignore next */
             error = null;
           } catch (e) {
             error = e;
@@ -520,6 +523,7 @@ describe(`WebGlBuffer`, () => {
           `getContextAttributes`,
           `Test Instance Data`
         > {
+          /* istanbul ignore next */
           generateData(): {
             readonly bufferContent: BufferSource;
             readonly instanceData: `Test Instance Data`;
@@ -632,6 +636,7 @@ describe(`WebGlBuffer`, () => {
           `getContextAttributes`,
           `Test Instance Data`
         > {
+          /* istanbul ignore next */
           generateData(): {
             readonly bufferContent: BufferSource;
             readonly instanceData: `Test Instance Data`;

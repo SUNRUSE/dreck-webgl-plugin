@@ -5,6 +5,8 @@ describe(`WebGlPackedAttributeDefinitionSet`, () => {
     beforeAll(() => {
       try {
         new WebGlPackedAttributeDefinitionSet({});
+
+        /* istanbul ignore next */
         error = null;
       } catch (e) {
         error = e;

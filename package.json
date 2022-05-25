@@ -35,7 +35,7 @@
     "buildLintFix": "eslint --fix \"./src/**/*.ts\" \"./tests/**/*.ts\"",
     "buildTypeScript": "tsc --project ./tsconfig.json",
     "buildJasmine": "jasmine --config=jasmine.json",
-    "buildNyc": "nyc --check-coverage --all --include \"./src/**/*.js\" --lines 100 --functions 100 --branches 100 --statements 100 npm run-script buildJasmine",
+    "buildNyc": "nyc --check-coverage --all --include \"index.js\" --lines 100 --functions 100 --branches 100 --statements 100 npm run-script buildJasmine",
     "test": "npm-run-all buildClean buildLintFix buildTypeScript buildNyc"
   }
 }

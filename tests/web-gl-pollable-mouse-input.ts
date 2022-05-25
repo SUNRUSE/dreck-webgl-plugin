@@ -192,6 +192,7 @@ describe(`WebGlPollableMouseInput`, () => {
               });
 
               for (const args of contextAddEventListener.calls.allArgs()) {
+                /* istanbul ignore next */
                 if (args[0] === `postRender`) {
                   args[1]();
                 }

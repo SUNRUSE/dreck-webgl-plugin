@@ -10,6 +10,7 @@ describe(`WebGlIndexBuffer`, () => {
     let addEventListener: jasmine.Spy;
 
     class TestIndexBuffer extends WebGlIndexBuffer {
+      /* istanbul ignore next */
       generateIndices(): readonly number[] {
         return generateIndices();
       }
@@ -501,6 +502,8 @@ describe(`WebGlIndexBuffer`, () => {
 
         try {
           indexBuffer.generateData();
+
+          /* istanbul ignore next */
           error = null;
         } catch (e) {
           error = e;
@@ -609,6 +612,8 @@ describe(`WebGlIndexBuffer`, () => {
 
         try {
           indexBuffer.generateData();
+
+          /* istanbul ignore next */
           error = null;
         } catch (e) {
           error = e;
@@ -717,6 +722,8 @@ describe(`WebGlIndexBuffer`, () => {
 
         try {
           indexBuffer.generateData();
+
+          /* istanbul ignore next */
           error = null;
         } catch (e) {
           error = e;
@@ -825,6 +832,8 @@ describe(`WebGlIndexBuffer`, () => {
 
         try {
           indexBuffer.generateData();
+
+          /* istanbul ignore next */
           error = null;
         } catch (e) {
           error = e;
@@ -1050,6 +1059,8 @@ describe(`WebGlIndexBuffer`, () => {
 
         try {
           indexBuffer.generateData();
+
+          /* istanbul ignore next */
           error = null;
         } catch (e) {
           error = e;
@@ -1160,6 +1171,8 @@ describe(`WebGlIndexBuffer`, () => {
 
         try {
           indexBuffer.generateData();
+
+          /* istanbul ignore next */
           error = null;
         } catch (e) {
           error = e;
@@ -1270,6 +1283,8 @@ describe(`WebGlIndexBuffer`, () => {
 
         try {
           indexBuffer.generateData();
+
+          /* istanbul ignore next */
           error = null;
         } catch (e) {
           error = e;
@@ -1378,6 +1393,8 @@ describe(`WebGlIndexBuffer`, () => {
 
         try {
           indexBuffer.generateData();
+
+          /* istanbul ignore next */
           error = null;
         } catch (e) {
           error = e;

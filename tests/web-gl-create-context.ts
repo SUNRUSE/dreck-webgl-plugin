@@ -28,6 +28,8 @@ describe(`webGlCreateContext`, () => {
           { powerPreference: `high-performance` },
           render
         );
+
+        /* istanbul ignore next */
         error = null;
       } catch (e) {
         error = e;

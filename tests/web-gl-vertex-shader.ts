@@ -733,10 +733,12 @@ describe(`WebGlVertexShader`, () => {
       TestUniformDefinitionSet,
       TestVaryingDefinitionSet
     > {
+      /* istanbul ignore next */
       getHeaderLines() {
         return getHeaderLines();
       }
 
+      /* istanbul ignore next */
       getBodyLines() {
         return getBodyLines();
       }
@@ -873,10 +875,12 @@ describe(`WebGlVertexShader`, () => {
       TestUniformDefinitionSet,
       TestVaryingDefinitionSet
     > {
+      /* istanbul ignore next */
       getHeaderLines() {
         return getHeaderLines();
       }
 
+      /* istanbul ignore next */
       getBodyLines() {
         return getBodyLines();
       }

@@ -177,7 +177,7 @@ function webGlRender<
                   context.gl.uniformMatrix2fv(
                     location,
                     false,
-                    uniforms[key] as WebGlMat2
+                    flat(uniforms[key] as ReadonlyArray<WebGlMat2>)
                   );
                 }
                 break;
@@ -193,7 +193,7 @@ function webGlRender<
                   context.gl.uniformMatrix3fv(
                     location,
                     false,
-                    uniforms[key] as WebGlMat3
+                    flat(uniforms[key] as ReadonlyArray<WebGlMat3>)
                   );
                 }
                 break;
@@ -209,7 +209,7 @@ function webGlRender<
                   context.gl.uniformMatrix4fv(
                     location,
                     false,
-                    uniforms[key] as WebGlMat4
+                    flat(uniforms[key] as ReadonlyArray<WebGlMat4>)
                   );
                 }
                 break;

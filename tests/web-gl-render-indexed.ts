@@ -1373,6 +1373,8 @@ describe(`webGlRenderIndexed`, () => {
           program,
           testUniformValueSet
         );
+
+        /* istanbul ignore next */
         error = null;
       } catch (e) {
         error = e;
@@ -1639,6 +1641,8 @@ describe(`webGlRenderIndexed`, () => {
           program,
           testUniformValueSet
         );
+
+        /* istanbul ignore next */
         error = null;
       } catch (e) {
         error = e;
@@ -1905,6 +1909,8 @@ describe(`webGlRenderIndexed`, () => {
           program,
           testUniformValueSet
         );
+
+        /* istanbul ignore next */
         error = null;
       } catch (e) {
         error = e;

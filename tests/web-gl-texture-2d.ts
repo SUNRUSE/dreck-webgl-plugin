@@ -80,6 +80,7 @@ describe(`WebGlTexture2D`, () => {
         let populate: jasmine.Spy;
 
         class TestTexture2D extends WebGlTexture2D<`getContextAttributes`> {
+          /* istanbul ignore next */
           populate(): void {
             return populate();
           }
@@ -206,6 +207,7 @@ describe(`WebGlTexture2D`, () => {
         let populate: jasmine.Spy;
 
         class TestTexture2D extends WebGlTexture2D<`getContextAttributes`> {
+          /* istanbul ignore next */
           populate(): void {
             return populate();
           }
@@ -370,6 +372,7 @@ describe(`WebGlTexture2D`, () => {
           texParameteri = jasmine
             .createSpy(`texParameteri`)
             .and.callFake(() => {
+              /* istanbul ignore next */
               if (
                 !bindTexture.calls.allArgs().some((args) => args[1] !== null)
               ) {
@@ -381,6 +384,7 @@ describe(`WebGlTexture2D`, () => {
           generateMipmap = jasmine
             .createSpy(`generateMipmap`)
             .and.callFake(() => {
+              /* istanbul ignore next */
               if (
                 bindTexture.calls.allArgs().some((args) => args[1] === null)
               ) {
@@ -389,6 +393,7 @@ describe(`WebGlTexture2D`, () => {
             });
           textureUnboundBeforePopulateCalled = false;
           populate = jasmine.createSpy(`populate`).and.callFake(() => {
+            /* istanbul ignore next */
             if (bindTexture.calls.allArgs().some((args) => args[1] === null)) {
               textureUnboundBeforePopulateCalled = true;
             }
@@ -579,6 +584,7 @@ describe(`WebGlTexture2D`, () => {
         let populate: jasmine.Spy;
 
         class TestTexture2D extends WebGlTexture2D<`getContextAttributes`> {
+          /* istanbul ignore next */
           populate(): void {
             return populate();
           }
@@ -707,6 +713,7 @@ describe(`WebGlTexture2D`, () => {
         let populate: jasmine.Spy;
 
         class TestTexture2D extends WebGlTexture2D<`getContextAttributes`> {
+          /* istanbul ignore next */
           populate(): void {
             return populate();
           }

@@ -1,4 +1,4 @@
-describe(`render`, () => {
+describe(`webGlRender`, () => {
   type TestUniformDefinitionSet = {
     readonly test_declaration_v_name: {
       readonly shaderPrimitive: WebGlConstants.Float;
@@ -1351,6 +1351,8 @@ describe(`render`, () => {
 
       try {
         webGlRender(context, vertexBuffer, program, testUniformValueSet);
+
+        /* istanbul ignore next */
         error = null;
       } catch (e) {
         error = e;
@@ -1583,6 +1585,8 @@ describe(`render`, () => {
 
       try {
         webGlRender(context, vertexBuffer, program, testUniformValueSet);
+
+        /* istanbul ignore next */
         error = null;
       } catch (e) {
         error = e;

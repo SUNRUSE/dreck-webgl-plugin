@@ -95,6 +95,7 @@ describe(`WebGlTextureCube`, () => {
         let populate: jasmine.Spy;
 
         class TestTextureCube extends WebGlTextureCube<`getContextAttributes`> {
+          /* istanbul ignore next */
           populate(): void {
             return populate();
           }
@@ -226,6 +227,7 @@ describe(`WebGlTextureCube`, () => {
         let populate: jasmine.Spy;
 
         class TestTextureCube extends WebGlTextureCube<`getContextAttributes`> {
+          /* istanbul ignore next */
           populate(): void {
             return populate();
           }
@@ -395,6 +397,7 @@ describe(`WebGlTextureCube`, () => {
           texParameteri = jasmine
             .createSpy(`texParameteri`)
             .and.callFake(() => {
+              /* istanbul ignore next */
               if (
                 !bindTexture.calls.allArgs().some((args) => args[1] !== null)
               ) {
@@ -406,6 +409,7 @@ describe(`WebGlTextureCube`, () => {
           generateMipmap = jasmine
             .createSpy(`generateMipmap`)
             .and.callFake(() => {
+              /* istanbul ignore next */
               if (
                 bindTexture.calls.allArgs().some((args) => args[1] === null)
               ) {
@@ -414,6 +418,7 @@ describe(`WebGlTextureCube`, () => {
             });
           textureUnboundBeforePopulateCalled = false;
           populate = jasmine.createSpy(`populate`).and.callFake(() => {
+            /* istanbul ignore next */
             if (bindTexture.calls.allArgs().some((args) => args[1] === null)) {
               textureUnboundBeforePopulateCalled = true;
             }
@@ -620,6 +625,7 @@ describe(`WebGlTextureCube`, () => {
         let populate: jasmine.Spy;
 
         class TestTextureCube extends WebGlTextureCube<`getContextAttributes`> {
+          /* istanbul ignore next */
           populate(): void {
             return populate();
           }
@@ -753,6 +759,7 @@ describe(`WebGlTextureCube`, () => {
         let populate: jasmine.Spy;
 
         class TestTextureCube extends WebGlTextureCube<`getContextAttributes`> {
+          /* istanbul ignore next */
           populate(): void {
             return populate();
           }
