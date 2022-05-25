@@ -20,11 +20,4 @@ interface WebGlContextInterface<
    * Renders the context.
    */
   render(): void;
-
-  /**
-   * Registers a callback.
-   * @param type The type of callback to register.
-   * @param callback The callback to register.
-   */
-  addEventListener(type: `postRender`, callback: () => void): void;
 }

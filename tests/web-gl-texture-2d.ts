@@ -76,7 +76,6 @@ describe(`WebGlTexture2D`, () => {
         let isContextLost: jasmine.Spy;
         let getContextAttributes: jasmine.Spy;
         let render: jasmine.Spy;
-        let addEventListener: jasmine.Spy;
         let populate: jasmine.Spy;
 
         class TestTexture2D extends WebGlTexture2D<`getContextAttributes`> {
@@ -107,7 +106,6 @@ describe(`WebGlTexture2D`, () => {
           isContextLost = jasmine.createSpy(`isContextLost`);
           getContextAttributes = jasmine.createSpy(`getContextAttributes`);
           render = jasmine.createSpy(`render`);
-          addEventListener = jasmine.createSpy(`addEventListener`);
 
           context = {
             gl: {
@@ -121,7 +119,6 @@ describe(`WebGlTexture2D`, () => {
             },
             timesContextRestored: 7,
             render,
-            addEventListener,
           };
 
           texture = new TestTexture2D(
@@ -139,10 +136,6 @@ describe(`WebGlTexture2D`, () => {
 
         it(`does not render`, () => {
           expect(render).not.toHaveBeenCalled();
-        });
-
-        it(`does not add any event listeners`, () => {
-          expect(addEventListener).not.toHaveBeenCalled();
         });
 
         it(`creates one texture`, () => {
@@ -203,7 +196,6 @@ describe(`WebGlTexture2D`, () => {
         let isContextLost: jasmine.Spy;
         let getContextAttributes: jasmine.Spy;
         let render: jasmine.Spy;
-        let addEventListener: jasmine.Spy;
         let populate: jasmine.Spy;
 
         class TestTexture2D extends WebGlTexture2D<`getContextAttributes`> {
@@ -237,7 +229,6 @@ describe(`WebGlTexture2D`, () => {
           isContextLost = jasmine.createSpy(`isContextLost`);
           getContextAttributes = jasmine.createSpy(`getContextAttributes`);
           render = jasmine.createSpy(`render`);
-          addEventListener = jasmine.createSpy(`addEventListener`);
 
           context = {
             gl: {
@@ -251,7 +242,6 @@ describe(`WebGlTexture2D`, () => {
             },
             timesContextRestored: 7,
             render,
-            addEventListener,
           };
 
           texture = new TestTexture2D(
@@ -271,10 +261,6 @@ describe(`WebGlTexture2D`, () => {
 
         it(`does not render`, () => {
           expect(render).not.toHaveBeenCalled();
-        });
-
-        it(`does not add any event listeners`, () => {
-          expect(addEventListener).not.toHaveBeenCalled();
         });
 
         it(`creates one texture`, () => {
@@ -339,7 +325,6 @@ describe(`WebGlTexture2D`, () => {
         let isContextLost: jasmine.Spy;
         let getContextAttributes: jasmine.Spy;
         let render: jasmine.Spy;
-        let addEventListener: jasmine.Spy;
         let populate: jasmine.Spy;
         let texParameteriCalledBeforeTextureBound: boolean;
         let textureUnboundBeforePopulateCalled: boolean;
@@ -401,7 +386,6 @@ describe(`WebGlTexture2D`, () => {
           isContextLost = jasmine.createSpy(`isContextLost`);
           getContextAttributes = jasmine.createSpy(`getContextAttributes`);
           render = jasmine.createSpy(`render`);
-          addEventListener = jasmine.createSpy(`addEventListener`);
 
           context = {
             gl: {
@@ -415,7 +399,6 @@ describe(`WebGlTexture2D`, () => {
             },
             timesContextRestored: 7,
             render,
-            addEventListener,
           };
 
           texture = new TestTexture2D(
@@ -435,10 +418,6 @@ describe(`WebGlTexture2D`, () => {
 
         it(`does not render`, () => {
           expect(render).not.toHaveBeenCalled();
-        });
-
-        it(`does not add any event listeners`, () => {
-          expect(addEventListener).not.toHaveBeenCalled();
         });
 
         it(`creates one texture`, () => {
@@ -580,7 +559,6 @@ describe(`WebGlTexture2D`, () => {
         let isContextLost: jasmine.Spy;
         let getContextAttributes: jasmine.Spy;
         let render: jasmine.Spy;
-        let addEventListener: jasmine.Spy;
         let populate: jasmine.Spy;
 
         class TestTexture2D extends WebGlTexture2D<`getContextAttributes`> {
@@ -611,7 +589,6 @@ describe(`WebGlTexture2D`, () => {
           isContextLost = jasmine.createSpy(`isContextLost`);
           getContextAttributes = jasmine.createSpy(`getContextAttributes`);
           render = jasmine.createSpy(`render`);
-          addEventListener = jasmine.createSpy(`addEventListener`);
 
           context = {
             gl: {
@@ -625,7 +602,6 @@ describe(`WebGlTexture2D`, () => {
             },
             timesContextRestored: 7,
             render,
-            addEventListener,
           };
 
           texture = new TestTexture2D(
@@ -645,10 +621,6 @@ describe(`WebGlTexture2D`, () => {
 
         it(`does not render`, () => {
           expect(render).not.toHaveBeenCalled();
-        });
-
-        it(`does not add any event listeners`, () => {
-          expect(addEventListener).not.toHaveBeenCalled();
         });
 
         it(`does not create any textures`, () => {
@@ -709,7 +681,6 @@ describe(`WebGlTexture2D`, () => {
         let isContextLost: jasmine.Spy;
         let getContextAttributes: jasmine.Spy;
         let render: jasmine.Spy;
-        let addEventListener: jasmine.Spy;
         let populate: jasmine.Spy;
 
         class TestTexture2D extends WebGlTexture2D<`getContextAttributes`> {
@@ -740,7 +711,6 @@ describe(`WebGlTexture2D`, () => {
           isContextLost = jasmine.createSpy(`isContextLost`);
           getContextAttributes = jasmine.createSpy(`getContextAttributes`);
           render = jasmine.createSpy(`render`);
-          addEventListener = jasmine.createSpy(`addEventListener`);
 
           context = {
             gl: {
@@ -754,7 +724,6 @@ describe(`WebGlTexture2D`, () => {
             },
             timesContextRestored: 7,
             render,
-            addEventListener,
           };
 
           texture = new TestTexture2D(
@@ -774,10 +743,6 @@ describe(`WebGlTexture2D`, () => {
 
         it(`does not render`, () => {
           expect(render).not.toHaveBeenCalled();
-        });
-
-        it(`does not add any event listeners`, () => {
-          expect(addEventListener).not.toHaveBeenCalled();
         });
 
         it(`does not create any textures`, () => {

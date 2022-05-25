@@ -461,7 +461,6 @@ describe(`WebGlVertexBuffer`, () => {
         let deleteBuffer: jasmine.Spy;
         let isContextLost: jasmine.Spy;
         let render: jasmine.Spy;
-        let addEventListener: jasmine.Spy;
 
         class TestVertexBuffer extends WebGlVertexBuffer<TestAttributeSet> {
           /* istanbul ignore next */
@@ -525,7 +524,6 @@ describe(`WebGlVertexBuffer`, () => {
           deleteBuffer = jasmine.createSpy(`deleteBuffer`);
           isContextLost = jasmine.createSpy(`isContextLost`);
           render = jasmine.createSpy(`render`);
-          addEventListener = jasmine.createSpy(`addEventListener`);
 
           context = {
             gl: {
@@ -537,7 +535,6 @@ describe(`WebGlVertexBuffer`, () => {
             },
             timesContextRestored: 7,
             render,
-            addEventListener,
           };
 
           vertexBuffer = new TestVertexBuffer(
@@ -588,10 +585,6 @@ describe(`WebGlVertexBuffer`, () => {
         it(`does not render`, () => {
           expect(render).not.toHaveBeenCalled();
         });
-
-        it(`does not add any event listeners`, () => {
-          expect(addEventListener).not.toHaveBeenCalled();
-        });
       });
 
       describe(`on generating data`, () => {
@@ -603,7 +596,6 @@ describe(`WebGlVertexBuffer`, () => {
           let deleteBuffer: jasmine.Spy;
           let isContextLost: jasmine.Spy;
           let render: jasmine.Spy;
-          let addEventListener: jasmine.Spy;
 
           class TestVertexBuffer extends WebGlVertexBuffer<TestAttributeSet> {
             generateVertices(): TestGeneratedVertices {
@@ -836,7 +828,6 @@ describe(`WebGlVertexBuffer`, () => {
             deleteBuffer = jasmine.createSpy(`deleteBuffer`);
             isContextLost = jasmine.createSpy(`isContextLost`);
             render = jasmine.createSpy(`render`);
-            addEventListener = jasmine.createSpy(`addEventListener`);
 
             context = {
               gl: {
@@ -848,7 +839,6 @@ describe(`WebGlVertexBuffer`, () => {
               },
               timesContextRestored: 7,
               render,
-              addEventListener,
             };
 
             vertexBuffer = new TestVertexBuffer(
@@ -900,10 +890,6 @@ describe(`WebGlVertexBuffer`, () => {
 
           it(`does not render`, () => {
             expect(render).not.toHaveBeenCalled();
-          });
-
-          it(`does not add any event listeners`, () => {
-            expect(addEventListener).not.toHaveBeenCalled();
           });
 
           describe(`returns bytes including`, () => {
@@ -1226,7 +1212,6 @@ describe(`WebGlVertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
-            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends WebGlVertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -1454,7 +1439,6 @@ describe(`WebGlVertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
-              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -1466,7 +1450,6 @@ describe(`WebGlVertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
-                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -1527,10 +1510,6 @@ describe(`WebGlVertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
-            it(`does not add any event listeners`, () => {
-              expect(addEventListener).not.toHaveBeenCalled();
-            });
-
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -1548,7 +1527,6 @@ describe(`WebGlVertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
-            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends WebGlVertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -1776,7 +1754,6 @@ describe(`WebGlVertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
-              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -1788,7 +1765,6 @@ describe(`WebGlVertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
-                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -1849,10 +1825,6 @@ describe(`WebGlVertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
-            it(`does not add any event listeners`, () => {
-              expect(addEventListener).not.toHaveBeenCalled();
-            });
-
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -1870,7 +1842,6 @@ describe(`WebGlVertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
-            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends WebGlVertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -2098,7 +2069,6 @@ describe(`WebGlVertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
-              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -2110,7 +2080,6 @@ describe(`WebGlVertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
-                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -2171,10 +2140,6 @@ describe(`WebGlVertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
-            it(`does not add any event listeners`, () => {
-              expect(addEventListener).not.toHaveBeenCalled();
-            });
-
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -2192,7 +2157,6 @@ describe(`WebGlVertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
-            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends WebGlVertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -2420,7 +2384,6 @@ describe(`WebGlVertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
-              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -2432,7 +2395,6 @@ describe(`WebGlVertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
-                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -2493,10 +2455,6 @@ describe(`WebGlVertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
-            it(`does not add any event listeners`, () => {
-              expect(addEventListener).not.toHaveBeenCalled();
-            });
-
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -2514,7 +2472,6 @@ describe(`WebGlVertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
-            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends WebGlVertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -2742,7 +2699,6 @@ describe(`WebGlVertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
-              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -2754,7 +2710,6 @@ describe(`WebGlVertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
-                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -2815,10 +2770,6 @@ describe(`WebGlVertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
-            it(`does not add any event listeners`, () => {
-              expect(addEventListener).not.toHaveBeenCalled();
-            });
-
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -2836,7 +2787,6 @@ describe(`WebGlVertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
-            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends WebGlVertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -3064,7 +3014,6 @@ describe(`WebGlVertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
-              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -3076,7 +3025,6 @@ describe(`WebGlVertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
-                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -3137,10 +3085,6 @@ describe(`WebGlVertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
-            it(`does not add any event listeners`, () => {
-              expect(addEventListener).not.toHaveBeenCalled();
-            });
-
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -3158,7 +3102,6 @@ describe(`WebGlVertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
-            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends WebGlVertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -3386,7 +3329,6 @@ describe(`WebGlVertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
-              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -3398,7 +3340,6 @@ describe(`WebGlVertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
-                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -3459,10 +3400,6 @@ describe(`WebGlVertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
-            it(`does not add any event listeners`, () => {
-              expect(addEventListener).not.toHaveBeenCalled();
-            });
-
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -3480,7 +3417,6 @@ describe(`WebGlVertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
-            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends WebGlVertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -3708,7 +3644,6 @@ describe(`WebGlVertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
-              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -3720,7 +3655,6 @@ describe(`WebGlVertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
-                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -3781,10 +3715,6 @@ describe(`WebGlVertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
-            it(`does not add any event listeners`, () => {
-              expect(addEventListener).not.toHaveBeenCalled();
-            });
-
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -3804,7 +3734,6 @@ describe(`WebGlVertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
-            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends WebGlVertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -4032,7 +3961,6 @@ describe(`WebGlVertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
-              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -4044,7 +3972,6 @@ describe(`WebGlVertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
-                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -4105,10 +4032,6 @@ describe(`WebGlVertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
-            it(`does not add any event listeners`, () => {
-              expect(addEventListener).not.toHaveBeenCalled();
-            });
-
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -4126,7 +4049,6 @@ describe(`WebGlVertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
-            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends WebGlVertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -4354,7 +4276,6 @@ describe(`WebGlVertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
-              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -4366,7 +4287,6 @@ describe(`WebGlVertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
-                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -4427,10 +4347,6 @@ describe(`WebGlVertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
-            it(`does not add any event listeners`, () => {
-              expect(addEventListener).not.toHaveBeenCalled();
-            });
-
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -4448,7 +4364,6 @@ describe(`WebGlVertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
-            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends WebGlVertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -4676,7 +4591,6 @@ describe(`WebGlVertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
-              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -4688,7 +4602,6 @@ describe(`WebGlVertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
-                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -4749,10 +4662,6 @@ describe(`WebGlVertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
-            it(`does not add any event listeners`, () => {
-              expect(addEventListener).not.toHaveBeenCalled();
-            });
-
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -4770,7 +4679,6 @@ describe(`WebGlVertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
-            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends WebGlVertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -4998,7 +4906,6 @@ describe(`WebGlVertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
-              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -5010,7 +4917,6 @@ describe(`WebGlVertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
-                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -5071,10 +4977,6 @@ describe(`WebGlVertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
-            it(`does not add any event listeners`, () => {
-              expect(addEventListener).not.toHaveBeenCalled();
-            });
-
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -5092,7 +4994,6 @@ describe(`WebGlVertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
-            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends WebGlVertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -5320,7 +5221,6 @@ describe(`WebGlVertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
-              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -5332,7 +5232,6 @@ describe(`WebGlVertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
-                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -5393,10 +5292,6 @@ describe(`WebGlVertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
-            it(`does not add any event listeners`, () => {
-              expect(addEventListener).not.toHaveBeenCalled();
-            });
-
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -5414,7 +5309,6 @@ describe(`WebGlVertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
-            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends WebGlVertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -5642,7 +5536,6 @@ describe(`WebGlVertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
-              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -5654,7 +5547,6 @@ describe(`WebGlVertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
-                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -5715,10 +5607,6 @@ describe(`WebGlVertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
-            it(`does not add any event listeners`, () => {
-              expect(addEventListener).not.toHaveBeenCalled();
-            });
-
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -5736,7 +5624,6 @@ describe(`WebGlVertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
-            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends WebGlVertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -5964,7 +5851,6 @@ describe(`WebGlVertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
-              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -5976,7 +5862,6 @@ describe(`WebGlVertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
-                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -6037,10 +5922,6 @@ describe(`WebGlVertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
-            it(`does not add any event listeners`, () => {
-              expect(addEventListener).not.toHaveBeenCalled();
-            });
-
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -6058,7 +5939,6 @@ describe(`WebGlVertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
-            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends WebGlVertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -6286,7 +6166,6 @@ describe(`WebGlVertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
-              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -6298,7 +6177,6 @@ describe(`WebGlVertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
-                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -6359,10 +6237,6 @@ describe(`WebGlVertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
-            it(`does not add any event listeners`, () => {
-              expect(addEventListener).not.toHaveBeenCalled();
-            });
-
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -6382,7 +6256,6 @@ describe(`WebGlVertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
-            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends WebGlVertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -6610,7 +6483,6 @@ describe(`WebGlVertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
-              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -6622,7 +6494,6 @@ describe(`WebGlVertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
-                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -6683,10 +6554,6 @@ describe(`WebGlVertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
-            it(`does not add any event listeners`, () => {
-              expect(addEventListener).not.toHaveBeenCalled();
-            });
-
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -6704,7 +6571,6 @@ describe(`WebGlVertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
-            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends WebGlVertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -6932,7 +6798,6 @@ describe(`WebGlVertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
-              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -6944,7 +6809,6 @@ describe(`WebGlVertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
-                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -7005,10 +6869,6 @@ describe(`WebGlVertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
-            it(`does not add any event listeners`, () => {
-              expect(addEventListener).not.toHaveBeenCalled();
-            });
-
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -7026,7 +6886,6 @@ describe(`WebGlVertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
-            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends WebGlVertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -7254,7 +7113,6 @@ describe(`WebGlVertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
-              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -7266,7 +7124,6 @@ describe(`WebGlVertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
-                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -7327,10 +7184,6 @@ describe(`WebGlVertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
-            it(`does not add any event listeners`, () => {
-              expect(addEventListener).not.toHaveBeenCalled();
-            });
-
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -7348,7 +7201,6 @@ describe(`WebGlVertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
-            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends WebGlVertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -7576,7 +7428,6 @@ describe(`WebGlVertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
-              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -7588,7 +7439,6 @@ describe(`WebGlVertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
-                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -7649,10 +7499,6 @@ describe(`WebGlVertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
-            it(`does not add any event listeners`, () => {
-              expect(addEventListener).not.toHaveBeenCalled();
-            });
-
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -7670,7 +7516,6 @@ describe(`WebGlVertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
-            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends WebGlVertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -7898,7 +7743,6 @@ describe(`WebGlVertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
-              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -7910,7 +7754,6 @@ describe(`WebGlVertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
-                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -7971,10 +7814,6 @@ describe(`WebGlVertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
-            it(`does not add any event listeners`, () => {
-              expect(addEventListener).not.toHaveBeenCalled();
-            });
-
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -7992,7 +7831,6 @@ describe(`WebGlVertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
-            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends WebGlVertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -8220,7 +8058,6 @@ describe(`WebGlVertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
-              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -8232,7 +8069,6 @@ describe(`WebGlVertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
-                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -8293,10 +8129,6 @@ describe(`WebGlVertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
-            it(`does not add any event listeners`, () => {
-              expect(addEventListener).not.toHaveBeenCalled();
-            });
-
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -8314,7 +8146,6 @@ describe(`WebGlVertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
-            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends WebGlVertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -8542,7 +8373,6 @@ describe(`WebGlVertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
-              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -8554,7 +8384,6 @@ describe(`WebGlVertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
-                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -8615,10 +8444,6 @@ describe(`WebGlVertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
-            it(`does not add any event listeners`, () => {
-              expect(addEventListener).not.toHaveBeenCalled();
-            });
-
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -8636,7 +8461,6 @@ describe(`WebGlVertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
-            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends WebGlVertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -8864,7 +8688,6 @@ describe(`WebGlVertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
-              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -8876,7 +8699,6 @@ describe(`WebGlVertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
-                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -8937,10 +8759,6 @@ describe(`WebGlVertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
-            it(`does not add any event listeners`, () => {
-              expect(addEventListener).not.toHaveBeenCalled();
-            });
-
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -8960,7 +8778,6 @@ describe(`WebGlVertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
-            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends WebGlVertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -9188,7 +9005,6 @@ describe(`WebGlVertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
-              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -9200,7 +9016,6 @@ describe(`WebGlVertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
-                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -9261,10 +9076,6 @@ describe(`WebGlVertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
-            it(`does not add any event listeners`, () => {
-              expect(addEventListener).not.toHaveBeenCalled();
-            });
-
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -9282,7 +9093,6 @@ describe(`WebGlVertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
-            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends WebGlVertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -9510,7 +9320,6 @@ describe(`WebGlVertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
-              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -9522,7 +9331,6 @@ describe(`WebGlVertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
-                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -9583,10 +9391,6 @@ describe(`WebGlVertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
-            it(`does not add any event listeners`, () => {
-              expect(addEventListener).not.toHaveBeenCalled();
-            });
-
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -9604,7 +9408,6 @@ describe(`WebGlVertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
-            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends WebGlVertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -9832,7 +9635,6 @@ describe(`WebGlVertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
-              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -9844,7 +9646,6 @@ describe(`WebGlVertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
-                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -9905,10 +9706,6 @@ describe(`WebGlVertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
-            it(`does not add any event listeners`, () => {
-              expect(addEventListener).not.toHaveBeenCalled();
-            });
-
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -9926,7 +9723,6 @@ describe(`WebGlVertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
-            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends WebGlVertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -10154,7 +9950,6 @@ describe(`WebGlVertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
-              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -10166,7 +9961,6 @@ describe(`WebGlVertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
-                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -10227,10 +10021,6 @@ describe(`WebGlVertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
-            it(`does not add any event listeners`, () => {
-              expect(addEventListener).not.toHaveBeenCalled();
-            });
-
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -10248,7 +10038,6 @@ describe(`WebGlVertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
-            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends WebGlVertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -10476,7 +10265,6 @@ describe(`WebGlVertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
-              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -10488,7 +10276,6 @@ describe(`WebGlVertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
-                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -10549,10 +10336,6 @@ describe(`WebGlVertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
-            it(`does not add any event listeners`, () => {
-              expect(addEventListener).not.toHaveBeenCalled();
-            });
-
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -10570,7 +10353,6 @@ describe(`WebGlVertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
-            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends WebGlVertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -10798,7 +10580,6 @@ describe(`WebGlVertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
-              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -10810,7 +10591,6 @@ describe(`WebGlVertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
-                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -10871,10 +10651,6 @@ describe(`WebGlVertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
-            it(`does not add any event listeners`, () => {
-              expect(addEventListener).not.toHaveBeenCalled();
-            });
-
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -10892,7 +10668,6 @@ describe(`WebGlVertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
-            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends WebGlVertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -11120,7 +10895,6 @@ describe(`WebGlVertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
-              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -11132,7 +10906,6 @@ describe(`WebGlVertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
-                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -11193,10 +10966,6 @@ describe(`WebGlVertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
-            it(`does not add any event listeners`, () => {
-              expect(addEventListener).not.toHaveBeenCalled();
-            });
-
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -11214,7 +10983,6 @@ describe(`WebGlVertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
-            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends WebGlVertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -11442,7 +11210,6 @@ describe(`WebGlVertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
-              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -11454,7 +11221,6 @@ describe(`WebGlVertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
-                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -11515,10 +11281,6 @@ describe(`WebGlVertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
-            it(`does not add any event listeners`, () => {
-              expect(addEventListener).not.toHaveBeenCalled();
-            });
-
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -11538,7 +11300,6 @@ describe(`WebGlVertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
-            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends WebGlVertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -11766,7 +11527,6 @@ describe(`WebGlVertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
-              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -11778,7 +11538,6 @@ describe(`WebGlVertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
-                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -11839,10 +11598,6 @@ describe(`WebGlVertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
-            it(`does not add any event listeners`, () => {
-              expect(addEventListener).not.toHaveBeenCalled();
-            });
-
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -11860,7 +11615,6 @@ describe(`WebGlVertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
-            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends WebGlVertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -12088,7 +11842,6 @@ describe(`WebGlVertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
-              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -12100,7 +11853,6 @@ describe(`WebGlVertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
-                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -12161,10 +11913,6 @@ describe(`WebGlVertexBuffer`, () => {
               expect(render).not.toHaveBeenCalled();
             });
 
-            it(`does not add any event listeners`, () => {
-              expect(addEventListener).not.toHaveBeenCalled();
-            });
-
             it(`throws the expected error`, () => {
               expect(error).toEqual(
                 new Error(
@@ -12182,7 +11930,6 @@ describe(`WebGlVertexBuffer`, () => {
             let deleteBuffer: jasmine.Spy;
             let isContextLost: jasmine.Spy;
             let render: jasmine.Spy;
-            let addEventListener: jasmine.Spy;
 
             class TestVertexBuffer extends WebGlVertexBuffer<TestAttributeSet> {
               generateVertices(): TestGeneratedVertices {
@@ -12410,7 +12157,6 @@ describe(`WebGlVertexBuffer`, () => {
               deleteBuffer = jasmine.createSpy(`deleteBuffer`);
               isContextLost = jasmine.createSpy(`isContextLost`);
               render = jasmine.createSpy(`render`);
-              addEventListener = jasmine.createSpy(`addEventListener`);
 
               context = {
                 gl: {
@@ -12422,7 +12168,6 @@ describe(`WebGlVertexBuffer`, () => {
                 },
                 timesContextRestored: 7,
                 render,
-                addEventListener,
               };
 
               vertexBuffer = new TestVertexBuffer(
@@ -12481,10 +12226,6 @@ describe(`WebGlVertexBuffer`, () => {
 
             it(`does not render`, () => {
               expect(render).not.toHaveBeenCalled();
-            });
-
-            it(`does not add any event listeners`, () => {
-              expect(addEventListener).not.toHaveBeenCalled();
             });
 
             it(`throws the expected error`, () => {

@@ -18,7 +18,6 @@ describe(`WebGlFramebuffer`, () => {
         | `isContextLost`
       >;
       let render: jasmine.Spy;
-      let addEventListener: jasmine.Spy;
       let colorAttachment0ThrowIfDisposed: jasmine.Spy;
       let colorAttachment0ThrowIfFromAnotherContext: jasmine.Spy;
       let colorAttachment0GetInstance: jasmine.Spy;
@@ -48,10 +47,8 @@ describe(`WebGlFramebuffer`, () => {
           },
           timesContextRestored: 7,
           render,
-          addEventListener,
         };
         render = jasmine.createSpy(`render`);
-        addEventListener = jasmine.createSpy(`addEventListener`);
         colorAttachment0ThrowIfDisposed = jasmine.createSpy(
           `colorAttachment0ThrowIfDisposed`
         );
@@ -105,10 +102,6 @@ describe(`WebGlFramebuffer`, () => {
         expect(render).not.toHaveBeenCalled();
       });
 
-      it(`does not add any event listeners`, () => {
-        expect(addEventListener).not.toHaveBeenCalled();
-      });
-
       it(`does not check whether color attachment 0 is disposed`, () => {
         expect(colorAttachment0ThrowIfDisposed).not.toHaveBeenCalled();
       });
@@ -160,7 +153,6 @@ describe(`WebGlFramebuffer`, () => {
         | `isContextLost`
       >;
       let render: jasmine.Spy;
-      let addEventListener: jasmine.Spy;
       let colorAttachment0ThrowIfDisposed: jasmine.Spy;
       let colorAttachment0ThrowIfFromAnotherContext: jasmine.Spy;
       let colorAttachment0GetInstance: jasmine.Spy;
@@ -192,10 +184,8 @@ describe(`WebGlFramebuffer`, () => {
           },
           timesContextRestored: 7,
           render,
-          addEventListener,
         };
         render = jasmine.createSpy(`render`);
-        addEventListener = jasmine.createSpy(`addEventListener`);
         colorAttachment0ThrowIfDisposed = jasmine.createSpy(
           `colorAttachment0ThrowIfDisposed`
         );
@@ -250,10 +240,6 @@ describe(`WebGlFramebuffer`, () => {
         expect(render).not.toHaveBeenCalled();
       });
 
-      it(`does not add any event listeners`, () => {
-        expect(addEventListener).not.toHaveBeenCalled();
-      });
-
       it(`does not check whether color attachment 0 is disposed`, () => {
         expect(colorAttachment0ThrowIfDisposed).not.toHaveBeenCalled();
       });
@@ -303,7 +289,6 @@ describe(`WebGlFramebuffer`, () => {
         | `isContextLost`
       >;
       let render: jasmine.Spy;
-      let addEventListener: jasmine.Spy;
       let colorAttachment0ThrowIfDisposed: jasmine.Spy;
       let colorAttachment0ThrowIfFromAnotherContext: jasmine.Spy;
       let colorAttachment0GetInstance: jasmine.Spy;
@@ -336,10 +321,8 @@ describe(`WebGlFramebuffer`, () => {
           },
           timesContextRestored: 7,
           render,
-          addEventListener,
         };
         render = jasmine.createSpy(`render`);
-        addEventListener = jasmine.createSpy(`addEventListener`);
         colorAttachment0ThrowIfDisposed = jasmine.createSpy(
           `colorAttachment0ThrowIfDisposed`
         );
@@ -394,10 +377,6 @@ describe(`WebGlFramebuffer`, () => {
         expect(render).not.toHaveBeenCalled();
       });
 
-      it(`does not add any event listeners`, () => {
-        expect(addEventListener).not.toHaveBeenCalled();
-      });
-
       it(`does not check whether color attachment 0 is disposed`, () => {
         expect(colorAttachment0ThrowIfDisposed).not.toHaveBeenCalled();
       });
@@ -447,7 +426,6 @@ describe(`WebGlFramebuffer`, () => {
         | `isContextLost`
       >;
       let render: jasmine.Spy;
-      let addEventListener: jasmine.Spy;
       let colorAttachment0ThrowIfDisposed: jasmine.Spy;
       let colorAttachment0ThrowIfFromAnotherContext: jasmine.Spy;
       let colorAttachment0GetInstance: jasmine.Spy;
@@ -484,10 +462,8 @@ describe(`WebGlFramebuffer`, () => {
           },
           timesContextRestored: 7,
           render,
-          addEventListener,
         };
         render = jasmine.createSpy(`render`);
-        addEventListener = jasmine.createSpy(`addEventListener`);
         colorAttachment0ThrowIfDisposed = jasmine.createSpy(
           `colorAttachment0ThrowIfDisposed`
         );
@@ -567,10 +543,6 @@ describe(`WebGlFramebuffer`, () => {
         expect(render).not.toHaveBeenCalled();
       });
 
-      it(`does not add any event listeners`, () => {
-        expect(addEventListener).not.toHaveBeenCalled();
-      });
-
       it(`does not check whether color attachment 0 is disposed`, () => {
         expect(colorAttachment0ThrowIfDisposed).not.toHaveBeenCalled();
       });
@@ -634,7 +606,6 @@ describe(`WebGlFramebuffer`, () => {
         | `isContextLost`
       >;
       let render: jasmine.Spy;
-      let addEventListener: jasmine.Spy;
       let colorAttachment0ThrowIfDisposed: jasmine.Spy;
       let colorAttachment0ThrowIfFromAnotherContext: jasmine.Spy;
       let colorAttachment0GetInstance: jasmine.Spy;
@@ -691,10 +662,8 @@ describe(`WebGlFramebuffer`, () => {
           },
           timesContextRestored: 7,
           render,
-          addEventListener,
         };
         render = jasmine.createSpy(`render`);
-        addEventListener = jasmine.createSpy(`addEventListener`);
         colorAttachment0ThrowIfDisposed = jasmine.createSpy(
           `colorAttachment0ThrowIfDisposed`
         );
@@ -792,10 +761,6 @@ describe(`WebGlFramebuffer`, () => {
         expect(render).not.toHaveBeenCalled();
       });
 
-      it(`does not add any event listeners`, () => {
-        expect(addEventListener).not.toHaveBeenCalled();
-      });
-
       it(`does not check whether color attachment 0 is disposed`, () => {
         expect(colorAttachment0ThrowIfDisposed).not.toHaveBeenCalled();
       });
@@ -867,7 +832,6 @@ describe(`WebGlFramebuffer`, () => {
         | `isContextLost`
       >;
       let render: jasmine.Spy;
-      let addEventListener: jasmine.Spy;
       let colorAttachment0ThrowIfDisposed: jasmine.Spy;
       let colorAttachment0ThrowIfFromAnotherContext: jasmine.Spy;
       let colorAttachment0GetInstance: jasmine.Spy;
@@ -902,10 +866,8 @@ describe(`WebGlFramebuffer`, () => {
           },
           timesContextRestored: 7,
           render,
-          addEventListener,
         };
         render = jasmine.createSpy(`render`);
-        addEventListener = jasmine.createSpy(`addEventListener`);
         colorAttachment0ThrowIfDisposed = jasmine.createSpy(
           `colorAttachment0ThrowIfDisposed`
         );
@@ -985,10 +947,6 @@ describe(`WebGlFramebuffer`, () => {
         expect(render).not.toHaveBeenCalled();
       });
 
-      it(`does not add any event listeners`, () => {
-        expect(addEventListener).not.toHaveBeenCalled();
-      });
-
       it(`does not check whether color attachment 0 is disposed`, () => {
         expect(colorAttachment0ThrowIfDisposed).not.toHaveBeenCalled();
       });
@@ -1048,7 +1006,6 @@ describe(`WebGlFramebuffer`, () => {
         | `isContextLost`
       >;
       let render: jasmine.Spy;
-      let addEventListener: jasmine.Spy;
       let colorAttachment0ThrowIfDisposed: jasmine.Spy;
       let colorAttachment0ThrowIfFromAnotherContext: jasmine.Spy;
       let colorAttachment0GetInstance: jasmine.Spy;
@@ -1078,10 +1035,8 @@ describe(`WebGlFramebuffer`, () => {
           },
           timesContextRestored: 7,
           render,
-          addEventListener,
         };
         render = jasmine.createSpy(`render`);
-        addEventListener = jasmine.createSpy(`addEventListener`);
         colorAttachment0ThrowIfDisposed = jasmine.createSpy(
           `colorAttachment0ThrowIfDisposed`
         );
@@ -1136,10 +1091,6 @@ describe(`WebGlFramebuffer`, () => {
         expect(render).not.toHaveBeenCalled();
       });
 
-      it(`does not add any event listeners`, () => {
-        expect(addEventListener).not.toHaveBeenCalled();
-      });
-
       it(`does not check whether color attachment 0 is disposed`, () => {
         expect(colorAttachment0ThrowIfDisposed).not.toHaveBeenCalled();
       });
@@ -1191,7 +1142,6 @@ describe(`WebGlFramebuffer`, () => {
         | `isContextLost`
       >;
       let render: jasmine.Spy;
-      let addEventListener: jasmine.Spy;
       let colorAttachment0ThrowIfDisposed: jasmine.Spy;
       let colorAttachment0ThrowIfFromAnotherContext: jasmine.Spy;
       let colorAttachment0GetInstance: jasmine.Spy;
@@ -1221,10 +1171,8 @@ describe(`WebGlFramebuffer`, () => {
           },
           timesContextRestored: 7,
           render,
-          addEventListener,
         };
         render = jasmine.createSpy(`render`);
-        addEventListener = jasmine.createSpy(`addEventListener`);
         colorAttachment0ThrowIfDisposed = jasmine.createSpy(
           `colorAttachment0ThrowIfDisposed`
         );
@@ -1290,10 +1238,6 @@ describe(`WebGlFramebuffer`, () => {
         expect(render).not.toHaveBeenCalled();
       });
 
-      it(`does not add any event listeners`, () => {
-        expect(addEventListener).not.toHaveBeenCalled();
-      });
-
       it(`does not check whether color attachment 0 is disposed`, () => {
         expect(colorAttachment0ThrowIfDisposed).not.toHaveBeenCalled();
       });
@@ -1355,7 +1299,6 @@ describe(`WebGlFramebuffer`, () => {
           | `isContextLost`
         >;
         let render: jasmine.Spy;
-        let addEventListener: jasmine.Spy;
         let colorAttachment0ThrowIfDisposed: jasmine.Spy;
         let colorAttachment0ThrowIfFromAnotherContext: jasmine.Spy;
         let colorAttachment0GetInstance: jasmine.Spy;
@@ -1396,10 +1339,8 @@ describe(`WebGlFramebuffer`, () => {
             },
             timesContextRestored: 7,
             render,
-            addEventListener,
           };
           render = jasmine.createSpy(`render`);
-          addEventListener = jasmine.createSpy(`addEventListener`);
           colorAttachment0ThrowIfDisposed = jasmine.createSpy(
             `colorAttachment0ThrowIfDisposed`
           );
@@ -1474,10 +1415,6 @@ describe(`WebGlFramebuffer`, () => {
 
         it(`does not render`, () => {
           expect(render).not.toHaveBeenCalled();
-        });
-
-        it(`does not add any event listeners`, () => {
-          expect(addEventListener).not.toHaveBeenCalled();
         });
 
         it(`does not check whether color attachment 0 is disposed`, () => {
@@ -1555,7 +1492,6 @@ describe(`WebGlFramebuffer`, () => {
           | `isContextLost`
         >;
         let render: jasmine.Spy;
-        let addEventListener: jasmine.Spy;
         let colorAttachment0ThrowIfDisposed: jasmine.Spy;
         let colorAttachment0ThrowIfFromAnotherContext: jasmine.Spy;
         let colorAttachment0GetInstance: jasmine.Spy;
@@ -1598,10 +1534,8 @@ describe(`WebGlFramebuffer`, () => {
             },
             timesContextRestored: 7,
             render,
-            addEventListener,
           };
           render = jasmine.createSpy(`render`);
-          addEventListener = jasmine.createSpy(`addEventListener`);
           colorAttachment0ThrowIfDisposed = jasmine.createSpy(
             `colorAttachment0ThrowIfDisposed`
           );
@@ -1679,10 +1613,6 @@ describe(`WebGlFramebuffer`, () => {
           expect(render).not.toHaveBeenCalled();
         });
 
-        it(`does not add any event listeners`, () => {
-          expect(addEventListener).not.toHaveBeenCalled();
-        });
-
         it(`does not check whether color attachment 0 is disposed`, () => {
           expect(colorAttachment0ThrowIfDisposed).not.toHaveBeenCalled();
         });
@@ -1752,7 +1682,6 @@ describe(`WebGlFramebuffer`, () => {
           | `isContextLost`
         >;
         let render: jasmine.Spy;
-        let addEventListener: jasmine.Spy;
         let colorAttachment0ThrowIfDisposed: jasmine.Spy;
         let colorAttachment0ThrowIfFromAnotherContext: jasmine.Spy;
         let colorAttachment0GetInstance: jasmine.Spy;
@@ -1795,10 +1724,8 @@ describe(`WebGlFramebuffer`, () => {
             },
             timesContextRestored: 7,
             render,
-            addEventListener,
           };
           render = jasmine.createSpy(`render`);
-          addEventListener = jasmine.createSpy(`addEventListener`);
           colorAttachment0ThrowIfDisposed = jasmine.createSpy(
             `colorAttachment0ThrowIfDisposed`
           );
@@ -1876,10 +1803,6 @@ describe(`WebGlFramebuffer`, () => {
           expect(render).not.toHaveBeenCalled();
         });
 
-        it(`does not add any event listeners`, () => {
-          expect(addEventListener).not.toHaveBeenCalled();
-        });
-
         it(`does not check whether color attachment 0 is disposed`, () => {
           expect(colorAttachment0ThrowIfDisposed).not.toHaveBeenCalled();
         });
@@ -1951,7 +1874,6 @@ describe(`WebGlFramebuffer`, () => {
           | `isContextLost`
         >;
         let render: jasmine.Spy;
-        let addEventListener: jasmine.Spy;
         let colorAttachment0ThrowIfDisposed: jasmine.Spy;
         let colorAttachment0ThrowIfFromAnotherContext: jasmine.Spy;
         let colorAttachment0GetInstance: jasmine.Spy;
@@ -1995,10 +1917,8 @@ describe(`WebGlFramebuffer`, () => {
             },
             timesContextRestored: 7,
             render,
-            addEventListener,
           };
           render = jasmine.createSpy(`render`);
-          addEventListener = jasmine.createSpy(`addEventListener`);
           colorAttachment0ThrowIfDisposed = jasmine.createSpy(
             `colorAttachment0ThrowIfDisposed`
           );
@@ -2076,10 +1996,6 @@ describe(`WebGlFramebuffer`, () => {
           expect(render).not.toHaveBeenCalled();
         });
 
-        it(`does not add any event listeners`, () => {
-          expect(addEventListener).not.toHaveBeenCalled();
-        });
-
         it(`does not check whether color attachment 0 is disposed`, () => {
           expect(colorAttachment0ThrowIfDisposed).not.toHaveBeenCalled();
         });
@@ -2149,7 +2065,6 @@ describe(`WebGlFramebuffer`, () => {
           | `isContextLost`
         >;
         let render: jasmine.Spy;
-        let addEventListener: jasmine.Spy;
         let colorAttachment0ThrowIfDisposed: jasmine.Spy;
         let colorAttachment0ThrowIfFromAnotherContext: jasmine.Spy;
         let colorAttachment0GetInstance: jasmine.Spy;
@@ -2197,10 +2112,8 @@ describe(`WebGlFramebuffer`, () => {
             },
             timesContextRestored: 7,
             render,
-            addEventListener,
           };
           render = jasmine.createSpy(`render`);
-          addEventListener = jasmine.createSpy(`addEventListener`);
           colorAttachment0ThrowIfDisposed = jasmine.createSpy(
             `colorAttachment0ThrowIfDisposed`
           );
@@ -2312,10 +2225,6 @@ describe(`WebGlFramebuffer`, () => {
           expect(render).not.toHaveBeenCalled();
         });
 
-        it(`does not add any event listeners`, () => {
-          expect(addEventListener).not.toHaveBeenCalled();
-        });
-
         it(`does not check whether color attachment 0 is disposed`, () => {
           expect(colorAttachment0ThrowIfDisposed).not.toHaveBeenCalled();
         });
@@ -2411,7 +2320,6 @@ describe(`WebGlFramebuffer`, () => {
           | `isContextLost`
         >;
         let render: jasmine.Spy;
-        let addEventListener: jasmine.Spy;
         let colorAttachment0ThrowIfDisposed: jasmine.Spy;
         let colorAttachment0ThrowIfFromAnotherContext: jasmine.Spy;
         let colorAttachment0GetInstance: jasmine.Spy;
@@ -2494,10 +2402,8 @@ describe(`WebGlFramebuffer`, () => {
             },
             timesContextRestored: 7,
             render,
-            addEventListener,
           };
           render = jasmine.createSpy(`render`);
-          addEventListener = jasmine.createSpy(`addEventListener`);
           colorAttachment0ThrowIfDisposed = jasmine.createSpy(
             `colorAttachment0ThrowIfDisposed`
           );
@@ -2629,10 +2535,6 @@ describe(`WebGlFramebuffer`, () => {
           expect(render).not.toHaveBeenCalled();
         });
 
-        it(`does not add any event listeners`, () => {
-          expect(addEventListener).not.toHaveBeenCalled();
-        });
-
         it(`does not check whether color attachment 0 is disposed`, () => {
           expect(colorAttachment0ThrowIfDisposed).not.toHaveBeenCalled();
         });
@@ -2736,7 +2638,6 @@ describe(`WebGlFramebuffer`, () => {
           | `isContextLost`
         >;
         let render: jasmine.Spy;
-        let addEventListener: jasmine.Spy;
         let colorAttachment0ThrowIfDisposed: jasmine.Spy;
         let colorAttachment0ThrowIfFromAnotherContext: jasmine.Spy;
         let colorAttachment0GetInstance: jasmine.Spy;
@@ -2782,10 +2683,8 @@ describe(`WebGlFramebuffer`, () => {
             },
             timesContextRestored: 7,
             render,
-            addEventListener,
           };
           render = jasmine.createSpy(`render`);
-          addEventListener = jasmine.createSpy(`addEventListener`);
           colorAttachment0ThrowIfDisposed = jasmine.createSpy(
             `colorAttachment0ThrowIfDisposed`
           );
@@ -2897,10 +2796,6 @@ describe(`WebGlFramebuffer`, () => {
           expect(render).not.toHaveBeenCalled();
         });
 
-        it(`does not add any event listeners`, () => {
-          expect(addEventListener).not.toHaveBeenCalled();
-        });
-
         it(`does not check whether color attachment 0 is disposed`, () => {
           expect(colorAttachment0ThrowIfDisposed).not.toHaveBeenCalled();
         });
@@ -2993,7 +2888,6 @@ describe(`WebGlFramebuffer`, () => {
         | `isContextLost`
       >;
       let render: jasmine.Spy;
-      let addEventListener: jasmine.Spy;
       let colorAttachment0ThrowIfDisposed: jasmine.Spy;
       let colorAttachment0ThrowIfFromAnotherContext: jasmine.Spy;
       let colorAttachment0GetInstance: jasmine.Spy;
@@ -3032,10 +2926,8 @@ describe(`WebGlFramebuffer`, () => {
           },
           timesContextRestored: 7,
           render,
-          addEventListener,
         };
         render = jasmine.createSpy(`render`);
-        addEventListener = jasmine.createSpy(`addEventListener`);
         colorAttachment0ThrowIfDisposed = jasmine.createSpy(
           `colorAttachment0ThrowIfDisposed`
         );
@@ -3112,10 +3004,6 @@ describe(`WebGlFramebuffer`, () => {
         expect(render).not.toHaveBeenCalled();
       });
 
-      it(`does not add any event listeners`, () => {
-        expect(addEventListener).not.toHaveBeenCalled();
-      });
-
       it(`does not check whether color attachment 0 is disposed`, () => {
         expect(colorAttachment0ThrowIfDisposed).not.toHaveBeenCalled();
       });
@@ -3169,7 +3057,6 @@ describe(`WebGlFramebuffer`, () => {
         | `isContextLost`
       >;
       let render: jasmine.Spy;
-      let addEventListener: jasmine.Spy;
       let colorAttachment0ThrowIfDisposed: jasmine.Spy;
       let colorAttachment0ThrowIfFromAnotherContext: jasmine.Spy;
       let colorAttachment0GetInstance: jasmine.Spy;
@@ -3208,10 +3095,8 @@ describe(`WebGlFramebuffer`, () => {
           },
           timesContextRestored: 7,
           render,
-          addEventListener,
         };
         render = jasmine.createSpy(`render`);
-        addEventListener = jasmine.createSpy(`addEventListener`);
         colorAttachment0ThrowIfDisposed = jasmine.createSpy(
           `colorAttachment0ThrowIfDisposed`
         );
@@ -3297,10 +3182,6 @@ describe(`WebGlFramebuffer`, () => {
 
       it(`does not render`, () => {
         expect(render).not.toHaveBeenCalled();
-      });
-
-      it(`does not add any event listeners`, () => {
-        expect(addEventListener).not.toHaveBeenCalled();
       });
 
       it(`does not check whether color attachment 0 is disposed`, () => {

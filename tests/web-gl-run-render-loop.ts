@@ -47,9 +47,6 @@ describe(`webGlRunRenderLoop`, () => {
         );
         const isContextLost = jasmine.createSpy(`isContextLost`);
         const render = jasmine.createSpy(`render`);
-        const contextAddEventListener = jasmine.createSpy(
-          `contextAddEventListener`
-        );
         const documentHasFocus = jasmine.createSpy(`document.hasFocus`);
         global[`document`] = {
           hasFocus: documentHasFocus,
@@ -132,7 +129,6 @@ describe(`webGlRunRenderLoop`, () => {
             },
             timesContextRestored: 7,
             render,
-            addEventListener: contextAddEventListener,
           },
           pauseOnFocusLoss
         );

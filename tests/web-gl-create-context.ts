@@ -71,9 +71,6 @@ describe(`webGlCreateContext`, () => {
     let render: jasmine.Spy;
     let gl: WebGLRenderingContext;
     let result: WebGlContextInterface<keyof WebGLRenderingContext>;
-    let postRenderA: jasmine.Spy;
-    let postRenderB: jasmine.Spy;
-    let postRenderC: jasmine.Spy;
 
     beforeAll(() => {
       gl = { test: `gl` } as unknown as WebGLRenderingContext;
@@ -97,13 +94,6 @@ describe(`webGlCreateContext`, () => {
         { powerPreference: `high-performance` },
         render
       );
-
-      postRenderA = jasmine.createSpy(`postRenderA`);
-      postRenderB = jasmine.createSpy(`postRenderB`);
-      postRenderC = jasmine.createSpy(`postRenderC`);
-      result.addEventListener(`postRender`, postRenderA);
-      result.addEventListener(`postRender`, postRenderB);
-      result.addEventListener(`postRender`, postRenderC);
     });
 
     it(`gets one context`, () => {
@@ -145,19 +135,12 @@ describe(`webGlCreateContext`, () => {
         gl,
         timesContextRestored: 0,
         render: jasmine.any(Function),
-        addEventListener: jasmine.any(Function),
       });
     });
 
     it(`does not manipulate the canvas`, () => {
       expect(canvas.width).toEqual(230);
       expect(canvas.height).toEqual(644);
-    });
-
-    it(`does not call the post render callbacks`, () => {
-      expect(postRenderA).not.toHaveBeenCalled();
-      expect(postRenderB).not.toHaveBeenCalled();
-      expect(postRenderC).not.toHaveBeenCalled();
     });
   });
 
@@ -170,9 +153,6 @@ describe(`webGlCreateContext`, () => {
     let result: WebGlContextInterface<keyof WebGLRenderingContext>;
     let preventDefault: jasmine.Spy;
     let event: Event;
-    let postRenderA: jasmine.Spy;
-    let postRenderB: jasmine.Spy;
-    let postRenderC: jasmine.Spy;
 
     beforeAll(() => {
       gl = { test: `gl` } as unknown as WebGLRenderingContext;
@@ -196,13 +176,6 @@ describe(`webGlCreateContext`, () => {
         { powerPreference: `high-performance` },
         render
       );
-
-      postRenderA = jasmine.createSpy(`postRenderA`);
-      postRenderB = jasmine.createSpy(`postRenderB`);
-      postRenderC = jasmine.createSpy(`postRenderC`);
-      result.addEventListener(`postRender`, postRenderA);
-      result.addEventListener(`postRender`, postRenderB);
-      result.addEventListener(`postRender`, postRenderC);
 
       preventDefault = jasmine.createSpy(`preventDefault`);
       event = { preventDefault } as unknown as Event;
@@ -231,7 +204,6 @@ describe(`webGlCreateContext`, () => {
         gl,
         timesContextRestored: 0,
         render: jasmine.any(Function),
-        addEventListener: jasmine.any(Function),
       });
     });
 
@@ -242,12 +214,6 @@ describe(`webGlCreateContext`, () => {
     it(`does not manipulate the canvas`, () => {
       expect(canvas.width).toEqual(230);
       expect(canvas.height).toEqual(644);
-    });
-
-    it(`does not call the post render callbacks`, () => {
-      expect(postRenderA).not.toHaveBeenCalled();
-      expect(postRenderB).not.toHaveBeenCalled();
-      expect(postRenderC).not.toHaveBeenCalled();
     });
   });
 
@@ -260,9 +226,6 @@ describe(`webGlCreateContext`, () => {
     let result: WebGlContextInterface<keyof WebGLRenderingContext>;
     let preventDefault: jasmine.Spy;
     let event: Event;
-    let postRenderA: jasmine.Spy;
-    let postRenderB: jasmine.Spy;
-    let postRenderC: jasmine.Spy;
 
     beforeAll(() => {
       gl = { test: `gl` } as unknown as WebGLRenderingContext;
@@ -286,13 +249,6 @@ describe(`webGlCreateContext`, () => {
         { powerPreference: `high-performance` },
         render
       );
-
-      postRenderA = jasmine.createSpy(`postRenderA`);
-      postRenderB = jasmine.createSpy(`postRenderB`);
-      postRenderC = jasmine.createSpy(`postRenderC`);
-      result.addEventListener(`postRender`, postRenderA);
-      result.addEventListener(`postRender`, postRenderB);
-      result.addEventListener(`postRender`, postRenderC);
 
       preventDefault = jasmine.createSpy(`preventDefault`);
       event = { preventDefault } as unknown as Event;
@@ -327,7 +283,6 @@ describe(`webGlCreateContext`, () => {
         gl,
         timesContextRestored: 1,
         render: jasmine.any(Function),
-        addEventListener: jasmine.any(Function),
       });
     });
 
@@ -338,12 +293,6 @@ describe(`webGlCreateContext`, () => {
     it(`does not manipulate the canvas`, () => {
       expect(canvas.width).toEqual(230);
       expect(canvas.height).toEqual(644);
-    });
-
-    it(`does not call the post render callbacks`, () => {
-      expect(postRenderA).not.toHaveBeenCalled();
-      expect(postRenderB).not.toHaveBeenCalled();
-      expect(postRenderC).not.toHaveBeenCalled();
     });
   });
 
@@ -358,9 +307,6 @@ describe(`webGlCreateContext`, () => {
     let preventDefaultB: jasmine.Spy;
     let eventA: Event;
     let eventB: Event;
-    let postRenderA: jasmine.Spy;
-    let postRenderB: jasmine.Spy;
-    let postRenderC: jasmine.Spy;
 
     beforeAll(() => {
       gl = { test: `gl` } as unknown as WebGLRenderingContext;
@@ -384,13 +330,6 @@ describe(`webGlCreateContext`, () => {
         { powerPreference: `high-performance` },
         render
       );
-
-      postRenderA = jasmine.createSpy(`postRenderA`);
-      postRenderB = jasmine.createSpy(`postRenderB`);
-      postRenderC = jasmine.createSpy(`postRenderC`);
-      result.addEventListener(`postRender`, postRenderA);
-      result.addEventListener(`postRender`, postRenderB);
-      result.addEventListener(`postRender`, postRenderC);
 
       preventDefaultA = jasmine.createSpy(`preventDefaultA`);
       eventA = { preventDefault: preventDefaultA } as unknown as Event;
@@ -434,7 +373,6 @@ describe(`webGlCreateContext`, () => {
         gl,
         timesContextRestored: 1,
         render: jasmine.any(Function),
-        addEventListener: jasmine.any(Function),
       });
     });
 
@@ -450,12 +388,6 @@ describe(`webGlCreateContext`, () => {
       expect(canvas.width).toEqual(230);
       expect(canvas.height).toEqual(644);
     });
-
-    it(`does not call the post render callbacks`, () => {
-      expect(postRenderA).not.toHaveBeenCalled();
-      expect(postRenderB).not.toHaveBeenCalled();
-      expect(postRenderC).not.toHaveBeenCalled();
-    });
   });
 
   describe(`on subsequent context restoration`, () => {
@@ -469,9 +401,6 @@ describe(`webGlCreateContext`, () => {
     let eventA: Event;
     let preventDefaultB: jasmine.Spy;
     let eventB: Event;
-    let postRenderA: jasmine.Spy;
-    let postRenderB: jasmine.Spy;
-    let postRenderC: jasmine.Spy;
 
     beforeAll(() => {
       gl = { test: `gl` } as unknown as WebGLRenderingContext;
@@ -495,13 +424,6 @@ describe(`webGlCreateContext`, () => {
         { powerPreference: `high-performance` },
         render
       );
-
-      postRenderA = jasmine.createSpy(`postRenderA`);
-      postRenderB = jasmine.createSpy(`postRenderB`);
-      postRenderC = jasmine.createSpy(`postRenderC`);
-      result.addEventListener(`postRender`, postRenderA);
-      result.addEventListener(`postRender`, postRenderB);
-      result.addEventListener(`postRender`, postRenderC);
 
       preventDefaultA = jasmine.createSpy(`preventDefaultA`);
       eventA = { preventDefault: preventDefaultA } as unknown as Event;
@@ -551,7 +473,6 @@ describe(`webGlCreateContext`, () => {
         gl,
         timesContextRestored: 2,
         render: jasmine.any(Function),
-        addEventListener: jasmine.any(Function),
       });
     });
 
@@ -567,12 +488,6 @@ describe(`webGlCreateContext`, () => {
       expect(canvas.width).toEqual(230);
       expect(canvas.height).toEqual(644);
     });
-
-    it(`does not call the post render callbacks`, () => {
-      expect(postRenderA).not.toHaveBeenCalled();
-      expect(postRenderB).not.toHaveBeenCalled();
-      expect(postRenderC).not.toHaveBeenCalled();
-    });
   });
 
   describe(`on render`, () => {
@@ -584,9 +499,6 @@ describe(`webGlCreateContext`, () => {
     let result: WebGlContextInterface<keyof WebGLRenderingContext>;
     let canvasWidthAtTimeOfRender: number;
     let canvasHeightAtTimeOfRender: number;
-    let postRenderA: jasmine.Spy;
-    let postRenderB: jasmine.Spy;
-    let postRenderC: jasmine.Spy;
 
     beforeAll(() => {
       gl = { test: `gl` } as unknown as WebGLRenderingContext;
@@ -613,13 +525,6 @@ describe(`webGlCreateContext`, () => {
         { powerPreference: `high-performance` },
         render
       );
-
-      postRenderA = jasmine.createSpy(`postRenderA`);
-      postRenderB = jasmine.createSpy(`postRenderB`);
-      postRenderC = jasmine.createSpy(`postRenderC`);
-      result.addEventListener(`postRender`, postRenderA);
-      result.addEventListener(`postRender`, postRenderB);
-      result.addEventListener(`postRender`, postRenderC);
 
       canvas.width = 928;
       canvas.height = 3281;
@@ -653,7 +558,6 @@ describe(`webGlCreateContext`, () => {
         gl,
         timesContextRestored: 0,
         render: jasmine.any(Function),
-        addEventListener: jasmine.any(Function),
       });
     });
 
@@ -665,18 +569,6 @@ describe(`webGlCreateContext`, () => {
     it(`has resized the canvas by the time the render callback executes`, () => {
       expect(canvasWidthAtTimeOfRender).toEqual(268.8);
       expect(canvasHeightAtTimeOfRender).toEqual(361.2);
-    });
-
-    it(`calls the post render callbacks once`, () => {
-      expect(postRenderA).toHaveBeenCalledTimes(1);
-      expect(postRenderB).toHaveBeenCalledTimes(1);
-      expect(postRenderC).toHaveBeenCalledTimes(1);
-    });
-
-    it(`calls the post render callbacks after rendering`, () => {
-      expect(render).toHaveBeenCalledBefore(postRenderA);
-      expect(render).toHaveBeenCalledBefore(postRenderB);
-      expect(render).toHaveBeenCalledBefore(postRenderC);
     });
   });
 });

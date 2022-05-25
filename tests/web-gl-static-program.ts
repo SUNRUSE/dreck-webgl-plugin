@@ -140,7 +140,6 @@ describe(`WebGlStaticProgram`, () => {
     let getShaderInfoLog: jasmine.Spy;
     let deleteShader: jasmine.Spy;
     let render: jasmine.Spy;
-    let addEventListener: jasmine.Spy;
     let context: WebGlContextInterface<
       | `createProgram`
       | `attachShader`
@@ -186,7 +185,6 @@ describe(`WebGlStaticProgram`, () => {
       getShaderInfoLog = jasmine.createSpy(`getShaderInfoLog`);
       deleteShader = jasmine.createSpy(`deleteShader`);
       render = jasmine.createSpy(`render`);
-      addEventListener = jasmine.createSpy(`addEventListener`);
       context = {
         gl: {
           createProgram,
@@ -209,7 +207,6 @@ describe(`WebGlStaticProgram`, () => {
         },
         timesContextRestored: 7,
         render,
-        addEventListener,
       };
 
       staticProgram = new WebGlStaticProgram(
@@ -353,10 +350,6 @@ describe(`WebGlStaticProgram`, () => {
 
     it(`does not render`, () => {
       expect(render).not.toHaveBeenCalled();
-    });
-
-    it(`does not add any event listeners`, () => {
-      expect(addEventListener).not.toHaveBeenCalled();
     });
   });
 });

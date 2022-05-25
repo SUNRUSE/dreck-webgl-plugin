@@ -118,7 +118,6 @@ describe(`WebGlStaticVertexShader`, () => {
     let getShaderInfoLog: jasmine.Spy;
     let deleteShader: jasmine.Spy;
     let render: jasmine.Spy;
-    let addEventListener: jasmine.Spy;
 
     let context: WebGlContextInterface<
       | `createShader`
@@ -145,7 +144,6 @@ describe(`WebGlStaticVertexShader`, () => {
       getShaderInfoLog = jasmine.createSpy(`getShaderInfoLog`);
       deleteShader = jasmine.createSpy(`deleteShader`);
       render = jasmine.createSpy(`render`);
-      addEventListener = jasmine.createSpy(`addEventListener`);
 
       context = {
         gl: {
@@ -159,7 +157,6 @@ describe(`WebGlStaticVertexShader`, () => {
         },
         timesContextRestored: 7,
         render,
-        addEventListener,
       };
 
       shader = new WebGlStaticVertexShader(
@@ -231,10 +228,6 @@ describe(`WebGlStaticVertexShader`, () => {
     it(`does not render`, () => {
       expect(render).not.toHaveBeenCalled();
     });
-
-    it(`does not add any event listeners`, () => {
-      expect(addEventListener).not.toHaveBeenCalled();
-    });
   });
 
   describe(`on getting header lines`, () => {
@@ -246,7 +239,6 @@ describe(`WebGlStaticVertexShader`, () => {
     let getShaderInfoLog: jasmine.Spy;
     let deleteShader: jasmine.Spy;
     let render: jasmine.Spy;
-    let addEventListener: jasmine.Spy;
 
     let context: WebGlContextInterface<
       | `createShader`
@@ -275,7 +267,6 @@ describe(`WebGlStaticVertexShader`, () => {
       getShaderInfoLog = jasmine.createSpy(`getShaderInfoLog`);
       deleteShader = jasmine.createSpy(`deleteShader`);
       render = jasmine.createSpy(`render`);
-      addEventListener = jasmine.createSpy(`addEventListener`);
 
       context = {
         gl: {
@@ -289,7 +280,6 @@ describe(`WebGlStaticVertexShader`, () => {
         },
         timesContextRestored: 7,
         render,
-        addEventListener,
       };
 
       shader = new WebGlStaticVertexShader(
@@ -364,10 +354,6 @@ describe(`WebGlStaticVertexShader`, () => {
       expect(render).not.toHaveBeenCalled();
     });
 
-    it(`does not add any event listeners`, () => {
-      expect(addEventListener).not.toHaveBeenCalled();
-    });
-
     it(`returns the header lines`, () => {
       expect(result).toEqual(testHeaderLines);
     });
@@ -382,7 +368,6 @@ describe(`WebGlStaticVertexShader`, () => {
     let getShaderInfoLog: jasmine.Spy;
     let deleteShader: jasmine.Spy;
     let render: jasmine.Spy;
-    let addEventListener: jasmine.Spy;
 
     let context: WebGlContextInterface<
       | `createShader`
@@ -411,7 +396,6 @@ describe(`WebGlStaticVertexShader`, () => {
       getShaderInfoLog = jasmine.createSpy(`getShaderInfoLog`);
       deleteShader = jasmine.createSpy(`deleteShader`);
       render = jasmine.createSpy(`render`);
-      addEventListener = jasmine.createSpy(`addEventListener`);
 
       context = {
         gl: {
@@ -425,7 +409,6 @@ describe(`WebGlStaticVertexShader`, () => {
         },
         timesContextRestored: 7,
         render,
-        addEventListener,
       };
 
       shader = new WebGlStaticVertexShader(
@@ -498,10 +481,6 @@ describe(`WebGlStaticVertexShader`, () => {
 
     it(`does not render`, () => {
       expect(render).not.toHaveBeenCalled();
-    });
-
-    it(`does not add any event listeners`, () => {
-      expect(addEventListener).not.toHaveBeenCalled();
     });
 
     it(`returns the body lines`, () => {

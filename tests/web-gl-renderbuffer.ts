@@ -11,7 +11,6 @@ describe(`WebGlRenderbuffer`, () => {
         let renderbufferStorage: jasmine.Spy;
         let isContextLost: jasmine.Spy;
         let render: jasmine.Spy;
-        let addEventListener: jasmine.Spy;
 
         let context: WebGlContextInterface<
           | `createRenderbuffer`
@@ -29,7 +28,6 @@ describe(`WebGlRenderbuffer`, () => {
           renderbufferStorage = jasmine.createSpy(`renderbufferStorage`);
           isContextLost = jasmine.createSpy(`isContextLost`);
           render = jasmine.createSpy(`render`);
-          addEventListener = jasmine.createSpy(`addEventListener`);
 
           context = {
             gl: {
@@ -41,7 +39,6 @@ describe(`WebGlRenderbuffer`, () => {
             },
             timesContextRestored: 7,
             render,
-            addEventListener,
           };
 
           renderbuffer = new WebGlRenderbuffer<TFormat>(
@@ -58,10 +55,6 @@ describe(`WebGlRenderbuffer`, () => {
 
         it(`does not render`, () => {
           expect(render).not.toHaveBeenCalled();
-        });
-
-        it(`does not add any event listeners`, () => {
-          expect(addEventListener).not.toHaveBeenCalled();
         });
 
         it(`creates one renderbuffer`, () => {
@@ -104,7 +97,6 @@ describe(`WebGlRenderbuffer`, () => {
         let renderbufferStorage: jasmine.Spy;
         let isContextLost: jasmine.Spy;
         let render: jasmine.Spy;
-        let addEventListener: jasmine.Spy;
 
         let context: WebGlContextInterface<
           | `createRenderbuffer`
@@ -125,7 +117,6 @@ describe(`WebGlRenderbuffer`, () => {
           renderbufferStorage = jasmine.createSpy(`renderbufferStorage`);
           isContextLost = jasmine.createSpy(`isContextLost`);
           render = jasmine.createSpy(`render`);
-          addEventListener = jasmine.createSpy(`addEventListener`);
 
           context = {
             gl: {
@@ -137,7 +128,6 @@ describe(`WebGlRenderbuffer`, () => {
             },
             timesContextRestored: 7,
             render,
-            addEventListener,
           };
 
           renderbuffer = new WebGlRenderbuffer<TFormat>(
@@ -156,10 +146,6 @@ describe(`WebGlRenderbuffer`, () => {
 
         it(`does not render`, () => {
           expect(render).not.toHaveBeenCalled();
-        });
-
-        it(`does not add any event listeners`, () => {
-          expect(addEventListener).not.toHaveBeenCalled();
         });
 
         it(`creates one renderbuffer`, () => {
@@ -206,7 +192,6 @@ describe(`WebGlRenderbuffer`, () => {
         let renderbufferStorage: jasmine.Spy;
         let isContextLost: jasmine.Spy;
         let render: jasmine.Spy;
-        let addEventListener: jasmine.Spy;
 
         let context: WebGlContextInterface<
           | `createRenderbuffer`
@@ -227,7 +212,6 @@ describe(`WebGlRenderbuffer`, () => {
           renderbufferStorage = jasmine.createSpy(`renderbufferStorage`);
           isContextLost = jasmine.createSpy(`isContextLost`);
           render = jasmine.createSpy(`render`);
-          addEventListener = jasmine.createSpy(`addEventListener`);
 
           context = {
             gl: {
@@ -239,7 +223,6 @@ describe(`WebGlRenderbuffer`, () => {
             },
             timesContextRestored: 7,
             render,
-            addEventListener,
           };
 
           renderbuffer = new WebGlRenderbuffer<TFormat>(
@@ -258,10 +241,6 @@ describe(`WebGlRenderbuffer`, () => {
 
         it(`does not render`, () => {
           expect(render).not.toHaveBeenCalled();
-        });
-
-        it(`does not add any event listeners`, () => {
-          expect(addEventListener).not.toHaveBeenCalled();
         });
 
         it(`creates one renderbuffer`, () => {
@@ -330,7 +309,6 @@ describe(`WebGlRenderbuffer`, () => {
         let renderbufferStorage: jasmine.Spy;
         let isContextLost: jasmine.Spy;
         let render: jasmine.Spy;
-        let addEventListener: jasmine.Spy;
 
         let context: WebGlContextInterface<
           | `createRenderbuffer`
@@ -348,7 +326,6 @@ describe(`WebGlRenderbuffer`, () => {
           renderbufferStorage = jasmine.createSpy(`renderbufferStorage`);
           isContextLost = jasmine.createSpy(`isContextLost`);
           render = jasmine.createSpy(`render`);
-          addEventListener = jasmine.createSpy(`addEventListener`);
 
           context = {
             gl: {
@@ -360,7 +337,6 @@ describe(`WebGlRenderbuffer`, () => {
             },
             timesContextRestored: 7,
             render,
-            addEventListener,
           };
 
           renderbuffer = new WebGlRenderbuffer<TFormat>(
@@ -379,10 +355,6 @@ describe(`WebGlRenderbuffer`, () => {
 
         it(`does not render`, () => {
           expect(render).not.toHaveBeenCalled();
-        });
-
-        it(`does not add any event listeners`, () => {
-          expect(addEventListener).not.toHaveBeenCalled();
         });
 
         it(`does not create any renderbuffers`, () => {
@@ -425,7 +397,6 @@ describe(`WebGlRenderbuffer`, () => {
         let renderbufferStorage: jasmine.Spy;
         let isContextLost: jasmine.Spy;
         let render: jasmine.Spy;
-        let addEventListener: jasmine.Spy;
 
         let context: WebGlContextInterface<
           | `createRenderbuffer`
@@ -443,7 +414,6 @@ describe(`WebGlRenderbuffer`, () => {
           renderbufferStorage = jasmine.createSpy(`renderbufferStorage`);
           isContextLost = jasmine.createSpy(`isContextLost`);
           render = jasmine.createSpy(`render`);
-          addEventListener = jasmine.createSpy(`addEventListener`);
 
           context = {
             gl: {
@@ -455,7 +425,6 @@ describe(`WebGlRenderbuffer`, () => {
             },
             timesContextRestored: 7,
             render,
-            addEventListener,
           };
 
           renderbuffer = new WebGlRenderbuffer<TFormat>(
@@ -474,10 +443,6 @@ describe(`WebGlRenderbuffer`, () => {
 
         it(`does not render`, () => {
           expect(render).not.toHaveBeenCalled();
-        });
-
-        it(`does not add any event listeners`, () => {
-          expect(addEventListener).not.toHaveBeenCalled();
         });
 
         it(`does not create any renderbuffers`, () => {

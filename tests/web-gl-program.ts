@@ -899,7 +899,6 @@ describe(`WebGlProgram`, () => {
     let getAttribLocation: jasmine.Spy;
     let getUniformLocation: jasmine.Spy;
     let render: jasmine.Spy;
-    let addEventListener: jasmine.Spy;
     let context: WebGlContextInterface<
       | `createProgram`
       | `attachShader`
@@ -943,7 +942,6 @@ describe(`WebGlProgram`, () => {
       getAttribLocation = jasmine.createSpy(`getAttribLocation`);
       getUniformLocation = jasmine.createSpy(`getUniformLocation`);
       render = jasmine.createSpy(`render`);
-      addEventListener = jasmine.createSpy(`addEventListener`);
       context = {
         gl: {
           createProgram,
@@ -960,7 +958,6 @@ describe(`WebGlProgram`, () => {
         },
         timesContextRestored: 7,
         render,
-        addEventListener,
       };
 
       vertexShaderThrowIfDisposed = jasmine.createSpy(
@@ -1063,10 +1060,6 @@ describe(`WebGlProgram`, () => {
       expect(render).not.toHaveBeenCalled();
     });
 
-    it(`does not add any event listeners`, () => {
-      expect(addEventListener).not.toHaveBeenCalled();
-    });
-
     it(`does not check whether the vertex shader has been disposed`, () => {
       expect(vertexShaderThrowIfDisposed).not.toHaveBeenCalled();
     });
@@ -1118,7 +1111,6 @@ describe(`WebGlProgram`, () => {
       let getAttribLocation: jasmine.Spy;
       let getUniformLocation: jasmine.Spy;
       let render: jasmine.Spy;
-      let addEventListener: jasmine.Spy;
       let context: WebGlContextInterface<
         | `createProgram`
         | `attachShader`
@@ -1167,7 +1159,6 @@ describe(`WebGlProgram`, () => {
         getAttribLocation = jasmine.createSpy(`getAttribLocation`);
         getUniformLocation = jasmine.createSpy(`getUniformLocation`);
         render = jasmine.createSpy(`render`);
-        addEventListener = jasmine.createSpy(`addEventListener`);
         context = {
           gl: {
             createProgram,
@@ -1184,7 +1175,6 @@ describe(`WebGlProgram`, () => {
           },
           timesContextRestored: 7,
           render,
-          addEventListener,
         };
 
         vertexShaderThrowIfDisposed = jasmine.createSpy(
@@ -1291,10 +1281,6 @@ describe(`WebGlProgram`, () => {
         expect(render).not.toHaveBeenCalled();
       });
 
-      it(`does not add any event listeners`, () => {
-        expect(addEventListener).not.toHaveBeenCalled();
-      });
-
       it(`does not check whether the vertex shader has been disposed`, () => {
         expect(vertexShaderThrowIfDisposed).not.toHaveBeenCalled();
       });
@@ -1339,7 +1325,6 @@ describe(`WebGlProgram`, () => {
       let getAttribLocation: jasmine.Spy;
       let getUniformLocation: jasmine.Spy;
       let render: jasmine.Spy;
-      let addEventListener: jasmine.Spy;
       let context: WebGlContextInterface<
         | `createProgram`
         | `attachShader`
@@ -1388,7 +1373,6 @@ describe(`WebGlProgram`, () => {
         getAttribLocation = jasmine.createSpy(`getAttribLocation`);
         getUniformLocation = jasmine.createSpy(`getUniformLocation`);
         render = jasmine.createSpy(`render`);
-        addEventListener = jasmine.createSpy(`addEventListener`);
         context = {
           gl: {
             createProgram,
@@ -1405,7 +1389,6 @@ describe(`WebGlProgram`, () => {
           },
           timesContextRestored: 7,
           render,
-          addEventListener,
         };
 
         vertexShaderThrowIfDisposed = jasmine.createSpy(
@@ -1512,10 +1495,6 @@ describe(`WebGlProgram`, () => {
         expect(render).not.toHaveBeenCalled();
       });
 
-      it(`does not add any event listeners`, () => {
-        expect(addEventListener).not.toHaveBeenCalled();
-      });
-
       it(`does not check whether the vertex shader has been disposed`, () => {
         expect(vertexShaderThrowIfDisposed).not.toHaveBeenCalled();
       });
@@ -1560,7 +1539,6 @@ describe(`WebGlProgram`, () => {
       let getAttribLocation: jasmine.Spy;
       let getUniformLocation: jasmine.Spy;
       let render: jasmine.Spy;
-      let addEventListener: jasmine.Spy;
       let context: WebGlContextInterface<
         | `createProgram`
         | `attachShader`
@@ -1611,7 +1589,6 @@ describe(`WebGlProgram`, () => {
         getAttribLocation = jasmine.createSpy(`getAttribLocation`);
         getUniformLocation = jasmine.createSpy(`getUniformLocation`);
         render = jasmine.createSpy(`render`);
-        addEventListener = jasmine.createSpy(`addEventListener`);
         context = {
           gl: {
             createProgram,
@@ -1628,7 +1605,6 @@ describe(`WebGlProgram`, () => {
           },
           timesContextRestored: 7,
           render,
-          addEventListener,
         };
 
         vertexShaderThrowIfDisposed = jasmine.createSpy(
@@ -1735,10 +1711,6 @@ describe(`WebGlProgram`, () => {
         expect(render).not.toHaveBeenCalled();
       });
 
-      it(`does not add any event listeners`, () => {
-        expect(addEventListener).not.toHaveBeenCalled();
-      });
-
       it(`does not check whether the vertex shader has been disposed`, () => {
         expect(vertexShaderThrowIfDisposed).not.toHaveBeenCalled();
       });
@@ -1783,7 +1755,6 @@ describe(`WebGlProgram`, () => {
       let getAttribLocation: jasmine.Spy;
       let getUniformLocation: jasmine.Spy;
       let render: jasmine.Spy;
-      let addEventListener: jasmine.Spy;
       let context: WebGlContextInterface<
         | `createProgram`
         | `attachShader`
@@ -1840,7 +1811,6 @@ describe(`WebGlProgram`, () => {
         getAttribLocation = jasmine.createSpy(`getAttribLocation`);
         getUniformLocation = jasmine.createSpy(`getUniformLocation`);
         render = jasmine.createSpy(`render`);
-        addEventListener = jasmine.createSpy(`addEventListener`);
         context = {
           gl: {
             createProgram,
@@ -1857,7 +1827,6 @@ describe(`WebGlProgram`, () => {
           },
           timesContextRestored: 7,
           render,
-          addEventListener,
         };
 
         vertexShaderThrowIfDisposed = jasmine.createSpy(
@@ -1989,10 +1958,6 @@ describe(`WebGlProgram`, () => {
         expect(render).not.toHaveBeenCalled();
       });
 
-      it(`does not add any event listeners`, () => {
-        expect(addEventListener).not.toHaveBeenCalled();
-      });
-
       it(`does not check whether the vertex shader has been disposed`, () => {
         expect(vertexShaderThrowIfDisposed).not.toHaveBeenCalled();
       });
@@ -2069,7 +2034,6 @@ describe(`WebGlProgram`, () => {
       let getAttribLocation: jasmine.Spy;
       let getUniformLocation: jasmine.Spy;
       let render: jasmine.Spy;
-      let addEventListener: jasmine.Spy;
       let context: WebGlContextInterface<
         | `createProgram`
         | `attachShader`
@@ -2123,7 +2087,6 @@ describe(`WebGlProgram`, () => {
         getAttribLocation = jasmine.createSpy(`getAttribLocation`);
         getUniformLocation = jasmine.createSpy(`getUniformLocation`);
         render = jasmine.createSpy(`render`);
-        addEventListener = jasmine.createSpy(`addEventListener`);
         context = {
           gl: {
             createProgram,
@@ -2140,7 +2103,6 @@ describe(`WebGlProgram`, () => {
           },
           timesContextRestored: 7,
           render,
-          addEventListener,
         };
 
         vertexShaderThrowIfDisposed = jasmine.createSpy(
@@ -2301,10 +2263,6 @@ describe(`WebGlProgram`, () => {
         expect(render).not.toHaveBeenCalled();
       });
 
-      it(`does not add any event listeners`, () => {
-        expect(addEventListener).not.toHaveBeenCalled();
-      });
-
       it(`does not check whether the vertex shader has been disposed`, () => {
         expect(vertexShaderThrowIfDisposed).not.toHaveBeenCalled();
       });
@@ -2397,7 +2355,6 @@ describe(`WebGlProgram`, () => {
       let getAttribLocation: jasmine.Spy;
       let getUniformLocation: jasmine.Spy;
       let render: jasmine.Spy;
-      let addEventListener: jasmine.Spy;
       let context: WebGlContextInterface<
         | `createProgram`
         | `attachShader`
@@ -2666,7 +2623,6 @@ describe(`WebGlProgram`, () => {
             throw new Error(`Unexpected uniform name ${JSON.stringify(name)}`);
           });
         render = jasmine.createSpy(`render`);
-        addEventListener = jasmine.createSpy(`addEventListener`);
         context = {
           gl: {
             createProgram,
@@ -2683,7 +2639,6 @@ describe(`WebGlProgram`, () => {
           },
           timesContextRestored: 7,
           render,
-          addEventListener,
         };
 
         vertexShaderThrowIfDisposed = jasmine.createSpy(
@@ -3127,10 +3082,6 @@ describe(`WebGlProgram`, () => {
         expect(render).not.toHaveBeenCalled();
       });
 
-      it(`does not add any event listeners`, () => {
-        expect(addEventListener).not.toHaveBeenCalled();
-      });
-
       it(`does not check whether the vertex shader has been disposed`, () => {
         expect(vertexShaderThrowIfDisposed).not.toHaveBeenCalled();
       });
@@ -3339,7 +3290,6 @@ describe(`WebGlProgram`, () => {
       let getAttribLocation: jasmine.Spy;
       let getUniformLocation: jasmine.Spy;
       let render: jasmine.Spy;
-      let addEventListener: jasmine.Spy;
       let context: WebGlContextInterface<
         | `createProgram`
         | `attachShader`
@@ -3383,7 +3333,6 @@ describe(`WebGlProgram`, () => {
         getAttribLocation = jasmine.createSpy(`getAttribLocation`);
         getUniformLocation = jasmine.createSpy(`getUniformLocation`);
         render = jasmine.createSpy(`render`);
-        addEventListener = jasmine.createSpy(`addEventListener`);
         context = {
           gl: {
             createProgram,
@@ -3400,7 +3349,6 @@ describe(`WebGlProgram`, () => {
           },
           timesContextRestored: 7,
           render,
-          addEventListener,
         };
 
         vertexShaderThrowIfDisposed = jasmine.createSpy(
@@ -3655,10 +3603,6 @@ describe(`WebGlProgram`, () => {
         expect(render).not.toHaveBeenCalled();
       });
 
-      it(`does not add any event listeners`, () => {
-        expect(addEventListener).not.toHaveBeenCalled();
-      });
-
       it(`does not check whether the vertex shader has been disposed`, () => {
         expect(vertexShaderThrowIfDisposed).not.toHaveBeenCalled();
       });
@@ -3715,7 +3659,6 @@ describe(`WebGlProgram`, () => {
       let getAttribLocation: jasmine.Spy;
       let getUniformLocation: jasmine.Spy;
       let render: jasmine.Spy;
-      let addEventListener: jasmine.Spy;
       let context: WebGlContextInterface<
         | `createProgram`
         | `attachShader`
@@ -3759,7 +3702,6 @@ describe(`WebGlProgram`, () => {
         getAttribLocation = jasmine.createSpy(`getAttribLocation`);
         getUniformLocation = jasmine.createSpy(`getUniformLocation`);
         render = jasmine.createSpy(`render`);
-        addEventListener = jasmine.createSpy(`addEventListener`);
         context = {
           gl: {
             createProgram,
@@ -3776,7 +3718,6 @@ describe(`WebGlProgram`, () => {
           },
           timesContextRestored: 7,
           render,
-          addEventListener,
         };
 
         vertexShaderThrowIfDisposed = jasmine.createSpy(
@@ -3879,10 +3820,6 @@ describe(`WebGlProgram`, () => {
 
       it(`does not render`, () => {
         expect(render).not.toHaveBeenCalled();
-      });
-
-      it(`does not add any event listeners`, () => {
-        expect(addEventListener).not.toHaveBeenCalled();
       });
 
       it(`does not check whether the vertex shader has been disposed`, () => {

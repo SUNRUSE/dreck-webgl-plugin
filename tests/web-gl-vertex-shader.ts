@@ -714,7 +714,6 @@ describe(`WebGlVertexShader`, () => {
     let getShaderInfoLog: jasmine.Spy;
     let deleteShader: jasmine.Spy;
     let render: jasmine.Spy;
-    let addEventListener: jasmine.Spy;
     let getHeaderLines: jasmine.Spy;
     let getBodyLines: jasmine.Spy;
 
@@ -755,7 +754,6 @@ describe(`WebGlVertexShader`, () => {
       getShaderInfoLog = jasmine.createSpy(`getShaderInfoLog`);
       deleteShader = jasmine.createSpy(`deleteShader`);
       render = jasmine.createSpy(`render`);
-      addEventListener = jasmine.createSpy(`addEventListener`);
       getHeaderLines = jasmine.createSpy(`getHeaderLines`);
       getBodyLines = jasmine.createSpy(`getBodyLines`);
 
@@ -771,7 +769,6 @@ describe(`WebGlVertexShader`, () => {
         },
         timesContextRestored: 7,
         render,
-        addEventListener,
       };
 
       shader = new TestShader(
@@ -834,10 +831,6 @@ describe(`WebGlVertexShader`, () => {
       expect(render).not.toHaveBeenCalled();
     });
 
-    it(`does not add any event listeners`, () => {
-      expect(addEventListener).not.toHaveBeenCalled();
-    });
-
     it(`does not get header lines`, () => {
       expect(getHeaderLines).not.toHaveBeenCalled();
     });
@@ -856,7 +849,6 @@ describe(`WebGlVertexShader`, () => {
     let getShaderInfoLog: jasmine.Spy;
     let deleteShader: jasmine.Spy;
     let render: jasmine.Spy;
-    let addEventListener: jasmine.Spy;
     let getHeaderLines: jasmine.Spy;
     let getBodyLines: jasmine.Spy;
 
@@ -898,7 +890,6 @@ describe(`WebGlVertexShader`, () => {
       getShaderInfoLog = jasmine.createSpy(`getShaderInfoLog`);
       deleteShader = jasmine.createSpy(`deleteShader`);
       render = jasmine.createSpy(`render`);
-      addEventListener = jasmine.createSpy(`addEventListener`);
       getHeaderLines = jasmine.createSpy(`getHeaderLines`);
       getBodyLines = jasmine.createSpy(`getBodyLines`);
 
@@ -915,7 +906,6 @@ describe(`WebGlVertexShader`, () => {
         timesContextRestored: 7,
 
         render,
-        addEventListener,
       };
 
       shader = new TestShader(
@@ -978,10 +968,6 @@ describe(`WebGlVertexShader`, () => {
 
     it(`does not render`, () => {
       expect(render).not.toHaveBeenCalled();
-    });
-
-    it(`does not add any event listeners`, () => {
-      expect(addEventListener).not.toHaveBeenCalled();
     });
 
     it(`does not get header lines`, () => {

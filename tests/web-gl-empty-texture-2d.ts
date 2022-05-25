@@ -8,7 +8,6 @@ describe(`WebGlEmptyTexture2D`, () => {
     let isContextLost: jasmine.Spy;
     let texImage2D: jasmine.Spy;
     let render: jasmine.Spy;
-    let addEventListener: jasmine.Spy;
 
     let context: WebGlContextInterface<
       | `createTexture`
@@ -33,7 +32,6 @@ describe(`WebGlEmptyTexture2D`, () => {
       isContextLost = jasmine.createSpy(`isContextLost`);
       texImage2D = jasmine.createSpy(`texImage2D`);
       render = jasmine.createSpy(`render`);
-      addEventListener = jasmine.createSpy(`addEventListener`);
 
       context = {
         gl: {
@@ -47,7 +45,6 @@ describe(`WebGlEmptyTexture2D`, () => {
         },
         timesContextRestored: 7,
         render,
-        addEventListener,
       };
 
       texture = new WebGlEmptyTexture2D(
@@ -69,10 +66,6 @@ describe(`WebGlEmptyTexture2D`, () => {
 
     it(`does not render`, () => {
       expect(render).not.toHaveBeenCalled();
-    });
-
-    it(`does not add any event listeners`, () => {
-      expect(addEventListener).not.toHaveBeenCalled();
     });
 
     it(`creates one texture`, () => {
@@ -139,7 +132,6 @@ describe(`WebGlEmptyTexture2D`, () => {
     let isContextLost: jasmine.Spy;
     let texImage2D: jasmine.Spy;
     let render: jasmine.Spy;
-    let addEventListener: jasmine.Spy;
 
     let context: WebGlContextInterface<
       | `createTexture`
@@ -164,7 +156,6 @@ describe(`WebGlEmptyTexture2D`, () => {
       isContextLost = jasmine.createSpy(`isContextLost`);
       texImage2D = jasmine.createSpy(`texImage2D`);
       render = jasmine.createSpy(`render`);
-      addEventListener = jasmine.createSpy(`addEventListener`);
 
       context = {
         gl: {
@@ -178,7 +169,6 @@ describe(`WebGlEmptyTexture2D`, () => {
         },
         timesContextRestored: 7,
         render,
-        addEventListener,
       };
 
       texture = new WebGlEmptyTexture2D(
@@ -202,10 +192,6 @@ describe(`WebGlEmptyTexture2D`, () => {
 
     it(`does not render`, () => {
       expect(render).not.toHaveBeenCalled();
-    });
-
-    it(`does not add any event listeners`, () => {
-      expect(addEventListener).not.toHaveBeenCalled();
     });
 
     it(`creates one texture`, () => {

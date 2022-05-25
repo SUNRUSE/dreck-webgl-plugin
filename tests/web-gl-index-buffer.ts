@@ -7,7 +7,6 @@ describe(`WebGlIndexBuffer`, () => {
     let deleteBuffer: jasmine.Spy;
     let isContextLost: jasmine.Spy;
     let render: jasmine.Spy;
-    let addEventListener: jasmine.Spy;
 
     class TestIndexBuffer extends WebGlIndexBuffer {
       /* istanbul ignore next */
@@ -34,7 +33,6 @@ describe(`WebGlIndexBuffer`, () => {
       deleteBuffer = jasmine.createSpy(`deleteBuffer`);
       isContextLost = jasmine.createSpy(`isContextLost`);
       render = jasmine.createSpy(`render`);
-      addEventListener = jasmine.createSpy(`addEventListener`);
 
       context = {
         gl: {
@@ -46,7 +44,6 @@ describe(`WebGlIndexBuffer`, () => {
         },
         timesContextRestored: 7,
         render,
-        addEventListener,
       };
 
       indexBuffer = new TestIndexBuffer(context);
@@ -87,10 +84,6 @@ describe(`WebGlIndexBuffer`, () => {
     it(`does not render`, () => {
       expect(render).not.toHaveBeenCalled();
     });
-
-    it(`does not add any event listeners`, () => {
-      expect(addEventListener).not.toHaveBeenCalled();
-    });
   });
 
   describe(`on generating data`, () => {
@@ -102,7 +95,6 @@ describe(`WebGlIndexBuffer`, () => {
       let deleteBuffer: jasmine.Spy;
       let isContextLost: jasmine.Spy;
       let render: jasmine.Spy;
-      let addEventListener: jasmine.Spy;
 
       class TestIndexBuffer extends WebGlIndexBuffer {
         generateIndices(): readonly number[] {
@@ -140,7 +132,6 @@ describe(`WebGlIndexBuffer`, () => {
         deleteBuffer = jasmine.createSpy(`deleteBuffer`);
         isContextLost = jasmine.createSpy(`isContextLost`);
         render = jasmine.createSpy(`render`);
-        addEventListener = jasmine.createSpy(`addEventListener`);
 
         context = {
           gl: {
@@ -152,7 +143,6 @@ describe(`WebGlIndexBuffer`, () => {
           },
           timesContextRestored: 7,
           render,
-          addEventListener,
         };
 
         indexBuffer = new TestIndexBuffer(context);
@@ -196,10 +186,6 @@ describe(`WebGlIndexBuffer`, () => {
         expect(render).not.toHaveBeenCalled();
       });
 
-      it(`does not add any event listeners`, () => {
-        expect(addEventListener).not.toHaveBeenCalled();
-      });
-
       it(`returns the expected data`, () => {
         expect(result).toEqual({
           bufferContent: Uint8Array.from([]),
@@ -219,7 +205,6 @@ describe(`WebGlIndexBuffer`, () => {
       let deleteBuffer: jasmine.Spy;
       let isContextLost: jasmine.Spy;
       let render: jasmine.Spy;
-      let addEventListener: jasmine.Spy;
 
       class TestIndexBuffer extends WebGlIndexBuffer {
         generateIndices(): readonly number[] {
@@ -257,7 +242,6 @@ describe(`WebGlIndexBuffer`, () => {
         deleteBuffer = jasmine.createSpy(`deleteBuffer`);
         isContextLost = jasmine.createSpy(`isContextLost`);
         render = jasmine.createSpy(`render`);
-        addEventListener = jasmine.createSpy(`addEventListener`);
 
         context = {
           gl: {
@@ -269,7 +253,6 @@ describe(`WebGlIndexBuffer`, () => {
           },
           timesContextRestored: 7,
           render,
-          addEventListener,
         };
 
         indexBuffer = new TestIndexBuffer(context);
@@ -313,10 +296,6 @@ describe(`WebGlIndexBuffer`, () => {
         expect(render).not.toHaveBeenCalled();
       });
 
-      it(`does not add any event listeners`, () => {
-        expect(addEventListener).not.toHaveBeenCalled();
-      });
-
       it(`returns the expected data`, () => {
         expect(result).toEqual({
           bufferContent: Uint8Array.from([128, 0, 64, 255, 74]),
@@ -336,7 +315,6 @@ describe(`WebGlIndexBuffer`, () => {
       let deleteBuffer: jasmine.Spy;
       let isContextLost: jasmine.Spy;
       let render: jasmine.Spy;
-      let addEventListener: jasmine.Spy;
 
       class TestIndexBuffer extends WebGlIndexBuffer {
         generateIndices(): readonly number[] {
@@ -374,7 +352,6 @@ describe(`WebGlIndexBuffer`, () => {
         deleteBuffer = jasmine.createSpy(`deleteBuffer`);
         isContextLost = jasmine.createSpy(`isContextLost`);
         render = jasmine.createSpy(`render`);
-        addEventListener = jasmine.createSpy(`addEventListener`);
 
         context = {
           gl: {
@@ -386,7 +363,6 @@ describe(`WebGlIndexBuffer`, () => {
           },
           timesContextRestored: 7,
           render,
-          addEventListener,
         };
 
         indexBuffer = new TestIndexBuffer(context);
@@ -430,10 +406,6 @@ describe(`WebGlIndexBuffer`, () => {
         expect(render).not.toHaveBeenCalled();
       });
 
-      it(`does not add any event listeners`, () => {
-        expect(addEventListener).not.toHaveBeenCalled();
-      });
-
       it(`returns the expected data`, () => {
         expect(result).toEqual({
           bufferContent: Uint16Array.from([128, 0, 64, 256, 74]),
@@ -453,7 +425,6 @@ describe(`WebGlIndexBuffer`, () => {
       let deleteBuffer: jasmine.Spy;
       let isContextLost: jasmine.Spy;
       let render: jasmine.Spy;
-      let addEventListener: jasmine.Spy;
 
       class TestIndexBuffer extends WebGlIndexBuffer {
         generateIndices(): readonly number[] {
@@ -483,7 +454,6 @@ describe(`WebGlIndexBuffer`, () => {
         deleteBuffer = jasmine.createSpy(`deleteBuffer`);
         isContextLost = jasmine.createSpy(`isContextLost`);
         render = jasmine.createSpy(`render`);
-        addEventListener = jasmine.createSpy(`addEventListener`);
 
         context = {
           gl: {
@@ -495,7 +465,6 @@ describe(`WebGlIndexBuffer`, () => {
           },
           timesContextRestored: 7,
           render,
-          addEventListener,
         };
 
         indexBuffer = new TestIndexBuffer(context);
@@ -546,10 +515,6 @@ describe(`WebGlIndexBuffer`, () => {
         expect(render).not.toHaveBeenCalled();
       });
 
-      it(`does not add any event listeners`, () => {
-        expect(addEventListener).not.toHaveBeenCalled();
-      });
-
       it(`throws the expected error`, () => {
         expect(error).toEqual(new Error(`Indices cannot be NaN.`));
       });
@@ -563,7 +528,6 @@ describe(`WebGlIndexBuffer`, () => {
       let deleteBuffer: jasmine.Spy;
       let isContextLost: jasmine.Spy;
       let render: jasmine.Spy;
-      let addEventListener: jasmine.Spy;
 
       class TestIndexBuffer extends WebGlIndexBuffer {
         generateIndices(): readonly number[] {
@@ -593,7 +557,6 @@ describe(`WebGlIndexBuffer`, () => {
         deleteBuffer = jasmine.createSpy(`deleteBuffer`);
         isContextLost = jasmine.createSpy(`isContextLost`);
         render = jasmine.createSpy(`render`);
-        addEventListener = jasmine.createSpy(`addEventListener`);
 
         context = {
           gl: {
@@ -605,7 +568,6 @@ describe(`WebGlIndexBuffer`, () => {
           },
           timesContextRestored: 7,
           render,
-          addEventListener,
         };
 
         indexBuffer = new TestIndexBuffer(context);
@@ -656,10 +618,6 @@ describe(`WebGlIndexBuffer`, () => {
         expect(render).not.toHaveBeenCalled();
       });
 
-      it(`does not add any event listeners`, () => {
-        expect(addEventListener).not.toHaveBeenCalled();
-      });
-
       it(`throws the expected error`, () => {
         expect(error).toEqual(new Error(`Indices must be integers.`));
       });
@@ -673,7 +631,6 @@ describe(`WebGlIndexBuffer`, () => {
       let deleteBuffer: jasmine.Spy;
       let isContextLost: jasmine.Spy;
       let render: jasmine.Spy;
-      let addEventListener: jasmine.Spy;
 
       class TestIndexBuffer extends WebGlIndexBuffer {
         generateIndices(): readonly number[] {
@@ -703,7 +660,6 @@ describe(`WebGlIndexBuffer`, () => {
         deleteBuffer = jasmine.createSpy(`deleteBuffer`);
         isContextLost = jasmine.createSpy(`isContextLost`);
         render = jasmine.createSpy(`render`);
-        addEventListener = jasmine.createSpy(`addEventListener`);
 
         context = {
           gl: {
@@ -715,7 +671,6 @@ describe(`WebGlIndexBuffer`, () => {
           },
           timesContextRestored: 7,
           render,
-          addEventListener,
         };
 
         indexBuffer = new TestIndexBuffer(context);
@@ -766,10 +721,6 @@ describe(`WebGlIndexBuffer`, () => {
         expect(render).not.toHaveBeenCalled();
       });
 
-      it(`does not add any event listeners`, () => {
-        expect(addEventListener).not.toHaveBeenCalled();
-      });
-
       it(`throws the expected error`, () => {
         expect(error).toEqual(new Error(`Indices must be finite.`));
       });
@@ -783,7 +734,6 @@ describe(`WebGlIndexBuffer`, () => {
       let deleteBuffer: jasmine.Spy;
       let isContextLost: jasmine.Spy;
       let render: jasmine.Spy;
-      let addEventListener: jasmine.Spy;
 
       class TestIndexBuffer extends WebGlIndexBuffer {
         generateIndices(): readonly number[] {
@@ -813,7 +763,6 @@ describe(`WebGlIndexBuffer`, () => {
         deleteBuffer = jasmine.createSpy(`deleteBuffer`);
         isContextLost = jasmine.createSpy(`isContextLost`);
         render = jasmine.createSpy(`render`);
-        addEventListener = jasmine.createSpy(`addEventListener`);
 
         context = {
           gl: {
@@ -825,7 +774,6 @@ describe(`WebGlIndexBuffer`, () => {
           },
           timesContextRestored: 7,
           render,
-          addEventListener,
         };
 
         indexBuffer = new TestIndexBuffer(context);
@@ -876,10 +824,6 @@ describe(`WebGlIndexBuffer`, () => {
         expect(render).not.toHaveBeenCalled();
       });
 
-      it(`does not add any event listeners`, () => {
-        expect(addEventListener).not.toHaveBeenCalled();
-      });
-
       it(`throws the expected error`, () => {
         expect(error).toEqual(new Error(`Indices must be finite.`));
       });
@@ -893,7 +837,6 @@ describe(`WebGlIndexBuffer`, () => {
       let deleteBuffer: jasmine.Spy;
       let isContextLost: jasmine.Spy;
       let render: jasmine.Spy;
-      let addEventListener: jasmine.Spy;
 
       class TestIndexBuffer extends WebGlIndexBuffer {
         generateIndices(): readonly number[] {
@@ -931,7 +874,6 @@ describe(`WebGlIndexBuffer`, () => {
         deleteBuffer = jasmine.createSpy(`deleteBuffer`);
         isContextLost = jasmine.createSpy(`isContextLost`);
         render = jasmine.createSpy(`render`);
-        addEventListener = jasmine.createSpy(`addEventListener`);
 
         context = {
           gl: {
@@ -943,7 +885,6 @@ describe(`WebGlIndexBuffer`, () => {
           },
           timesContextRestored: 7,
           render,
-          addEventListener,
         };
 
         indexBuffer = new TestIndexBuffer(context);
@@ -987,10 +928,6 @@ describe(`WebGlIndexBuffer`, () => {
         expect(render).not.toHaveBeenCalled();
       });
 
-      it(`does not add any event listeners`, () => {
-        expect(addEventListener).not.toHaveBeenCalled();
-      });
-
       it(`returns the expected data`, () => {
         expect(result).toEqual({
           bufferContent: Uint16Array.from([128, 0, 64, 65535, 74]),
@@ -1010,7 +947,6 @@ describe(`WebGlIndexBuffer`, () => {
       let deleteBuffer: jasmine.Spy;
       let isContextLost: jasmine.Spy;
       let render: jasmine.Spy;
-      let addEventListener: jasmine.Spy;
 
       class TestIndexBuffer extends WebGlIndexBuffer {
         generateIndices(): readonly number[] {
@@ -1040,7 +976,6 @@ describe(`WebGlIndexBuffer`, () => {
         deleteBuffer = jasmine.createSpy(`deleteBuffer`);
         isContextLost = jasmine.createSpy(`isContextLost`);
         render = jasmine.createSpy(`render`);
-        addEventListener = jasmine.createSpy(`addEventListener`);
 
         context = {
           gl: {
@@ -1052,7 +987,6 @@ describe(`WebGlIndexBuffer`, () => {
           },
           timesContextRestored: 7,
           render,
-          addEventListener,
         };
 
         indexBuffer = new TestIndexBuffer(context);
@@ -1103,10 +1037,6 @@ describe(`WebGlIndexBuffer`, () => {
         expect(render).not.toHaveBeenCalled();
       });
 
-      it(`does not add any event listeners`, () => {
-        expect(addEventListener).not.toHaveBeenCalled();
-      });
-
       it(`throws the expected error`, () => {
         expect(error).toEqual(
           new Error(`Indices cannot be greater than 65535.`)
@@ -1122,7 +1052,6 @@ describe(`WebGlIndexBuffer`, () => {
       let deleteBuffer: jasmine.Spy;
       let isContextLost: jasmine.Spy;
       let render: jasmine.Spy;
-      let addEventListener: jasmine.Spy;
 
       class TestIndexBuffer extends WebGlIndexBuffer {
         generateIndices(): readonly number[] {
@@ -1152,7 +1081,6 @@ describe(`WebGlIndexBuffer`, () => {
         deleteBuffer = jasmine.createSpy(`deleteBuffer`);
         isContextLost = jasmine.createSpy(`isContextLost`);
         render = jasmine.createSpy(`render`);
-        addEventListener = jasmine.createSpy(`addEventListener`);
 
         context = {
           gl: {
@@ -1164,7 +1092,6 @@ describe(`WebGlIndexBuffer`, () => {
           },
           timesContextRestored: 7,
           render,
-          addEventListener,
         };
 
         indexBuffer = new TestIndexBuffer(context);
@@ -1215,10 +1142,6 @@ describe(`WebGlIndexBuffer`, () => {
         expect(render).not.toHaveBeenCalled();
       });
 
-      it(`does not add any event listeners`, () => {
-        expect(addEventListener).not.toHaveBeenCalled();
-      });
-
       it(`throws the expected error`, () => {
         expect(error).toEqual(
           new Error(`Indices cannot be greater than 65535.`)
@@ -1234,7 +1157,6 @@ describe(`WebGlIndexBuffer`, () => {
       let deleteBuffer: jasmine.Spy;
       let isContextLost: jasmine.Spy;
       let render: jasmine.Spy;
-      let addEventListener: jasmine.Spy;
 
       class TestIndexBuffer extends WebGlIndexBuffer {
         generateIndices(): readonly number[] {
@@ -1264,7 +1186,6 @@ describe(`WebGlIndexBuffer`, () => {
         deleteBuffer = jasmine.createSpy(`deleteBuffer`);
         isContextLost = jasmine.createSpy(`isContextLost`);
         render = jasmine.createSpy(`render`);
-        addEventListener = jasmine.createSpy(`addEventListener`);
 
         context = {
           gl: {
@@ -1276,7 +1197,6 @@ describe(`WebGlIndexBuffer`, () => {
           },
           timesContextRestored: 7,
           render,
-          addEventListener,
         };
 
         indexBuffer = new TestIndexBuffer(context);
@@ -1327,10 +1247,6 @@ describe(`WebGlIndexBuffer`, () => {
         expect(render).not.toHaveBeenCalled();
       });
 
-      it(`does not add any event listeners`, () => {
-        expect(addEventListener).not.toHaveBeenCalled();
-      });
-
       it(`throws the expected error`, () => {
         expect(error).toEqual(new Error(`Indices cannot be less than 0.`));
       });
@@ -1344,7 +1260,6 @@ describe(`WebGlIndexBuffer`, () => {
       let deleteBuffer: jasmine.Spy;
       let isContextLost: jasmine.Spy;
       let render: jasmine.Spy;
-      let addEventListener: jasmine.Spy;
 
       class TestIndexBuffer extends WebGlIndexBuffer {
         generateIndices(): readonly number[] {
@@ -1374,7 +1289,6 @@ describe(`WebGlIndexBuffer`, () => {
         deleteBuffer = jasmine.createSpy(`deleteBuffer`);
         isContextLost = jasmine.createSpy(`isContextLost`);
         render = jasmine.createSpy(`render`);
-        addEventListener = jasmine.createSpy(`addEventListener`);
 
         context = {
           gl: {
@@ -1386,7 +1300,6 @@ describe(`WebGlIndexBuffer`, () => {
           },
           timesContextRestored: 7,
           render,
-          addEventListener,
         };
 
         indexBuffer = new TestIndexBuffer(context);
@@ -1435,10 +1348,6 @@ describe(`WebGlIndexBuffer`, () => {
 
       it(`does not render`, () => {
         expect(render).not.toHaveBeenCalled();
-      });
-
-      it(`does not add any event listeners`, () => {
-        expect(addEventListener).not.toHaveBeenCalled();
       });
 
       it(`throws the expected error`, () => {

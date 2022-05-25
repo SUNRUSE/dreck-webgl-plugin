@@ -8,7 +8,6 @@ describe(`WebGlStaticIndexBuffer`, () => {
     let deleteBuffer: jasmine.Spy;
     let isContextLost: jasmine.Spy;
     let render: jasmine.Spy;
-    let addEventListener: jasmine.Spy;
 
     let context: WebGlContextInterface<
       | `createBuffer`
@@ -27,7 +26,6 @@ describe(`WebGlStaticIndexBuffer`, () => {
       deleteBuffer = jasmine.createSpy(`deleteBuffer`);
       isContextLost = jasmine.createSpy(`isContextLost`);
       render = jasmine.createSpy(`render`);
-      addEventListener = jasmine.createSpy(`addEventListener`);
 
       context = {
         gl: {
@@ -39,7 +37,6 @@ describe(`WebGlStaticIndexBuffer`, () => {
         },
         timesContextRestored: 7,
         render,
-        addEventListener,
       };
 
       staticIndexBuffer = new WebGlStaticIndexBuffer(context, testIndices);
@@ -76,10 +73,6 @@ describe(`WebGlStaticIndexBuffer`, () => {
     it(`does not render`, () => {
       expect(render).not.toHaveBeenCalled();
     });
-
-    it(`does not add any event listeners`, () => {
-      expect(addEventListener).not.toHaveBeenCalled();
-    });
   });
 
   describe(`on generating indices`, () => {
@@ -89,7 +82,6 @@ describe(`WebGlStaticIndexBuffer`, () => {
     let deleteBuffer: jasmine.Spy;
     let isContextLost: jasmine.Spy;
     let render: jasmine.Spy;
-    let addEventListener: jasmine.Spy;
 
     let context: WebGlContextInterface<
       | `createBuffer`
@@ -110,7 +102,6 @@ describe(`WebGlStaticIndexBuffer`, () => {
       deleteBuffer = jasmine.createSpy(`deleteBuffer`);
       isContextLost = jasmine.createSpy(`isContextLost`);
       render = jasmine.createSpy(`render`);
-      addEventListener = jasmine.createSpy(`addEventListener`);
 
       context = {
         gl: {
@@ -122,7 +113,6 @@ describe(`WebGlStaticIndexBuffer`, () => {
         },
         timesContextRestored: 7,
         render,
-        addEventListener,
       };
 
       staticIndexBuffer = new WebGlStaticIndexBuffer(context, testIndices);
@@ -160,10 +150,6 @@ describe(`WebGlStaticIndexBuffer`, () => {
 
     it(`does not render`, () => {
       expect(render).not.toHaveBeenCalled();
-    });
-
-    it(`does not add any event listeners`, () => {
-      expect(addEventListener).not.toHaveBeenCalled();
     });
 
     it(`returns the indices`, () => {

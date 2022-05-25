@@ -82,7 +82,6 @@ describe(`WebGlStaticFragmentShader`, () => {
     let getShaderInfoLog: jasmine.Spy;
     let deleteShader: jasmine.Spy;
     let render: jasmine.Spy;
-    let addEventListener: jasmine.Spy;
 
     let context: WebGlContextInterface<
       | `createShader`
@@ -108,7 +107,6 @@ describe(`WebGlStaticFragmentShader`, () => {
       getShaderInfoLog = jasmine.createSpy(`getShaderInfoLog`);
       deleteShader = jasmine.createSpy(`deleteShader`);
       render = jasmine.createSpy(`render`);
-      addEventListener = jasmine.createSpy(`addEventListener`);
 
       context = {
         gl: {
@@ -122,7 +120,6 @@ describe(`WebGlStaticFragmentShader`, () => {
         },
         timesContextRestored: 7,
         render,
-        addEventListener,
       };
 
       shader = new WebGlStaticFragmentShader(
@@ -189,10 +186,6 @@ describe(`WebGlStaticFragmentShader`, () => {
     it(`does not render`, () => {
       expect(render).not.toHaveBeenCalled();
     });
-
-    it(`does not add any event listeners`, () => {
-      expect(addEventListener).not.toHaveBeenCalled();
-    });
   });
 
   describe(`on getting header lines`, () => {
@@ -204,7 +197,6 @@ describe(`WebGlStaticFragmentShader`, () => {
     let getShaderInfoLog: jasmine.Spy;
     let deleteShader: jasmine.Spy;
     let render: jasmine.Spy;
-    let addEventListener: jasmine.Spy;
 
     let context: WebGlContextInterface<
       | `createShader`
@@ -232,7 +224,6 @@ describe(`WebGlStaticFragmentShader`, () => {
       getShaderInfoLog = jasmine.createSpy(`getShaderInfoLog`);
       deleteShader = jasmine.createSpy(`deleteShader`);
       render = jasmine.createSpy(`render`);
-      addEventListener = jasmine.createSpy(`addEventListener`);
 
       context = {
         gl: {
@@ -246,7 +237,6 @@ describe(`WebGlStaticFragmentShader`, () => {
         },
         timesContextRestored: 7,
         render,
-        addEventListener,
       };
 
       shader = new WebGlStaticFragmentShader(
@@ -316,10 +306,6 @@ describe(`WebGlStaticFragmentShader`, () => {
       expect(render).not.toHaveBeenCalled();
     });
 
-    it(`does not add any event listeners`, () => {
-      expect(addEventListener).not.toHaveBeenCalled();
-    });
-
     it(`returns the header lines`, () => {
       expect(result).toEqual(testHeaderLines);
     });
@@ -334,7 +320,6 @@ describe(`WebGlStaticFragmentShader`, () => {
     let getShaderInfoLog: jasmine.Spy;
     let deleteShader: jasmine.Spy;
     let render: jasmine.Spy;
-    let addEventListener: jasmine.Spy;
 
     let context: WebGlContextInterface<
       | `createShader`
@@ -362,7 +347,6 @@ describe(`WebGlStaticFragmentShader`, () => {
       getShaderInfoLog = jasmine.createSpy(`getShaderInfoLog`);
       deleteShader = jasmine.createSpy(`deleteShader`);
       render = jasmine.createSpy(`render`);
-      addEventListener = jasmine.createSpy(`addEventListener`);
 
       context = {
         gl: {
@@ -376,7 +360,6 @@ describe(`WebGlStaticFragmentShader`, () => {
         },
         timesContextRestored: 7,
         render,
-        addEventListener,
       };
 
       shader = new WebGlStaticFragmentShader(
@@ -444,10 +427,6 @@ describe(`WebGlStaticFragmentShader`, () => {
 
     it(`does not render`, () => {
       expect(render).not.toHaveBeenCalled();
-    });
-
-    it(`does not add any event listeners`, () => {
-      expect(addEventListener).not.toHaveBeenCalled();
     });
 
     it(`returns the body lines`, () => {

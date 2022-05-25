@@ -283,7 +283,6 @@ describe(`WebGlShader`, () => {
     let getShaderInfoLog: jasmine.Spy;
     let deleteShader: jasmine.Spy;
     let render: jasmine.Spy;
-    let addEventListener: jasmine.Spy;
     let getHeaderLines: jasmine.Spy;
     let getDeclarations: jasmine.Spy;
     let getBodyLines: jasmine.Spy;
@@ -326,7 +325,6 @@ describe(`WebGlShader`, () => {
       getShaderInfoLog = jasmine.createSpy(`getShaderInfoLog`);
       deleteShader = jasmine.createSpy(`deleteShader`);
       render = jasmine.createSpy(`render`);
-      addEventListener = jasmine.createSpy(`addEventListener`);
       getHeaderLines = jasmine.createSpy(`getHeaderLines`);
       getDeclarations = jasmine.createSpy(`getDeclarations`);
       getBodyLines = jasmine.createSpy(`getBodyLines`);
@@ -343,7 +341,6 @@ describe(`WebGlShader`, () => {
         },
         timesContextRestored: 7,
         render,
-        addEventListener,
       };
 
       shader = new TestShader(context, WebGlConstants.FragmentShader);
@@ -389,10 +386,6 @@ describe(`WebGlShader`, () => {
       expect(render).not.toHaveBeenCalled();
     });
 
-    it(`does not add any event listeners`, () => {
-      expect(addEventListener).not.toHaveBeenCalled();
-    });
-
     it(`does not get header lines`, () => {
       expect(getHeaderLines).not.toHaveBeenCalled();
     });
@@ -416,7 +409,6 @@ describe(`WebGlShader`, () => {
       let getShaderInfoLog: jasmine.Spy;
       let deleteShader: jasmine.Spy;
       let render: jasmine.Spy;
-      let addEventListener: jasmine.Spy;
       let getHeaderLines: jasmine.Spy;
       let getDeclarations: jasmine.Spy;
       let getBodyLines: jasmine.Spy;
@@ -461,7 +453,6 @@ describe(`WebGlShader`, () => {
         getShaderInfoLog = jasmine.createSpy(`getShaderInfoLog`);
         deleteShader = jasmine.createSpy(`deleteShader`);
         render = jasmine.createSpy(`render`);
-        addEventListener = jasmine.createSpy(`addEventListener`);
         getHeaderLines = jasmine.createSpy(`getHeaderLines`);
         getDeclarations = jasmine.createSpy(`getDeclarations`);
         getBodyLines = jasmine.createSpy(`getBodyLines`);
@@ -478,7 +469,6 @@ describe(`WebGlShader`, () => {
           },
           timesContextRestored: 7,
           render,
-          addEventListener,
         };
 
         shader = new TestShader(context, WebGlConstants.FragmentShader);
@@ -532,10 +522,6 @@ describe(`WebGlShader`, () => {
         expect(render).not.toHaveBeenCalled();
       });
 
-      it(`does not add any event listeners`, () => {
-        expect(addEventListener).not.toHaveBeenCalled();
-      });
-
       it(`does not get header lines`, () => {
         expect(getHeaderLines).not.toHaveBeenCalled();
       });
@@ -562,7 +548,6 @@ describe(`WebGlShader`, () => {
       let getShaderInfoLog: jasmine.Spy;
       let deleteShader: jasmine.Spy;
       let render: jasmine.Spy;
-      let addEventListener: jasmine.Spy;
       let getHeaderLines: jasmine.Spy;
       let getDeclarations: jasmine.Spy;
       let getBodyLines: jasmine.Spy;
@@ -610,7 +595,6 @@ describe(`WebGlShader`, () => {
         getShaderInfoLog = jasmine.createSpy(`getShaderInfoLog`);
         deleteShader = jasmine.createSpy(`deleteShader`);
         render = jasmine.createSpy(`render`);
-        addEventListener = jasmine.createSpy(`addEventListener`);
         getHeaderLines = jasmine
           .createSpy(`getHeaderLines`)
           .and.returnValue([
@@ -643,7 +627,6 @@ describe(`WebGlShader`, () => {
           },
           timesContextRestored: 7,
           render,
-          addEventListener,
         };
 
         shader = new TestShader(context, WebGlConstants.FragmentShader);
@@ -768,10 +751,6 @@ Test Body Line E`
         expect(render).not.toHaveBeenCalled();
       });
 
-      it(`does not add any event listeners`, () => {
-        expect(addEventListener).not.toHaveBeenCalled();
-      });
-
       it(`compiles the shader after providing source`, () => {
         expect(shaderSource).toHaveBeenCalledBefore(compileShader);
       });
@@ -810,7 +789,6 @@ Test Body Line E`
       let getShaderInfoLog: jasmine.Spy;
       let deleteShader: jasmine.Spy;
       let render: jasmine.Spy;
-      let addEventListener: jasmine.Spy;
       let getHeaderLines: jasmine.Spy;
       let getDeclarations: jasmine.Spy;
       let getBodyLines: jasmine.Spy;
@@ -860,7 +838,6 @@ Test Body Line E`
           .and.returnValue(`Test WebGlShader Info Log`);
         deleteShader = jasmine.createSpy(`deleteShader`);
         render = jasmine.createSpy(`render`);
-        addEventListener = jasmine.createSpy(`addEventListener`);
         getHeaderLines = jasmine
           .createSpy(`getHeaderLines`)
           .and.returnValue([
@@ -893,7 +870,6 @@ Test Body Line E`
           },
           timesContextRestored: 7,
           render,
-          addEventListener,
         };
 
         shader = new TestShader(context, WebGlConstants.FragmentShader);
@@ -1029,10 +1005,6 @@ Test Body Line E`
         expect(render).not.toHaveBeenCalled();
       });
 
-      it(`does not add any event listeners`, () => {
-        expect(addEventListener).not.toHaveBeenCalled();
-      });
-
       it(`compiles the shader after providing source`, () => {
         expect(shaderSource).toHaveBeenCalledBefore(compileShader);
       });
@@ -1083,7 +1055,6 @@ Test Body Line E`
       let getShaderInfoLog: jasmine.Spy;
       let deleteShader: jasmine.Spy;
       let render: jasmine.Spy;
-      let addEventListener: jasmine.Spy;
       let getHeaderLines: jasmine.Spy;
       let getDeclarations: jasmine.Spy;
       let getBodyLines: jasmine.Spy;
@@ -1129,7 +1100,6 @@ Test Body Line E`
         getShaderInfoLog = jasmine.createSpy(`getShaderInfoLog`);
         deleteShader = jasmine.createSpy(`deleteShader`);
         render = jasmine.createSpy(`render`);
-        addEventListener = jasmine.createSpy(`addEventListener`);
         getHeaderLines = jasmine
           .createSpy(`getHeaderLines`)
           .and.returnValue([
@@ -1162,7 +1132,6 @@ Test Body Line E`
           },
           timesContextRestored: 7,
           render,
-          addEventListener,
         };
 
         shader = new TestShader(context, WebGlConstants.FragmentShader);
@@ -1295,10 +1264,6 @@ Test Body Line E`
         expect(render).not.toHaveBeenCalled();
       });
 
-      it(`does not add any event listeners`, () => {
-        expect(addEventListener).not.toHaveBeenCalled();
-      });
-
       it(`gets one set of header lines`, () => {
         expect(getHeaderLines).toHaveBeenCalledTimes(1);
       });
@@ -1327,7 +1292,6 @@ Test Body Line E`
       let getShaderInfoLog: jasmine.Spy;
       let deleteShader: jasmine.Spy;
       let render: jasmine.Spy;
-      let addEventListener: jasmine.Spy;
       let getHeaderLines: jasmine.Spy;
       let getDeclarations: jasmine.Spy;
       let getBodyLines: jasmine.Spy;
@@ -1370,7 +1334,6 @@ Test Body Line E`
         getShaderInfoLog = jasmine.createSpy(`getShaderInfoLog`);
         deleteShader = jasmine.createSpy(`deleteShader`);
         render = jasmine.createSpy(`render`);
-        addEventListener = jasmine.createSpy(`addEventListener`);
         getHeaderLines = jasmine.createSpy(`getHeaderLines`);
         getDeclarations = jasmine.createSpy(`getDeclarations`);
         getBodyLines = jasmine.createSpy(`getBodyLines`);
@@ -1387,7 +1350,6 @@ Test Body Line E`
           },
           timesContextRestored: 7,
           render,
-          addEventListener,
         };
 
         shader = new TestShader(context, WebGlConstants.FragmentShader);
@@ -1439,10 +1401,6 @@ Test Body Line E`
         expect(render).not.toHaveBeenCalled();
       });
 
-      it(`does not add any event listeners`, () => {
-        expect(addEventListener).not.toHaveBeenCalled();
-      });
-
       it(`does not get header lines`, () => {
         expect(getHeaderLines).not.toHaveBeenCalled();
       });
@@ -1465,7 +1423,6 @@ Test Body Line E`
       let getShaderInfoLog: jasmine.Spy;
       let deleteShader: jasmine.Spy;
       let render: jasmine.Spy;
-      let addEventListener: jasmine.Spy;
       let getHeaderLines: jasmine.Spy;
       let getDeclarations: jasmine.Spy;
       let getBodyLines: jasmine.Spy;
@@ -1508,7 +1465,6 @@ Test Body Line E`
         getShaderInfoLog = jasmine.createSpy(`getShaderInfoLog`);
         deleteShader = jasmine.createSpy(`deleteShader`);
         render = jasmine.createSpy(`render`);
-        addEventListener = jasmine.createSpy(`addEventListener`);
         getHeaderLines = jasmine.createSpy(`getHeaderLines`);
         getDeclarations = jasmine.createSpy(`getDeclarations`);
         getBodyLines = jasmine.createSpy(`getBodyLines`);
@@ -1525,7 +1481,6 @@ Test Body Line E`
           },
           timesContextRestored: 7,
           render,
-          addEventListener,
         };
 
         shader = new TestShader(context, WebGlConstants.FragmentShader);
@@ -1571,10 +1526,6 @@ Test Body Line E`
 
       it(`does not render`, () => {
         expect(render).not.toHaveBeenCalled();
-      });
-
-      it(`does not add any event listeners`, () => {
-        expect(addEventListener).not.toHaveBeenCalled();
       });
 
       it(`does not get header lines`, () => {

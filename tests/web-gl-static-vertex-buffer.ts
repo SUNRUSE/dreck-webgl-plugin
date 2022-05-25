@@ -71,7 +71,6 @@ describe(`WebGlStaticVertexBuffer`, () => {
     let deleteBuffer: jasmine.Spy;
     let isContextLost: jasmine.Spy;
     let render: jasmine.Spy;
-    let addEventListener: jasmine.Spy;
 
     let context: WebGlContextInterface<
       | `createBuffer`
@@ -90,7 +89,6 @@ describe(`WebGlStaticVertexBuffer`, () => {
       deleteBuffer = jasmine.createSpy(`deleteBuffer`);
       isContextLost = jasmine.createSpy(`isContextLost`);
       render = jasmine.createSpy(`render`);
-      addEventListener = jasmine.createSpy(`addEventListener`);
 
       context = {
         gl: {
@@ -102,7 +100,6 @@ describe(`WebGlStaticVertexBuffer`, () => {
         },
         timesContextRestored: 7,
         render,
-        addEventListener,
       };
 
       staticVertexBuffer = new WebGlStaticVertexBuffer(
@@ -154,10 +151,6 @@ describe(`WebGlStaticVertexBuffer`, () => {
     it(`does not render`, () => {
       expect(render).not.toHaveBeenCalled();
     });
-
-    it(`does not add any event listeners`, () => {
-      expect(addEventListener).not.toHaveBeenCalled();
-    });
   });
 
   describe(`on generating vertices`, () => {
@@ -167,7 +160,6 @@ describe(`WebGlStaticVertexBuffer`, () => {
     let deleteBuffer: jasmine.Spy;
     let isContextLost: jasmine.Spy;
     let render: jasmine.Spy;
-    let addEventListener: jasmine.Spy;
 
     let context: WebGlContextInterface<
       | `createBuffer`
@@ -188,7 +180,6 @@ describe(`WebGlStaticVertexBuffer`, () => {
       deleteBuffer = jasmine.createSpy(`deleteBuffer`);
       isContextLost = jasmine.createSpy(`isContextLost`);
       render = jasmine.createSpy(`render`);
-      addEventListener = jasmine.createSpy(`addEventListener`);
 
       context = {
         gl: {
@@ -200,7 +191,6 @@ describe(`WebGlStaticVertexBuffer`, () => {
         },
         timesContextRestored: 7,
         render,
-        addEventListener,
       };
 
       staticVertexBuffer = new WebGlStaticVertexBuffer(
@@ -253,10 +243,6 @@ describe(`WebGlStaticVertexBuffer`, () => {
 
     it(`does not render`, () => {
       expect(render).not.toHaveBeenCalled();
-    });
-
-    it(`does not add any event listeners`, () => {
-      expect(addEventListener).not.toHaveBeenCalled();
     });
 
     it(`returns the vertices`, () => {
