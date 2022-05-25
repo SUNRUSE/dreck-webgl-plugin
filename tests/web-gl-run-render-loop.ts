@@ -54,6 +54,8 @@ describe(`webGlRunRenderLoop`, () => {
 
         let previousRequest: null | string = null;
         let nextRequest: null | string = null;
+
+        /* istanbul ignore next */
         let animationFrameCallback = () => {
           // Empty
         };
