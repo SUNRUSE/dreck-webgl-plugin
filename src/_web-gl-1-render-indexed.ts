@@ -37,7 +37,7 @@ function webGlRenderIndexed<
     | `bindTexture`
   >,
   vertexBuffer: WebGlResourceInterface<WebGlVertexBufferInstance> & {
-    readonly WebGlPackedAttributeDefinitionSet: WebGlPackedAttributeDefinitionSet<TAttributeDefinitionSet>;
+    readonly packedAttributeDefinitionSet: WebGlPackedAttributeDefinitionSet<TAttributeDefinitionSet>;
     readonly mode:
       | WebGlConstants.Points
       | WebGlConstants.LineStrip
@@ -204,7 +204,7 @@ function webGlRenderIndexed<
             const location = programInstance.attributeLocations[key];
 
             if (location !== -1) {
-              const details = vertexBuffer.WebGlPackedAttributeDefinitionSet
+              const details = vertexBuffer.packedAttributeDefinitionSet
                 .attributeDefinitionSet[key] as WebGlAttributeDefinition;
 
               context.gl.vertexAttribPointer(
@@ -214,8 +214,8 @@ function webGlRenderIndexed<
                 details.binaryType === WebGlConstants.Float
                   ? false
                   : details.normalized,
-                vertexBuffer.WebGlPackedAttributeDefinitionSet.stride,
-                vertexBuffer.WebGlPackedAttributeDefinitionSet.offsets[key]
+                vertexBuffer.packedAttributeDefinitionSet.stride,
+                vertexBuffer.packedAttributeDefinitionSet.offsets[key]
               );
             }
           }

@@ -1370,7 +1370,7 @@ describe(`webGlRenderIndexed`, () => {
         throwIfDisposed: vertexBufferThrowIfDisposed,
         throwIfFromAnotherContext: vertexBufferThrowIfFromAnotherContext,
         getInstance: vertexBufferGetInstance,
-        WebGlPackedAttributeDefinitionSet: testPackedAttributeDefinitionSet,
+        packedAttributeDefinitionSet: testPackedAttributeDefinitionSet,
         mode: WebGlConstants.LineStrip as WebGlConstants.LineStrip,
       };
       indexBufferThrowIfDisposed = jasmine.createSpy(
@@ -2289,7 +2289,7 @@ describe(`webGlRenderIndexed`, () => {
         throwIfDisposed: vertexBufferThrowIfDisposed,
         throwIfFromAnotherContext: vertexBufferThrowIfFromAnotherContext,
         getInstance: vertexBufferGetInstance,
-        WebGlPackedAttributeDefinitionSet: testPackedAttributeDefinitionSet,
+        packedAttributeDefinitionSet: testPackedAttributeDefinitionSet,
         mode: WebGlConstants.LineStrip as WebGlConstants.LineStrip,
       };
       indexBufferThrowIfDisposed = jasmine.createSpy(
@@ -3208,7 +3208,7 @@ describe(`webGlRenderIndexed`, () => {
         throwIfDisposed: vertexBufferThrowIfDisposed,
         throwIfFromAnotherContext: vertexBufferThrowIfFromAnotherContext,
         getInstance: vertexBufferGetInstance,
-        WebGlPackedAttributeDefinitionSet: testPackedAttributeDefinitionSet,
+        packedAttributeDefinitionSet: testPackedAttributeDefinitionSet,
         mode: WebGlConstants.LineStrip as WebGlConstants.LineStrip,
       };
       indexBufferThrowIfDisposed = jasmine.createSpy(
@@ -4127,7 +4127,7 @@ describe(`webGlRenderIndexed`, () => {
         throwIfDisposed: vertexBufferThrowIfDisposed,
         throwIfFromAnotherContext: vertexBufferThrowIfFromAnotherContext,
         getInstance: vertexBufferGetInstance,
-        WebGlPackedAttributeDefinitionSet: testPackedAttributeDefinitionSet,
+        packedAttributeDefinitionSet: testPackedAttributeDefinitionSet,
         mode: WebGlConstants.LineStrip as WebGlConstants.LineStrip,
       };
       indexBufferThrowIfDisposed = jasmine.createSpy(
@@ -5046,7 +5046,7 @@ describe(`webGlRenderIndexed`, () => {
         throwIfDisposed: vertexBufferThrowIfDisposed,
         throwIfFromAnotherContext: vertexBufferThrowIfFromAnotherContext,
         getInstance: vertexBufferGetInstance,
-        WebGlPackedAttributeDefinitionSet: testPackedAttributeDefinitionSet,
+        packedAttributeDefinitionSet: testPackedAttributeDefinitionSet,
         mode: WebGlConstants.LineStrip as WebGlConstants.LineStrip,
       };
       indexBufferThrowIfDisposed = jasmine.createSpy(
@@ -5965,7 +5965,7 @@ describe(`webGlRenderIndexed`, () => {
         throwIfDisposed: vertexBufferThrowIfDisposed,
         throwIfFromAnotherContext: vertexBufferThrowIfFromAnotherContext,
         getInstance: vertexBufferGetInstance,
-        WebGlPackedAttributeDefinitionSet: testPackedAttributeDefinitionSet,
+        packedAttributeDefinitionSet: testPackedAttributeDefinitionSet,
         mode: WebGlConstants.LineStrip as WebGlConstants.LineStrip,
       };
       indexBufferThrowIfDisposed = jasmine.createSpy(
@@ -6884,7 +6884,7 @@ describe(`webGlRenderIndexed`, () => {
         throwIfDisposed: vertexBufferThrowIfDisposed,
         throwIfFromAnotherContext: vertexBufferThrowIfFromAnotherContext,
         getInstance: vertexBufferGetInstance,
-        WebGlPackedAttributeDefinitionSet: testPackedAttributeDefinitionSet,
+        packedAttributeDefinitionSet: testPackedAttributeDefinitionSet,
         mode: WebGlConstants.LineStrip as WebGlConstants.LineStrip,
       };
       indexBufferThrowIfDisposed = jasmine.createSpy(
@@ -7804,7 +7804,7 @@ describe(`webGlRenderIndexed`, () => {
         throwIfDisposed: vertexBufferThrowIfDisposed,
         throwIfFromAnotherContext: vertexBufferThrowIfFromAnotherContext,
         getInstance: vertexBufferGetInstance,
-        WebGlPackedAttributeDefinitionSet: testPackedAttributeDefinitionSet,
+        packedAttributeDefinitionSet: testPackedAttributeDefinitionSet,
         mode: WebGlConstants.LineStrip as WebGlConstants.LineStrip,
       };
       indexBufferThrowIfDisposed = jasmine.createSpy(
@@ -8950,7 +8950,7 @@ describe(`webGlRenderIndexed`, () => {
         throwIfDisposed: vertexBufferThrowIfDisposed,
         throwIfFromAnotherContext: vertexBufferThrowIfFromAnotherContext,
         getInstance: vertexBufferGetInstance,
-        WebGlPackedAttributeDefinitionSet: testPackedAttributeDefinitionSet,
+        packedAttributeDefinitionSet: testPackedAttributeDefinitionSet,
         mode: WebGlConstants.LineStrip as WebGlConstants.LineStrip,
       };
       indexBufferThrowIfDisposed = jasmine.createSpy(
@@ -10093,7 +10093,7 @@ describe(`webGlRenderIndexed`, () => {
         throwIfDisposed: vertexBufferThrowIfDisposed,
         throwIfFromAnotherContext: vertexBufferThrowIfFromAnotherContext,
         getInstance: vertexBufferGetInstance,
-        WebGlPackedAttributeDefinitionSet: testPackedAttributeDefinitionSet,
+        packedAttributeDefinitionSet: testPackedAttributeDefinitionSet,
         mode: WebGlConstants.LineStrip as WebGlConstants.LineStrip,
       };
       indexBufferThrowIfDisposed = jasmine.createSpy(
@@ -11045,7 +11045,7 @@ describe(`webGlRenderIndexed`, () => {
         throwIfDisposed: vertexBufferThrowIfDisposed,
         throwIfFromAnotherContext: vertexBufferThrowIfFromAnotherContext,
         getInstance: vertexBufferGetInstance,
-        WebGlPackedAttributeDefinitionSet: testPackedAttributeDefinitionSet,
+        packedAttributeDefinitionSet: testPackedAttributeDefinitionSet,
         mode: WebGlConstants.LineStrip as WebGlConstants.LineStrip,
       };
       indexBufferThrowIfDisposed = jasmine.createSpy(
@@ -12192,7 +12192,7 @@ describe(`webGlRenderIndexed`, () => {
         throwIfDisposed: vertexBufferThrowIfDisposed,
         throwIfFromAnotherContext: vertexBufferThrowIfFromAnotherContext,
         getInstance: vertexBufferGetInstance,
-        WebGlPackedAttributeDefinitionSet: testPackedAttributeDefinitionSet,
+        packedAttributeDefinitionSet: testPackedAttributeDefinitionSet,
         mode: WebGlConstants.LineStrip as WebGlConstants.LineStrip,
       };
       indexBufferThrowIfDisposed = jasmine.createSpy(
@@ -13339,7 +13339,7 @@ describe(`webGlRenderIndexed`, () => {
         throwIfDisposed: vertexBufferThrowIfDisposed,
         throwIfFromAnotherContext: vertexBufferThrowIfFromAnotherContext,
         getInstance: vertexBufferGetInstance,
-        WebGlPackedAttributeDefinitionSet: testPackedAttributeDefinitionSet,
+        packedAttributeDefinitionSet: testPackedAttributeDefinitionSet,
         mode: WebGlConstants.LineStrip as WebGlConstants.LineStrip,
       };
       indexBufferThrowIfDisposed = jasmine.createSpy(
@@ -14486,7 +14486,7 @@ describe(`webGlRenderIndexed`, () => {
         throwIfDisposed: vertexBufferThrowIfDisposed,
         throwIfFromAnotherContext: vertexBufferThrowIfFromAnotherContext,
         getInstance: vertexBufferGetInstance,
-        WebGlPackedAttributeDefinitionSet: testPackedAttributeDefinitionSet,
+        packedAttributeDefinitionSet: testPackedAttributeDefinitionSet,
         mode: WebGlConstants.LineStrip as WebGlConstants.LineStrip,
       };
       indexBufferThrowIfDisposed = jasmine.createSpy(
@@ -15696,7 +15696,7 @@ describe(`webGlRenderIndexed`, () => {
         throwIfDisposed: vertexBufferThrowIfDisposed,
         throwIfFromAnotherContext: vertexBufferThrowIfFromAnotherContext,
         getInstance: vertexBufferGetInstance,
-        WebGlPackedAttributeDefinitionSet: testPackedAttributeDefinitionSet,
+        packedAttributeDefinitionSet: testPackedAttributeDefinitionSet,
         mode: WebGlConstants.LineStrip as WebGlConstants.LineStrip,
       };
       indexBufferThrowIfDisposed = jasmine.createSpy(
