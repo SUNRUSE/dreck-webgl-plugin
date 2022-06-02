@@ -57,6 +57,16 @@ function webGlRenderIndexed<
   },
   uniforms: WebGlUniformValueSet<TUniformDefinitionSet>
 ): void {
+  function flat<T>(input: ReadonlyArray<ReadonlyArray<T>>): T[] {
+    const output: T[] = [];
+
+    for (const a of input) {
+      output.push(...a);
+    }
+
+    return output;
+  }
+
   if (vertexBuffer.context !== context) {
     throw new Error(`The vertex buffer must be of the given context.`);
   } else if (indexBuffer.context !== context) {
@@ -239,7 +249,7 @@ function webGlRenderIndexed<
                   } else {
                     context.gl.uniform2fv(
                       uniform,
-                      (uniforms[key] as ReadonlyArray<WebGlVec2>).flat()
+                      flat(uniforms[key] as ReadonlyArray<WebGlVec2>)
                     );
                   }
                   break;
@@ -253,7 +263,7 @@ function webGlRenderIndexed<
                   } else {
                     context.gl.uniform3fv(
                       uniform,
-                      (uniforms[key] as ReadonlyArray<WebGlVec3>).flat()
+                      flat(uniforms[key] as ReadonlyArray<WebGlVec3>)
                     );
                   }
                   break;
@@ -267,7 +277,7 @@ function webGlRenderIndexed<
                   } else {
                     context.gl.uniform4fv(
                       uniform,
-                      (uniforms[key] as ReadonlyArray<WebGlVec4>).flat()
+                      flat(uniforms[key] as ReadonlyArray<WebGlVec4>)
                     );
                   }
                   break;
@@ -283,7 +293,7 @@ function webGlRenderIndexed<
                     context.gl.uniformMatrix2fv(
                       uniform,
                       false,
-                      (uniforms[key] as WebGlMat2).flat()
+                      flat(uniforms[key] as ReadonlyArray<WebGlMat2>)
                     );
                   }
                   break;
@@ -299,7 +309,7 @@ function webGlRenderIndexed<
                     context.gl.uniformMatrix3fv(
                       uniform,
                       false,
-                      (uniforms[key] as WebGlMat3).flat()
+                      flat(uniforms[key] as ReadonlyArray<WebGlMat3>)
                     );
                   }
                   break;
@@ -315,7 +325,7 @@ function webGlRenderIndexed<
                     context.gl.uniformMatrix4fv(
                       uniform,
                       false,
-                      (uniforms[key] as WebGlMat4).flat()
+                      flat(uniforms[key] as ReadonlyArray<WebGlMat4>)
                     );
                   }
                   break;
