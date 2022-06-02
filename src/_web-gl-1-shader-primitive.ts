@@ -37,4 +37,14 @@ type WebGlShaderPrimitive = {
    * A 4x4 floating-point column-order matrix.
    */
   readonly [WebGlConstants.Mat4]: WebGlMat4;
+
+  /**
+   * A 2D texture sampler.
+   */
+  readonly [WebGlConstants.Sampler2D]: WebGlResourceInterface<WebGLTexture>;
+
+  /**
+   * A cube texture sampler.
+   */
+  readonly [WebGlConstants.SamplerCube]: WebGlResourceInterface<WebGLTexture>;
 };

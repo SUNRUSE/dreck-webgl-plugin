@@ -90,7 +90,9 @@ abstract class WebGlShader<
           | WebGlConstants.Vec4
           | WebGlConstants.Mat2
           | WebGlConstants.Mat3
-          | WebGlConstants.Mat4;
+          | WebGlConstants.Mat4
+          | WebGlConstants.Sampler2D
+          | WebGlConstants.SamplerCube;
 
         /**
          * The declaration's name.

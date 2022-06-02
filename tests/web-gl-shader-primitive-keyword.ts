@@ -26,4 +26,16 @@ describe(`webGlShaderPrimitiveKeyword`, () => {
   it(`mat4`, () => {
     expect(webGlShaderPrimitiveKeyword[WebGlConstants.Mat4]).toEqual(`mat4`);
   });
+
+  it(`sampler2D`, () => {
+    expect(webGlShaderPrimitiveKeyword[WebGlConstants.Sampler2D]).toEqual(
+      `sampler2D`
+    );
+  });
+
+  it(`samplerCube`, () => {
+    expect(webGlShaderPrimitiveKeyword[WebGlConstants.SamplerCube]).toEqual(
+      `samplerCube`
+    );
+  });
 });

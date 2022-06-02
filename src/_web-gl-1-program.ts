@@ -117,22 +117,72 @@ class WebGlProgram<
               )
             );
 
-            const uniformLocations = this.fromEntries<
-              keyof TUniformDefinitionSet,
-              null | WebGLUniformLocation
-            >(
-              Object.keys(this.vertexShader.uniformDefinitionSet).map(
-                (name) => [
-                  name,
-                  this.context.gl.getUniformLocation(program, name),
-                ]
+            let nextTextureIndex = 0;
+
+            const uniforms = Object.fromEntries(
+              Object.entries(this.vertexShader.uniformDefinitionSet).map(
+                ([name, data]) => {
+                  const location = this.context.gl.getUniformLocation(
+                    program,
+                    name
+                  );
+
+                  if (location === null) {
+                    return [name, null];
+                  } else {
+                    switch (data.shaderPrimitive) {
+                      case WebGlConstants.Float:
+                      case WebGlConstants.Vec2:
+                      case WebGlConstants.Vec3:
+                      case WebGlConstants.Vec4:
+                      case WebGlConstants.Mat2:
+                      case WebGlConstants.Mat3:
+                      case WebGlConstants.Mat4:
+                        return [name, location];
+
+                      case WebGlConstants.Sampler2D:
+                      case WebGlConstants.SamplerCube: {
+                        const indices: WebGlTextureIndex[] = [];
+
+                        while (indices.length < data.quantity) {
+                          if (nextTextureIndex > 7) {
+                            this.context.gl.detachShader(
+                              program,
+                              fragmentShader
+                            );
+                            this.context.gl.detachShader(program, vertexShader);
+                            this.context.gl.deleteProgram(program);
+
+                            throw new Error(
+                              `WebGL program requires more than 8 texture slots.`
+                            );
+                          }
+
+                          indices.push(nextTextureIndex as WebGlTextureIndex);
+
+                          nextTextureIndex++;
+                        }
+
+                        if (data.quantity === 1) {
+                          return [name, { location, index: indices[0] }];
+                        } else {
+                          return [name, { location, indices }];
+                        }
+                      }
+                    }
+                  }
+                }
               )
-            );
+            ) as {
+              readonly [TKey in keyof TUniformDefinitionSet]: WebGlProgramInstanceUniform<
+                TUniformDefinitionSet[TKey]
+              >;
+            };
 
             return {
               program,
               attributeLocations,
-              uniformLocations,
+              uniforms,
             };
           } else if (this.context.gl.isContextLost()) {
             return null;

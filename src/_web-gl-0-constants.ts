@@ -129,6 +129,16 @@ const enum WebGlConstants {
   Mat4 = 35676,
 
   /**
+   * A 2D texture sampler.
+   */
+  Sampler2D = 35678,
+
+  /**
+   * A cube texture sampler.
+   */
+  SamplerCube = 35680,
+
+  /**
    * The shader parameter which retrieves whether compilation succeeded.
    */
   CompileStatus = 35713,
@@ -352,4 +362,44 @@ const enum WebGlConstants {
    * The framebuffer was successfully assembled.
    */
   FramebufferComplete = 36053,
+
+  /**
+   * The first texture slot.
+   */
+  Texture0 = 33984,
+
+  /**
+   * The second texture slot.
+   */
+  Texture1 = 33985,
+
+  /**
+   * The third texture slot.
+   */
+  Texture2 = 33986,
+
+  /**
+   * The fourth texture slot.
+   */
+  Texture3 = 33987,
+
+  /**
+   * The fifth texture slot.
+   */
+  Texture4 = 33988,
+
+  /**
+   * The sixth texture slot.
+   */
+  Texture5 = 33989,
+
+  /**
+   * The seventh texture slot.
+   */
+  Texture6 = 33990,
+
+  /**
+   * The eighth (and final) texture slot.
+   */
+  Texture7 = 33991,
 }

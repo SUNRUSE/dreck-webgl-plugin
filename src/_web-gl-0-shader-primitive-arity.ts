@@ -37,4 +37,14 @@ const webGlShaderPrimitiveArity = {
    * A 4x4 floating-point column-order matrix.
    */
   [WebGlConstants.Mat4]: 16,
+
+  /**
+   * A 2D texture sampler.
+   */
+  [WebGlConstants.Sampler2D]: 1,
+
+  /**
+   * A cube texture sampler.
+   */
+  [WebGlConstants.SamplerCube]: 1,
 };

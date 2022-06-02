@@ -83,7 +83,6 @@ describe(`WebGlResource`, () => {
         const cullFace = jasmine.createSpy(`cullFace`);
         const isContextLost = jasmine.createSpy(`isContextLost`);
         const render = jasmine.createSpy(`render`);
-        const addEventListener = jasmine.createSpy(`addEventListener`);
 
         const context = {
           gl: {
@@ -92,7 +91,6 @@ describe(`WebGlResource`, () => {
           },
           timesContextRestored: 11,
           render,
-          addEventListener,
         };
 
         const createInstance = jasmine.createSpy(`createInstance`);
@@ -270,7 +268,6 @@ describe(`WebGlResource`, () => {
 
         expect(testResource.context).toBe(context);
         expect(render).not.toHaveBeenCalled();
-        expect(addEventListener).not.toHaveBeenCalled();
       });
     });
   }

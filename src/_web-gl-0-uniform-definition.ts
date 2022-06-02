@@ -13,7 +13,9 @@ type WebGlUniformDefinition = {
     | WebGlConstants.Vec4
     | WebGlConstants.Mat2
     | WebGlConstants.Mat3
-    | WebGlConstants.Mat4;
+    | WebGlConstants.Mat4
+    | WebGlConstants.Sampler2D
+    | WebGlConstants.SamplerCube;
 
   /**
    * When 1, the uniform is NOT an array.  When greater than 1, the uniform is an array of the specified length.

@@ -21,9 +21,11 @@ type WebGlProgramInstance<
   };
 
   /**
-   * The locations of the uniforms within the WebGL program.  Any not found (not used, for example) are null.
+   * Information regarding the uniforms within the WebGL program.  Any not found (not used, for example) are null.
    */
-  readonly uniformLocations: {
-    readonly [TKey in keyof TUniformDefinitionSet]: null | WebGLUniformLocation;
+  readonly uniforms: {
+    readonly [TKey in keyof TUniformDefinitionSet]: WebGlProgramInstanceUniform<
+      TUniformDefinitionSet[TKey]
+    >;
   };
 };
