@@ -79,6 +79,20 @@ class WebGlProgram<
     return output as { readonly [T in TKey]: TValue };
   }
 
+  private entries<TKey extends string, TValue>(obj: {
+    readonly [T in TKey]: TValue;
+  }): ReadonlyArray<readonly [TKey, TValue]> {
+    const output: (readonly [TKey, TValue])[] = [];
+
+    for (const key in obj) {
+      const typedKey = key as TKey;
+
+      output.push([typedKey, obj[typedKey]]);
+    }
+
+    return output;
+  }
+
   createInstance() {
     const vertexShader = this.vertexShader.getInstance();
 
@@ -119,8 +133,8 @@ class WebGlProgram<
 
             let nextTextureIndex = 0;
 
-            const uniforms = Object.fromEntries(
-              Object.entries(this.vertexShader.uniformDefinitionSet).map(
+            const uniforms = this.fromEntries(
+              this.entries(this.vertexShader.uniformDefinitionSet).map(
                 ([name, data]) => {
                   const location = this.context.gl.getUniformLocation(
                     program,
