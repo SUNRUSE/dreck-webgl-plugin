@@ -12,7 +12,7 @@ Adds a library of TypeScript classes to a Dreck project for interacting with Web
 Run the following in a Bash shell at the root of your project:
 
 ```bash
-git submodule add https://github.com/sunruse/dreck-webgl-plugin submodules/plugins/dreck-webgl-plugin
+git submodule add https://github.com/sunruse/dreck-webgl-plugin submodules/plugins/webgl
 ```
 
 ## Example
