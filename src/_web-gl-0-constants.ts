@@ -402,4 +402,19 @@ const enum WebGlConstants {
    * The eighth (and final) texture slot.
    */
   Texture7 = 33991,
+
+  /**
+   * The depth buffer is to be cleared.
+   */
+  DepthBufferBit = 256,
+
+  /**
+   * The stencil buffer is to be cleared.
+   */
+  StencilBufferBit = 1024,
+
+  /**
+   * The color buffer is to be cleared.
+   */
+  ColorBufferBit = 16384,
 }
