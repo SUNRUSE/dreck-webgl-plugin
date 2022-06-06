@@ -3,7 +3,7 @@ describe(`WebGlTextureCube`, () => {
     wrapX: WebGlWrappingMode,
     wrapY: WebGlWrappingMode,
     wrapZ: WebGlWrappingMode,
-    minificationFilter: webGlMinificationFilter,
+    minificationFilter: WebGlMinificationFilter,
     magnificationFilter: WebGlMagnificationFilter,
     generatesMipmaps: boolean
   ): void {
@@ -873,7 +873,7 @@ describe(`WebGlTextureCube`, () => {
           for (const minificationFilter of [
             WebGlConstants.Nearest,
             WebGlConstants.Linear,
-          ] as ReadonlyArray<webGlMinificationFilter>) {
+          ] as ReadonlyArray<WebGlMinificationFilter>) {
             Scenario(
               wrapX,
               wrapY,
@@ -888,7 +888,7 @@ describe(`WebGlTextureCube`, () => {
             WebGlConstants.NearestMipmapLinear,
             WebGlConstants.LinearMipmapNearest,
             WebGlConstants.NearestMipmapNearest,
-          ] as ReadonlyArray<webGlMinificationFilter>) {
+          ] as ReadonlyArray<WebGlMinificationFilter>) {
             Scenario(
               wrapX,
               wrapY,

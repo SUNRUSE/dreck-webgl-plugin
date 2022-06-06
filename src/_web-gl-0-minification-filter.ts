@@ -2,7 +2,7 @@
  * A minification filter which can be applied to a texture.
  */
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-type webGlMinificationFilter =
+type WebGlMinificationFilter =
   | WebGlConstants.Linear
   | WebGlConstants.Nearest
   | WebGlConstants.NearestMipmapNearest

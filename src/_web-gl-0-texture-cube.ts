@@ -38,7 +38,7 @@ abstract class WebGlTextureCube<
     public readonly wrapX: WebGlWrappingMode,
     public readonly wrapY: WebGlWrappingMode,
     public readonly wrapZ: WebGlWrappingMode,
-    public readonly minificationFilter: webGlMinificationFilter,
+    public readonly minificationFilter: WebGlMinificationFilter,
     public readonly magnificationFilter: WebGlMagnificationFilter
   ) {
     super(context);

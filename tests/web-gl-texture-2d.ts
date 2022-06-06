@@ -2,7 +2,7 @@ describe(`WebGlTexture2D`, () => {
   function Scenario(
     wrapX: WebGlWrappingMode,
     wrapY: WebGlWrappingMode,
-    minificationFilter: webGlMinificationFilter,
+    minificationFilter: WebGlMinificationFilter,
     magnificationFilter: WebGlMagnificationFilter,
     generatesMipmaps: boolean
   ): void {
@@ -817,7 +817,7 @@ describe(`WebGlTexture2D`, () => {
         for (const minificationFilter of [
           WebGlConstants.Nearest,
           WebGlConstants.Linear,
-        ] as ReadonlyArray<webGlMinificationFilter>) {
+        ] as ReadonlyArray<WebGlMinificationFilter>) {
           Scenario(
             wrapX,
             wrapY,
@@ -831,7 +831,7 @@ describe(`WebGlTexture2D`, () => {
           WebGlConstants.NearestMipmapLinear,
           WebGlConstants.LinearMipmapNearest,
           WebGlConstants.NearestMipmapNearest,
-        ] as ReadonlyArray<webGlMinificationFilter>) {
+        ] as ReadonlyArray<WebGlMinificationFilter>) {
           Scenario(wrapX, wrapY, minificationFilter, magnificationFilter, true);
         }
       }

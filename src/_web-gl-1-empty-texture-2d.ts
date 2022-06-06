@@ -32,7 +32,7 @@ class WebGlEmptyTexture2D<
     >,
     wrapX: WebGlWrappingMode,
     wrapY: WebGlWrappingMode,
-    minificationFilter: webGlMinificationFilter,
+    minificationFilter: WebGlMinificationFilter,
     magnificationFilter: WebGlMagnificationFilter,
     public readonly format: TFormat,
     public readonly type: TType,

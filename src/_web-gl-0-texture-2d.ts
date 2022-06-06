@@ -36,7 +36,7 @@ abstract class WebGlTexture2D<
     >,
     public readonly wrapX: WebGlWrappingMode,
     public readonly wrapY: WebGlWrappingMode,
-    public readonly minificationFilter: webGlMinificationFilter,
+    public readonly minificationFilter: WebGlMinificationFilter,
     public readonly magnificationFilter: WebGlMagnificationFilter
   ) {
     super(context);
